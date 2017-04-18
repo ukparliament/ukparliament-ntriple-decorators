@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'parliament/grom/decorator/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'parliament-grom-decorator'
+  spec.name          = 'parliament-grom-decorators'
   spec.version       = Parliament::Grom::Decorator::VERSION
   spec.authors       = ['Rebecca Appleyard']
   spec.email         = ['rklappleyard@gmail.com']
