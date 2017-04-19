@@ -1,0 +1,63 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:3030/constituencies/1b316bf7-2064-4cf7-921a-865f13d082e1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      - application/n-triples
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/n-triples; charset=utf-8
+      Etag:
+      - W/"3fabc3ecf241fe2877daa52e083e4d00"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - a40ace2b-bea6-4dd4-982b-7a159d07d48d
+      X-Runtime:
+      - '0.292646'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        <http://id.ukpds.org/1b316bf7-2064-4cf7-921a-865f13d082e1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
+        <http://id.ukpds.org/1b316bf7-2064-4cf7-921a-865f13d082e1> <http://id.ukpds.org/schema/constituencyGroupStartDate> "2010-05-06"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/1b316bf7-2064-4cf7-921a-865f13d082e1> <http://id.ukpds.org/schema/constituencyGroupName> "Walthamstow" .
+        <http://id.ukpds.org/1b316bf7-2064-4cf7-921a-865f13d082e1> <http://id.ukpds.org/schema/constituencyGroupOnsCode> "E14001013" .
+        <http://id.ukpds.org/1b316bf7-2064-4cf7-921a-865f13d082e1> <http://id.ukpds.org/schema/constituencyGroupHasHouseSeat> <http://id.ukpds.org/cd7466be-0796-4044-9752-b5abfb8d7195> .
+        <http://id.ukpds.org/cd7466be-0796-4044-9752-b5abfb8d7195> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/HouseSeat> .
+        <http://id.ukpds.org/cd7466be-0796-4044-9752-b5abfb8d7195> <http://id.ukpds.org/schema/houseSeatHasSeatIncumbency> <http://id.ukpds.org/5d6e8e88-002c-48f7-837a-4b964dfe3e80> .
+        <http://id.ukpds.org/5d6e8e88-002c-48f7-837a-4b964dfe3e80> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/SeatIncumbency> .
+        <http://id.ukpds.org/5d6e8e88-002c-48f7-837a-4b964dfe3e80> <http://id.ukpds.org/schema/incumbencyHasMember> <http://id.ukpds.org/80c2b596-494f-4dab-97ed-867729a40451> .
+        <http://id.ukpds.org/5d6e8e88-002c-48f7-837a-4b964dfe3e80> <http://id.ukpds.org/schema/incumbencyEndDate> "2015-03-30"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/5d6e8e88-002c-48f7-837a-4b964dfe3e80> <http://id.ukpds.org/schema/incumbencyStartDate> "2010-05-06"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/80c2b596-494f-4dab-97ed-867729a40451> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Person> .
+        <http://id.ukpds.org/80c2b596-494f-4dab-97ed-867729a40451> <http://id.ukpds.org/schema/personGivenName> "Person - givenName" .
+        <http://id.ukpds.org/80c2b596-494f-4dab-97ed-867729a40451> <http://id.ukpds.org/schema/personFamilyName> "Person - familyName" .
+        <http://id.ukpds.org/cd7466be-0796-4044-9752-b5abfb8d7195> <http://id.ukpds.org/schema/houseSeatHasSeatIncumbency> <http://id.ukpds.org/cae17778-79c2-42cb-8196-8e1d85d8c50f> .
+        <http://id.ukpds.org/cae17778-79c2-42cb-8196-8e1d85d8c50f> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/SeatIncumbency> .
+        <http://id.ukpds.org/cae17778-79c2-42cb-8196-8e1d85d8c50f> <http://id.ukpds.org/schema/incumbencyHasMember> <http://id.ukpds.org/80c2b596-494f-4dab-97ed-867729a40451> .
+        <http://id.ukpds.org/cae17778-79c2-42cb-8196-8e1d85d8c50f> <http://id.ukpds.org/schema/incumbencyStartDate> "2015-05-07"^^<http://www.w3.org/2001/XMLSchema#date> .
+    http_version:
+  recorded_at: Tue, 18 Apr 2017 14:46:57 GMT
+recorded_with: VCR 3.0.3

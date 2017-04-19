@@ -1,0 +1,49 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:3030/people/66dd76ef-543a-42a2-8808-dbb9ef71cefa
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      - application/n-triples
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/n-triples; charset=utf-8
+      Etag:
+      - W/"426e28f6b775dd9670bf42f97520a720"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - a7229353-096f-466a-8c57-41436a9c5911
+      X-Runtime:
+      - '0.066536'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        <http://id.ukpds.org/66dd76ef-543a-42a2-8808-dbb9ef71cefa> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Person> .
+        <http://id.ukpds.org/66dd76ef-543a-42a2-8808-dbb9ef71cefa> <http://id.ukpds.org/schema/personGivenName> "Person - givenName" .
+        <http://id.ukpds.org/66dd76ef-543a-42a2-8808-dbb9ef71cefa> <http://id.ukpds.org/schema/personOtherNames> "Person - otherName" .
+        <http://id.ukpds.org/66dd76ef-543a-42a2-8808-dbb9ef71cefa> <http://id.ukpds.org/schema/personFamilyName> "Person - familyName" .
+    http_version:
+  recorded_at: Wed, 19 Apr 2017 10:38:32 GMT
+recorded_with: VCR 3.0.3

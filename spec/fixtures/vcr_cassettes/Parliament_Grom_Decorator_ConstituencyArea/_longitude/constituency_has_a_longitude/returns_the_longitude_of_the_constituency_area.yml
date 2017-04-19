@@ -57,9 +57,8 @@ http_interactions:
         <http://id.ukpds.org/5d6e8e88-002c-48f7-837a-4b964dfe3e80> <http://id.ukpds.org/schema/incumbencyEndDate> "2015-03-30"^^<http://www.w3.org/2001/XMLSchema#date> .
         <http://id.ukpds.org/5d6e8e88-002c-48f7-837a-4b964dfe3e80> <http://id.ukpds.org/schema/incumbencyStartDate> "2010-05-06"^^<http://www.w3.org/2001/XMLSchema#date> .
         <http://id.ukpds.org/80c2b596-494f-4dab-97ed-867729a40451> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Person> .
-        <http://id.ukpds.org/80c2b596-494f-4dab-97ed-867729a40451> <http://id.ukpds.org/schema/personGivenName> "Stella" .
-        <http://id.ukpds.org/80c2b596-494f-4dab-97ed-867729a40451> <http://id.ukpds.org/schema/personFamilyName> "Creasy" .
-        <http://id.ukpds.org/80c2b596-494f-4dab-97ed-867729a40451> <http://example.com/F31CBD81AD8343898B49DC65743F0BDF> "Stella Creasy" .
+        <http://id.ukpds.org/80c2b596-494f-4dab-97ed-867729a40451> <http://id.ukpds.org/schema/personGivenName> "Person - givenName" .
+        <http://id.ukpds.org/80c2b596-494f-4dab-97ed-867729a40451> <http://id.ukpds.org/schema/personFamilyName> "Person - familyName" .
         <http://id.ukpds.org/cd7466be-0796-4044-9752-b5abfb8d7195> <http://id.ukpds.org/schema/houseSeatHasSeatIncumbency> <http://id.ukpds.org/cae17778-79c2-42cb-8196-8e1d85d8c50f> .
         <http://id.ukpds.org/cae17778-79c2-42cb-8196-8e1d85d8c50f> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/SeatIncumbency> .
         <http://id.ukpds.org/cae17778-79c2-42cb-8196-8e1d85d8c50f> <http://id.ukpds.org/schema/incumbencyHasMember> <http://id.ukpds.org/80c2b596-494f-4dab-97ed-867729a40451> .

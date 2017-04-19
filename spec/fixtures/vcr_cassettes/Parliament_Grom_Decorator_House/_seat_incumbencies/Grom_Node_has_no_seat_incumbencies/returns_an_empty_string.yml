@@ -1,0 +1,52 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:3030/people/80c2b596-494f-4dab-97ed-867729a40451/houses
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      - application/n-triples
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/n-triples; charset=utf-8
+      Etag:
+      - W/"75ad5dd335e7ece0b7292d85c28c0285"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 99eefc46-945b-432b-b38c-7b5881fbaaf7
+      X-Runtime:
+      - '0.204212'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        <http://id.ukpds.org/80c2b596-494f-4dab-97ed-867729a40451> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Person> .
+        <http://id.ukpds.org/80c2b596-494f-4dab-97ed-867729a40451> <http://id.ukpds.org/schema/personGivenName> "Person - givenName" .
+        <http://id.ukpds.org/80c2b596-494f-4dab-97ed-867729a40451> <http://id.ukpds.org/schema/personFamilyName> "Person - familyName" .
+        <http://id.ukpds.org/4b77dd58-f6ba-4121-b521-c8ad70465f52> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/House> .
+        <http://id.ukpds.org/4b77dd58-f6ba-4121-b521-c8ad70465f52> <http://id.ukpds.org/schema/houseName> "House of Commons" .
+        <http://id.ukpds.org/cd7466be-0796-4044-9752-b5abfb8d7195> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/HouseSeat> .
+        <http://id.ukpds.org/cd7466be-0796-4044-9752-b5abfb8d7195> <http://id.ukpds.org/schema/houseSeatHasHouse> <http://id.ukpds.org/4b77dd58-f6ba-4121-b521-c8ad70465f52> .
+    http_version:
+  recorded_at: Tue, 18 Apr 2017 15:46:57 GMT
+recorded_with: VCR 3.0.3
