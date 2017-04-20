@@ -5,6 +5,3 @@ gemspec
 
 # Include coveralls for CI coverage reports
 gem 'coveralls', require: false
-
-gem 'parliament-ntriple', path: '../parliament-ntriple'
-gem 'parliament-ruby', path: '../parliament-ruby'

@@ -25,7 +25,7 @@ module Parliament
       # Decorates objects with alias methods extended from its decorator module.
       #
       # @param [Grom::Node] object the object to be decorated.
-      def self.assign_decorator(object)
+      def self.decorate(object)
         return object unless object.respond_to?(:type)
 
         object_type = ::Grom::Helper.get_id(object.type)
