@@ -109,7 +109,6 @@ module Parliament
 
         def current_member_display_name
           return @current_member_display_name unless @current_member_display_name.nil?
-          require 'pry'; binding.pry
           current_incumbency = seat_incumbencies.select(&:current?).first
           @current_member_display_name = current_incumbency.nil? ? nil : current_incumbency.member.display_name
         end
