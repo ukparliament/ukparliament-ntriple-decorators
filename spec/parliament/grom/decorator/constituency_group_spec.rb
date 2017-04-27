@@ -195,4 +195,50 @@ describe Parliament::Grom::Decorator::ConstituencyGroup, vcr: true do
       expect(constituency_node.correct?).to eq(true)
     end
   end
+
+  describe '#current_member_display_name' do
+     let(:id) {'9d65a056-04c9-4aa5-999c-1a5905ce54fd'}
+     let(:response) { Parliament::Request::UrlRequest.new(base_url: 'http://localhost:3030',
+                                                           builder: Parliament::Builder::NTripleResponseBuilder,
+                                                           decorators: Parliament::Grom::Decorator).constituencies(id).get}
+    context 'constituency has seat incumbencies' do
+      it 'and returns a single member' do
+        constituency_node = response.filter('http://id.ukpds.org/schema/ConstituencyGroup')[0]
+        expect(constituency_node).to respond_to(:current_member_display_name)
+        expect(constituency_node.members.size).to be(1)
+        expect(constituency_node.current_member_display_name).to eq 'givename familyname - 1'
+      end
+    end
+
+    context 'constituency without any seat incumbencies' do
+      it 'returns an empty array' do
+        constituency_node = response.filter('http://id.ukpds.org/schema/ConstituencyGroup')[0]
+        expect(constituency_node).to respond_to(:current_member_display_name)
+        expect(constituency_node.current_member_display_name).to eq ''
+      end
+    end
+  end
+
+  describe '#current_member_party_name' do
+    let(:id) {'9d65a056-04c9-4aa5-999c-1a5905ce54fd'}
+    let(:response) { Parliament::Request::UrlRequest.new(base_url: 'http://localhost:3030',
+                                                         builder: Parliament::Builder::NTripleResponseBuilder,
+                                                         decorators: Parliament::Grom::Decorator).constituencies(id).get}
+
+    context 'constituency member is a current seat incumbent' do
+      it 'and returns a party name' do
+        constituency_node = response.filter('http://id.ukpds.org/schema/ConstituencyGroup')[0]
+        expect(constituency_node.current_member_party_name).to eq('Conservative')
+      end
+    end
+
+    context 'constituency member' do
+      it 'does not return a party name' do
+        constituency_node = response.filter('http://id.ukpds.org/schema/ConstituencyGroup')[0]
+        expect(constituency_node.current_member_party_name).to eq('')
+      end
+    end
+  end
+
+
 end
