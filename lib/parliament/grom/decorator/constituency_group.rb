@@ -2,7 +2,10 @@ module Parliament
   module Grom
     module Decorator
       # Decorator namespace for Grom::Node instances with type: http://id.ukpds.org/schema/ConstituencyGroup
+      #
+      # attr [Boolean] correct verifies that the Grom::Node is the expected constituency.  This is used in conjunction with postcode lookup to verify if the Grom::Node is the expected constituency.
       module ConstituencyGroup
+        attr_accessor :correct
         # Alias constituencyGroupName with fallback.
         #
         # @return [String, String] the name of the Grom::Node or an empty string.
@@ -91,16 +94,9 @@ module Parliament
 
         # Checks if Grom::Node is the correct constituency.
         #
-        # @return [Boolean] a boolean depending on whether or not the Grom::Node is the correct constituency.
+        # @return [Boolean] a boolean depending on whether or not the Grom::Node is the expected constituency.
         def correct?
-          @correct
-        end
-
-        # Sets the correct variable to a boolean value.
-        #
-        # @return [Boolean] the boolean @correct is to be set to.
-        def correct(bool)
-          @correct = bool
+          @correct || false
         end
       end
     end
