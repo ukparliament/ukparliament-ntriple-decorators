@@ -108,10 +108,10 @@ module Parliament
         # @return [Array, Array] the current member of the Grom::Node has a display name.
 
         def current_member_display_name
-          return @current_member unless @current_member.nil?
+          return @current_member_display_name unless @current_member_display_name.nil?
           require 'pry'; binding.pry
           current_incumbency = seat_incumbencies.select(&:current?).first
-          @member = current_incumbency.nil? ? nil : current_incumbency.member.display_name
+          @current_member_display_name = current_incumbency.nil? ? nil : current_incumbency.member.display_name
         end
 
         # Alias party_name with fallback.
