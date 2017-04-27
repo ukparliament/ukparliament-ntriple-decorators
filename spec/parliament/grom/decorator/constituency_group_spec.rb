@@ -190,7 +190,6 @@ describe Parliament::Grom::Decorator::ConstituencyGroup, vcr: true do
                                                      builder: Parliament::Builder::NTripleResponseBuilder,
                                                      decorators: Parliament::Grom::Decorator).people(id).constituencies.get
       constituency_node = response.filter('http://id.ukpds.org/schema/ConstituencyGroup').first
-
       constituency_node.correct = true
 
       expect(constituency_node.correct?).to eq(true)
