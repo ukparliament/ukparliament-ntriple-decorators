@@ -88,6 +88,20 @@ module Parliament
 
           !has_end_date
         end
+
+        # Checks if Grom::Node is the correct constituency.
+        #
+        # @return [Boolean] a boolean depending on whether or not the Grom::Node is the correct constituency.
+        def correct?
+          @correct
+        end
+
+        # Sets the correct variable to a boolean value.
+        #
+        # @return [Boolean] the boolean @correct is to be set to.
+        def correct(bool)
+          @correct = bool
+        end
       end
     end
   end

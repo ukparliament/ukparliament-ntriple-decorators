@@ -182,4 +182,18 @@ describe Parliament::Grom::Decorator::ConstituencyGroup, vcr: true do
       expect(constituency_results).to eq([false, false, true])
     end
   end
+
+  describe '#correct?' do
+    it 'Grom::Node returns the value for a correct constituency' do
+      id = '1921fc4a-6867-48fa-a4f4-6df05be005ce'
+      response = Parliament::Request::UrlRequest.new(base_url: 'http://localhost:3030',
+                                                     builder: Parliament::Builder::NTripleResponseBuilder,
+                                                     decorators: Parliament::Grom::Decorator).people(id).constituencies.get
+      constituency_node = response.filter('http://id.ukpds.org/schema/ConstituencyGroup').first
+
+      constituency_node.correct(true)
+
+      expect(constituency_node.correct?).to eq(true)
+    end
+  end
 end
