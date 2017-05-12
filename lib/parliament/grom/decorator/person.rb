@@ -170,18 +170,18 @@ module Parliament
         # TODO: Convert hard-coded strings to language file values
         def build_house_membership_status(no_current_seat_incumbency, no_current_house_incumbency, former_lord, former_mp)
           statuses = []
-          statuses << 'Current MP' unless no_current_seat_incumbency
-          statuses << 'Member of the House of Lords' unless no_current_house_incumbency
-          statuses << 'Former Member of the House of Lords' if former_lord
-          statuses << 'Former MP' if former_mp
+          statuses << I18n.t('person.current.mp') unless no_current_seat_incumbency
+          statuses << I18n.t('person.current.member_of_the_house_of_lords') unless no_current_house_incumbency
+          statuses << I18n.t('person.former.member_of_the_house_of_lords') if former_lord
+          statuses << I18n.t('person.former.mp') if former_mp
 
           statuses
         end
 
         def general_membership_status
           statuses = []
-          statuses << 'Current Member' unless incumbencies.select(&:current?).empty?
-          statuses << 'Former Member' if !incumbencies.empty? && incumbencies.select(&:current?).empty?
+          statuses << I18n.t('person.current.member') unless incumbencies.select(&:current?).empty?
+          statuses << I18n.t('person.former.member') if !incumbencies.empty? && incumbencies.select(&:current?).empty?
           statuses
         end
       end

@@ -7,8 +7,9 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
 SimpleCov.start
 
 $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
-require 'parliament/grom/decorator'
+require 'parliament'
 require 'parliament/ntriple'
+require 'parliament/grom/decorator'
 
 require 'webmock/rspec'
 require 'vcr'
