@@ -45,3 +45,5 @@ If you wish to submit a bug fix or feature, you can create a pull request and it
 1. Push to the branch (`git push origin my-new-feature`)
 1. Ensure your changes are tested using [Rspec](http://rspec.info/)
 1. Create a new Pull Request
+
+This is a test.
