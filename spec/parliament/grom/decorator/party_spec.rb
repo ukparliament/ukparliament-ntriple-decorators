@@ -85,4 +85,59 @@ describe Parliament::Grom::Decorator::Party, vcr: true do
       end
     end
   end
+
+  describe '#commons_count' do
+    before(:each) do
+      response = Parliament::Request::UrlRequest.new(base_url: 'http://localhost:3030',
+                                                     builder: Parliament::Builder::NTripleResponseBuilder,
+                                                     decorators: Parliament::Grom::Decorator).parties.get
+      @party_node = response.filter('http://id.ukpds.org/schema/Party').first
+    end
+
+    context 'Grom::Node has a Commons count' do
+      it 'returns the Commons count for a Grom::Node object of type Party' do
+        expect(@party_node.commons_count).to eq(0)
+      end
+    end
+
+    context 'Grom::Node has no Commons count' do
+      it 'returns nil' do
+        expect(@party_node.commons_count).to be(nil)
+      end
+    end
+  end
+
+  describe '#lords_count' do
+    before(:each) do
+      response = Parliament::Request::UrlRequest.new(base_url: 'http://localhost:3030',
+                                                     builder: Parliament::Builder::NTripleResponseBuilder,
+                                                     decorators: Parliament::Grom::Decorator).parties.get
+      @party_node = response.filter('http://id.ukpds.org/schema/Party').first
+    end
+
+    context 'Grom::Node has a Lords count' do
+      it 'returns the Lords count for a Grom::Node object of type Party' do
+        expect(@party_node.lords_count).to eq(211)
+      end
+    end
+
+    context 'Grom::Node has no Lords count' do
+      it 'returns nil' do
+        expect(@party_node.lords_count).to be(nil)
+      end
+    end
+  end
+
+  describe '#current?' do
+    it 'Grom::Node returns the correct value for a current or non current party' do
+      response = Parliament::Request::UrlRequest.new(base_url: 'http://localhost:3030',
+                                                     builder: Parliament::Builder::NTripleResponseBuilder,
+                                                     decorators: Parliament::Grom::Decorator).parties.get
+      @party_nodes = response.filter('http://id.ukpds.org/schema/Party')
+
+      party_results = @party_nodes.map(&:current?)
+
+      expect(party_results).to eq([true, true, true, false, false, false, false, false])
+    end
+  end
 end
