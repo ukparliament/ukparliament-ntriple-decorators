@@ -22,7 +22,7 @@ module Parliament
     #
     # @since 0.1.0
     module Decorator
-      I18n.load_path += Dir[File.join((File.expand_path 'config'), 'locales', '*.yml')]
+      I18n.load_path += Dir[File.join(File.expand_path('../../../../config', __FILE__), 'locales', '*.yml')]
 
       # Decorates objects with alias methods extended from its decorator module.
       #
