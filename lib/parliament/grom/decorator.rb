@@ -22,7 +22,14 @@ module Parliament
     #
     # @since 0.1.0
     module Decorator
-      I18n.load_path += Dir[File.join(File.expand_path('../../../../config', __FILE__), 'locales', '*.yml')]
+      # Gets the root directory of the gem
+      def self.gem_path
+        File.expand_path '../../../../', __FILE__
+      end
+
+      # Loads the translation file into the I18n gem
+      I18n.load_path += Dir[File.join(gem_path, 'config', 'locales', '*.yml')]
+      I18n.backend.load_translations
 
       # Decorates objects with alias methods extended from its decorator module.
       #
