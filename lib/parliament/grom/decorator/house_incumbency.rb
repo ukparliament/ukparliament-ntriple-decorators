@@ -3,6 +3,8 @@ module Parliament
     module Decorator
       # Decorator namespace for Grom::Node instances with type: http://id.ukpds.org/schema/HouseIncumbency
       module HouseIncumbency
+        include Helpers::DateHelper
+
         # Alias incumbencyStartDate with fallback.
         #
         # @return [DateTime, nil] the start date of the Grom::Node or nil.

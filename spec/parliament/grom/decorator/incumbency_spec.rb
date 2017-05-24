@@ -52,6 +52,35 @@ describe Parliament::Grom::Decorator::Incumbency, vcr: true do
     end
   end
 
+  describe '#date_range' do
+    context 'incumbency has no start_date' do
+      it 'returns no date' do
+        incumbency_node = @incumbency_nodes.first
+
+        expect(incumbency_node).to respond_to(:date_range)
+        expect(incumbency_node.date_range).to eq('[Date unavailable]')
+      end
+    end
+
+    context 'incumbency has an end date' do
+      it 'returns full formatted start and end date' do
+        incumbency_node = @incumbency_nodes.first
+
+        expect(incumbency_node).to respond_to(:date_range)
+        expect(incumbency_node.date_range).to eq('7 May 2015 to 7 May 2016')
+      end
+    end
+
+    context 'incumbency has no end date' do
+      it 'returns formatted start date' do
+        incumbency_node = @incumbency_nodes.first
+
+        expect(incumbency_node).to respond_to(:date_range)
+        expect(incumbency_node.date_range).to eq('7 May 2015 to present')
+      end
+    end
+  end
+
   describe '#member' do
     context 'Grom::Node has all the required objects' do
       it 'returns the member for a Grom::Node object of type Incumbency' do

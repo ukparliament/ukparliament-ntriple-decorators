@@ -3,6 +3,8 @@ module Parliament
     module Decorator
       # Decorator namespace for Grom::Node instances with type: http://id.ukpds.org/schema/PartyMembership
       module PartyMembership
+        include Helpers::DateHelper
+
         # Alias partyMembershipHasParty with fallback.
         #
         # @return [Grom::Node, nil] the party of the Grom::Node or nil.

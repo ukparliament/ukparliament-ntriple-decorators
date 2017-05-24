@@ -20,6 +20,8 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  to_present: 'to present'
+  to: 'to'
   person:
     current:
       mp: 'Current MP'

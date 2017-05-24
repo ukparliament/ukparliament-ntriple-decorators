@@ -29,4 +29,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'webmock', '~> 2.3'
   spec.add_development_dependency 'parliament-ruby'
   spec.add_development_dependency 'parliament-ntriple', '~> 0.1'
+  spec.add_development_dependency 'pry'
 end

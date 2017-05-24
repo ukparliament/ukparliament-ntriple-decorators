@@ -4,6 +4,8 @@ module Parliament
       # Decorator namespace for Grom::Node instances with type: http://id.ukpds.org/schema/Person.
       # rubocop:disable ModuleLength
       module Person
+        include Helpers::DateHelper
+
         # Alias personGivenName with fallback.
         #
         # @return [String, String] the given name of the Grom::Node or an empty string.
