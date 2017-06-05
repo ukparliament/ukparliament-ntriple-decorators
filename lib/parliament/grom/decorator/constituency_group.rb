@@ -5,6 +5,8 @@ module Parliament
       #
       # attr [Boolean] correct verifies that the Grom::Node is the expected constituency.  This is used in conjunction with postcode lookup to verify if the Grom::Node is the expected constituency.
       module ConstituencyGroup
+        include Helpers::DateHelper
+
         attr_accessor :correct
         # Alias constituencyGroupName with fallback.
         #
@@ -123,9 +125,9 @@ module Parliament
           else
             @party_name = nil
           end
-            @party_name
-        end
 
+          @party_name
+        end
       end
     end
   end
