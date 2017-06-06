@@ -39,6 +39,13 @@ module Parliament
         def previous_parliament?
           respond_to?(:parliamentPeriodHasImmediatelyPreviousParliamentPeriod)
         end
+
+        # Checks if Grom::Node is current - ie. it has a start date in the past or today and an end date which is nil, today or in the future.
+        #
+        # @return [Boolean] a boolean depending on whether or not the Grom::Node is current.
+        def current?
+          (!start_date.nil? && start_date <= Date.today) && (end_date.nil? || end_date >= Date.today)
+        end
       end
     end
   end
