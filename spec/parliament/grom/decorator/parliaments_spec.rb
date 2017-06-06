@@ -161,4 +161,70 @@ describe Parliament::Grom::Decorator::ParliamentPeriod, vcr: true, focus: true d
       end
     end
   end
+
+  describe '#current?' do
+    let(:id) { 'GEFMX81E' }
+    let(:response) do
+      Parliament::Request::UrlRequest.new(base_url: 'http://localhost:3030',
+                                          builder: Parliament::Builder::NTripleResponseBuilder,
+                                          decorators: Parliament::Grom::Decorator).parliaments(id).get
+    end
+
+    before(:each) do
+      Timecop.freeze(Date.today)
+      @parliament_nodes = response.filter('http://id.ukpds.org/schema/ParliamentPeriod')
+    end
+
+    after do
+      Timecop.return
+    end
+
+    context 'parliament is a past parliament' do
+      it 'returns false if the end date is in the past' do
+        parliament_node = @parliament_nodes.first
+
+        expect(parliament_node.current?).to be(false)
+      end
+    end
+
+    context 'parliament is a current parliament' do
+      it 'returns true if the start date is in the past and there is no end date' do
+        parliament_node = @parliament_nodes.first
+
+        expect(parliament_node.current?).to be(true)
+      end
+
+      it 'returns true if the start date is in the past and the end date is today' do
+        parliament_node = @parliament_nodes.first
+
+        expect(parliament_node.current?).to be(true)
+      end
+
+      it 'returns true if the start date is in the past and the end date is in the future' do
+        parliament_node = @parliament_nodes.first
+
+        expect(parliament_node.current?).to be(true)
+      end
+
+      it 'returns true if the start date is today and there is no end date' do
+        parliament_node = @parliament_nodes.first
+
+        expect(parliament_node.current?).to be(true)
+      end
+
+      it 'returns true if the start date is today and the end date is in the future' do
+        parliament_node = @parliament_nodes.first
+
+        expect(parliament_node.current?).to be(true)
+      end
+    end
+
+    context 'parliament is a future parliament' do
+      it 'returns false if the start date is in the future' do
+        parliament_node = @parliament_nodes.first
+
+        expect(parliament_node.current?).to be(false)
+      end
+    end
+  end
 end
