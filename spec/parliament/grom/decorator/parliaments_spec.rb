@@ -170,8 +170,11 @@ describe Parliament::Grom::Decorator::ParliamentPeriod, vcr: true, focus: true d
                                           decorators: Parliament::Grom::Decorator).parliaments(id).get
     end
 
+    before do
+      Timecop.freeze(Time.local(2017, 6, 6))
+    end
+
     before(:each) do
-      Timecop.freeze(Date.today)
       @parliament_nodes = response.filter('http://id.ukpds.org/schema/ParliamentPeriod')
     end
 
@@ -196,7 +199,7 @@ describe Parliament::Grom::Decorator::ParliamentPeriod, vcr: true, focus: true d
 
       it 'returns true if the start date is in the past and the end date is today' do
         parliament_node = @parliament_nodes.first
-
+        
         expect(parliament_node.current?).to be(true)
       end
 
