@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = %q{Parliamentary Grom decorator}
   spec.description   = %q{Parliamentary Grom decorator}
-  spec.homepage      = 'http://github.com/ukparliament/parliament_grom_decorators'
+  spec.homepage      = 'http://github.com/ukparliament/parliament-grom-decorators'
 
   spec.files         = `git ls-files -z`.split("\x0").reject do |f|
     f.match(%r{^(test|spec|features)/})
