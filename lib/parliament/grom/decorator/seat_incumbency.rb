@@ -66,6 +66,19 @@ module Parliament
         def member
           respond_to?(:incumbencyHasMember) ? incumbencyHasMember.first : nil
         end
+
+        def party_affiliations
+          return [] if member.nil?
+
+          inc_end_date = self.end_date || DateTime.now
+
+          @party_affiliations ||= member.party_memberships.select do |party_affiliation|
+            party_affiliation_end_date = party_affiliation.end_date || DateTime.now
+
+            (party_affiliation.start_date <= self.start_date && party_affiliation_end_date > self.start_date) ||
+                (party_affiliation.start_date >= self.start_date && party_affiliation.start_date < inc_end_date)
+          end
+        end
       end
     end
   end

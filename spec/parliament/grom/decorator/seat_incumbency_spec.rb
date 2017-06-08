@@ -189,4 +189,78 @@ describe Parliament::Grom::Decorator::SeatIncumbency, vcr: true do
       end
     end
   end
+
+  describe '#party_affiliations' do
+    context 'Grom::Node has no member' do
+      it 'returns an empty array' do
+        seat_incumbency_node = @seat_incumbency_nodes.first
+
+        expect(seat_incumbency_node.party_affiliations).to eq([])
+      end
+    end
+
+    context 'Grom::Node has a member with no party memberships' do
+      it 'returns an empty array' do
+        seat_incumbency_node = @seat_incumbency_nodes.first
+
+        expect(seat_incumbency_node.party_affiliations).to eq([])
+      end
+    end
+
+    context 'Grom::Node has a member with party memberships' do
+      it 'returns party memberships which are longer than the seat incumbency' do
+        seat_incumbency_node = @seat_incumbency_nodes.first
+
+        expect(seat_incumbency_node.party_affiliations.size).to eq(1)
+        expect(seat_incumbency_node.party_affiliations.first.start_date).to eq(DateTime.new(1986, 6, 11))
+        expect(seat_incumbency_node.party_affiliations.first.end_date).to eq(DateTime.new(2015, 3, 30))
+      end
+
+      it 'returns party memberships which begin before the seat incumbency' do
+        seat_incumbency_node = @seat_incumbency_nodes.first
+
+        expect(seat_incumbency_node.party_affiliations.size).to eq(1)
+        expect(seat_incumbency_node.party_affiliations.first.start_date).to eq(DateTime.new(1986, 6, 11))
+        expect(seat_incumbency_node.party_affiliations.first.end_date).to eq(DateTime.new(1991, 3, 30))
+      end
+
+      it 'returns party memberships which end after the seat incumbency' do
+        seat_incumbency_node = @seat_incumbency_nodes.first
+
+        expect(seat_incumbency_node.party_affiliations.size).to eq(1)
+        expect(seat_incumbency_node.party_affiliations.first.start_date).to eq(DateTime.new(1987, 6, 11))
+        expect(seat_incumbency_node.party_affiliations.first.end_date).to eq(DateTime.new(2015, 3, 30))
+      end
+
+      it 'returns party memberships which are shorter than the seat incumbency' do
+        seat_incumbency_node = @seat_incumbency_nodes.first
+
+        expect(seat_incumbency_node.party_affiliations.size).to eq(1)
+        expect(seat_incumbency_node.party_affiliations.first.start_date).to eq(DateTime.new(1988, 6, 11))
+        expect(seat_incumbency_node.party_affiliations.first.end_date).to eq(DateTime.new(1991, 3, 30))
+      end
+    end
+
+    context 'Grom::Node has no end date' do
+      it 'returns party memberships' do
+        seat_incumbency_node = @seat_incumbency_nodes.first
+
+        expect(seat_incumbency_node.party_affiliations.size).to eq(2)
+        expect(seat_incumbency_node.party_affiliations.first.start_date).to eq(DateTime.new(1986, 6, 11))
+        expect(seat_incumbency_node.party_affiliations.first.end_date).to eq(DateTime.new(2015, 3, 30))
+        expect(seat_incumbency_node.party_affiliations[1].start_date).to eq(DateTime.new(2015, 5, 7))
+        expect(seat_incumbency_node.party_affiliations[1].end_date).to eq(DateTime.new(2016, 5, 7))
+      end
+    end
+
+    context 'Grom::Node has a party membership with no end date' do
+      it 'returns the correct party membership' do
+        seat_incumbency_node = @seat_incumbency_nodes.first
+
+        expect(seat_incumbency_node.party_affiliations.size).to eq(1)
+        expect(seat_incumbency_node.party_affiliations.first.start_date).to eq(DateTime.new(1987, 6, 11))
+        expect(seat_incumbency_node.party_affiliations.first.end_date).to be(nil)
+      end
+    end
+  end
 end
