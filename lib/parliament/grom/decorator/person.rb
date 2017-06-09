@@ -169,7 +169,6 @@ module Parliament
           build_house_membership_status(no_current_seat_incumbency, no_current_house_incumbency, former_lord, former_mp)
         end
 
-        # TODO: Convert hard-coded strings to language file values
         def build_house_membership_status(no_current_seat_incumbency, no_current_house_incumbency, former_lord, former_mp)
           statuses = []
           statuses << I18n.t('person.current.mp') unless no_current_seat_incumbency
@@ -177,7 +176,7 @@ module Parliament
           statuses << I18n.t('person.former.member_of_the_house_of_lords') if former_lord
           statuses << I18n.t('person.former.mp') if former_mp
 
-          statuses
+          convert_house_membership_status(statuses)
         end
 
         def general_membership_status
@@ -185,6 +184,12 @@ module Parliament
           statuses << I18n.t('person.current.member') unless incumbencies.select(&:current?).empty?
           statuses << I18n.t('person.former.member') if !incumbencies.empty? && incumbencies.select(&:current?).empty?
           statuses
+        end
+
+        def convert_house_membership_status(statuses)
+          statuses.each_with_index do |status, index|
+            status[0] = status[0].downcase if index != 0
+          end
         end
       end
     end
