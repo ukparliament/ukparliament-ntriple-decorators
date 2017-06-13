@@ -455,7 +455,7 @@ describe Parliament::Grom::Decorator::Person, vcr: true do
 
         expect(person_node.statuses.size).to eq(2)
         expect(person_node.statuses[:house_membership_status][0]).to eq('Member of the House of Lords')
-        expect(person_node.statuses[:house_membership_status][1]).to eq('Former MP')
+        expect(person_node.statuses[:house_membership_status][1]).to eq('former MP')
       end
     end
 
@@ -469,7 +469,7 @@ describe Parliament::Grom::Decorator::Person, vcr: true do
 
         expect(person_node.statuses.size).to eq(2)
         expect(person_node.statuses[:house_membership_status][0]).to eq('Former Member of the House of Lords')
-        expect(person_node.statuses[:house_membership_status][1]).to eq('Former MP')
+        expect(person_node.statuses[:house_membership_status][1]).to eq('former MP')
       end
     end
 
