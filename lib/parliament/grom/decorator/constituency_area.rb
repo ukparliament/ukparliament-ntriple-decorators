@@ -21,7 +21,7 @@ module Parliament
         #
         # @return [String, String] the polygon of the Grom::Node or an empty string.
         def polygon
-          respond_to?(:constituencyAreaExtent) ? constituencyAreaExtent : ''
+          respond_to?(:constituencyAreaExtent) ? constituencyAreaExtent : []
         end
       end
     end
