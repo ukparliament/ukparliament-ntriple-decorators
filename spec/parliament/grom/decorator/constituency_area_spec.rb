@@ -62,7 +62,7 @@ describe Parliament::Grom::Decorator::ConstituencyArea, vcr: true do
         constituency_area_node = response.filter('http://id.ukpds.org/schema/ConstituencyArea')[0]
 
         expect(constituency_area_node).to respond_to(:polygon)
-        expect(constituency_area_node.polygon).to eq ''
+        expect(constituency_area_node.polygon).to eq []
       end
     end
   end
