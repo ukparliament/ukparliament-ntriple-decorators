@@ -1,7 +1,7 @@
 module Parliament
   module Grom
     module Decorator
-      VERSION = '0.2.2.pre'.freeze
+      VERSION = '0.2.3'.freeze
     end
   end
 end

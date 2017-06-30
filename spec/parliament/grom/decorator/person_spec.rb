@@ -550,4 +550,30 @@ describe Parliament::Grom::Decorator::Person, vcr: true do
       end
     end
   end
+
+  describe '#image_id' do
+    before(:each) do
+      id = '7c511a2b-9ce2-4001-8ee5-71ae734c52d6'
+      response = Parliament::Request::UrlRequest.new(base_url: 'http://localhost:3030',
+                                                     builder: Parliament::Builder::NTripleResponseBuilder,
+                                                     decorators: Parliament::Grom::Decorator).people(id).get
+      @person_node = response.filter('http://id.ukpds.org/schema/Person').first
+    end
+
+    context 'Grom::Node has an image id' do
+      it 'returns the image id string for a Grom::Node objects of type Person' do
+        expect(@person_node.image_id).to eq('Person - imageId')
+      end
+    end
+
+    context 'Grom::Node does not have an image id' do
+      it 'returns by default a placeholder string for a Grom::Node object of type Person' do
+        expect(@person_node.image_id).to eq('placeholder')
+      end
+
+      it 'returns nil if show_placeholder is overridden' do
+        expect(@person_node.image_id(show_placeholder:false)).to eq(nil)
+      end
+    end
+  end
 end

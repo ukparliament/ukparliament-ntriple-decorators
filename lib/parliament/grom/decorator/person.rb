@@ -47,6 +47,17 @@ module Parliament
           @full_name = full_name.join(' ')
         end
 
+        # Alias personHasImage with fallback.
+        #
+        # @return [String, String] the image location of the Grom::Node or a placeholder string.
+        def image_id(show_placeholder:true)
+          if respond_to?(:personHasImage)
+            personHasImage
+          else
+            show_placeholder ? 'placeholder' : nil
+          end
+        end
+
         # Alias memberHasIncumbency with fallback.
         #
         # @return [Array, Array] all the incumbencies of the Grom::Node or an empty array.
