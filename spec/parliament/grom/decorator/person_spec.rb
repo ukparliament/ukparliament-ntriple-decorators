@@ -561,8 +561,8 @@ describe Parliament::Grom::Decorator::Person, vcr: true do
     end
 
     context 'Grom::Node has an image id' do
-      it 'returns the image id string for a Grom::Node objects of type Person' do
-        expect(@person_node.image_id).to eq('Person - imageId')
+      it 'returns the image id string for a Grom::Node object of type Person' do
+        expect(@person_node.image_id).to eq('12345678')
       end
     end
 
