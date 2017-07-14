@@ -15,6 +15,7 @@ require 'parliament/grom/decorator/person'
 require 'parliament/grom/decorator/postal_address'
 require 'parliament/grom/decorator/seat_incumbency'
 require 'parliament/grom/decorator/parliaments'
+require 'parliament/grom/decorator/member_image'
 
 # Namespace for classes and modules that handle connections to, and processing of data from the parliamentary API.
 # @since 0.1.0

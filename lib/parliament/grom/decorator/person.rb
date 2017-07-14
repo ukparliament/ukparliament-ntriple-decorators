@@ -47,12 +47,12 @@ module Parliament
           @full_name = full_name.join(' ')
         end
 
-        # Alias personHasImage with fallback.
+        # Alias personHasPersonImage with fallback.
         #
         # @return [String, String] the image location of the Grom::Node or a placeholder string.
-        def image_id(show_placeholder:true)
-          if respond_to?(:personHasImage)
-            personHasImage
+        def image_id(show_placeholder: true)
+          if respond_to?(:memberHasMemberImage)
+            memberHasMemberImage.first.graph_id
           else
             show_placeholder ? 'placeholder' : nil
           end
