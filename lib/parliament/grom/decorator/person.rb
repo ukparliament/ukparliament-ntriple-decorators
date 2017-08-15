@@ -114,6 +114,20 @@ module Parliament
           @parties ||= party_memberships.map(&:party).flatten.uniq.compact
         end
 
+        # Alias partyMembershipHasParty with fallback.
+        #
+        # @return [Grom::Node] the current party of the Grom::Node or nil.
+        def current_party
+          @current_party ||= party_memberships.select(&:current?).select(&:party)&.first&.party
+        end
+
+        # Alias partyMembershipHasParty with fallback.
+        #
+        # @return [Grom::Node] the current party membership of the Grom::Node or nil.
+        def current_party_membership
+          @current_party_membership ||= party_memberships.select(&:current?).select(&:party)&.first
+        end
+
         # Alias personHasContactPoint with fallback.
         #
         # @return [Array, Array] the contact points of the Grom::Node or an empty array.
