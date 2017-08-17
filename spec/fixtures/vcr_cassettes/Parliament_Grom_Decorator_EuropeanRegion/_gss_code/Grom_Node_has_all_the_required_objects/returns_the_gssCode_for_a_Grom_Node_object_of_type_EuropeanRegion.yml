@@ -1,0 +1,70 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:3030/api/v1/region_index
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      - application/n-triples
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/n-triples
+      Content-Disposition:
+      - inline; filename="index"
+      Last-Modified:
+      - Tue, 15 Aug 2017 14:17:19 GMT
+      X-Content-Type-Options:
+      - nosniff
+      Content-Length:
+      - '4670'
+    body:
+      encoding: UTF-8
+      string: |
+        <http://data.ordnancesurvey.co.uk/id/7000000000041430> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://data.ordnancesurvey.co.uk/ontology/admingeo/EuropeanRegion> .
+        <http://data.ordnancesurvey.co.uk/id/7000000000041430> <http://data.ordnancesurvey.co.uk/ontology/admingeo/gssCode> "E15000003" .
+        <http://data.ordnancesurvey.co.uk/id/7000000000041430> <http://www.w3.org/2004/02/skos/core#prefLabel> "Yorkshire and the Humber " .
+        <http://data.ordnancesurvey.co.uk/id/7000000000041424> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://data.ordnancesurvey.co.uk/ontology/admingeo/EuropeanRegion> .
+        <http://data.ordnancesurvey.co.uk/id/7000000000041424> <http://data.ordnancesurvey.co.uk/ontology/admingeo/gssCode> "W08000001" .
+        <http://data.ordnancesurvey.co.uk/id/7000000000041424> <http://www.w3.org/2004/02/skos/core#prefLabel> "Wales " .
+        <http://data.ordnancesurvey.co.uk/id/7000000000041429> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://data.ordnancesurvey.co.uk/ontology/admingeo/EuropeanRegion> .
+        <http://data.ordnancesurvey.co.uk/id/7000000000041429> <http://data.ordnancesurvey.co.uk/ontology/admingeo/gssCode> "S15000001" .
+        <http://data.ordnancesurvey.co.uk/id/7000000000041429> <http://www.w3.org/2004/02/skos/core#prefLabel> "Scotland " .
+        <http://data.ordnancesurvey.co.uk/id/7000000000041422> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://data.ordnancesurvey.co.uk/ontology/admingeo/EuropeanRegion> .
+        <http://data.ordnancesurvey.co.uk/id/7000000000041422> <http://data.ordnancesurvey.co.uk/ontology/admingeo/gssCode> "E15000001" .
+        <http://data.ordnancesurvey.co.uk/id/7000000000041422> <http://www.w3.org/2004/02/skos/core#prefLabel> "North East " .
+        <http://data.ordnancesurvey.co.uk/id/7000000000041427> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://data.ordnancesurvey.co.uk/ontology/admingeo/EuropeanRegion> .
+        <http://data.ordnancesurvey.co.uk/id/7000000000041427> <http://data.ordnancesurvey.co.uk/ontology/admingeo/gssCode> "E15000009" .
+        <http://data.ordnancesurvey.co.uk/id/7000000000041427> <http://www.w3.org/2004/02/skos/core#prefLabel> "South West " .
+        <http://data.ordnancesurvey.co.uk/id/7000000000041431> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://data.ordnancesurvey.co.uk/ontology/admingeo/EuropeanRegion> .
+        <http://data.ordnancesurvey.co.uk/id/7000000000041431> <http://data.ordnancesurvey.co.uk/ontology/admingeo/gssCode> "E15000002" .
+        <http://data.ordnancesurvey.co.uk/id/7000000000041431> <http://www.w3.org/2004/02/skos/core#prefLabel> "North West " .
+        <http://data.ordnancesurvey.co.uk/id/7000000000041425> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://data.ordnancesurvey.co.uk/ontology/admingeo/EuropeanRegion> .
+        <http://data.ordnancesurvey.co.uk/id/7000000000041425> <http://data.ordnancesurvey.co.uk/ontology/admingeo/gssCode> "E15000006" .
+        <http://data.ordnancesurvey.co.uk/id/7000000000041425> <http://www.w3.org/2004/02/skos/core#prefLabel> "Eastern " .
+        <http://data.ordnancesurvey.co.uk/id/7000000000041423> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://data.ordnancesurvey.co.uk/ontology/admingeo/EuropeanRegion> .
+        <http://data.ordnancesurvey.co.uk/id/7000000000041423> <http://data.ordnancesurvey.co.uk/ontology/admingeo/gssCode> "E15000004" .
+        <http://data.ordnancesurvey.co.uk/id/7000000000041423> <http://www.w3.org/2004/02/skos/core#prefLabel> "East Midlands " .
+        <http://data.ordnancesurvey.co.uk/id/7000000000041428> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://data.ordnancesurvey.co.uk/ontology/admingeo/EuropeanRegion> .
+        <http://data.ordnancesurvey.co.uk/id/7000000000041428> <http://data.ordnancesurvey.co.uk/ontology/admingeo/gssCode> "E15000007" .
+        <http://data.ordnancesurvey.co.uk/id/7000000000041428> <http://www.w3.org/2004/02/skos/core#prefLabel> "London " .
+        <http://data.ordnancesurvey.co.uk/id/7000000000041421> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://data.ordnancesurvey.co.uk/ontology/admingeo/EuropeanRegion> .
+        <http://data.ordnancesurvey.co.uk/id/7000000000041421> <http://data.ordnancesurvey.co.uk/ontology/admingeo/gssCode> "E15000008" .
+        <http://data.ordnancesurvey.co.uk/id/7000000000041421> <http://www.w3.org/2004/02/skos/core#prefLabel> "South East " .
+        <http://data.ordnancesurvey.co.uk/id/7000000000041426> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://data.ordnancesurvey.co.uk/ontology/admingeo/EuropeanRegion> .
+        <http://data.ordnancesurvey.co.uk/id/7000000000041426> <http://data.ordnancesurvey.co.uk/ontology/admingeo/gssCode> "E15000005" .
+        <http://data.ordnancesurvey.co.uk/id/7000000000041426> <http://www.w3.org/2004/02/skos/core#prefLabel> "West Midlands " .
+    http_version: 
+  recorded_at: Tue, 15 Aug 2017 14:40:57 GMT
+recorded_with: VCR 3.0.3
