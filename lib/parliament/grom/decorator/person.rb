@@ -183,6 +183,13 @@ module Parliament
           respond_to?(:A5EE13ABE03C4D3A8F1A274F57097B6C) ? self.A5EE13ABE03C4D3A8F1A274F57097B6C : ''
         end
 
+        # Alias memberHasFormalBodyMembership with fallback.
+        #
+        # @return [Array, Array] all the formal body memberships of the Grom::Node or an empty array.
+        def formal_body_memberships
+          respond_to?(:memberHasFormalBodyMembership) ? memberHasFormalBodyMembership : []
+        end
+
         private
 
         def house_membership_status
