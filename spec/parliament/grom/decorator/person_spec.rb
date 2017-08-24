@@ -601,6 +601,29 @@ describe Parliament::Grom::Decorator::Person, vcr: true do
     end
   end
 
+  describe '#formal_body_memberships' do
+    before(:each) do
+      id = 'tJxPOiSd'
+      response = Parliament::Request::UrlRequest.new(base_url: 'http://localhost:3030',
+      builder: Parliament::Builder::NTripleResponseBuilder,
+      decorators: Parliament::Grom::Decorator).people(id).get
+      @person_node = response.filter('http://id.ukpds.org/schema/Person').first
+    end
+
+    context 'Grom::Node has all the required objects' do
+      it 'returns the formal body membership Grom::Node objects of type Person' do
+        expect(@person_node.formal_body_memberships.count).to eq(2)
+        expect(@person_node.formal_body_memberships.first.type).to eq('http://id.ukpds.org/schema/FormalBodyMembership')
+      end
+    end
+
+    context 'Grom::Node has no formal body memberships' do
+      it 'will return an empty array' do
+        expect(@person_node.formal_body_memberships).to eq([])
+      end
+    end
+  end
+
   describe '#image_id' do
     before(:each) do
       id = '7c511a2b-9ce2-4001-8ee5-71ae734c52d6'
