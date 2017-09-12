@@ -128,6 +128,11 @@ module Parliament
 
           @party_name
         end
+
+        # @return [Array, Array] the regions of the Grom::Node or an empty array.
+        def region
+          respond_to?(:inEuropeanRegion) ? inEuropeanRegion : []
+        end
       end
     end
   end
