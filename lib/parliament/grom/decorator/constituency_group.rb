@@ -104,7 +104,6 @@ module Parliament
         # Alias incumbencyHasMember with fallback.
         #
         # @return [Array, Array] the current member of the Grom::Node has a display name.
-
         def current_member_display_name
           return @current_member_display_name unless @current_member_display_name.nil?
           current_incumbency = seat_incumbencies.select(&:current?).first
@@ -114,7 +113,6 @@ module Parliament
         # Alias party_name with fallback.
         #
         # @return [String, String] the name of the Grom::Node or an empty string.
-
         def current_member_party_name
           return @party_name unless @party_name.nil?
           current_incumbency = seat_incumbencies.select(&:current?).first
@@ -130,7 +128,7 @@ module Parliament
         end
 
         # @return [Array, Array] the regions of the Grom::Node or an empty array.
-        def region
+        def regions
           respond_to?(:inEuropeanRegion) ? inEuropeanRegion : []
         end
       end

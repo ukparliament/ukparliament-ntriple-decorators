@@ -240,14 +240,14 @@ describe Parliament::Grom::Decorator::ConstituencyGroup, vcr: true do
     end
   end
 
-  describe '#region' do
+  describe '#regions' do
     context 'constituency belongs to a region' do
       it 'returns the region the constituency sits within' do
         constituency_node = response.filter('http://id.ukpds.org/schema/ConstituencyGroup')[0]
 
-        expect(constituency_node).to respond_to(:region)
-        expect(constituency_node.region.length).to eq 1
-        expect(constituency_node.region.first.type).to eq 'http://data.ordnancesurvey.co.uk/ontology/admingeo/EuropeanRegion'
+        expect(constituency_node).to respond_to(:regions)
+        expect(constituency_node.regions.length).to eq 1
+        expect(constituency_node.regions.first.type).to eq 'http://data.ordnancesurvey.co.uk/ontology/admingeo/EuropeanRegion'
       end
     end
 
@@ -255,8 +255,8 @@ describe Parliament::Grom::Decorator::ConstituencyGroup, vcr: true do
       it 'returns an empty array' do
         constituency_node = response.filter('http://id.ukpds.org/schema/ConstituencyGroup')[0]
 
-        expect(constituency_node).to respond_to(:region)
-        expect(constituency_node.region).to eq([])
+        expect(constituency_node).to respond_to(:regions)
+        expect(constituency_node.regions).to eq([])
       end
     end
   end
