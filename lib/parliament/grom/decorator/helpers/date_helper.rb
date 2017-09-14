@@ -9,7 +9,7 @@ module Parliament
           # @example Format a node with an end_date with the date format YYYY-MM-DD
           #   "grom_node_instance.date_range('%Y-%m-%d)" #=> "2010-01-01 to 2015-01-01"
           def date_range(date_format: '%-e %b %Y')
-            return '[Date unavailable]' if start_date.nil?
+            return I18n.t('date_unavailable') if start_date.nil?
             if end_date
               "#{I18n.l(start_date, format: date_format)} #{I18n.t('to')} #{I18n.l(end_date, format: date_format)}"
             else
