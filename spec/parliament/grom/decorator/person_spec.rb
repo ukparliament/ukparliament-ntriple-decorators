@@ -649,4 +649,30 @@ describe Parliament::Grom::Decorator::Person, vcr: true do
       end
     end
   end
+
+  describe '#weblinks' do
+    before(:each) do
+      id = 'tJxPOiSd'
+      response = Parliament::Request::UrlRequest.new(base_url: 'http://localhost:3030',
+      builder: Parliament::Builder::NTripleResponseBuilder,
+      decorators: Parliament::Grom::Decorator).people(id).get
+      @person_node = response.filter('http://id.ukpds.org/schema/Person').first
+    end
+
+    context 'Grom::Node has all the required objects' do
+      it 'returns the weblinks Grom::Node objects of type Person' do
+        expect(@person_node.weblinks.count).to eq(2)
+      end
+
+      it 'returns the correct link' do
+        expect(@person_node.weblinks.first).to eq('http://www.adrianbaileymp.org/')
+      end
+    end
+
+    context 'Grom::Node has no weblinks' do
+      it 'will return nil' do
+        expect(@person_node.weblinks).to eq(nil)
+      end
+    end
+  end
 end

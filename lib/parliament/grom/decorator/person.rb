@@ -190,6 +190,13 @@ module Parliament
           respond_to?(:memberHasFormalBodyMembership) ? memberHasFormalBodyMembership : []
         end
 
+        # Alias personHasPersonWebLink with fallback.
+        #
+        # @return [Array|String, nil] all the weblinks of the Grom::Node or an nil.
+        def weblinks
+          respond_to?(:personHasPersonWebLink) ? personHasPersonWebLink : nil
+        end
+
         private
 
         def house_membership_status
