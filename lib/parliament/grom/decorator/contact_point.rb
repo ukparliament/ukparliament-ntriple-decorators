@@ -38,11 +38,11 @@ module Parliament
           respond_to?(:contactPointHasPerson) ? contactPointHasPerson : []
         end
 
-        # Alias contactPointHasIncumbency with fallback.
+        # Alias contactPointHasParliamentaryIncumbency with fallback.
         #
-        # @return [Grom::Node, nil] the incumbency of the Grom::Node or nil.
-        def incumbency
-          respond_to?(:contactPointHasIncumbency) ? contactPointHasIncumbency.first : nil
+        # @return [Grom::Node, nil] the parliamentary incumbency of the Grom::Node or nil.
+        def parliamentary_incumbency
+          respond_to?(:contactPointHasParliamentaryIncumbency) ? contactPointHasParliamentaryIncumbency.first : nil
         end
       end
     end

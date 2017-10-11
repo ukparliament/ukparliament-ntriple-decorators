@@ -43,8 +43,8 @@ http_interactions:
         <http://id.ukpds.org/1b316bf7-2064-4cf7-921a-865f13d082e1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
         <http://id.ukpds.org/1b316bf7-2064-4cf7-921a-865f13d082e1> <http://id.ukpds.org/schema/constituencyGroupName> "Walthamstow" .
         <http://id.ukpds.org/5d6e8e88-002c-48f7-837a-4b964dfe3e80> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/SeatIncumbency> .
-        <http://id.ukpds.org/5d6e8e88-002c-48f7-837a-4b964dfe3e80> <http://id.ukpds.org/schema/incumbencyEndDate> "2015-03-30"^^<http://www.w3.org/2001/XMLSchema#date> .
-        <http://id.ukpds.org/5d6e8e88-002c-48f7-837a-4b964dfe3e80> <http://id.ukpds.org/schema/incumbencyStartDate> "2010-05-06"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/5d6e8e88-002c-48f7-837a-4b964dfe3e80> <http://id.ukpds.org/schema/parliamentaryIncumbencyEndDate> "2015-03-30"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/5d6e8e88-002c-48f7-837a-4b964dfe3e80> <http://id.ukpds.org/schema/parliamentaryIncumbencyStartDate> "2010-05-06"^^<http://www.w3.org/2001/XMLSchema#date> .
         <http://id.ukpds.org/5d6e8e88-002c-48f7-837a-4b964dfe3e80> <http://id.ukpds.org/schema/seatIncumbencyHasHouseSeat> <http://id.ukpds.org/cd7466be-0796-4044-9752-b5abfb8d7195> .
         <http://id.ukpds.org/cd7466be-0796-4044-9752-b5abfb8d7195> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/HouseSeat> .
         <http://id.ukpds.org/cd7466be-0796-4044-9752-b5abfb8d7195> <http://id.ukpds.org/schema/houseSeatHasConstituencyGroup> <http://id.ukpds.org/1b316bf7-2064-4cf7-921a-865f13d082e1> .
@@ -69,9 +69,9 @@ http_interactions:
         <http://id.ukpds.org/0edc6f22-9465-452e-beae-f6240d45b950> <http://id.ukpds.org/schema/addressLine2> "London" .
         <http://id.ukpds.org/0edc6f22-9465-452e-beae-f6240d45b950> <http://id.ukpds.org/schema/postCode> "SW1A 0AA" .
         <http://id.ukpds.org/cae17778-79c2-42cb-8196-8e1d85d8c50f> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/SeatIncumbency> .
-        <http://id.ukpds.org/cae17778-79c2-42cb-8196-8e1d85d8c50f> <http://id.ukpds.org/schema/incumbencyStartDate> "2015-05-07"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/cae17778-79c2-42cb-8196-8e1d85d8c50f> <http://id.ukpds.org/schema/parliamentaryIncumbencyStartDate> "2015-05-07"^^<http://www.w3.org/2001/XMLSchema#date> .
         <http://id.ukpds.org/cae17778-79c2-42cb-8196-8e1d85d8c50f> <http://id.ukpds.org/schema/seatIncumbencyHasHouseSeat> <http://id.ukpds.org/cd7466be-0796-4044-9752-b5abfb8d7195> .
-        <http://id.ukpds.org/cae17778-79c2-42cb-8196-8e1d85d8c50f> <http://id.ukpds.org/schema/incumbencyHasContactPoint> <http://id.ukpds.org/d4340898-79ef-4351-9674-49d61f36224d> .
+        <http://id.ukpds.org/cae17778-79c2-42cb-8196-8e1d85d8c50f> <http://id.ukpds.org/schema/parliamentaryIncumbencyHasContactPoint> <http://id.ukpds.org/d4340898-79ef-4351-9674-49d61f36224d> .
     http_version:
   recorded_at: Tue, 18 Apr 2017 15:22:17 GMT
 recorded_with: VCR 3.0.3

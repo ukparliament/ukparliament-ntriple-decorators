@@ -50,7 +50,7 @@ module Parliament
           @seat_incumbencies = seat_incumbencies.flatten.uniq
         end
 
-        # Alias incumbencyHasMember with fallback.
+        # Alias parliamentaryIncumbencyHasMember with fallback.
         #
         # @return [Array, Array] the members of the Grom::Node or an empty array.
         def members
@@ -71,7 +71,7 @@ module Parliament
           respond_to?(:constituencyGroupHasConstituencyArea) ? constituencyGroupHasConstituencyArea.first : nil
         end
 
-        # Alias incumbencyHasContactPoint with fallback.
+        # Alias parliamentaryIncumbencyHasContactPoint with fallback.
         #
         # @return [Array, Array] the contact points of the Grom::Node or an empty array.
         def contact_points
@@ -101,7 +101,7 @@ module Parliament
           @correct || false
         end
 
-        # Alias incumbencyHasMember with fallback.
+        # Alias parliamentaryIncumbencyHasMember with fallback.
         #
         # @return [Array, Array] the current member of the Grom::Node has a display name.
         def current_member_display_name

@@ -44,10 +44,10 @@ http_interactions:
         <http://id.ukpds.org/99ceb32e-2e16-42a0-904d-c6a7e3a9f217> <http://id.ukpds.org/schema/personGivenName> "Person - givenName" .
         <http://id.ukpds.org/99ceb32e-2e16-42a0-904d-c6a7e3a9f217> <http://id.ukpds.org/schema/personFamilyName> "Person - familyname" .
         <http://id.ukpds.org/99ceb32e-2e16-42a0-904d-c6a7e3a9f217> <http://id.ukpds.org/schema/partyMemberHasPartyMembership> <http://id.ukpds.org/b8455c4d-fb51-4878-9974-b52789f97fa0> .
-        <http://id.ukpds.org/99ceb32e-2e16-42a0-904d-c6a7e3a9f217> <http://id.ukpds.org/schema/memberHasIncumbency> <http://id.ukpds.org/e1d43353-b347-47e7-9b6a-ece70f3b672a> .
+        <http://id.ukpds.org/99ceb32e-2e16-42a0-904d-c6a7e3a9f217> <http://id.ukpds.org/schema/memberHasParliamentaryIncumbency> <http://id.ukpds.org/e1d43353-b347-47e7-9b6a-ece70f3b672a> .
         <http://id.ukpds.org/e1d43353-b347-47e7-9b6a-ece70f3b672a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/HouseIncumbency> .
-        <http://id.ukpds.org/e1d43353-b347-47e7-9b6a-ece70f3b672a> <http://id.ukpds.org/schema/incumbencyEndDate> "1997-12-21"^^<http://www.w3.org/2001/XMLSchema#date> .
-        <http://id.ukpds.org/e1d43353-b347-47e7-9b6a-ece70f3b672a> <http://id.ukpds.org/schema/incumbencyStartDate> "1965-06-22"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/e1d43353-b347-47e7-9b6a-ece70f3b672a> <http://id.ukpds.org/schema/parliamentaryIncumbencyEndDate> "1997-12-21"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/e1d43353-b347-47e7-9b6a-ece70f3b672a> <http://id.ukpds.org/schema/parliamentaryIncumbencyStartDate> "1965-06-22"^^<http://www.w3.org/2001/XMLSchema#date> .
         <http://id.ukpds.org/e1d43353-b347-47e7-9b6a-ece70f3b672a> <http://id.ukpds.org/schema/houseIncumbencyHasHouse> <http://id.ukpds.org/f1a325bf-f550-48a5-ad40-e30cb7b7bdf4> .
         <http://id.ukpds.org/a5581366-1203-44f5-8b54-6bd7662c1897> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Party> .
         <http://id.ukpds.org/a5581366-1203-44f5-8b54-6bd7662c1897> <http://id.ukpds.org/schema/partyName> "Crossbench" .

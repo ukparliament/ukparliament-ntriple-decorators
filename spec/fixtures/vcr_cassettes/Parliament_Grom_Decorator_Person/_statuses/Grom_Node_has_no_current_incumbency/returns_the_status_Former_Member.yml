@@ -44,12 +44,12 @@ http_interactions:
         <http://id.ukpds.org/5fe4df31-fa20-40cc-8cf2-f9d731e0be91> <http://id.ukpds.org/schema/personGivenName> "Person - givenName" .
         <http://id.ukpds.org/5fe4df31-fa20-40cc-8cf2-f9d731e0be91> <http://id.ukpds.org/schema/personFamilyName> "Person - familyName" .
         <http://id.ukpds.org/5fe4df31-fa20-40cc-8cf2-f9d731e0be91> <http://id.ukpds.org/schema/partyMemberHasPartyMembership> <http://id.ukpds.org/6205333d-5cf4-4079-bb27-58d1f8bec1d0> .
-        <http://id.ukpds.org/5fe4df31-fa20-40cc-8cf2-f9d731e0be91> <http://id.ukpds.org/schema/memberHasIncumbency> <http://id.ukpds.org/8d44dec3-3243-4f13-9aa3-64bf7258fa66> .
+        <http://id.ukpds.org/5fe4df31-fa20-40cc-8cf2-f9d731e0be91> <http://id.ukpds.org/schema/memberHasParliamentaryIncumbency> <http://id.ukpds.org/8d44dec3-3243-4f13-9aa3-64bf7258fa66> .
         <http://id.ukpds.org/9c51b36c-457e-43c2-a68e-3876b2744671> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
         <http://id.ukpds.org/9c51b36c-457e-43c2-a68e-3876b2744671> <http://id.ukpds.org/schema/constituencyGroupName> "Montgomeryshire" .
         <http://id.ukpds.org/8d44dec3-3243-4f13-9aa3-64bf7258fa66> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/SeatIncumbency> .
-        <http://id.ukpds.org/8d44dec3-3243-4f13-9aa3-64bf7258fa66> <http://id.ukpds.org/schema/incumbencyEndDate> "2001-06-07"^^<http://www.w3.org/2001/XMLSchema#date> .
-        <http://id.ukpds.org/8d44dec3-3243-4f13-9aa3-64bf7258fa66> <http://id.ukpds.org/schema/incumbencyStartDate> "1997-05-01"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/8d44dec3-3243-4f13-9aa3-64bf7258fa66> <http://id.ukpds.org/schema/parliamentaryIncumbencyEndDate> "2001-06-07"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/8d44dec3-3243-4f13-9aa3-64bf7258fa66> <http://id.ukpds.org/schema/parliamentaryIncumbencyStartDate> "1997-05-01"^^<http://www.w3.org/2001/XMLSchema#date> .
         <http://id.ukpds.org/8d44dec3-3243-4f13-9aa3-64bf7258fa66> <http://id.ukpds.org/schema/seatIncumbencyHasHouseSeat> <http://id.ukpds.org/06d16daa-d33c-4c56-84b4-d0f6306e0968> .
         <http://id.ukpds.org/06d16daa-d33c-4c56-84b4-d0f6306e0968> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/HouseSeat> .
         <http://id.ukpds.org/06d16daa-d33c-4c56-84b4-d0f6306e0968> <http://id.ukpds.org/schema/houseSeatHasConstituencyGroup> <http://id.ukpds.org/9c51b36c-457e-43c2-a68e-3876b2744671> .
@@ -61,18 +61,18 @@ http_interactions:
         <http://id.ukpds.org/6205333d-5cf4-4079-bb27-58d1f8bec1d0> <http://id.ukpds.org/schema/partyMembershipHasParty> <http://id.ukpds.org/61080972-c215-42a9-a04a-10e0002e1c18> .
         <http://id.ukpds.org/4b77dd58-f6ba-4121-b521-c8ad70465f52> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/House> .
         <http://id.ukpds.org/4b77dd58-f6ba-4121-b521-c8ad70465f52> <http://id.ukpds.org/schema/houseName> "House of Commons" .
-        <http://id.ukpds.org/5fe4df31-fa20-40cc-8cf2-f9d731e0be91> <http://id.ukpds.org/schema/memberHasIncumbency> <http://id.ukpds.org/6f5134eb-21d0-4d0e-a303-b70cb5892f0e> .
+        <http://id.ukpds.org/5fe4df31-fa20-40cc-8cf2-f9d731e0be91> <http://id.ukpds.org/schema/memberHasParliamentaryIncumbency> <http://id.ukpds.org/6f5134eb-21d0-4d0e-a303-b70cb5892f0e> .
         <http://id.ukpds.org/6f5134eb-21d0-4d0e-a303-b70cb5892f0e> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/SeatIncumbency> .
-        <http://id.ukpds.org/6f5134eb-21d0-4d0e-a303-b70cb5892f0e> <http://id.ukpds.org/schema/incumbencyEndDate> "2005-05-05"^^<http://www.w3.org/2001/XMLSchema#date> .
-        <http://id.ukpds.org/6f5134eb-21d0-4d0e-a303-b70cb5892f0e> <http://id.ukpds.org/schema/incumbencyStartDate> "2001-06-07"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/6f5134eb-21d0-4d0e-a303-b70cb5892f0e> <http://id.ukpds.org/schema/parliamentaryIncumbencyEndDate> "2005-05-05"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/6f5134eb-21d0-4d0e-a303-b70cb5892f0e> <http://id.ukpds.org/schema/parliamentaryIncumbencyStartDate> "2001-06-07"^^<http://www.w3.org/2001/XMLSchema#date> .
         <http://id.ukpds.org/6f5134eb-21d0-4d0e-a303-b70cb5892f0e> <http://id.ukpds.org/schema/seatIncumbencyHasHouseSeat> <http://id.ukpds.org/06d16daa-d33c-4c56-84b4-d0f6306e0968> .
-        <http://id.ukpds.org/5fe4df31-fa20-40cc-8cf2-f9d731e0be91> <http://id.ukpds.org/schema/memberHasIncumbency> <http://id.ukpds.org/005119bc-fe50-4ddd-a944-64a31f89b978> .
+        <http://id.ukpds.org/5fe4df31-fa20-40cc-8cf2-f9d731e0be91> <http://id.ukpds.org/schema/memberHasParliamentaryIncumbency> <http://id.ukpds.org/005119bc-fe50-4ddd-a944-64a31f89b978> .
         <http://id.ukpds.org/756123c4-1e5b-4102-a8da-e86e20deec02> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ContactPoint> .
         <http://id.ukpds.org/005119bc-fe50-4ddd-a944-64a31f89b978> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/SeatIncumbency> .
-        <http://id.ukpds.org/005119bc-fe50-4ddd-a944-64a31f89b978> <http://id.ukpds.org/schema/incumbencyEndDate> "2010-05-06"^^<http://www.w3.org/2001/XMLSchema#date> .
-        <http://id.ukpds.org/005119bc-fe50-4ddd-a944-64a31f89b978> <http://id.ukpds.org/schema/incumbencyStartDate> "2005-05-05"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/005119bc-fe50-4ddd-a944-64a31f89b978> <http://id.ukpds.org/schema/parliamentaryIncumbencyEndDate> "2010-05-06"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/005119bc-fe50-4ddd-a944-64a31f89b978> <http://id.ukpds.org/schema/parliamentaryIncumbencyStartDate> "2005-05-05"^^<http://www.w3.org/2001/XMLSchema#date> .
         <http://id.ukpds.org/005119bc-fe50-4ddd-a944-64a31f89b978> <http://id.ukpds.org/schema/seatIncumbencyHasHouseSeat> <http://id.ukpds.org/06d16daa-d33c-4c56-84b4-d0f6306e0968> .
-        <http://id.ukpds.org/005119bc-fe50-4ddd-a944-64a31f89b978> <http://id.ukpds.org/schema/incumbencyHasContactPoint> <http://id.ukpds.org/756123c4-1e5b-4102-a8da-e86e20deec02> .
+        <http://id.ukpds.org/005119bc-fe50-4ddd-a944-64a31f89b978> <http://id.ukpds.org/schema/parliamentaryIncumbencyHasContactPoint> <http://id.ukpds.org/756123c4-1e5b-4102-a8da-e86e20deec02> .
     http_version: 
   recorded_at: Wed, 19 Apr 2017 10:45:33 GMT
 recorded_with: VCR 3.0.3
