@@ -211,7 +211,7 @@ http_interactions:
 
         <http://id.ukpds.org/soTeywda> <http://id.ukpds.org/schema/governmentIncumbency> <http://id.ukpds.org/Lalalala> .
         <http://id.ukpds.org/Lalalala> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/GovernmentIncumbency> .
-        <http://id.ukpds.org/Lalalala> <http://id.ukpds.org/schema/parliamentaryIncumbencyStartDate> "2015-05-07+00:00"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <http://id.ukpds.org/Lalalala> <http://id.ukpds.org/schema/incumbencyStartDate> "2015-05-07+00:00"^^<http://www.w3.org/2001/XMLSchema#date> .
         <http://id.ukpds.org/Lalalala> <http://id.ukpds.org/schema/governmentIncumbencyHasGovernmentPosition> <http://id.ukpds.org/Popopopo> .
         <http://id.ukpds.org/Popopopo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/GovernmentPosition> .
         <http://id.ukpds.org/Popopopo> <http://id.ukpds.org/schema/positionName> "Secretary of State for Work and Pensions" .
