@@ -58,21 +58,21 @@ module Parliament
           end
         end
 
-        # Alias memberHasIncumbency with fallback.
+        # Alias memberHasParliamentaryIncumbency with fallback.
         #
         # @return [Array, Array] all the incumbencies of the Grom::Node or an empty array.
         def incumbencies
-          respond_to?(:memberHasIncumbency) ? memberHasIncumbency : []
+          respond_to?(:memberHasParliamentaryIncumbency) ? memberHasParliamentaryIncumbency : []
         end
 
-        # Alias memberHasIncumbency with fallback.
+        # Alias memberHasParliamentaryIncumbency with fallback.
         #
         # @return [Array, Array] the seat incumbencies of the Grom::Node or an empty array.
         def seat_incumbencies
           @seat_incumbencies ||= incumbencies.select { |inc| inc.type == 'http://id.ukpds.org/schema/SeatIncumbency' }
         end
 
-        # Alias memberHasIncumbency with fallback.
+        # Alias memberHasParliamentaryIncumbency with fallback.
         #
         # @return [Array, Array] the house incumbencies of the Grom::Node or an empty array.
         def house_incumbencies

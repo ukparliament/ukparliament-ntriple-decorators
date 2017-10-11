@@ -6,18 +6,18 @@ module Parliament
       module GovernmentIncumbency
         include Helpers::DateHelper
 
-        # Alias incumbencyStartDate with fallback.
+        # Alias parliamentaryIncumbencyStartDate with fallback.
         #
         # @return [DateTime, nil] the start date of the Grom::Node or nil.
         def start_date
-          @start_date ||= respond_to?(:incumbencyStartDate) ? DateTime.parse(incumbencyStartDate) : nil
+          @start_date ||= respond_to?(:parliamentaryIncumbencyStartDate) ? DateTime.parse(parliamentaryIncumbencyStartDate) : nil
         end
 
-        # Alias incumbencyEndDate with fallback.
+        # Alias parliamentaryIncumbencyEndDate with fallback.
         #
         # @return [DateTime, nil] the end date of the Grom::Node or nil.
         def end_date
-          @end_date ||= respond_to?(:incumbencyEndDate) ? DateTime.parse(incumbencyEndDate) : nil
+          @end_date ||= respond_to?(:parliamentaryIncumbencyEndDate) ? DateTime.parse(parliamentaryIncumbencyEndDate) : nil
         end
 
         # Checks if Grom::Node has an end date.

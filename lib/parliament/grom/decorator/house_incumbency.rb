@@ -5,18 +5,18 @@ module Parliament
       module HouseIncumbency
         include Helpers::DateHelper
 
-        # Alias incumbencyStartDate with fallback.
+        # Alias parliamentaryIncumbencyStartDate with fallback.
         #
         # @return [DateTime, nil] the start date of the Grom::Node or nil.
         def start_date
-          @start_date ||= respond_to?(:incumbencyStartDate) ? DateTime.parse(incumbencyStartDate) : nil
+          @start_date ||= respond_to?(:parliamentaryIncumbencyStartDate) ? DateTime.parse(parliamentaryIncumbencyStartDate) : nil
         end
 
-        # Alias incumbencyEndDate with fallback.
+        # Alias parliamentaryIncumbencyEndDate with fallback.
         #
         # @return [DateTime, nil] the end date of the Grom::Node or nil.
         def end_date
-          @end_date ||= respond_to?(:incumbencyEndDate) ? DateTime.parse(incumbencyEndDate) : nil
+          @end_date ||= respond_to?(:parliamentaryIncumbencyEndDate) ? DateTime.parse(parliamentaryIncumbencyEndDate) : nil
         end
 
         # Checks if Grom::Node has an end date.
@@ -33,18 +33,18 @@ module Parliament
           respond_to?(:houseIncumbencyHasHouse) ? houseIncumbencyHasHouse.first : nil
         end
 
-        # Alias incumbencyHasMember with fallback.
+        # Alias parliamentaryIncumbencyHasMember with fallback.
         #
         # @return [Grom::Node, nil] the member connected to the Grom::Node or nil.
         def member
-          respond_to?(:incumbencyHasMember) ? incumbencyHasMember.first : nil
+          respond_to?(:parliamentaryIncumbencyHasMember) ? parliamentaryIncumbencyHasMember.first : nil
         end
 
-        # Alias incumbencyHasContactPoint with fallback.
+        # Alias parliamentaryIncumbencyHasContactPoint with fallback.
         #
         # @return [Array, Array] the contact points of the Grom::Node or an empty array.
         def contact_points
-          respond_to?(:incumbencyHasContactPoint) ? incumbencyHasContactPoint : []
+          respond_to?(:parliamentaryIncumbencyHasContactPoint) ? parliamentaryIncumbencyHasContactPoint : []
         end
       end
     end
