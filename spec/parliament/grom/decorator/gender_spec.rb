@@ -8,7 +8,7 @@ describe Parliament::Grom::Decorator::Gender, vcr: true do
   end
 
   before(:each) do
-    @gender_nodes = response.filter('http://id.ukpds.org/schema/Gender')
+    @gender_nodes = response.filter('https://id.parliament.uk/schema/Gender')
   end
 
   describe '#name' do

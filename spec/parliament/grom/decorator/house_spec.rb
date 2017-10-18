@@ -7,7 +7,7 @@ describe Parliament::Grom::Decorator::House, vcr: true do
       response = Parliament::Request::UrlRequest.new(base_url: 'http://localhost:3030',
                                           builder: Parliament::Builder::NTripleResponseBuilder,
                                           decorators: Parliament::Grom::Decorator).people(id).houses.get
-      @house_nodes = response.filter('http://id.ukpds.org/schema/House')
+      @house_nodes = response.filter('https://id.parliament.uk/schema/House')
     end
 
     context 'Grom::Node has all the required objects' do
@@ -33,7 +33,7 @@ describe Parliament::Grom::Decorator::House, vcr: true do
       response = Parliament::Request::UrlRequest.new(base_url: 'http://localhost:3030',
                                                      builder: Parliament::Builder::NTripleResponseBuilder,
                                                      decorators: Parliament::Grom::Decorator).people(id).houses.get
-      @house_nodes = response.filter('http://id.ukpds.org/schema/House')
+      @house_nodes = response.filter('https://id.parliament.uk/schema/House')
     end
 
     context 'Grom::Node has all the required objects' do
@@ -41,7 +41,7 @@ describe Parliament::Grom::Decorator::House, vcr: true do
         house_node = @house_nodes.first
 
         expect(house_node.seats.size).to eq(1)
-        expect(house_node.seats.first.type).to eq('http://id.ukpds.org/schema/HouseSeat')
+        expect(house_node.seats.first.type).to eq('https://id.parliament.uk/schema/HouseSeat')
       end
     end
 
@@ -60,7 +60,7 @@ describe Parliament::Grom::Decorator::House, vcr: true do
       response = Parliament::Request::UrlRequest.new(base_url: 'http://localhost:3030',
                                                      builder: Parliament::Builder::NTripleResponseBuilder,
                                                      decorators: Parliament::Grom::Decorator).people(id).houses.get
-      @house_nodes = response.filter('http://id.ukpds.org/schema/House')
+      @house_nodes = response.filter('https://id.parliament.uk/schema/House')
     end
 
     context 'Grom::Node has all the required objects' do
@@ -68,7 +68,7 @@ describe Parliament::Grom::Decorator::House, vcr: true do
         house_node = @house_nodes.first
 
         expect(house_node.seat_incumbencies.size).to eq(6)
-        expect(house_node.seat_incumbencies.first.type).to eq('http://id.ukpds.org/schema/SeatIncumbency')
+        expect(house_node.seat_incumbencies.first.type).to eq('https://id.parliament.uk/schema/SeatIncumbency')
       end
     end
 
@@ -87,7 +87,7 @@ describe Parliament::Grom::Decorator::House, vcr: true do
       response = Parliament::Request::UrlRequest.new(base_url: 'http://localhost:3030',
                                                      builder: Parliament::Builder::NTripleResponseBuilder,
                                                      decorators: Parliament::Grom::Decorator).people(id).houses.get
-      @house_nodes = response.filter('http://id.ukpds.org/schema/House')
+      @house_nodes = response.filter('https://id.parliament.uk/schema/House')
     end
 
     context 'Grom::Node has all the required objects' do
@@ -95,7 +95,7 @@ describe Parliament::Grom::Decorator::House, vcr: true do
         house_node = @house_nodes.first
 
         expect(house_node.house_incumbencies.size).to eq(1)
-        expect(house_node.house_incumbencies.first.type).to eq('http://id.ukpds.org/schema/HouseIncumbency')
+        expect(house_node.house_incumbencies.first.type).to eq('https://id.parliament.uk/schema/HouseIncumbency')
       end
     end
 

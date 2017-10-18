@@ -6,7 +6,7 @@ describe Parliament::Grom::Decorator::FormalBodyMembership, vcr: true do
     response = Parliament::Request::UrlRequest.new(base_url: 'http://localhost:3000',
     builder: Parliament::Builder::NTripleResponseBuilder,
     decorators: Parliament::Grom::Decorator).people(id).get
-    @formal_body_membership_nodes = response.filter('http://id.ukpds.org/schema/FormalBodyMembership')
+    @formal_body_membership_nodes = response.filter('https://id.parliament.uk/schema/FormalBodyMembership')
   end
 
   context '#start_date' do
@@ -56,7 +56,7 @@ describe Parliament::Grom::Decorator::FormalBodyMembership, vcr: true do
   context '#formal_body' do
     context 'has formal body' do
       it 'will return formal body' do
-        expect(@formal_body_membership_nodes[0].formal_body.type).to eq('http://id.ukpds.org/schema/FormalBody')
+        expect(@formal_body_membership_nodes[0].formal_body.type).to eq('https://id.parliament.uk/schema/FormalBody')
       end
     end
 

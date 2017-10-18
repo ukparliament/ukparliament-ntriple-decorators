@@ -1,11 +1,11 @@
 module Parliament
   module Grom
     module Decorator
-      # Decorator namespace for Grom::Node instances with type: http://id.ukpds.org/schema/GenderIdentity
+      # Decorator namespace for Grom::Node instances with type: https://id.parliament.uk/schema/GenderIdentity
       module GenderIdentity
         # Alias genderIdentityHasGender with fallback.
         #
-        # @return [Grom::Node, nil] a Grom::Node with type http://id.ukpds.org/schema/Gender or nil.
+        # @return [Grom::Node, nil] a Grom::Node with type https://id.parliament.uk/schema/Gender or nil.
         def gender
           respond_to?(:genderIdentityHasGender) ? genderIdentityHasGender.first : nil
         end
