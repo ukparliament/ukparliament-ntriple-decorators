@@ -6,7 +6,7 @@ describe Parliament::Grom::Decorator::GovernmentPosition, vcr: true do
     response = Parliament::Request::UrlRequest.new(base_url: 'http://localhost:3000/api/v1',
     builder: Parliament::Builder::NTripleResponseBuilder,
     decorators: Parliament::Grom::Decorator).person_by_id.get
-    @government_position_nodes = response.filter('http://id.ukpds.org/schema/GovernmentPosition')
+    @government_position_nodes = response.filter('https://id.parliament.uk/schema/GovernmentPosition')
   end
 
   context '#name' do

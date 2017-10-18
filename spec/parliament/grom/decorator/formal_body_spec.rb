@@ -6,7 +6,7 @@ describe Parliament::Grom::Decorator::FormalBody, vcr: true do
     response = Parliament::Request::UrlRequest.new(base_url: 'http://localhost:3000',
     builder: Parliament::Builder::NTripleResponseBuilder,
     decorators: Parliament::Grom::Decorator).people(id).get
-    @formal_body_nodes = response.filter('http://id.ukpds.org/schema/FormalBody')
+    @formal_body_nodes = response.filter('https://id.parliament.uk/schema/FormalBody')
   end
 
   context '#name' do

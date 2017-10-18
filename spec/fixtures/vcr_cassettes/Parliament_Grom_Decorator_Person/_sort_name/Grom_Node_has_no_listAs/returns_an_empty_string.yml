@@ -41,15 +41,15 @@ http_interactions:
     body:
       encoding: UTF-8
       string: |
-        <http://id.ukpds.org/4644f36e-6a0d-422f-ab1f-af7efee354cb> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Person> .
-        <http://id.ukpds.org/4644f36e-6a0d-422f-ab1f-af7efee354cb> <http://id.ukpds.org/schema/personGivenName> "Person 1 - givenName" .
-        <http://id.ukpds.org/4644f36e-6a0d-422f-ab1f-af7efee354cb> <http://id.ukpds.org/schema/personFamilyName> "Person 1 - familyName" .
-        <http://id.ukpds.org/b31d01fa-42f8-445e-b80d-498ee02f1b98> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Person> .
-        <http://id.ukpds.org/b31d01fa-42f8-445e-b80d-498ee02f1b98> <http://id.ukpds.org/schema/personGivenName> "Person 2 - givenName" .
-        <http://id.ukpds.org/b31d01fa-42f8-445e-b80d-498ee02f1b98> <http://id.ukpds.org/schema/personFamilyName> "Person 2 - familyName" .
-        <http://id.ukpds.org/8f6f32e6-bc23-4fb0-8ade-54a53068bd22> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Person> .
-        <http://id.ukpds.org/8f6f32e6-bc23-4fb0-8ade-54a53068bd22> <http://id.ukpds.org/schema/personGivenName> "Person 3 - givenName" .
-        <http://id.ukpds.org/8f6f32e6-bc23-4fb0-8ade-54a53068bd22> <http://id.ukpds.org/schema/personFamilyName> "Person 3 - familyName" .
+        <https://id.parliament.uk/4644f36e-6a0d-422f-ab1f-af7efee354cb> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://id.parliament.uk/schema/Person> .
+        <https://id.parliament.uk/4644f36e-6a0d-422f-ab1f-af7efee354cb> <https://id.parliament.uk/schema/personGivenName> "Person 1 - givenName" .
+        <https://id.parliament.uk/4644f36e-6a0d-422f-ab1f-af7efee354cb> <https://id.parliament.uk/schema/personFamilyName> "Person 1 - familyName" .
+        <https://id.parliament.uk/b31d01fa-42f8-445e-b80d-498ee02f1b98> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://id.parliament.uk/schema/Person> .
+        <https://id.parliament.uk/b31d01fa-42f8-445e-b80d-498ee02f1b98> <https://id.parliament.uk/schema/personGivenName> "Person 2 - givenName" .
+        <https://id.parliament.uk/b31d01fa-42f8-445e-b80d-498ee02f1b98> <https://id.parliament.uk/schema/personFamilyName> "Person 2 - familyName" .
+        <https://id.parliament.uk/8f6f32e6-bc23-4fb0-8ade-54a53068bd22> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://id.parliament.uk/schema/Person> .
+        <https://id.parliament.uk/8f6f32e6-bc23-4fb0-8ade-54a53068bd22> <https://id.parliament.uk/schema/personGivenName> "Person 3 - givenName" .
+        <https://id.parliament.uk/8f6f32e6-bc23-4fb0-8ade-54a53068bd22> <https://id.parliament.uk/schema/personFamilyName> "Person 3 - familyName" .
     http_version:
   recorded_at: Tue, 14 Mar 2017 11:38:34 GMT
 recorded_with: VCR 3.0.3

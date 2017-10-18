@@ -8,7 +8,7 @@ describe Parliament::Grom::Decorator::HouseSeat, vcr: true do
   end
 
   before(:each) do
-    @seat_nodes = response.filter('http://id.ukpds.org/schema/HouseSeat')
+    @seat_nodes = response.filter('https://id.parliament.uk/schema/HouseSeat')
   end
 
   describe '#house' do
@@ -16,7 +16,7 @@ describe Parliament::Grom::Decorator::HouseSeat, vcr: true do
       it 'returns the house for a Grom::Node object of type HouseSeat' do
         seat_node = @seat_nodes.first
 
-        expect(seat_node.house.type).to eq('http://id.ukpds.org/schema/House')
+        expect(seat_node.house.type).to eq('https://id.parliament.uk/schema/House')
       end
     end
 
@@ -34,7 +34,7 @@ describe Parliament::Grom::Decorator::HouseSeat, vcr: true do
       it 'returns the constituency for a Grom::Node object of type HouseSeat' do
         seat_node = @seat_nodes.first
 
-        expect(seat_node.constituency.type).to eq('http://id.ukpds.org/schema/ConstituencyGroup')
+        expect(seat_node.constituency.type).to eq('https://id.parliament.uk/schema/ConstituencyGroup')
       end
     end
 
@@ -49,7 +49,7 @@ describe Parliament::Grom::Decorator::HouseSeat, vcr: true do
 
   describe '#seat_incumbencies' do
     before(:each) do
-      @seat_nodes = response.filter('http://id.ukpds.org/schema/HouseSeat')
+      @seat_nodes = response.filter('https://id.parliament.uk/schema/HouseSeat')
     end
 
     context 'Grom::Node has all the required objects' do
@@ -57,7 +57,7 @@ describe Parliament::Grom::Decorator::HouseSeat, vcr: true do
         seat_node = @seat_nodes.first
 
         expect(seat_node.seat_incumbencies.size).to eq(1)
-        expect(seat_node.seat_incumbencies.first.type).to eq('http://id.ukpds.org/schema/SeatIncumbency')
+        expect(seat_node.seat_incumbencies.first.type).to eq('https://id.parliament.uk/schema/SeatIncumbency')
       end
     end
 

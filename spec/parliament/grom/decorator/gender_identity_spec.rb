@@ -8,7 +8,7 @@ describe Parliament::Grom::Decorator::GenderIdentity, vcr: true do
   end
 
   before(:each) do
-    @gender_identity_nodes = response.filter('http://id.ukpds.org/schema/GenderIdentity')
+    @gender_identity_nodes = response.filter('https://id.parliament.uk/schema/GenderIdentity')
   end
 
   describe '#gender' do
@@ -17,7 +17,7 @@ describe Parliament::Grom::Decorator::GenderIdentity, vcr: true do
         gender_identity_node = @gender_identity_nodes.first
 
         expect(gender_identity_node.gender.genderName).to eq('F')
-        expect(gender_identity_node.gender.type).to eq('http://id.ukpds.org/schema/Gender')
+        expect(gender_identity_node.gender.type).to eq('https://id.parliament.uk/schema/Gender')
       end
     end
 

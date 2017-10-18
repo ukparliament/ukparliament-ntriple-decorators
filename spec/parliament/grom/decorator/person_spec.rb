@@ -10,7 +10,7 @@ describe Parliament::Grom::Decorator::Person, vcr: true do
 
   describe '#houses' do
     before(:each) do
-      @people_nodes = response.filter('http://id.ukpds.org/schema/Person')
+      @people_nodes = response.filter('https://id.parliament.uk/schema/Person')
     end
 
     context 'Grom::Node has all the required objects' do
@@ -18,7 +18,7 @@ describe Parliament::Grom::Decorator::Person, vcr: true do
         person_node = @people_nodes.first
 
         expect(person_node.houses.size).to eq(2)
-        expect(person_node.houses.first.type).to eq('http://id.ukpds.org/schema/House')
+        expect(person_node.houses.first.type).to eq('https://id.parliament.uk/schema/House')
       end
     end
 
@@ -33,7 +33,7 @@ describe Parliament::Grom::Decorator::Person, vcr: true do
 
   describe '#incumbencies' do
     before(:each) do
-      @people_nodes = response.filter('http://id.ukpds.org/schema/Person')
+      @people_nodes = response.filter('https://id.parliament.uk/schema/Person')
     end
 
     context 'Grom::Node has all the required objects' do
@@ -55,7 +55,7 @@ describe Parliament::Grom::Decorator::Person, vcr: true do
 
   describe '#seat_incumbencies' do
     before(:each) do
-      @people_nodes = response.filter('http://id.ukpds.org/schema/Person')
+      @people_nodes = response.filter('https://id.parliament.uk/schema/Person')
     end
 
     context 'Grom::Node has all the required objects' do
@@ -63,7 +63,7 @@ describe Parliament::Grom::Decorator::Person, vcr: true do
         person_node = @people_nodes.first
 
         expect(person_node.seat_incumbencies.size).to eq(5)
-        expect(person_node.seat_incumbencies.first.type).to eq('http://id.ukpds.org/schema/SeatIncumbency')
+        expect(person_node.seat_incumbencies.first.type).to eq('https://id.parliament.uk/schema/SeatIncumbency')
       end
     end
 
@@ -78,14 +78,14 @@ describe Parliament::Grom::Decorator::Person, vcr: true do
 
   describe '#seats' do
     before(:each) do
-      @people_nodes = response.filter('http://id.ukpds.org/schema/Person')
+      @people_nodes = response.filter('https://id.parliament.uk/schema/Person')
     end
 
     context 'Grom::Node has all the required objects' do
       it 'returns the seats for a Grom::Node object of type Person' do
         person_node = @people_nodes.first
         expect(person_node.seats.size).to eq(3)
-        expect(person_node.seats.first.type).to eq('http://id.ukpds.org/schema/HouseSeat')
+        expect(person_node.seats.first.type).to eq('https://id.parliament.uk/schema/HouseSeat')
       end
     end
 
@@ -100,7 +100,7 @@ describe Parliament::Grom::Decorator::Person, vcr: true do
 
   describe '#given_name' do
     before(:each) do
-      @people_nodes = response.filter('http://id.ukpds.org/schema/Person')
+      @people_nodes = response.filter('https://id.parliament.uk/schema/Person')
     end
 
     context 'Grom::Node has all the required objects' do
@@ -122,7 +122,7 @@ describe Parliament::Grom::Decorator::Person, vcr: true do
 
   describe '#family_name' do
     before(:each) do
-      @people_nodes = response.filter('http://id.ukpds.org/schema/Person')
+      @people_nodes = response.filter('https://id.parliament.uk/schema/Person')
     end
 
     context 'Grom::Node has all the required objects' do
@@ -144,7 +144,7 @@ describe Parliament::Grom::Decorator::Person, vcr: true do
 
   describe '#date_of_birth' do
     before(:each) do
-      @people_nodes = response.filter('http://id.ukpds.org/schema/Person')
+      @people_nodes = response.filter('https://id.parliament.uk/schema/Person')
     end
 
     context 'Grom::Node has all the required objects' do
@@ -166,7 +166,7 @@ describe Parliament::Grom::Decorator::Person, vcr: true do
 
   describe '#other_name' do
     before(:each) do
-      @people_nodes = response.filter('http://id.ukpds.org/schema/Person')
+      @people_nodes = response.filter('https://id.parliament.uk/schema/Person')
     end
 
     context 'Grom::Node has all the required objects' do
@@ -188,7 +188,7 @@ describe Parliament::Grom::Decorator::Person, vcr: true do
 
   describe '#full_name' do
     before(:each) do
-      @people_nodes = response.filter('http://id.ukpds.org/schema/Person')
+      @people_nodes = response.filter('https://id.parliament.uk/schema/Person')
     end
 
     context 'Grom::Node has all the required objects' do
@@ -226,7 +226,7 @@ describe Parliament::Grom::Decorator::Person, vcr: true do
 
   describe '#constituencies' do
     before(:each) do
-      @people_nodes = response.filter('http://id.ukpds.org/schema/Person')
+      @people_nodes = response.filter('https://id.parliament.uk/schema/Person')
     end
 
     context 'Grom::Node has all the required objects' do
@@ -234,7 +234,7 @@ describe Parliament::Grom::Decorator::Person, vcr: true do
         person_node = @people_nodes.first
 
         expect(person_node.constituencies.size).to eq(3)
-        expect(person_node.constituencies.first.type).to eq('http://id.ukpds.org/schema/ConstituencyGroup')
+        expect(person_node.constituencies.first.type).to eq('https://id.parliament.uk/schema/ConstituencyGroup')
       end
     end
 
@@ -249,7 +249,7 @@ describe Parliament::Grom::Decorator::Person, vcr: true do
 
   describe '#parties' do
     before(:each) do
-      @people_nodes = response.filter('http://id.ukpds.org/schema/Person')
+      @people_nodes = response.filter('https://id.parliament.uk/schema/Person')
     end
 
     context 'Grom::Node has all the required objects' do
@@ -257,7 +257,7 @@ describe Parliament::Grom::Decorator::Person, vcr: true do
         person_node = @people_nodes.first
 
         expect(person_node.parties.size).to eq(1)
-        expect(person_node.parties.first.type).to eq('http://id.ukpds.org/schema/Party')
+        expect(person_node.parties.first.type).to eq('https://id.parliament.uk/schema/Party')
       end
     end
 
@@ -277,13 +277,13 @@ describe Parliament::Grom::Decorator::Person, vcr: true do
       builder: Parliament::Builder::NTripleResponseBuilder,
       decorators: Parliament::Grom::Decorator).person_by_id.get(params: {person_id: id})
       # N.B. Different 'get' request following change in data API
-      @people_nodes = response.filter('http://id.ukpds.org/schema/Person')
+      @people_nodes = response.filter('https://id.parliament.uk/schema/Person')
     end
 
     context 'Grom::Node has all the required objects' do
       it 'returns the current party for a Grom::Node object of type Person' do
         person_node = @people_nodes.first
-        expect(person_node.current_party.type).to eq('http://id.ukpds.org/schema/Party')
+        expect(person_node.current_party.type).to eq('https://id.parliament.uk/schema/Party')
       end
     end
 
@@ -302,13 +302,13 @@ describe Parliament::Grom::Decorator::Person, vcr: true do
       builder: Parliament::Builder::NTripleResponseBuilder,
       decorators: Parliament::Grom::Decorator).person_by_id.get(params: {person_id: id})
       # N.B. Different 'get' request following change in data API
-      @people_nodes = response.filter('http://id.ukpds.org/schema/Person')
+      @people_nodes = response.filter('https://id.parliament.uk/schema/Person')
     end
 
     context 'Grom::Node has all the required objects' do
       it 'returns the current party membership for a Grom::Node object of type Person' do
         person_node = @people_nodes.first
-        expect(person_node.current_party_membership.type).to eq('http://id.ukpds.org/schema/PartyMembership')
+        expect(person_node.current_party_membership.type).to eq('https://id.parliament.uk/schema/PartyMembership')
       end
     end
 
@@ -322,7 +322,7 @@ describe Parliament::Grom::Decorator::Person, vcr: true do
 
   describe '#party_memberships' do
     before(:each) do
-      @people_nodes = response.filter('http://id.ukpds.org/schema/Person')
+      @people_nodes = response.filter('https://id.parliament.uk/schema/Person')
     end
 
     context 'Grom::Node has all the required objects' do
@@ -330,7 +330,7 @@ describe Parliament::Grom::Decorator::Person, vcr: true do
         person_node = @people_nodes.first
 
         expect(person_node.party_memberships.size).to eq(2)
-        expect(person_node.party_memberships.first.type).to eq('http://id.ukpds.org/schema/PartyMembership')
+        expect(person_node.party_memberships.first.type).to eq('https://id.parliament.uk/schema/PartyMembership')
       end
     end
 
@@ -349,7 +349,7 @@ describe Parliament::Grom::Decorator::Person, vcr: true do
       response = Parliament::Request::UrlRequest.new(base_url: 'http://localhost:3030',
       builder: Parliament::Builder::NTripleResponseBuilder,
       decorators: Parliament::Grom::Decorator).people(id).get
-      @people_with_contact_nodes = response.filter('http://id.ukpds.org/schema/Person')
+      @people_with_contact_nodes = response.filter('https://id.parliament.uk/schema/Person')
     end
 
     context 'Grom::Node has all the required objects' do
@@ -357,7 +357,7 @@ describe Parliament::Grom::Decorator::Person, vcr: true do
         person_node = @people_with_contact_nodes.first
 
         expect(person_node.contact_points.size).to eq(1)
-        expect(person_node.contact_points.first.type).to eq('http://id.ukpds.org/schema/ContactPoint')
+        expect(person_node.contact_points.first.type).to eq('https://id.parliament.uk/schema/ContactPoint')
       end
     end
 
@@ -372,7 +372,7 @@ describe Parliament::Grom::Decorator::Person, vcr: true do
 
   describe '#gender_identities' do
     before(:each) do
-      @people_nodes = response.filter('http://id.ukpds.org/schema/Person')
+      @people_nodes = response.filter('https://id.parliament.uk/schema/Person')
     end
 
     context 'Grom::Node has all the required objects' do
@@ -380,7 +380,7 @@ describe Parliament::Grom::Decorator::Person, vcr: true do
         person_node = @people_nodes.first
 
         expect(person_node.gender_identities.size).to eq(1)
-        expect(person_node.gender_identities.first.type).to eq('http://id.ukpds.org/schema/GenderIdentity')
+        expect(person_node.gender_identities.first.type).to eq('https://id.parliament.uk/schema/GenderIdentity')
       end
     end
 
@@ -395,7 +395,7 @@ describe Parliament::Grom::Decorator::Person, vcr: true do
 
   describe '#gender' do
     before(:each) do
-      @people_nodes = response.filter('http://id.ukpds.org/schema/Person')
+      @people_nodes = response.filter('https://id.parliament.uk/schema/Person')
     end
 
     context 'Grom::Node has all the required objects' do
@@ -403,7 +403,7 @@ describe Parliament::Grom::Decorator::Person, vcr: true do
         person_node = @people_nodes.first
 
         expect(person_node.gender.genderName).to eq('F')
-        expect(person_node.gender.type).to eq('http://id.ukpds.org/schema/Gender')
+        expect(person_node.gender.type).to eq('https://id.parliament.uk/schema/Gender')
       end
     end
 
@@ -423,7 +423,7 @@ describe Parliament::Grom::Decorator::Person, vcr: true do
         response = Parliament::Request::UrlRequest.new(base_url: 'http://localhost:3030',
         builder: Parliament::Builder::NTripleResponseBuilder,
         decorators: Parliament::Grom::Decorator).people(id).get
-        person_node = response.filter('http://id.ukpds.org/schema/Person').first
+        person_node = response.filter('https://id.parliament.uk/schema/Person').first
 
         expect(person_node.statuses[:house_membership_status].size).to eq(1)
         expect(person_node.statuses[:house_membership_status].first).to eq('Current MP')
@@ -436,7 +436,7 @@ describe Parliament::Grom::Decorator::Person, vcr: true do
         response = Parliament::Request::UrlRequest.new(base_url: 'http://localhost:3030',
         builder: Parliament::Builder::NTripleResponseBuilder,
         decorators: Parliament::Grom::Decorator).people(id).get
-        person_node = response.filter('http://id.ukpds.org/schema/Person').first
+        person_node = response.filter('https://id.parliament.uk/schema/Person').first
 
         expect(person_node.statuses[:house_membership_status].size).to eq(1)
         expect(person_node.statuses[:house_membership_status].first).to eq('Member of the House of Lords')
@@ -449,7 +449,7 @@ describe Parliament::Grom::Decorator::Person, vcr: true do
         response = Parliament::Request::UrlRequest.new(base_url: 'http://localhost:3030',
         builder: Parliament::Builder::NTripleResponseBuilder,
         decorators: Parliament::Grom::Decorator).people(id).get
-        person_node = response.filter('http://id.ukpds.org/schema/Person').first
+        person_node = response.filter('https://id.parliament.uk/schema/Person').first
 
         expect(person_node.statuses[:general_membership_status].size).to eq(1)
         expect(person_node.statuses[:general_membership_status].first).to eq('Current Member')
@@ -462,7 +462,7 @@ describe Parliament::Grom::Decorator::Person, vcr: true do
         response = Parliament::Request::UrlRequest.new(base_url: 'http://localhost:3030',
         builder: Parliament::Builder::NTripleResponseBuilder,
         decorators: Parliament::Grom::Decorator).people(id).get
-        person_node = response.filter('http://id.ukpds.org/schema/Person').first
+        person_node = response.filter('https://id.parliament.uk/schema/Person').first
 
         expect(person_node.statuses[:general_membership_status].size).to eq(1)
         expect(person_node.statuses[:general_membership_status].first).to eq('Former Member')
@@ -475,7 +475,7 @@ describe Parliament::Grom::Decorator::Person, vcr: true do
         response = Parliament::Request::UrlRequest.new(base_url: 'http://localhost:3030',
         builder: Parliament::Builder::NTripleResponseBuilder,
         decorators: Parliament::Grom::Decorator).people(id).get
-        person_node = response.filter('http://id.ukpds.org/schema/Person').first
+        person_node = response.filter('https://id.parliament.uk/schema/Person').first
 
         expect(person_node.statuses[:house_membership_status].size).to eq(1)
         expect(person_node.statuses[:house_membership_status].first).to eq('Former MP')
@@ -488,7 +488,7 @@ describe Parliament::Grom::Decorator::Person, vcr: true do
         response = Parliament::Request::UrlRequest.new(base_url: 'http://localhost:3030',
         builder: Parliament::Builder::NTripleResponseBuilder,
         decorators: Parliament::Grom::Decorator).people(id).get
-        person_node = response.filter('http://id.ukpds.org/schema/Person').first
+        person_node = response.filter('https://id.parliament.uk/schema/Person').first
 
         expect(person_node.statuses[:house_membership_status].size).to eq(1)
         expect(person_node.statuses[:house_membership_status].first).to eq('Former Member of the House of Lords')
@@ -501,7 +501,7 @@ describe Parliament::Grom::Decorator::Person, vcr: true do
         response = Parliament::Request::UrlRequest.new(base_url: 'http://localhost:3030',
         builder: Parliament::Builder::NTripleResponseBuilder,
         decorators: Parliament::Grom::Decorator).people(id).get
-        person_node = response.filter('http://id.ukpds.org/schema/Person').first
+        person_node = response.filter('https://id.parliament.uk/schema/Person').first
 
         expect(person_node.statuses.size).to eq(2)
         expect(person_node.statuses[:house_membership_status][0]).to eq('Member of the House of Lords')
@@ -515,7 +515,7 @@ describe Parliament::Grom::Decorator::Person, vcr: true do
         response = Parliament::Request::UrlRequest.new(base_url: 'http://localhost:3030',
         builder: Parliament::Builder::NTripleResponseBuilder,
         decorators: Parliament::Grom::Decorator).people(id).get
-        person_node = response.filter('http://id.ukpds.org/schema/Person').first
+        person_node = response.filter('https://id.parliament.uk/schema/Person').first
 
         expect(person_node.statuses.size).to eq(2)
         expect(person_node.statuses[:house_membership_status][0]).to eq('Former Member of the House of Lords')
@@ -529,7 +529,7 @@ describe Parliament::Grom::Decorator::Person, vcr: true do
         response = Parliament::Request::UrlRequest.new(base_url: 'http://localhost:3030',
         builder: Parliament::Builder::NTripleResponseBuilder,
         decorators: Parliament::Grom::Decorator).people(id).get
-        person_node = response.filter('http://id.ukpds.org/schema/Person').first
+        person_node = response.filter('https://id.parliament.uk/schema/Person').first
 
         expect(person_node.statuses[:house_membership_status]).to eq([])
       end
@@ -542,7 +542,7 @@ describe Parliament::Grom::Decorator::Person, vcr: true do
       response = Parliament::Request::UrlRequest.new(base_url: 'http://localhost:3030',
       builder: Parliament::Builder::NTripleResponseBuilder,
       decorators: Parliament::Grom::Decorator).people(id).get
-      @person_node = response.filter('http://id.ukpds.org/schema/Person').first
+      @person_node = response.filter('https://id.parliament.uk/schema/Person').first
     end
 
     context 'Grom::Node has all the required objects' do
@@ -564,7 +564,7 @@ describe Parliament::Grom::Decorator::Person, vcr: true do
       response = Parliament::Request::UrlRequest.new(base_url: 'http://localhost:3030',
       builder: Parliament::Builder::NTripleResponseBuilder,
       decorators: Parliament::Grom::Decorator).people(id).get
-      @person_node = response.filter('http://id.ukpds.org/schema/Person').first
+      @person_node = response.filter('https://id.parliament.uk/schema/Person').first
     end
 
     context 'Grom::Node has all the required objects' do
@@ -585,7 +585,7 @@ describe Parliament::Grom::Decorator::Person, vcr: true do
       response = Parliament::Request::UrlRequest.new(base_url: 'http://localhost:3030',
       builder: Parliament::Builder::NTripleResponseBuilder,
       decorators: Parliament::Grom::Decorator).people.get
-      @people_nodes = response.filter('http://id.ukpds.org/schema/Person')
+      @people_nodes = response.filter('https://id.parliament.uk/schema/Person')
     end
 
     context 'Grom::Node has all the required objects' do
@@ -607,13 +607,13 @@ describe Parliament::Grom::Decorator::Person, vcr: true do
       response = Parliament::Request::UrlRequest.new(base_url: 'http://localhost:3030',
       builder: Parliament::Builder::NTripleResponseBuilder,
       decorators: Parliament::Grom::Decorator).people(id).get
-      @person_node = response.filter('http://id.ukpds.org/schema/Person').first
+      @person_node = response.filter('https://id.parliament.uk/schema/Person').first
     end
 
     context 'Grom::Node has all the required objects' do
       it 'returns the formal body membership Grom::Node objects of type Person' do
         expect(@person_node.formal_body_memberships.count).to eq(2)
-        expect(@person_node.formal_body_memberships.first.type).to eq('http://id.ukpds.org/schema/FormalBodyMembership')
+        expect(@person_node.formal_body_memberships.first.type).to eq('https://id.parliament.uk/schema/FormalBodyMembership')
       end
     end
 
@@ -630,7 +630,7 @@ describe Parliament::Grom::Decorator::Person, vcr: true do
       response = Parliament::Request::UrlRequest.new(base_url: 'http://localhost:3030',
       builder: Parliament::Builder::NTripleResponseBuilder,
       decorators: Parliament::Grom::Decorator).people(id).get
-      @person_node = response.filter('http://id.ukpds.org/schema/Person').first
+      @person_node = response.filter('https://id.parliament.uk/schema/Person').first
     end
 
     context 'Grom::Node has an image id' do
@@ -656,7 +656,7 @@ describe Parliament::Grom::Decorator::Person, vcr: true do
       response = Parliament::Request::UrlRequest.new(base_url: 'http://localhost:3030',
       builder: Parliament::Builder::NTripleResponseBuilder,
       decorators: Parliament::Grom::Decorator).people(id).get
-      @person_node = response.filter('http://id.ukpds.org/schema/Person').first
+      @person_node = response.filter('https://id.parliament.uk/schema/Person').first
     end
 
     context 'Grom::Node has all the required objects' do
