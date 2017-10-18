@@ -8,7 +8,7 @@ describe Parliament::Grom::Decorator::ContactPoint, vcr: true do
   end
 
   before(:each) do
-    @contact_point_nodes = response.filter('http://id.ukpds.org/schema/ContactPoint')
+    @contact_point_nodes = response.filter('https://id.parliament.uk/schema/ContactPoint')
   end
 
   describe '#postal_addresses' do
@@ -17,7 +17,7 @@ describe Parliament::Grom::Decorator::ContactPoint, vcr: true do
         contact_point_node = @contact_point_nodes.first
 
         expect(contact_point_node.postal_addresses.size).to eq(1)
-        expect(contact_point_node.postal_addresses.first.type).to eq('http://id.ukpds.org/schema/PostalAddress')
+        expect(contact_point_node.postal_addresses.first.type).to eq('https://id.parliament.uk/schema/PostalAddress')
       end
     end
 
@@ -96,7 +96,7 @@ describe Parliament::Grom::Decorator::ContactPoint, vcr: true do
         contact_point_node = @contact_point_nodes.first
 
         expect(contact_point_node).to respond_to(:person)
-        expect(contact_point_node.person.first.type).to eq('http://id.ukpds.org/schema/Person')
+        expect(contact_point_node.person.first.type).to eq('https://id.parliament.uk/schema/Person')
         expect(contact_point_node.person.first.given_name).to eq('Person - givenName')
         expect(contact_point_node.person.first.family_name).to eq('Person - familyName')
       end
@@ -118,7 +118,7 @@ describe Parliament::Grom::Decorator::ContactPoint, vcr: true do
         contact_point_node = @contact_point_nodes.first
 
         expect(contact_point_node).to respond_to(:parliamentary_incumbency)
-        expect(contact_point_node.parliamentary_incumbency.type).to eq('http://id.ukpds.org/schema/ParliamentaryIncumbency')
+        expect(contact_point_node.parliamentary_incumbency.type).to eq('https://id.parliament.uk/schema/ParliamentaryIncumbency')
       end
     end
 

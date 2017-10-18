@@ -1,7 +1,7 @@
 module Parliament
   module Grom
     module Decorator
-      # Decorator namespace for Grom::Node instances with type: http://id.ukpds.org/schema/Person.
+      # Decorator namespace for Grom::Node instances with type: https://id.parliament.uk/schema/Person.
       # rubocop:disable ModuleLength
       module Person
         include Helpers::DateHelper
@@ -69,14 +69,14 @@ module Parliament
         #
         # @return [Array, Array] the seat incumbencies of the Grom::Node or an empty array.
         def seat_incumbencies
-          @seat_incumbencies ||= incumbencies.select { |inc| inc.type == 'http://id.ukpds.org/schema/SeatIncumbency' }
+          @seat_incumbencies ||= incumbencies.select { |inc| inc.type == 'https://id.parliament.uk/schema/SeatIncumbency' }
         end
 
         # Alias memberHasParliamentaryIncumbency with fallback.
         #
         # @return [Array, Array] the house incumbencies of the Grom::Node or an empty array.
         def house_incumbencies
-          @house_incumbencies ||= incumbencies.select { |inc| inc.type == 'http://id.ukpds.org/schema/HouseIncumbency' }
+          @house_incumbencies ||= incumbencies.select { |inc| inc.type == 'https://id.parliament.uk/schema/HouseIncumbency' }
         end
 
         # Alias seatIncumbencyHasHouseSeat with fallback.

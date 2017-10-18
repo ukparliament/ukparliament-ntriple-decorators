@@ -9,7 +9,7 @@ describe Parliament::Grom::Decorator::ConstituencyArea, vcr: true do
   describe '#latitude' do
     context 'constituency has a latitude' do
       it 'returns the latitude of the constituency area' do
-        constituency_area_node = response.filter('http://id.ukpds.org/schema/ConstituencyArea')[0]
+        constituency_area_node = response.filter('https://id.parliament.uk/schema/ConstituencyArea')[0]
 
         expect(constituency_area_node).to respond_to(:latitude)
         expect(constituency_area_node.latitude).to eq '51.5850956402'
@@ -18,7 +18,7 @@ describe Parliament::Grom::Decorator::ConstituencyArea, vcr: true do
 
     context 'constituency has no latitude' do
       it 'returns an empty string' do
-        constituency_area_node = response.filter('http://id.ukpds.org/schema/ConstituencyArea')[0]
+        constituency_area_node = response.filter('https://id.parliament.uk/schema/ConstituencyArea')[0]
 
         expect(constituency_area_node).to respond_to(:latitude)
         expect(constituency_area_node.latitude).to eq ''
@@ -29,7 +29,7 @@ describe Parliament::Grom::Decorator::ConstituencyArea, vcr: true do
   describe '#longitude' do
     context 'constituency has a longitude' do
       it 'returns the longitude of the constituency area' do
-        constituency_area_node = response.filter('http://id.ukpds.org/schema/ConstituencyArea')[0]
+        constituency_area_node = response.filter('https://id.parliament.uk/schema/ConstituencyArea')[0]
 
         expect(constituency_area_node).to respond_to(:longitude)
         expect(constituency_area_node.longitude).to eq '-0.0277980827695'
@@ -38,7 +38,7 @@ describe Parliament::Grom::Decorator::ConstituencyArea, vcr: true do
 
     context 'constituency has no longitude' do
       it 'returns an empty string' do
-        constituency_area_node = response.filter('http://id.ukpds.org/schema/ConstituencyArea')[0]
+        constituency_area_node = response.filter('https://id.parliament.uk/schema/ConstituencyArea')[0]
 
         expect(constituency_area_node).to respond_to(:longitude)
         expect(constituency_area_node.longitude).to eq ''
@@ -49,7 +49,7 @@ describe Parliament::Grom::Decorator::ConstituencyArea, vcr: true do
   describe '#polygon' do
     context 'constituency has a polygon' do
       it 'returns the polygon of the constituency area' do
-        constituency_area_node = response.filter('http://id.ukpds.org/schema/ConstituencyArea')[0]
+        constituency_area_node = response.filter('https://id.parliament.uk/schema/ConstituencyArea')[0]
 
         expect(constituency_area_node).to respond_to(:polygon)
         expected_polygon = 'Polygon((-0.03982748537 51.60513413577,-0.03979437830 51.60516506019))'
@@ -59,7 +59,7 @@ describe Parliament::Grom::Decorator::ConstituencyArea, vcr: true do
 
     context 'constituency has no polygon' do
       it 'returns an empty string' do
-        constituency_area_node = response.filter('http://id.ukpds.org/schema/ConstituencyArea')[0]
+        constituency_area_node = response.filter('https://id.parliament.uk/schema/ConstituencyArea')[0]
 
         expect(constituency_area_node).to respond_to(:polygon)
         expect(constituency_area_node.polygon).to eq []

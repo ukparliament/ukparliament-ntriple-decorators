@@ -40,80 +40,80 @@ http_interactions:
     body:
       encoding: UTF-8
       string: |
-        <http://id.ukpds.org/1921fc4a-6867-48fa-a4f4-6df05be005ce> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Person> .
-        <http://id.ukpds.org/1921fc4a-6867-48fa-a4f4-6df05be005ce> <http://id.ukpds.org/schema/personGivenName> "Person - givenName" .
-        <http://id.ukpds.org/1921fc4a-6867-48fa-a4f4-6df05be005ce> <http://id.ukpds.org/schema/personOtherNames> "Person - otherNames" .
-        <http://id.ukpds.org/1921fc4a-6867-48fa-a4f4-6df05be005ce> <http://id.ukpds.org/schema/personFamilyName> "Person - familyName" .
-        <http://id.ukpds.org/1921fc4a-6867-48fa-a4f4-6df05be005ce> <http://id.ukpds.org/schema/partyMemberHasPartyMembership> <http://id.ukpds.org/dce2f54c-e8f7-4e01-8446-247ca35ce80c> .
-        <http://id.ukpds.org/1921fc4a-6867-48fa-a4f4-6df05be005ce> <http://id.ukpds.org/schema/memberHasParliamentaryIncumbency> <http://id.ukpds.org/72686927-f6a4-425c-b7d2-f8286027d17a> .
-        <http://id.ukpds.org/12504788-a681-424e-913a-f1da5220a68e> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
-        <http://id.ukpds.org/12504788-a681-424e-913a-f1da5220a68e> <http://id.ukpds.org/schema/constituencyGroupName> "Hackney North and Stoke Newington" .
-        <http://id.ukpds.org/72686927-f6a4-425c-b7d2-f8286027d17a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/SeatIncumbency> .
-        <http://id.ukpds.org/72686927-f6a4-425c-b7d2-f8286027d17a> <http://id.ukpds.org/schema/parliamentaryIncumbencyEndDate> "1992-04-09"^^<http://www.w3.org/2001/XMLSchema#date> .
-        <http://id.ukpds.org/72686927-f6a4-425c-b7d2-f8286027d17a> <http://id.ukpds.org/schema/parliamentaryIncumbencyStartDate> "1987-06-11"^^<http://www.w3.org/2001/XMLSchema#date> .
-        <http://id.ukpds.org/72686927-f6a4-425c-b7d2-f8286027d17a> <http://id.ukpds.org/schema/seatIncumbencyHasHouseSeat> <http://id.ukpds.org/f542845d-fe0e-461f-8812-7743ea4c6340> .
-        <http://id.ukpds.org/f542845d-fe0e-461f-8812-7743ea4c6340> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/HouseSeat> .
-        <http://id.ukpds.org/f542845d-fe0e-461f-8812-7743ea4c6340> <http://id.ukpds.org/schema/houseSeatHasConstituencyGroup> <http://id.ukpds.org/12504788-a681-424e-913a-f1da5220a68e> .
-        <http://id.ukpds.org/f542845d-fe0e-461f-8812-7743ea4c6340> <http://id.ukpds.org/schema/houseSeatHasHouse> <http://id.ukpds.org/4b77dd58-f6ba-4121-b521-c8ad70465f52> .
-        <http://id.ukpds.org/f4e62fb8-2cf4-41b2-b7a3-7e621522a30d> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Party> .
-        <http://id.ukpds.org/f4e62fb8-2cf4-41b2-b7a3-7e621522a30d> <http://id.ukpds.org/schema/partyName> "Labour" .
-        <http://id.ukpds.org/dce2f54c-e8f7-4e01-8446-247ca35ce80c> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/PartyMembership> .
-        <http://id.ukpds.org/dce2f54c-e8f7-4e01-8446-247ca35ce80c> <http://id.ukpds.org/schema/partyMembershipStartDate> "1987-06-11"^^<http://www.w3.org/2001/XMLSchema#date> .
-        <http://id.ukpds.org/dce2f54c-e8f7-4e01-8446-247ca35ce80c> <http://id.ukpds.org/schema/partyMembershipEndDate> "2015-03-30"^^<http://www.w3.org/2001/XMLSchema#date> .
-        <http://id.ukpds.org/dce2f54c-e8f7-4e01-8446-247ca35ce80c> <http://id.ukpds.org/schema/partyMembershipHasParty> <http://id.ukpds.org/f4e62fb8-2cf4-41b2-b7a3-7e621522a30d> .
-        <http://id.ukpds.org/4b77dd58-f6ba-4121-b521-c8ad70465f52> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/House> .
-        <http://id.ukpds.org/4b77dd58-f6ba-4121-b521-c8ad70465f52> <http://id.ukpds.org/schema/houseName> "House of Commons" .
-        <http://id.ukpds.org/1921fc4a-6867-48fa-a4f4-6df05be005ce> <http://id.ukpds.org/schema/partyMemberHasPartyMembership> <http://id.ukpds.org/d7671174-6e29-46c8-9374-d9f135424c5e> .
-        <http://id.ukpds.org/d7671174-6e29-46c8-9374-d9f135424c5e> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/PartyMembership> .
-        <http://id.ukpds.org/d7671174-6e29-46c8-9374-d9f135424c5e> <http://id.ukpds.org/schema/partyMembershipStartDate> "2015-05-07"^^<http://www.w3.org/2001/XMLSchema#date> .
-        <http://id.ukpds.org/d7671174-6e29-46c8-9374-d9f135424c5e> <http://id.ukpds.org/schema/partyMembershipHasParty> <http://id.ukpds.org/f4e62fb8-2cf4-41b2-b7a3-7e621522a30d> .
-        <http://id.ukpds.org/1921fc4a-6867-48fa-a4f4-6df05be005ce> <http://id.ukpds.org/schema/memberHasParliamentaryIncumbency> <http://id.ukpds.org/4601be24-1fb7-478b-ae33-2b467d74ddfa> .
-        <http://id.ukpds.org/4601be24-1fb7-478b-ae33-2b467d74ddfa> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/SeatIncumbency> .
-        <http://id.ukpds.org/4601be24-1fb7-478b-ae33-2b467d74ddfa> <http://id.ukpds.org/schema/parliamentaryIncumbencyStartDate> "1992-04-09"^^<http://www.w3.org/2001/XMLSchema#date> .
-        <http://id.ukpds.org/4601be24-1fb7-478b-ae33-2b467d74ddfa> <http://id.ukpds.org/schema/seatIncumbencyHasHouseSeat> <http://id.ukpds.org/f542845d-fe0e-461f-8812-7743ea4c6340> .
-        <http://id.ukpds.org/1921fc4a-6867-48fa-a4f4-6df05be005ce> <http://id.ukpds.org/schema/memberHasParliamentaryIncumbency> <http://id.ukpds.org/10e85766-a6ae-4054-86e3-bdc407f54fce> .
-        <http://id.ukpds.org/58df12a8-af8c-4a08-98ca-4a6d88603607> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
-        <http://id.ukpds.org/58df12a8-af8c-4a08-98ca-4a6d88603607> <http://id.ukpds.org/schema/constituencyGroupName> "Hackney North and Stoke Newington" .
-        <http://id.ukpds.org/10e85766-a6ae-4054-86e3-bdc407f54fce> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/SeatIncumbency> .
-        <http://id.ukpds.org/10e85766-a6ae-4054-86e3-bdc407f54fce> <http://id.ukpds.org/schema/parliamentaryIncumbencyEndDate> "2001-06-07"^^<http://www.w3.org/2001/XMLSchema#date> .
-        <http://id.ukpds.org/10e85766-a6ae-4054-86e3-bdc407f54fce> <http://id.ukpds.org/schema/parliamentaryIncumbencyStartDate> "1997-05-01"^^<http://www.w3.org/2001/XMLSchema#date> .
-        <http://id.ukpds.org/10e85766-a6ae-4054-86e3-bdc407f54fce> <http://id.ukpds.org/schema/seatIncumbencyHasHouseSeat> <http://id.ukpds.org/acb8599d-b32c-4eb7-8f6f-9322601c83d7> .
-        <http://id.ukpds.org/acb8599d-b32c-4eb7-8f6f-9322601c83d7> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/HouseSeat> .
-        <http://id.ukpds.org/acb8599d-b32c-4eb7-8f6f-9322601c83d7> <http://id.ukpds.org/schema/houseSeatHasConstituencyGroup> <http://id.ukpds.org/58df12a8-af8c-4a08-98ca-4a6d88603607> .
-        <http://id.ukpds.org/acb8599d-b32c-4eb7-8f6f-9322601c83d7> <http://id.ukpds.org/schema/houseSeatHasHouse> <http://id.ukpds.org/4b77dd58-f6ba-4121-b521-c8ad70465f52> .
-        <http://id.ukpds.org/1921fc4a-6867-48fa-a4f4-6df05be005ce> <http://id.ukpds.org/schema/memberHasParliamentaryIncumbency> <http://id.ukpds.org/a08fd30d-c117-474b-9678-5c11f924eab8> .
-        <http://id.ukpds.org/a08fd30d-c117-474b-9678-5c11f924eab8> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/SeatIncumbency> .
-        <http://id.ukpds.org/a08fd30d-c117-474b-9678-5c11f924eab8> <http://id.ukpds.org/schema/parliamentaryIncumbencyEndDate> "2005-05-05"^^<http://www.w3.org/2001/XMLSchema#date> .
-        <http://id.ukpds.org/a08fd30d-c117-474b-9678-5c11f924eab8> <http://id.ukpds.org/schema/parliamentaryIncumbencyStartDate> "2001-06-07"^^<http://www.w3.org/2001/XMLSchema#date> .
-        <http://id.ukpds.org/a08fd30d-c117-474b-9678-5c11f924eab8> <http://id.ukpds.org/schema/seatIncumbencyHasHouseSeat> <http://id.ukpds.org/acb8599d-b32c-4eb7-8f6f-9322601c83d7> .
-        <http://id.ukpds.org/1921fc4a-6867-48fa-a4f4-6df05be005ce> <http://id.ukpds.org/schema/memberHasParliamentaryIncumbency> <http://id.ukpds.org/b85c629b-8ed7-4f4d-a004-3f963629b220> .
-        <http://id.ukpds.org/b85c629b-8ed7-4f4d-a004-3f963629b220> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/SeatIncumbency> .
-        <http://id.ukpds.org/b85c629b-8ed7-4f4d-a004-3f963629b220> <http://id.ukpds.org/schema/parliamentaryIncumbencyEndDate> "2010-05-06"^^<http://www.w3.org/2001/XMLSchema#date> .
-        <http://id.ukpds.org/b85c629b-8ed7-4f4d-a004-3f963629b220> <http://id.ukpds.org/schema/parliamentaryIncumbencyStartDate> "2005-05-05"^^<http://www.w3.org/2001/XMLSchema#date> .
-        <http://id.ukpds.org/b85c629b-8ed7-4f4d-a004-3f963629b220> <http://id.ukpds.org/schema/seatIncumbencyHasHouseSeat> <http://id.ukpds.org/acb8599d-b32c-4eb7-8f6f-9322601c83d7> .
-        <http://id.ukpds.org/1921fc4a-6867-48fa-a4f4-6df05be005ce> <http://id.ukpds.org/schema/memberHasParliamentaryIncumbency> <http://id.ukpds.org/2aa9070f-6ae8-444e-aef5-80370bafb62b> .
-        <http://id.ukpds.org/42a9e90d-7582-45f1-98ff-48f01f1a9ba7> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ConstituencyGroup> .
-        <http://id.ukpds.org/42a9e90d-7582-45f1-98ff-48f01f1a9ba7> <http://id.ukpds.org/schema/constituencyGroupName> "Hackney North and Stoke Newington" .
-        <http://id.ukpds.org/2aa9070f-6ae8-444e-aef5-80370bafb62b> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/SeatIncumbency> .
-        <http://id.ukpds.org/2aa9070f-6ae8-444e-aef5-80370bafb62b> <http://id.ukpds.org/schema/parliamentaryIncumbencyEndDate> "2015-03-30"^^<http://www.w3.org/2001/XMLSchema#date> .
-        <http://id.ukpds.org/2aa9070f-6ae8-444e-aef5-80370bafb62b> <http://id.ukpds.org/schema/parliamentaryIncumbencyStartDate> "2010-05-06"^^<http://www.w3.org/2001/XMLSchema#date> .
-        <http://id.ukpds.org/2aa9070f-6ae8-444e-aef5-80370bafb62b> <http://id.ukpds.org/schema/seatIncumbencyHasHouseSeat> <http://id.ukpds.org/f79ae77e-01e6-4da5-89bf-89e1dafc6b8c> .
-        <http://id.ukpds.org/f79ae77e-01e6-4da5-89bf-89e1dafc6b8c> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/HouseSeat> .
-        <http://id.ukpds.org/f79ae77e-01e6-4da5-89bf-89e1dafc6b8c> <http://id.ukpds.org/schema/houseSeatHasConstituencyGroup> <http://id.ukpds.org/42a9e90d-7582-45f1-98ff-48f01f1a9ba7> .
-        <http://id.ukpds.org/f79ae77e-01e6-4da5-89bf-89e1dafc6b8c> <http://id.ukpds.org/schema/houseSeatHasHouse> <http://id.ukpds.org/4b77dd58-f6ba-4121-b521-c8ad70465f52> .
-        <http://id.ukpds.org/1921fc4a-6867-48fa-a4f4-6df05be005ce> <http://id.ukpds.org/schema/memberHasParliamentaryIncumbency> <http://id.ukpds.org/c1a2b657-a2ea-4543-883f-28a0e6678324> .
-        <http://id.ukpds.org/939d1024-04c3-45b3-96a7-9391c60ab9f2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/ContactPoint> .
-        <http://id.ukpds.org/939d1024-04c3-45b3-96a7-9391c60ab9f2> <http://id.ukpds.org/schema/email> "examplee@parliament.uk" .
-        <http://id.ukpds.org/939d1024-04c3-45b3-96a7-9391c60ab9f2> <http://id.ukpds.org/schema/phoneNumber> "012 3456 7890" .
-        <http://id.ukpds.org/939d1024-04c3-45b3-96a7-9391c60ab9f2> <http://id.ukpds.org/schema/contactPointHasPostalAddress> <http://id.ukpds.org/58679821-70cf-4a1a-b1bc-1366637a4d16> .
-        <http://id.ukpds.org/58679821-70cf-4a1a-b1bc-1366637a4d16> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/PostalAddress> .
-        <http://id.ukpds.org/58679821-70cf-4a1a-b1bc-1366637a4d16> <http://id.ukpds.org/schema/addressLine1> "House of Commons" .
-        <http://id.ukpds.org/58679821-70cf-4a1a-b1bc-1366637a4d16> <http://id.ukpds.org/schema/addressLine2> "London" .
-        <http://id.ukpds.org/58679821-70cf-4a1a-b1bc-1366637a4d16> <http://id.ukpds.org/schema/postCode> "SW1A 0AA" .
-        <http://id.ukpds.org/c1a2b657-a2ea-4543-883f-28a0e6678324> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/SeatIncumbency> .
-        <http://id.ukpds.org/c1a2b657-a2ea-4543-883f-28a0e6678324> <http://id.ukpds.org/schema/parliamentaryIncumbencyStartDate> "2015-05-07"^^<http://www.w3.org/2001/XMLSchema#date> .
-        <http://id.ukpds.org/c1a2b657-a2ea-4543-883f-28a0e6678324> <http://id.ukpds.org/schema/seatIncumbencyHasHouseSeat> <http://id.ukpds.org/f79ae77e-01e6-4da5-89bf-89e1dafc6b8c> .
-        <http://id.ukpds.org/c1a2b657-a2ea-4543-883f-28a0e6678324> <http://id.ukpds.org/schema/parliamentaryIncumbencyHasContactPoint> <http://id.ukpds.org/939d1024-04c3-45b3-96a7-9391c60ab9f2> .
+        <https://id.parliament.uk/1921fc4a-6867-48fa-a4f4-6df05be005ce> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://id.parliament.uk/schema/Person> .
+        <https://id.parliament.uk/1921fc4a-6867-48fa-a4f4-6df05be005ce> <https://id.parliament.uk/schema/personGivenName> "Person - givenName" .
+        <https://id.parliament.uk/1921fc4a-6867-48fa-a4f4-6df05be005ce> <https://id.parliament.uk/schema/personOtherNames> "Person - otherNames" .
+        <https://id.parliament.uk/1921fc4a-6867-48fa-a4f4-6df05be005ce> <https://id.parliament.uk/schema/personFamilyName> "Person - familyName" .
+        <https://id.parliament.uk/1921fc4a-6867-48fa-a4f4-6df05be005ce> <https://id.parliament.uk/schema/partyMemberHasPartyMembership> <https://id.parliament.uk/dce2f54c-e8f7-4e01-8446-247ca35ce80c> .
+        <https://id.parliament.uk/1921fc4a-6867-48fa-a4f4-6df05be005ce> <https://id.parliament.uk/schema/memberHasParliamentaryIncumbency> <https://id.parliament.uk/72686927-f6a4-425c-b7d2-f8286027d17a> .
+        <https://id.parliament.uk/12504788-a681-424e-913a-f1da5220a68e> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://id.parliament.uk/schema/ConstituencyGroup> .
+        <https://id.parliament.uk/12504788-a681-424e-913a-f1da5220a68e> <https://id.parliament.uk/schema/constituencyGroupName> "Hackney North and Stoke Newington" .
+        <https://id.parliament.uk/72686927-f6a4-425c-b7d2-f8286027d17a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://id.parliament.uk/schema/SeatIncumbency> .
+        <https://id.parliament.uk/72686927-f6a4-425c-b7d2-f8286027d17a> <https://id.parliament.uk/schema/parliamentaryIncumbencyEndDate> "1992-04-09"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <https://id.parliament.uk/72686927-f6a4-425c-b7d2-f8286027d17a> <https://id.parliament.uk/schema/parliamentaryIncumbencyStartDate> "1987-06-11"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <https://id.parliament.uk/72686927-f6a4-425c-b7d2-f8286027d17a> <https://id.parliament.uk/schema/seatIncumbencyHasHouseSeat> <https://id.parliament.uk/f542845d-fe0e-461f-8812-7743ea4c6340> .
+        <https://id.parliament.uk/f542845d-fe0e-461f-8812-7743ea4c6340> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://id.parliament.uk/schema/HouseSeat> .
+        <https://id.parliament.uk/f542845d-fe0e-461f-8812-7743ea4c6340> <https://id.parliament.uk/schema/houseSeatHasConstituencyGroup> <https://id.parliament.uk/12504788-a681-424e-913a-f1da5220a68e> .
+        <https://id.parliament.uk/f542845d-fe0e-461f-8812-7743ea4c6340> <https://id.parliament.uk/schema/houseSeatHasHouse> <https://id.parliament.uk/4b77dd58-f6ba-4121-b521-c8ad70465f52> .
+        <https://id.parliament.uk/f4e62fb8-2cf4-41b2-b7a3-7e621522a30d> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://id.parliament.uk/schema/Party> .
+        <https://id.parliament.uk/f4e62fb8-2cf4-41b2-b7a3-7e621522a30d> <https://id.parliament.uk/schema/partyName> "Labour" .
+        <https://id.parliament.uk/dce2f54c-e8f7-4e01-8446-247ca35ce80c> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://id.parliament.uk/schema/PartyMembership> .
+        <https://id.parliament.uk/dce2f54c-e8f7-4e01-8446-247ca35ce80c> <https://id.parliament.uk/schema/partyMembershipStartDate> "1987-06-11"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <https://id.parliament.uk/dce2f54c-e8f7-4e01-8446-247ca35ce80c> <https://id.parliament.uk/schema/partyMembershipEndDate> "2015-03-30"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <https://id.parliament.uk/dce2f54c-e8f7-4e01-8446-247ca35ce80c> <https://id.parliament.uk/schema/partyMembershipHasParty> <https://id.parliament.uk/f4e62fb8-2cf4-41b2-b7a3-7e621522a30d> .
+        <https://id.parliament.uk/4b77dd58-f6ba-4121-b521-c8ad70465f52> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://id.parliament.uk/schema/House> .
+        <https://id.parliament.uk/4b77dd58-f6ba-4121-b521-c8ad70465f52> <https://id.parliament.uk/schema/houseName> "House of Commons" .
+        <https://id.parliament.uk/1921fc4a-6867-48fa-a4f4-6df05be005ce> <https://id.parliament.uk/schema/partyMemberHasPartyMembership> <https://id.parliament.uk/d7671174-6e29-46c8-9374-d9f135424c5e> .
+        <https://id.parliament.uk/d7671174-6e29-46c8-9374-d9f135424c5e> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://id.parliament.uk/schema/PartyMembership> .
+        <https://id.parliament.uk/d7671174-6e29-46c8-9374-d9f135424c5e> <https://id.parliament.uk/schema/partyMembershipStartDate> "2015-05-07"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <https://id.parliament.uk/d7671174-6e29-46c8-9374-d9f135424c5e> <https://id.parliament.uk/schema/partyMembershipHasParty> <https://id.parliament.uk/f4e62fb8-2cf4-41b2-b7a3-7e621522a30d> .
+        <https://id.parliament.uk/1921fc4a-6867-48fa-a4f4-6df05be005ce> <https://id.parliament.uk/schema/memberHasParliamentaryIncumbency> <https://id.parliament.uk/4601be24-1fb7-478b-ae33-2b467d74ddfa> .
+        <https://id.parliament.uk/4601be24-1fb7-478b-ae33-2b467d74ddfa> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://id.parliament.uk/schema/SeatIncumbency> .
+        <https://id.parliament.uk/4601be24-1fb7-478b-ae33-2b467d74ddfa> <https://id.parliament.uk/schema/parliamentaryIncumbencyStartDate> "1992-04-09"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <https://id.parliament.uk/4601be24-1fb7-478b-ae33-2b467d74ddfa> <https://id.parliament.uk/schema/seatIncumbencyHasHouseSeat> <https://id.parliament.uk/f542845d-fe0e-461f-8812-7743ea4c6340> .
+        <https://id.parliament.uk/1921fc4a-6867-48fa-a4f4-6df05be005ce> <https://id.parliament.uk/schema/memberHasParliamentaryIncumbency> <https://id.parliament.uk/10e85766-a6ae-4054-86e3-bdc407f54fce> .
+        <https://id.parliament.uk/58df12a8-af8c-4a08-98ca-4a6d88603607> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://id.parliament.uk/schema/ConstituencyGroup> .
+        <https://id.parliament.uk/58df12a8-af8c-4a08-98ca-4a6d88603607> <https://id.parliament.uk/schema/constituencyGroupName> "Hackney North and Stoke Newington" .
+        <https://id.parliament.uk/10e85766-a6ae-4054-86e3-bdc407f54fce> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://id.parliament.uk/schema/SeatIncumbency> .
+        <https://id.parliament.uk/10e85766-a6ae-4054-86e3-bdc407f54fce> <https://id.parliament.uk/schema/parliamentaryIncumbencyEndDate> "2001-06-07"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <https://id.parliament.uk/10e85766-a6ae-4054-86e3-bdc407f54fce> <https://id.parliament.uk/schema/parliamentaryIncumbencyStartDate> "1997-05-01"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <https://id.parliament.uk/10e85766-a6ae-4054-86e3-bdc407f54fce> <https://id.parliament.uk/schema/seatIncumbencyHasHouseSeat> <https://id.parliament.uk/acb8599d-b32c-4eb7-8f6f-9322601c83d7> .
+        <https://id.parliament.uk/acb8599d-b32c-4eb7-8f6f-9322601c83d7> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://id.parliament.uk/schema/HouseSeat> .
+        <https://id.parliament.uk/acb8599d-b32c-4eb7-8f6f-9322601c83d7> <https://id.parliament.uk/schema/houseSeatHasConstituencyGroup> <https://id.parliament.uk/58df12a8-af8c-4a08-98ca-4a6d88603607> .
+        <https://id.parliament.uk/acb8599d-b32c-4eb7-8f6f-9322601c83d7> <https://id.parliament.uk/schema/houseSeatHasHouse> <https://id.parliament.uk/4b77dd58-f6ba-4121-b521-c8ad70465f52> .
+        <https://id.parliament.uk/1921fc4a-6867-48fa-a4f4-6df05be005ce> <https://id.parliament.uk/schema/memberHasParliamentaryIncumbency> <https://id.parliament.uk/a08fd30d-c117-474b-9678-5c11f924eab8> .
+        <https://id.parliament.uk/a08fd30d-c117-474b-9678-5c11f924eab8> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://id.parliament.uk/schema/SeatIncumbency> .
+        <https://id.parliament.uk/a08fd30d-c117-474b-9678-5c11f924eab8> <https://id.parliament.uk/schema/parliamentaryIncumbencyEndDate> "2005-05-05"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <https://id.parliament.uk/a08fd30d-c117-474b-9678-5c11f924eab8> <https://id.parliament.uk/schema/parliamentaryIncumbencyStartDate> "2001-06-07"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <https://id.parliament.uk/a08fd30d-c117-474b-9678-5c11f924eab8> <https://id.parliament.uk/schema/seatIncumbencyHasHouseSeat> <https://id.parliament.uk/acb8599d-b32c-4eb7-8f6f-9322601c83d7> .
+        <https://id.parliament.uk/1921fc4a-6867-48fa-a4f4-6df05be005ce> <https://id.parliament.uk/schema/memberHasParliamentaryIncumbency> <https://id.parliament.uk/b85c629b-8ed7-4f4d-a004-3f963629b220> .
+        <https://id.parliament.uk/b85c629b-8ed7-4f4d-a004-3f963629b220> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://id.parliament.uk/schema/SeatIncumbency> .
+        <https://id.parliament.uk/b85c629b-8ed7-4f4d-a004-3f963629b220> <https://id.parliament.uk/schema/parliamentaryIncumbencyEndDate> "2010-05-06"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <https://id.parliament.uk/b85c629b-8ed7-4f4d-a004-3f963629b220> <https://id.parliament.uk/schema/parliamentaryIncumbencyStartDate> "2005-05-05"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <https://id.parliament.uk/b85c629b-8ed7-4f4d-a004-3f963629b220> <https://id.parliament.uk/schema/seatIncumbencyHasHouseSeat> <https://id.parliament.uk/acb8599d-b32c-4eb7-8f6f-9322601c83d7> .
+        <https://id.parliament.uk/1921fc4a-6867-48fa-a4f4-6df05be005ce> <https://id.parliament.uk/schema/memberHasParliamentaryIncumbency> <https://id.parliament.uk/2aa9070f-6ae8-444e-aef5-80370bafb62b> .
+        <https://id.parliament.uk/42a9e90d-7582-45f1-98ff-48f01f1a9ba7> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://id.parliament.uk/schema/ConstituencyGroup> .
+        <https://id.parliament.uk/42a9e90d-7582-45f1-98ff-48f01f1a9ba7> <https://id.parliament.uk/schema/constituencyGroupName> "Hackney North and Stoke Newington" .
+        <https://id.parliament.uk/2aa9070f-6ae8-444e-aef5-80370bafb62b> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://id.parliament.uk/schema/SeatIncumbency> .
+        <https://id.parliament.uk/2aa9070f-6ae8-444e-aef5-80370bafb62b> <https://id.parliament.uk/schema/parliamentaryIncumbencyEndDate> "2015-03-30"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <https://id.parliament.uk/2aa9070f-6ae8-444e-aef5-80370bafb62b> <https://id.parliament.uk/schema/parliamentaryIncumbencyStartDate> "2010-05-06"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <https://id.parliament.uk/2aa9070f-6ae8-444e-aef5-80370bafb62b> <https://id.parliament.uk/schema/seatIncumbencyHasHouseSeat> <https://id.parliament.uk/f79ae77e-01e6-4da5-89bf-89e1dafc6b8c> .
+        <https://id.parliament.uk/f79ae77e-01e6-4da5-89bf-89e1dafc6b8c> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://id.parliament.uk/schema/HouseSeat> .
+        <https://id.parliament.uk/f79ae77e-01e6-4da5-89bf-89e1dafc6b8c> <https://id.parliament.uk/schema/houseSeatHasConstituencyGroup> <https://id.parliament.uk/42a9e90d-7582-45f1-98ff-48f01f1a9ba7> .
+        <https://id.parliament.uk/f79ae77e-01e6-4da5-89bf-89e1dafc6b8c> <https://id.parliament.uk/schema/houseSeatHasHouse> <https://id.parliament.uk/4b77dd58-f6ba-4121-b521-c8ad70465f52> .
+        <https://id.parliament.uk/1921fc4a-6867-48fa-a4f4-6df05be005ce> <https://id.parliament.uk/schema/memberHasParliamentaryIncumbency> <https://id.parliament.uk/c1a2b657-a2ea-4543-883f-28a0e6678324> .
+        <https://id.parliament.uk/939d1024-04c3-45b3-96a7-9391c60ab9f2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://id.parliament.uk/schema/ContactPoint> .
+        <https://id.parliament.uk/939d1024-04c3-45b3-96a7-9391c60ab9f2> <https://id.parliament.uk/schema/email> "examplee@parliament.uk" .
+        <https://id.parliament.uk/939d1024-04c3-45b3-96a7-9391c60ab9f2> <https://id.parliament.uk/schema/phoneNumber> "012 3456 7890" .
+        <https://id.parliament.uk/939d1024-04c3-45b3-96a7-9391c60ab9f2> <https://id.parliament.uk/schema/contactPointHasPostalAddress> <https://id.parliament.uk/58679821-70cf-4a1a-b1bc-1366637a4d16> .
+        <https://id.parliament.uk/58679821-70cf-4a1a-b1bc-1366637a4d16> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://id.parliament.uk/schema/PostalAddress> .
+        <https://id.parliament.uk/58679821-70cf-4a1a-b1bc-1366637a4d16> <https://id.parliament.uk/schema/addressLine1> "House of Commons" .
+        <https://id.parliament.uk/58679821-70cf-4a1a-b1bc-1366637a4d16> <https://id.parliament.uk/schema/addressLine2> "London" .
+        <https://id.parliament.uk/58679821-70cf-4a1a-b1bc-1366637a4d16> <https://id.parliament.uk/schema/postCode> "SW1A 0AA" .
+        <https://id.parliament.uk/c1a2b657-a2ea-4543-883f-28a0e6678324> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://id.parliament.uk/schema/SeatIncumbency> .
+        <https://id.parliament.uk/c1a2b657-a2ea-4543-883f-28a0e6678324> <https://id.parliament.uk/schema/parliamentaryIncumbencyStartDate> "2015-05-07"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <https://id.parliament.uk/c1a2b657-a2ea-4543-883f-28a0e6678324> <https://id.parliament.uk/schema/seatIncumbencyHasHouseSeat> <https://id.parliament.uk/f79ae77e-01e6-4da5-89bf-89e1dafc6b8c> .
+        <https://id.parliament.uk/c1a2b657-a2ea-4543-883f-28a0e6678324> <https://id.parliament.uk/schema/parliamentaryIncumbencyHasContactPoint> <https://id.parliament.uk/939d1024-04c3-45b3-96a7-9391c60ab9f2> .
     http_version:
   recorded_at: Wed, 19 Apr 2017 09:39:20 GMT
 recorded_with: VCR 3.0.3

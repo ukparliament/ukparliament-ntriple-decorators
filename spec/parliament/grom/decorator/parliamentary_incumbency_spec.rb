@@ -9,7 +9,7 @@ describe Parliament::Grom::Decorator::ParliamentaryIncumbency, vcr: true do
   end
 
   before(:each) do
-    @parliamentary_incumbency_nodes = response.filter('http://id.ukpds.org/schema/ParliamentaryIncumbency')
+    @parliamentary_incumbency_nodes = response.filter('https://id.parliament.uk/schema/ParliamentaryIncumbency')
   end
 
   describe '#start_date' do
@@ -86,7 +86,7 @@ describe Parliament::Grom::Decorator::ParliamentaryIncumbency, vcr: true do
       it 'returns the member for a Grom::Node object of type ParliamentaryIncumbency' do
         incumbency_node = @parliamentary_incumbency_nodes.first
 
-        expect(incumbency_node.member.type).to eq('http://id.ukpds.org/schema/Person')
+        expect(incumbency_node.member.type).to eq('https://id.parliament.uk/schema/Person')
       end
     end
 
@@ -110,17 +110,17 @@ describe Parliament::Grom::Decorator::ParliamentaryIncumbency, vcr: true do
   describe '#contact_points' do
     context 'incumbency has contact points' do
       it 'returns an array of contact points' do
-        incumbency_node = response.filter('http://id.ukpds.org/schema/ParliamentaryIncumbency')[0]
+        incumbency_node = response.filter('https://id.parliament.uk/schema/ParliamentaryIncumbency')[0]
 
         expect(incumbency_node).to respond_to(:contact_points)
         expect(incumbency_node.contact_points.size).to eq 1
-        expect(incumbency_node.contact_points.first.type).to eq 'http://id.ukpds.org/schema/ContactPoint'
+        expect(incumbency_node.contact_points.first.type).to eq 'https://id.parliament.uk/schema/ContactPoint'
       end
     end
 
     context 'incumbency has no contact points' do
       it 'returns an empty array' do
-        incumbency_node = response.filter('http://id.ukpds.org/schema/ParliamentaryIncumbency').first
+        incumbency_node = response.filter('https://id.parliament.uk/schema/ParliamentaryIncumbency').first
 
         expect(incumbency_node).to respond_to(:contact_points)
         expect(incumbency_node.contact_points).to eq []
@@ -133,7 +133,7 @@ describe Parliament::Grom::Decorator::ParliamentaryIncumbency, vcr: true do
       it 'returns the house for a Grom::Node object of type ParliamentaryIncumbency' do
         incumbency_node = @parliamentary_incumbency_nodes.first
 
-        expect(incumbency_node.house.type).to eq('http://id.ukpds.org/schema/House')
+        expect(incumbency_node.house.type).to eq('https://id.parliament.uk/schema/House')
       end
     end
 
@@ -151,7 +151,7 @@ describe Parliament::Grom::Decorator::ParliamentaryIncumbency, vcr: true do
       it 'returns the seat for a Grom::Node object of type ParliamentaryIncumbency' do
         incumbency_node = @parliamentary_incumbency_nodes.first
 
-        expect(incumbency_node.seat.type).to eq('http://id.ukpds.org/schema/HouseSeat')
+        expect(incumbency_node.seat.type).to eq('https://id.parliament.uk/schema/HouseSeat')
       end
     end
 

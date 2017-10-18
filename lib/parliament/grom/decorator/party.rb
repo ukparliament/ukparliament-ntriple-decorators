@@ -1,7 +1,7 @@
 module Parliament
   module Grom
     module Decorator
-      # Decorator namespace for Grom::Node instances with type: http://id.ukpds.org/schema/Party
+      # Decorator namespace for Grom::Node instances with type: https://id.parliament.uk/schema/Party
       module Party
         # Alias partyName with fallback.
         #

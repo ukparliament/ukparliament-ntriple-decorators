@@ -1,7 +1,7 @@
 module Parliament
   module Grom
     module Decorator
-      # Decorator namespace for Grom::Node instances with type: http://id.ukpds.org/schema/PartyMembership
+      # Decorator namespace for Grom::Node instances with type: https://id.parliament.uk/schema/PartyMembership
       module PartyMembership
         include Helpers::DateHelper
 
