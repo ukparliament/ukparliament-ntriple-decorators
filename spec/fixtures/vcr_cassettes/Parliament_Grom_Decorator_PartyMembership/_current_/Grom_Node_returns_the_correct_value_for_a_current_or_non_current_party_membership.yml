@@ -40,18 +40,18 @@ http_interactions:
     body:
       encoding: UTF-8
       string: |
-        <http://id.ukpds.org/1921fc4a-6867-48fa-a4f4-6df05be005ce> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Person> .
-        <http://id.ukpds.org/1921fc4a-6867-48fa-a4f4-6df05be005ce> <http://id.ukpds.org/schema/personGivenName> "Person - givenName" .
-        <http://id.ukpds.org/1921fc4a-6867-48fa-a4f4-6df05be005ce> <http://id.ukpds.org/schema/personFamilyName> "Person - familyName" .
-        <http://id.ukpds.org/f4e62fb8-2cf4-41b2-b7a3-7e621522a30d> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Party> .
-        <http://id.ukpds.org/f4e62fb8-2cf4-41b2-b7a3-7e621522a30d> <http://id.ukpds.org/schema/partyName> "Labour" .
-        <http://id.ukpds.org/dce2f54c-e8f7-4e01-8446-247ca35ce80c> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/PartyMembership> .
-        <http://id.ukpds.org/dce2f54c-e8f7-4e01-8446-247ca35ce80c> <http://id.ukpds.org/schema/partyMembershipStartDate> "1987-06-11"^^<http://www.w3.org/2001/XMLSchema#date> .
-        <http://id.ukpds.org/dce2f54c-e8f7-4e01-8446-247ca35ce80c> <http://id.ukpds.org/schema/partyMembershipEndDate> "2015-03-30"^^<http://www.w3.org/2001/XMLSchema#date> .
-        <http://id.ukpds.org/dce2f54c-e8f7-4e01-8446-247ca35ce80c> <http://id.ukpds.org/schema/partyMembershipHasParty> <http://id.ukpds.org/f4e62fb8-2cf4-41b2-b7a3-7e621522a30d> .
-        <http://id.ukpds.org/d7671174-6e29-46c8-9374-d9f135424c5e> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/PartyMembership> .
-        <http://id.ukpds.org/d7671174-6e29-46c8-9374-d9f135424c5e> <http://id.ukpds.org/schema/partyMembershipStartDate> "2015-05-07"^^<http://www.w3.org/2001/XMLSchema#date> .
-        <http://id.ukpds.org/d7671174-6e29-46c8-9374-d9f135424c5e> <http://id.ukpds.org/schema/partyMembershipHasParty> <http://id.ukpds.org/f4e62fb8-2cf4-41b2-b7a3-7e621522a30d> .
+        <https://id.parliament.uk/1921fc4a-6867-48fa-a4f4-6df05be005ce> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://id.parliament.uk/schema/Person> .
+        <https://id.parliament.uk/1921fc4a-6867-48fa-a4f4-6df05be005ce> <https://id.parliament.uk/schema/personGivenName> "Person - givenName" .
+        <https://id.parliament.uk/1921fc4a-6867-48fa-a4f4-6df05be005ce> <https://id.parliament.uk/schema/personFamilyName> "Person - familyName" .
+        <https://id.parliament.uk/f4e62fb8-2cf4-41b2-b7a3-7e621522a30d> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://id.parliament.uk/schema/Party> .
+        <https://id.parliament.uk/f4e62fb8-2cf4-41b2-b7a3-7e621522a30d> <https://id.parliament.uk/schema/partyName> "Labour" .
+        <https://id.parliament.uk/dce2f54c-e8f7-4e01-8446-247ca35ce80c> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://id.parliament.uk/schema/PartyMembership> .
+        <https://id.parliament.uk/dce2f54c-e8f7-4e01-8446-247ca35ce80c> <https://id.parliament.uk/schema/partyMembershipStartDate> "1987-06-11"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <https://id.parliament.uk/dce2f54c-e8f7-4e01-8446-247ca35ce80c> <https://id.parliament.uk/schema/partyMembershipEndDate> "2015-03-30"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <https://id.parliament.uk/dce2f54c-e8f7-4e01-8446-247ca35ce80c> <https://id.parliament.uk/schema/partyMembershipHasParty> <https://id.parliament.uk/f4e62fb8-2cf4-41b2-b7a3-7e621522a30d> .
+        <https://id.parliament.uk/d7671174-6e29-46c8-9374-d9f135424c5e> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://id.parliament.uk/schema/PartyMembership> .
+        <https://id.parliament.uk/d7671174-6e29-46c8-9374-d9f135424c5e> <https://id.parliament.uk/schema/partyMembershipStartDate> "2015-05-07"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <https://id.parliament.uk/d7671174-6e29-46c8-9374-d9f135424c5e> <https://id.parliament.uk/schema/partyMembershipHasParty> <https://id.parliament.uk/f4e62fb8-2cf4-41b2-b7a3-7e621522a30d> .
     http_version: 
   recorded_at: Wed, 19 Apr 2017 08:48:27 GMT
 recorded_with: VCR 3.0.3

@@ -1,7 +1,7 @@
 module Parliament
   module Grom
     module Decorator
-      # Decorator namespace for Grom::Node instances with type: http://id.ukpds.org/schema/ConstituencyGroup
+      # Decorator namespace for Grom::Node instances with type: https://id.parliament.uk/schema/ConstituencyGroup
       #
       # attr [Boolean] correct verifies that the Grom::Node is the expected constituency.  This is used in conjunction with postcode lookup to verify if the Grom::Node is the expected constituency.
       module ConstituencyGroup
@@ -66,7 +66,7 @@ module Parliament
 
         # Alias constituencyGroupHasConstituencyArea with fallback.
         #
-        # @return [Grom::Node, nil] a Grom::Node with type http://id.ukpds.org/schema/ConstituencyArea or nil.
+        # @return [Grom::Node, nil] a Grom::Node with type https://id.parliament.uk/schema/ConstituencyArea or nil.
         def area
           respond_to?(:constituencyGroupHasConstituencyArea) ? constituencyGroupHasConstituencyArea.first : nil
         end

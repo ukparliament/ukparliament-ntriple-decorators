@@ -9,7 +9,7 @@ describe Parliament::Grom::Decorator::HouseIncumbency, vcr: true do
   end
 
   before(:each) do
-    @incumbency_nodes = response.filter('http://id.ukpds.org/schema/HouseIncumbency')
+    @incumbency_nodes = response.filter('https://id.parliament.uk/schema/HouseIncumbency')
   end
 
   describe '#start_date' do
@@ -57,7 +57,7 @@ describe Parliament::Grom::Decorator::HouseIncumbency, vcr: true do
       it 'returns the house for a Grom::Node object of type HouseIncumbency' do
         incumbency_node = @incumbency_nodes.first
 
-        expect(incumbency_node.house.type).to eq('http://id.ukpds.org/schema/House')
+        expect(incumbency_node.house.type).to eq('https://id.parliament.uk/schema/House')
       end
     end
 
@@ -75,7 +75,7 @@ describe Parliament::Grom::Decorator::HouseIncumbency, vcr: true do
       it 'returns the member for a Grom::Node object of type HouseIncumbency' do
         incumbency_node = @incumbency_nodes.first
 
-        expect(incumbency_node.member.type).to eq('http://id.ukpds.org/schema/Person')
+        expect(incumbency_node.member.type).to eq('https://id.parliament.uk/schema/Person')
       end
     end
 
@@ -99,17 +99,17 @@ describe Parliament::Grom::Decorator::HouseIncumbency, vcr: true do
   describe '#contact_points' do
     context 'house incumbency has contact points' do
       it 'returns an array of contact points' do
-        incumbency_node = response.filter('http://id.ukpds.org/schema/HouseIncumbency')[0]
+        incumbency_node = response.filter('https://id.parliament.uk/schema/HouseIncumbency')[0]
 
         expect(incumbency_node).to respond_to(:contact_points)
         expect(incumbency_node.contact_points.size).to eq 1
-        expect(incumbency_node.contact_points.first.type).to eq 'http://id.ukpds.org/schema/ContactPoint'
+        expect(incumbency_node.contact_points.first.type).to eq 'https://id.parliament.uk/schema/ContactPoint'
       end
     end
 
     context 'house incumbency has no contact points' do
       it 'returns an empty array' do
-        incumbency_node = response.filter('http://id.ukpds.org/schema/HouseIncumbency').first
+        incumbency_node = response.filter('https://id.parliament.uk/schema/HouseIncumbency').first
 
         expect(incumbency_node).to respond_to(:contact_points)
         expect(incumbency_node.contact_points).to eq []

@@ -1,7 +1,7 @@
 module Parliament
   module Grom
     module Decorator
-      # Decorator namespace for Grom::Node instances with type: http://id.ukpds.org/schema/PostalAddress
+      # Decorator namespace for Grom::Node instances with type: https://id.parliament.uk/schema/PostalAddress
       module PostalAddress
         # Builds a full address using the lines of the address and the postcode.
         #

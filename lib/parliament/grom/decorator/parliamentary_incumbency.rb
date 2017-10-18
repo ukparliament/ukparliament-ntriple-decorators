@@ -1,7 +1,7 @@
 module Parliament
   module Grom
     module Decorator
-      # Decorator namespace for Grom::Node instances with type: http://id.ukpds.org/schema/ParliamentaryIncumbency
+      # Decorator namespace for Grom::Node instances with type: https://id.parliament.uk/schema/ParliamentaryIncumbency
       module ParliamentaryIncumbency
         include Helpers::DateHelper
 

@@ -7,7 +7,7 @@ describe Parliament::Grom::Decorator::PostalAddress, vcr: true do
                                                        decorators: Parliament::Grom::Decorator).constituencies(id).contact_point.get }
 
   before(:each) do
-    @postal_address_nodes = response.filter('http://id.ukpds.org/schema/PostalAddress')
+    @postal_address_nodes = response.filter('https://id.parliament.uk/schema/PostalAddress')
   end
 
   describe '#full_address' do

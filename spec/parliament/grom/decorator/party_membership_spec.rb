@@ -8,7 +8,7 @@ describe Parliament::Grom::Decorator::PartyMembership, vcr: true do
   end
 
   before(:each) do
-    @party_membership_nodes = response.filter('http://id.ukpds.org/schema/PartyMembership')
+    @party_membership_nodes = response.filter('https://id.parliament.uk/schema/PartyMembership')
   end
 
   describe '#party' do
@@ -17,7 +17,7 @@ describe Parliament::Grom::Decorator::PartyMembership, vcr: true do
         party_membership_node = @party_membership_nodes.first
 
         expect(party_membership_node.party.name).to eq('Labour')
-        expect(party_membership_node.party.type).to eq('http://id.ukpds.org/schema/Party')
+        expect(party_membership_node.party.type).to eq('https://id.parliament.uk/schema/Party')
       end
     end
 

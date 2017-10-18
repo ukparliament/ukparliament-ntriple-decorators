@@ -40,11 +40,11 @@ http_interactions:
     body:
       encoding: UTF-8
       string: |
-        <http://id.ukpds.org/1921fc4a-6867-48fa-a4f4-6df05be005ce> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Person> .
-        <http://id.ukpds.org/1921fc4a-6867-48fa-a4f4-6df05be005ce> <http://id.ukpds.org/schema/personGivenName> "Person - givenName" .
-        <http://id.ukpds.org/1921fc4a-6867-48fa-a4f4-6df05be005ce> <http://id.ukpds.org/schema/personFamilyName> "Person - familyName" .
-        <http://id.ukpds.org/f4e62fb8-2cf4-41b2-b7a3-7e621522a30d> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://id.ukpds.org/schema/Party> .
-        <http://id.ukpds.org/f4e62fb8-2cf4-41b2-b7a3-7e621522a30d> <http://id.ukpds.org/schema/partyName> "Labour" .
+        <https://id.parliament.uk/1921fc4a-6867-48fa-a4f4-6df05be005ce> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://id.parliament.uk/schema/Person> .
+        <https://id.parliament.uk/1921fc4a-6867-48fa-a4f4-6df05be005ce> <https://id.parliament.uk/schema/personGivenName> "Person - givenName" .
+        <https://id.parliament.uk/1921fc4a-6867-48fa-a4f4-6df05be005ce> <https://id.parliament.uk/schema/personFamilyName> "Person - familyName" .
+        <https://id.parliament.uk/f4e62fb8-2cf4-41b2-b7a3-7e621522a30d> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://id.parliament.uk/schema/Party> .
+        <https://id.parliament.uk/f4e62fb8-2cf4-41b2-b7a3-7e621522a30d> <https://id.parliament.uk/schema/partyName> "Labour" .
     http_version:
   recorded_at: Wed, 19 Apr 2017 08:39:39 GMT
 recorded_with: VCR 3.0.3

@@ -7,14 +7,14 @@ describe Parliament::Grom::Decorator::Party, vcr: true do
       response = Parliament::Request::UrlRequest.new(base_url: 'http://localhost:3030',
                                                      builder: Parliament::Builder::NTripleResponseBuilder,
                                                      decorators: Parliament::Grom::Decorator).people(id).parties.get
-      @party_nodes = response.filter('http://id.ukpds.org/schema/Party')
+      @party_nodes = response.filter('https://id.parliament.uk/schema/Party')
     end
 
     context 'Grom::Node has all the required objects' do
       it 'confirms that the type for this Grom::Node object is Party' do
         party_node = @party_nodes.first
 
-        expect(party_node.type).to eq('http://id.ukpds.org/schema/Party')
+        expect(party_node.type).to eq('https://id.parliament.uk/schema/Party')
       end
 
       it 'returns the name of the party for the Grom::Node object' do
@@ -39,7 +39,7 @@ describe Parliament::Grom::Decorator::Party, vcr: true do
       response = Parliament::Request::UrlRequest.new(base_url: 'http://localhost:3030',
                                                      builder: Parliament::Builder::NTripleResponseBuilder,
                                                      decorators: Parliament::Grom::Decorator).people(id).parties.get
-      @party_nodes = response.filter('http://id.ukpds.org/schema/Party')
+      @party_nodes = response.filter('https://id.parliament.uk/schema/Party')
     end
 
     context 'Grom::Node has all the required objects' do
@@ -47,7 +47,7 @@ describe Parliament::Grom::Decorator::Party, vcr: true do
         party_node = @party_nodes.first
 
         expect(party_node.party_memberships.size).to eq(2)
-        expect(party_node.party_memberships.first.type).to eq('http://id.ukpds.org/schema/PartyMembership')
+        expect(party_node.party_memberships.first.type).to eq('https://id.parliament.uk/schema/PartyMembership')
       end
     end
 
@@ -66,7 +66,7 @@ describe Parliament::Grom::Decorator::Party, vcr: true do
       response = Parliament::Request::UrlRequest.new(base_url: 'http://localhost:3030',
                                                      builder: Parliament::Builder::NTripleResponseBuilder,
                                                      decorators: Parliament::Grom::Decorator).houses(id).parties.current.get
-      @party_nodes = response.filter('http://id.ukpds.org/schema/Party')
+      @party_nodes = response.filter('https://id.parliament.uk/schema/Party')
     end
 
     context 'Grom::Node has a member count' do
@@ -91,7 +91,7 @@ describe Parliament::Grom::Decorator::Party, vcr: true do
       response = Parliament::Request::UrlRequest.new(base_url: 'http://localhost:3030',
                                                      builder: Parliament::Builder::NTripleResponseBuilder,
                                                      decorators: Parliament::Grom::Decorator).parties.get
-      @party_node = response.filter('http://id.ukpds.org/schema/Party').first
+      @party_node = response.filter('https://id.parliament.uk/schema/Party').first
     end
 
     context 'Grom::Node has a Commons count' do
@@ -112,7 +112,7 @@ describe Parliament::Grom::Decorator::Party, vcr: true do
       response = Parliament::Request::UrlRequest.new(base_url: 'http://localhost:3030',
                                                      builder: Parliament::Builder::NTripleResponseBuilder,
                                                      decorators: Parliament::Grom::Decorator).parties.get
-      @party_node = response.filter('http://id.ukpds.org/schema/Party').first
+      @party_node = response.filter('https://id.parliament.uk/schema/Party').first
     end
 
     context 'Grom::Node has a Lords count' do
@@ -133,7 +133,7 @@ describe Parliament::Grom::Decorator::Party, vcr: true do
       response = Parliament::Request::UrlRequest.new(base_url: 'http://localhost:3030',
                                                      builder: Parliament::Builder::NTripleResponseBuilder,
                                                      decorators: Parliament::Grom::Decorator).parties.get
-      @party_nodes = response.filter('http://id.ukpds.org/schema/Party')
+      @party_nodes = response.filter('https://id.parliament.uk/schema/Party')
 
       party_results = @party_nodes.map(&:current?)
 

@@ -9,7 +9,7 @@ describe Parliament::Grom::Decorator::Helpers::DateHelper, vcr: true do
   end
 
   before(:each) do
-    @incumbency_nodes = response.filter('http://id.ukpds.org/schema/ParliamentaryIncumbency')
+    @incumbency_nodes = response.filter('https://id.parliament.uk/schema/ParliamentaryIncumbency')
   end
 
   describe '#date_range' do

@@ -8,7 +8,7 @@ describe Parliament::Grom::Decorator::MemberImage, vcr: true do
   end
 
   before(:each) do
-    @image_nodes = response.filter('http://id.ukpds.org/schema/MemberImage')
+    @image_nodes = response.filter('https://id.parliament.uk/schema/MemberImage')
   end
 
   describe '#person' do
@@ -16,7 +16,7 @@ describe Parliament::Grom::Decorator::MemberImage, vcr: true do
       it 'returns the person for a Grom::Node object of type MemberImage' do
         image_node = @image_nodes.first
 
-        expect(image_node.person.type).to eq('http://id.ukpds.org/schema/Person')
+        expect(image_node.person.type).to eq('https://id.parliament.uk/schema/Person')
       end
     end
 

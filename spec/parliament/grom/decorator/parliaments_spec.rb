@@ -8,7 +8,7 @@ describe Parliament::Grom::Decorator::ParliamentPeriod, vcr: true, focus: true d
   end
 
   before(:each) do
-    @parliament_nodes = response.filter('http://id.ukpds.org/schema/ParliamentPeriod')
+    @parliament_nodes = response.filter('https://id.parliament.uk/schema/ParliamentPeriod')
   end
 
   describe '#start_date' do
@@ -109,7 +109,7 @@ describe Parliament::Grom::Decorator::ParliamentPeriod, vcr: true, focus: true d
     end
 
     before(:each) do
-      @parliament_nodes = response.filter('http://id.ukpds.org/schema/ParliamentPeriod')
+      @parliament_nodes = response.filter('https://id.parliament.uk/schema/ParliamentPeriod')
     end
 
     context 'parliament has a next parliament' do
@@ -140,7 +140,7 @@ describe Parliament::Grom::Decorator::ParliamentPeriod, vcr: true, focus: true d
     end
 
     before(:each) do
-      @parliament_nodes = response.filter('http://id.ukpds.org/schema/ParliamentPeriod')
+      @parliament_nodes = response.filter('https://id.parliament.uk/schema/ParliamentPeriod')
     end
 
     context 'parliament has a previous parliament' do
@@ -175,7 +175,7 @@ describe Parliament::Grom::Decorator::ParliamentPeriod, vcr: true, focus: true d
     end
 
     before(:each) do
-      @parliament_nodes = response.filter('http://id.ukpds.org/schema/ParliamentPeriod')
+      @parliament_nodes = response.filter('https://id.parliament.uk/schema/ParliamentPeriod')
     end
 
     after do

@@ -8,7 +8,7 @@ describe Parliament::Grom::Decorator::ConstituencyGroup, vcr: true do
   describe '#name' do
     context 'constituency has a name' do
       it 'returns the name of the constituency' do
-        constituency_node = response.filter('http://id.ukpds.org/schema/ConstituencyGroup')[0]
+        constituency_node = response.filter('https://id.parliament.uk/schema/ConstituencyGroup')[0]
 
         expect(constituency_node).to respond_to(:name)
         expect(constituency_node.name).to eq 'Walthamstow'
@@ -17,7 +17,7 @@ describe Parliament::Grom::Decorator::ConstituencyGroup, vcr: true do
 
     context 'constituency has no name' do
       it 'returns an empty string' do
-        constituency_node = response.filter('http://id.ukpds.org/schema/ConstituencyGroup')[0]
+        constituency_node = response.filter('https://id.parliament.uk/schema/ConstituencyGroup')[0]
 
         expect(constituency_node).to respond_to(:name)
         expect(constituency_node.name).to eq ''
@@ -28,7 +28,7 @@ describe Parliament::Grom::Decorator::ConstituencyGroup, vcr: true do
   describe '#start_date' do
     context 'constituency has a start date' do
       it 'returns the start date of the constituency' do
-        constituency_node = response.filter('http://id.ukpds.org/schema/ConstituencyGroup')[0]
+        constituency_node = response.filter('https://id.parliament.uk/schema/ConstituencyGroup')[0]
 
         expect(constituency_node).to respond_to(:start_date)
         expect(constituency_node.start_date).to eq(DateTime.new(2010, 5, 6))
@@ -37,7 +37,7 @@ describe Parliament::Grom::Decorator::ConstituencyGroup, vcr: true do
 
     context 'constituency has no start date' do
       it 'returns nil' do
-        constituency_node = response.filter('http://id.ukpds.org/schema/ConstituencyGroup')[0]
+        constituency_node = response.filter('https://id.parliament.uk/schema/ConstituencyGroup')[0]
 
         expect(constituency_node).to respond_to(:start_date)
         expect(constituency_node.start_date).to be(nil)
@@ -48,7 +48,7 @@ describe Parliament::Grom::Decorator::ConstituencyGroup, vcr: true do
   describe '#end_date' do
     context 'constituency has an end date' do
       it 'returns the end date of the constituency' do
-        constituency_node = response.filter('http://id.ukpds.org/schema/ConstituencyGroup')[0]
+        constituency_node = response.filter('https://id.parliament.uk/schema/ConstituencyGroup')[0]
 
         expect(constituency_node).to respond_to(:end_date)
         expect(constituency_node.end_date).to eq(DateTime.new(2015, 5, 6))
@@ -57,7 +57,7 @@ describe Parliament::Grom::Decorator::ConstituencyGroup, vcr: true do
 
     context 'constituency has no end date' do
       it 'returns nil' do
-        constituency_node = response.filter('http://id.ukpds.org/schema/ConstituencyGroup')[0]
+        constituency_node = response.filter('https://id.parliament.uk/schema/ConstituencyGroup')[0]
 
         expect(constituency_node).to respond_to(:end_date)
         expect(constituency_node.end_date).to be(nil)
@@ -68,17 +68,17 @@ describe Parliament::Grom::Decorator::ConstituencyGroup, vcr: true do
   describe '#seats' do
     context 'constituency has house seats' do
       it 'returns an array of house seats' do
-        constituency_node = response.filter('http://id.ukpds.org/schema/ConstituencyGroup')[0]
+        constituency_node = response.filter('https://id.parliament.uk/schema/ConstituencyGroup')[0]
 
         expect(constituency_node).to respond_to(:seats)
         expect(constituency_node.seats.size).to eq 1
-        expect(constituency_node.seats.first.type).to eq 'http://id.ukpds.org/schema/HouseSeat'
+        expect(constituency_node.seats.first.type).to eq 'https://id.parliament.uk/schema/HouseSeat'
       end
     end
 
     context 'constituency has no house seats' do
       it 'returns an empty array' do
-        constituency_node = response.filter('http://id.ukpds.org/schema/ConstituencyGroup')[0]
+        constituency_node = response.filter('https://id.parliament.uk/schema/ConstituencyGroup')[0]
 
         expect(constituency_node).to respond_to(:seats)
         expect(constituency_node.seats).to eq []
@@ -89,17 +89,17 @@ describe Parliament::Grom::Decorator::ConstituencyGroup, vcr: true do
   describe '#seat_incumbencies' do
     context 'constituency has seat incumbencies' do
       it 'returns an array of seat incumbencies' do
-        constituency_node = response.filter('http://id.ukpds.org/schema/ConstituencyGroup')[0]
+        constituency_node = response.filter('https://id.parliament.uk/schema/ConstituencyGroup')[0]
 
         expect(constituency_node).to respond_to(:seat_incumbencies)
         expect(constituency_node.seat_incumbencies.size).to eq(2)
-        expect(constituency_node.seat_incumbencies.first.type).to eq 'http://id.ukpds.org/schema/SeatIncumbency'
+        expect(constituency_node.seat_incumbencies.first.type).to eq 'https://id.parliament.uk/schema/SeatIncumbency'
       end
     end
 
     context 'constituency has no seat incumbencies' do
       it 'returns an empty array' do
-        constituency_node = response.filter('http://id.ukpds.org/schema/ConstituencyGroup')[0]
+        constituency_node = response.filter('https://id.parliament.uk/schema/ConstituencyGroup')[0]
 
         expect(constituency_node).to respond_to(:seat_incumbencies)
         expect(constituency_node.seat_incumbencies).to eq []
@@ -110,17 +110,17 @@ describe Parliament::Grom::Decorator::ConstituencyGroup, vcr: true do
   describe '#members' do
     context 'constituency has members' do
       it 'returns an array of members' do
-        constituency_node = response.filter('http://id.ukpds.org/schema/ConstituencyGroup')[0]
+        constituency_node = response.filter('https://id.parliament.uk/schema/ConstituencyGroup')[0]
 
         expect(constituency_node).to respond_to(:members)
         expect(constituency_node.members.size).to eq(1)
-        expect(constituency_node.members.first.type).to eq 'http://id.ukpds.org/schema/Person'
+        expect(constituency_node.members.first.type).to eq 'https://id.parliament.uk/schema/Person'
       end
     end
 
     context 'constituency has no seat incumbencies' do
       it 'returns an empty array' do
-        constituency_node = response.filter('http://id.ukpds.org/schema/ConstituencyGroup')[0]
+        constituency_node = response.filter('https://id.parliament.uk/schema/ConstituencyGroup')[0]
 
         expect(constituency_node).to respond_to(:members)
         expect(constituency_node.members).to eq []
@@ -131,16 +131,16 @@ describe Parliament::Grom::Decorator::ConstituencyGroup, vcr: true do
   describe '#area' do
     context 'constituency has an area' do
       it 'returns the area' do
-        constituency_node = response.filter('http://id.ukpds.org/schema/ConstituencyGroup')[0]
+        constituency_node = response.filter('https://id.parliament.uk/schema/ConstituencyGroup')[0]
 
         expect(constituency_node).to respond_to(:area)
-        expect(constituency_node.area.type).to eq 'http://id.ukpds.org/schema/ConstituencyArea'
+        expect(constituency_node.area.type).to eq 'https://id.parliament.uk/schema/ConstituencyArea'
       end
     end
 
     context 'constituency has no constituency area' do
       it 'returns nil' do
-        constituency_node = response.filter('http://id.ukpds.org/schema/ConstituencyGroup')[0]
+        constituency_node = response.filter('https://id.parliament.uk/schema/ConstituencyGroup')[0]
 
         expect(constituency_node).to respond_to(:area)
         expect(constituency_node.area).to be_nil
@@ -151,17 +151,17 @@ describe Parliament::Grom::Decorator::ConstituencyGroup, vcr: true do
   describe '#contact_points' do
     context 'constituency has contact points' do
       it 'returns an array of contact points' do
-        constituency_node = response.filter('http://id.ukpds.org/schema/ConstituencyGroup')[0]
+        constituency_node = response.filter('https://id.parliament.uk/schema/ConstituencyGroup')[0]
 
         expect(constituency_node).to respond_to(:contact_points)
         expect(constituency_node.contact_points.size).to eq 1
-        expect(constituency_node.contact_points.first.type).to eq 'http://id.ukpds.org/schema/ContactPoint'
+        expect(constituency_node.contact_points.first.type).to eq 'https://id.parliament.uk/schema/ContactPoint'
       end
     end
 
     context 'constituency has no contact points' do
       it 'returns an empty array' do
-        constituency_node = response.filter('http://id.ukpds.org/schema/ConstituencyGroup').first
+        constituency_node = response.filter('https://id.parliament.uk/schema/ConstituencyGroup').first
 
         expect(constituency_node).to respond_to(:contact_points)
         expect(constituency_node.contact_points).to eq []
@@ -175,7 +175,7 @@ describe Parliament::Grom::Decorator::ConstituencyGroup, vcr: true do
       response = Parliament::Request::UrlRequest.new(base_url: 'http://localhost:3030',
                                                      builder: Parliament::Builder::NTripleResponseBuilder,
                                                      decorators: Parliament::Grom::Decorator).people(id).constituencies.get
-      constituency_nodes = response.filter('http://id.ukpds.org/schema/ConstituencyGroup')
+      constituency_nodes = response.filter('https://id.parliament.uk/schema/ConstituencyGroup')
 
       constituency_results = constituency_nodes.map(&:current?)
 
@@ -189,7 +189,7 @@ describe Parliament::Grom::Decorator::ConstituencyGroup, vcr: true do
       response = Parliament::Request::UrlRequest.new(base_url: 'http://localhost:3030',
                                                      builder: Parliament::Builder::NTripleResponseBuilder,
                                                      decorators: Parliament::Grom::Decorator).people(id).constituencies.get
-      constituency_node = response.filter('http://id.ukpds.org/schema/ConstituencyGroup').first
+      constituency_node = response.filter('https://id.parliament.uk/schema/ConstituencyGroup').first
       constituency_node.correct = true
 
       expect(constituency_node.correct?).to eq(true)
@@ -203,7 +203,7 @@ describe Parliament::Grom::Decorator::ConstituencyGroup, vcr: true do
                                                            decorators: Parliament::Grom::Decorator).constituencies(id).get}
     context 'constituency has seat incumbencies' do
       it 'and returns a single member' do
-        constituency_node = response.filter('http://id.ukpds.org/schema/ConstituencyGroup')[0]
+        constituency_node = response.filter('https://id.parliament.uk/schema/ConstituencyGroup')[0]
         expect(constituency_node).to respond_to(:current_member_display_name)
         expect(constituency_node.members.size).to be(1)
         expect(constituency_node.current_member_display_name).to eq 'givename familyname - 1'
@@ -212,7 +212,7 @@ describe Parliament::Grom::Decorator::ConstituencyGroup, vcr: true do
 
     context 'constituency without any seat incumbencies' do
       it 'returns an empty array' do
-        constituency_node = response.filter('http://id.ukpds.org/schema/ConstituencyGroup')[0]
+        constituency_node = response.filter('https://id.parliament.uk/schema/ConstituencyGroup')[0]
         expect(constituency_node).to respond_to(:current_member_display_name)
         expect(constituency_node.current_member_display_name).to eq ''
       end
@@ -227,14 +227,14 @@ describe Parliament::Grom::Decorator::ConstituencyGroup, vcr: true do
 
     context 'constituency member is a current seat incumbent' do
       it 'and returns a party name' do
-        constituency_node = response.filter('http://id.ukpds.org/schema/ConstituencyGroup')[0]
+        constituency_node = response.filter('https://id.parliament.uk/schema/ConstituencyGroup')[0]
         expect(constituency_node.current_member_party_name).to eq('Conservative')
       end
     end
 
     context 'constituency member' do
       it 'does not return a party name' do
-        constituency_node = response.filter('http://id.ukpds.org/schema/ConstituencyGroup')[0]
+        constituency_node = response.filter('https://id.parliament.uk/schema/ConstituencyGroup')[0]
         expect(constituency_node.current_member_party_name).to eq('')
       end
     end
@@ -243,7 +243,7 @@ describe Parliament::Grom::Decorator::ConstituencyGroup, vcr: true do
   describe '#regions' do
     context 'constituency belongs to a region' do
       it 'returns the region the constituency sits within' do
-        constituency_node = response.filter('http://id.ukpds.org/schema/ConstituencyGroup')[0]
+        constituency_node = response.filter('https://id.parliament.uk/schema/ConstituencyGroup')[0]
 
         expect(constituency_node).to respond_to(:regions)
         expect(constituency_node.regions.length).to eq 1
@@ -253,7 +253,7 @@ describe Parliament::Grom::Decorator::ConstituencyGroup, vcr: true do
 
     context 'constituency does not belong to a region' do
       it 'returns an empty array' do
-        constituency_node = response.filter('http://id.ukpds.org/schema/ConstituencyGroup')[0]
+        constituency_node = response.filter('https://id.parliament.uk/schema/ConstituencyGroup')[0]
 
         expect(constituency_node).to respond_to(:regions)
         expect(constituency_node.regions).to eq([])
