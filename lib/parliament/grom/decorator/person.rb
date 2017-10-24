@@ -162,6 +162,20 @@ module Parliament
           @statuses = statuses
         end
 
+        # Check whether #statuses includes 'Current MP'.
+        #
+        # @return [Boolean] a boolean depending on whether or not the result of #statuses includes 'Current MP'.
+        def current_mp?
+          statuses[:house_membership_status].include?('Current MP')
+        end
+
+        # Check whether #statuses includes 'Member of the House of Lords'.
+        #
+        # @return [Boolean] a boolean depending on whether or not the result of #statuses includes 'Member of the House of Lords'.
+        def current_lord?
+          statuses[:house_membership_status].include?('Member of the House of Lords')
+        end
+
         # Alias D79B0BAC513C4A9A87C9D5AFF1FC632F with fallback.
         #
         # @return [String, String] the full title of the Grom::Node or an empty string.
@@ -197,11 +211,25 @@ module Parliament
           respond_to?(:governmentIncumbency) ? governmentIncumbency : []
         end
 
-        # Alias personHasPersonWebLink with fallback.
+        # Alias personHasPersonalWebLink with fallback.
         #
-        # @return [Array|String, nil] all the weblinks of the Grom::Node or an nil.
-        def weblinks
-          respond_to?(:personHasPersonWebLink) ? personHasPersonWebLink : nil
+        # @return [Array|String, nil] all the personal weblinks of the Grom::Node or an nil.
+        def personal_weblinks
+          respond_to?(:personHasPersonalWebLink) && (current_mp? || current_lord?) ? personHasPersonalWebLink : nil
+        end
+
+        # Alias personHasTwitterWebLink with fallback.
+        #
+        # @return [Array|String, nil] all the Twitter weblinks of the Grom::Node or an nil.
+        def twitter_weblinks
+          respond_to?(:personHasTwitterWebLink) && (current_mp? || current_lord?) ? personHasTwitterWebLink : nil
+        end
+
+        # Alias personHasFacebookWebLink with fallback.
+        #
+        # @return [Array|String, nil] all the Facebook weblinks of the Grom::Node or an nil.
+        def facebook_weblinks
+          respond_to?(:personHasFacebookWebLink) && (current_mp? || current_lord?) ? personHasFacebookWebLink : nil
         end
 
         private
