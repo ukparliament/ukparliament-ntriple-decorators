@@ -536,6 +536,58 @@ describe Parliament::Grom::Decorator::Person, vcr: true do
     end
   end
 
+  describe '#current_mp?' do
+    context 'is a current MP' do
+      it 'returns true' do
+        id = 'YHylN7q7'
+        response = Parliament::Request::UrlRequest.new(base_url: 'http://localhost:3030',
+        builder: Parliament::Builder::NTripleResponseBuilder,
+        decorators: Parliament::Grom::Decorator).people(id).get
+        person_node = response.filter('https://id.parliament.uk/schema/Person').first
+
+        expect(person_node.current_mp?).to eq(true)
+      end
+    end
+
+    context 'is NOT a current MP' do
+      it 'returns false' do
+        id = 'YHylN7q8'
+        response = Parliament::Request::UrlRequest.new(base_url: 'http://localhost:3030',
+        builder: Parliament::Builder::NTripleResponseBuilder,
+        decorators: Parliament::Grom::Decorator).people(id).get
+        person_node = response.filter('https://id.parliament.uk/schema/Person').first
+
+        expect(person_node.current_mp?).to eq(false)
+      end
+    end
+  end
+
+  describe '#current_lord?' do
+    context 'is a current Lord' do
+      it 'returns true' do
+        id = 'TImtubyi'
+        response = Parliament::Request::UrlRequest.new(base_url: 'http://localhost:3030',
+        builder: Parliament::Builder::NTripleResponseBuilder,
+        decorators: Parliament::Grom::Decorator).people(id).get
+        person_node = response.filter('https://id.parliament.uk/schema/Person').first
+
+        expect(person_node.current_lord?).to eq(true)
+      end
+    end
+
+    context 'is NOT a current Lord' do
+      it 'returns false' do
+        id = 'TImtubyp'
+        response = Parliament::Request::UrlRequest.new(base_url: 'http://localhost:3030',
+        builder: Parliament::Builder::NTripleResponseBuilder,
+        decorators: Parliament::Grom::Decorator).people(id).get
+        person_node = response.filter('https://id.parliament.uk/schema/Person').first
+
+        expect(person_node.current_lord?).to eq(false)
+      end
+    end
+  end
+
   describe '#full_title' do
     before(:each) do
       id = '841a4a1f-965a-4009-8cbc-dfc9e350fe0e'
@@ -650,9 +702,9 @@ describe Parliament::Grom::Decorator::Person, vcr: true do
     end
   end
 
-  describe '#weblinks' do
+  describe '#personal_weblinks' do
     before(:each) do
-      id = 'tJxPOiSd'
+      id = 'YHylN7q7'
       response = Parliament::Request::UrlRequest.new(base_url: 'http://localhost:3030',
       builder: Parliament::Builder::NTripleResponseBuilder,
       decorators: Parliament::Grom::Decorator).people(id).get
@@ -660,18 +712,89 @@ describe Parliament::Grom::Decorator::Person, vcr: true do
     end
 
     context 'Grom::Node has all the required objects' do
-      it 'returns the weblinks Grom::Node objects of type Person' do
-        expect(@person_node.weblinks.count).to eq(2)
+      it 'returns the personal weblinks Grom::Node objects of type Person' do
+        expect(@person_node.personal_weblinks.count).to eq(2)
       end
 
       it 'returns the correct link' do
-        expect(@person_node.weblinks.first).to eq('http://www.adrianbaileymp.org/')
+        expect(@person_node.personal_weblinks).to eq('http://www.sajidjavid.com/')
       end
     end
 
-    context 'Grom::Node has no weblinks' do
+    context 'Grom::Node has no personal weblinks' do
       it 'will return nil' do
-        expect(@person_node.weblinks).to eq(nil)
+        expect(@person_node.personal_weblinks).to eq(nil)
+      end
+    end
+
+    context 'person not current MP or member of the Lords' do
+      it 'will return nil' do
+        expect(@person_node.personal_weblinks).to eq(nil)
+      end
+    end
+  end
+
+  describe '#twitter_weblinks' do
+    before(:each) do
+      id = 'YHylN7q7'
+      response = Parliament::Request::UrlRequest.new(base_url: 'http://localhost:3030',
+      builder: Parliament::Builder::NTripleResponseBuilder,
+      decorators: Parliament::Grom::Decorator).people(id).get
+      @person_node = response.filter('https://id.parliament.uk/schema/Person').first
+    end
+
+    context 'Grom::Node has all the required objects' do
+      it 'returns the twitter weblinks Grom::Node objects of type Person' do
+        expect(@person_node.twitter_weblinks.count).to eq(2)
+      end
+
+      it 'returns the correct link' do
+        expect(@person_node.twitter_weblinks).to eq('https://twitter.com/sajidjavid')
+      end
+    end
+
+    context 'Grom::Node has no twitter weblinks' do
+      it 'will return nil' do
+        expect(@person_node.twitter_weblinks).to eq(nil)
+      end
+    end
+
+    context 'person not current MP or member of the Lords' do
+      it 'will return nil' do
+        expect(@person_node.twitter_weblinks).to eq(nil)
+      end
+    end
+  end
+
+
+  describe '#facebook_weblinks' do
+    before(:each) do
+      id = 'YHylN7q7'
+      response = Parliament::Request::UrlRequest.new(base_url: 'http://localhost:3030',
+      builder: Parliament::Builder::NTripleResponseBuilder,
+      decorators: Parliament::Grom::Decorator).people(id).get
+      @person_node = response.filter('https://id.parliament.uk/schema/Person').first
+    end
+
+    context 'Grom::Node has all the required objects' do
+      it 'returns the facebook weblinks Grom::Node objects of type Person' do
+        expect(@person_node.facebook_weblinks.count).to eq(2)
+      end
+
+      it 'returns the correct link' do
+        expect(@person_node.facebook_weblinks).to eq('http://www.facebook.com/pages/Sajid-Javid-MP/179373355424859')
+      end
+    end
+
+    context 'Grom::Node has no facebook weblinks' do
+      it 'will return nil' do
+        expect(@person_node.facebook_weblinks).to eq(nil)
+      end
+    end
+
+    context 'person not current MP or member of the Lords' do
+      it 'will return nil' do
+        expect(@person_node.facebook_weblinks).to eq(nil)
       end
     end
   end
