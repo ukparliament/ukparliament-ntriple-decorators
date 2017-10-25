@@ -714,22 +714,23 @@ describe Parliament::Grom::Decorator::Person, vcr: true do
     context 'Grom::Node has all the required objects' do
       it 'returns the personal weblinks Grom::Node objects of type Person' do
         expect(@person_node.personal_weblinks.count).to eq(2)
+        expect(@person_node.personal_weblinks.first).to eq('http://www.sajidjavid.com/')
       end
 
       it 'returns the correct link' do
-        expect(@person_node.personal_weblinks).to eq('http://www.sajidjavid.com/')
+        expect(@person_node.personal_weblinks).to eq(['http://www.sajidjavid.com/'])
       end
     end
 
     context 'Grom::Node has no personal weblinks' do
-      it 'will return nil' do
-        expect(@person_node.personal_weblinks).to eq(nil)
+      it 'will return an empty array' do
+        expect(@person_node.personal_weblinks).to eq([])
       end
     end
 
     context 'person not current MP or member of the Lords' do
-      it 'will return nil' do
-        expect(@person_node.personal_weblinks).to eq(nil)
+      it 'will return an empty array' do
+        expect(@person_node.personal_weblinks).to eq([])
       end
     end
   end
@@ -746,22 +747,23 @@ describe Parliament::Grom::Decorator::Person, vcr: true do
     context 'Grom::Node has all the required objects' do
       it 'returns the twitter weblinks Grom::Node objects of type Person' do
         expect(@person_node.twitter_weblinks.count).to eq(2)
+        expect(@person_node.twitter_weblinks.first).to eq('https://twitter.com/sajidjavid')
       end
 
       it 'returns the correct link' do
-        expect(@person_node.twitter_weblinks).to eq('https://twitter.com/sajidjavid')
+        expect(@person_node.twitter_weblinks).to eq(['https://twitter.com/sajidjavid'])
       end
     end
 
     context 'Grom::Node has no twitter weblinks' do
-      it 'will return nil' do
-        expect(@person_node.twitter_weblinks).to eq(nil)
+      it 'will return an empty array' do
+        expect(@person_node.twitter_weblinks).to eq([])
       end
     end
 
     context 'person not current MP or member of the Lords' do
-      it 'will return nil' do
-        expect(@person_node.twitter_weblinks).to eq(nil)
+      it 'will return an empty array' do
+        expect(@person_node.twitter_weblinks).to eq([])
       end
     end
   end
@@ -779,22 +781,23 @@ describe Parliament::Grom::Decorator::Person, vcr: true do
     context 'Grom::Node has all the required objects' do
       it 'returns the facebook weblinks Grom::Node objects of type Person' do
         expect(@person_node.facebook_weblinks.count).to eq(2)
+        expect(@person_node.facebook_weblinks.first).to eq('http://www.facebook.com/pages/Sajid-Javid-MP/179373355424859')
       end
 
       it 'returns the correct link' do
-        expect(@person_node.facebook_weblinks).to eq('http://www.facebook.com/pages/Sajid-Javid-MP/179373355424859')
+        expect(@person_node.facebook_weblinks).to eq(['http://www.facebook.com/pages/Sajid-Javid-MP/179373355424859'])
       end
     end
 
     context 'Grom::Node has no facebook weblinks' do
-      it 'will return nil' do
-        expect(@person_node.facebook_weblinks).to eq(nil)
+      it 'will return an empty array' do
+        expect(@person_node.facebook_weblinks).to eq([])
       end
     end
 
     context 'person not current MP or member of the Lords' do
-      it 'will return nil' do
-        expect(@person_node.facebook_weblinks).to eq(nil)
+      it 'will return an empty array' do
+        expect(@person_node.facebook_weblinks).to eq([])
       end
     end
   end

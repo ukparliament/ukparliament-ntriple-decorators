@@ -213,23 +213,23 @@ module Parliament
 
         # Alias personHasPersonalWebLink with fallback.
         #
-        # @return [Array|String, nil] all the personal weblinks of the Grom::Node or an nil.
+        # @return [Array, Array] all the personal weblinks of the Grom::Node or an empty Array.
         def personal_weblinks
-          respond_to?(:personHasPersonalWebLink) && (current_mp? || current_lord?) ? personHasPersonalWebLink : nil
+          [*get_weblinks_by_predicate(:personHasPersonalWebLink)]
         end
 
         # Alias personHasTwitterWebLink with fallback.
         #
-        # @return [Array|String, nil] all the Twitter weblinks of the Grom::Node or an nil.
+        # @return [Array, Array] all the Twitter weblinks of the Grom::Node or an empty array.
         def twitter_weblinks
-          respond_to?(:personHasTwitterWebLink) && (current_mp? || current_lord?) ? personHasTwitterWebLink : nil
+          [*get_weblinks_by_predicate(:personHasTwitterWebLink)]
         end
 
         # Alias personHasFacebookWebLink with fallback.
         #
-        # @return [Array|String, nil] all the Facebook weblinks of the Grom::Node or an nil.
+        # @return [Array, Array] all the Facebook weblinks of the Grom::Node or an empty array.
         def facebook_weblinks
-          respond_to?(:personHasFacebookWebLink) && (current_mp? || current_lord?) ? personHasFacebookWebLink : nil
+          [*get_weblinks_by_predicate(:personHasFacebookWebLink)]
         end
 
         private
@@ -264,6 +264,10 @@ module Parliament
           statuses.each_with_index do |status, index|
             status[0] = status[0].downcase if index != 0
           end
+        end
+
+        def get_weblinks_by_predicate(weblink_predicate)
+          (respond_to?(weblink_predicate) && (current_mp? || current_lord?) ? send(weblink_predicate) : nil)
         end
       end
     end
