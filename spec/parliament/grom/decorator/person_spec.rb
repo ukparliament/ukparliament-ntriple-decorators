@@ -801,4 +801,44 @@ describe Parliament::Grom::Decorator::Person, vcr: true do
       end
     end
   end
+
+  describe '#weblinks?' do
+    before(:each) do
+      id = 'YHylN7q7'
+      response = Parliament::Request::UrlRequest.new(base_url: 'http://localhost:3030',
+      builder: Parliament::Builder::NTripleResponseBuilder,
+      decorators: Parliament::Grom::Decorator).people(id).get
+      @person_node = response.filter('https://id.parliament.uk/schema/Person').first
+    end
+
+    context 'person has all weblinks' do
+      it 'returns true' do
+        expect(@person_node.weblinks?).to eq(true)
+      end
+    end
+
+    context 'person has a personal weblink' do
+      it 'returns true' do
+        expect(@person_node.weblinks?).to eq(true)
+      end
+    end
+
+    context 'person has a Twitter weblink' do
+      it 'returns true' do
+        expect(@person_node.weblinks?).to eq(true)
+      end
+    end
+
+    context 'person has a Facebook weblink' do
+      it 'returns true' do
+        expect(@person_node.weblinks?).to eq(true)
+      end
+    end
+
+    context 'person has no weblinks' do
+      it 'returns false' do
+        expect(@person_node.weblinks?).to eq(false)
+      end
+    end
+  end
 end
