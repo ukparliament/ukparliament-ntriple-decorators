@@ -232,6 +232,11 @@ module Parliament
           [*get_weblinks_by_predicate(:personHasFacebookWebLink)]
         end
 
+        # Check whether a person has any weblinks
+        def weblinks?
+          (personal_weblinks + twitter_weblinks + facebook_weblinks).any?
+        end
+
         private
 
         def house_membership_status
