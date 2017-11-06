@@ -116,4 +116,18 @@ describe Parliament::Grom::Decorator::HouseIncumbency, vcr: true do
       end
     end
   end
+
+  describe '#date_range' do
+    include_examples 'date range has no start date' do
+      let(:node) { response.filter('https://id.parliament.uk/schema/HouseIncumbency').first }
+    end
+
+    include_examples 'date range has no end date' do
+      let(:node) { response.filter('https://id.parliament.uk/schema/HouseIncumbency').first }
+    end
+
+    include_examples 'date range has start and end dates' do
+      let(:node) { response.filter('https://id.parliament.uk/schema/HouseIncumbency').first }
+    end
+  end
 end

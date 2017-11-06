@@ -53,31 +53,16 @@ describe Parliament::Grom::Decorator::SeatIncumbency, vcr: true do
   end
 
   describe '#date_range' do
-    context 'seat incumbency has no start_date' do
-      it 'returns no date' do
-        seat_incumbency_node = @seat_incumbency_nodes.first
-
-        expect(seat_incumbency_node).to respond_to(:date_range)
-        expect(seat_incumbency_node.date_range).to eq('[Date unavailable]')
-      end
+    include_examples 'date range has no start date' do
+      let(:node) { @seat_incumbency_nodes.first }
     end
 
-    context 'seat incumbency has an end date' do
-      it 'returns full formatted start and end date' do
-        seat_incumbency_node = @seat_incumbency_nodes.first
-
-        expect(seat_incumbency_node).to respond_to(:date_range)
-        expect(seat_incumbency_node.date_range).to eq('11 Jun 1987 to 9 Apr 1992')
-      end
+    include_examples 'date range has no end date' do
+      let(:node) { @seat_incumbency_nodes.first }
     end
 
-    context 'seat incumbency has no end date' do
-      it 'returns formatted start date' do
-        seat_incumbency_node = @seat_incumbency_nodes.first
-
-        expect(seat_incumbency_node).to respond_to(:date_range)
-        expect(seat_incumbency_node.date_range).to eq('11 Jun 1987 to present')
-      end
+    include_examples 'date range has start and end dates' do
+      let(:node) { @seat_incumbency_nodes.first }
     end
   end
 
