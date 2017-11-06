@@ -73,4 +73,18 @@ describe Parliament::Grom::Decorator::PartyMembership, vcr: true do
       expect(party_membership_results).to eq([false, true])
     end
   end
+
+  describe '#date_range' do
+    include_examples 'date range has no start date' do
+      let(:node) { @party_membership_nodes.first }
+    end
+
+    include_examples 'date range has no end date' do
+      let(:node) { @party_membership_nodes.first }
+    end
+
+    include_examples 'date range has start and end dates' do
+      let(:node) { @party_membership_nodes.first }
+    end
+  end
 end

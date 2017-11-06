@@ -54,31 +54,16 @@ describe Parliament::Grom::Decorator::GovernmentIncumbency, vcr: true do
   end
 
   describe '#date_range' do
-    context 'government incumbency has no start_date' do
-      it 'returns no date' do
-        government_incumbency_node = @government_incumbency_nodes.first
-
-        expect(government_incumbency_node).to respond_to(:date_range)
-        expect(government_incumbency_node.date_range).to eq('[Date unavailable]')
-      end
+    include_examples 'date range has no start date' do
+      let(:node) { @government_incumbency_nodes.first }
     end
 
-    context 'government incumbency has an end date' do
-      it 'returns full formatted start and end date' do
-        government_incumbency_node = @government_incumbency_nodes.first
-
-        expect(government_incumbency_node).to respond_to(:date_range)
-        expect(government_incumbency_node.date_range).to eq('7 May 2015 to 7 Jun 2017')
-      end
+    include_examples 'date range has no end date' do
+      let(:node) { @government_incumbency_nodes.first }
     end
 
-    context 'government incumbency has no end date' do
-      it 'returns formatted start date' do
-        government_incumbency_node = @government_incumbency_nodes.first
-
-        expect(government_incumbency_node).to respond_to(:date_range)
-        expect(government_incumbency_node.date_range).to eq('7 May 2015 to present')
-      end
+    include_examples 'date range has start and end dates' do
+      let(:node) { @government_incumbency_nodes.first }
     end
   end
 end

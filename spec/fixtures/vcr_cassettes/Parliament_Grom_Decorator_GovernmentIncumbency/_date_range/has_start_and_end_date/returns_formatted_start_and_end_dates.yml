@@ -208,7 +208,6 @@ http_interactions:
         <https://id.parliament.uk/DjdJTJkH> <https://id.parliament.uk/schema/parliamentaryIncumbencyStartDate> "2017-06-08+00:00"^^<http://www.w3.org/2001/XMLSchema#date> .
         <https://id.parliament.uk/DjdJTJkH> <https://id.parliament.uk/schema/seatIncumbencyHasHouseSeat> <https://id.parliament.uk/e3Cs8wyG> .
         <https://id.parliament.uk/DjdJTJkH> <https://id.parliament.uk/schema/parliamentaryIncumbencyHasContactPoint> <https://id.parliament.uk/Hfqb2WQK> .
-
         <https://id.parliament.uk/soTeywda> <https://id.parliament.uk/schema/governmentIncumbency> <https://id.parliament.uk/Lalalala> .
         <https://id.parliament.uk/Lalalala> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://id.parliament.uk/schema/GovernmentIncumbency> .
         <https://id.parliament.uk/Lalalala> <https://id.parliament.uk/schema/incumbencyStartDate> "2015-05-07+00:00"^^<http://www.w3.org/2001/XMLSchema#date> .

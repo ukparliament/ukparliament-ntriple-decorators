@@ -72,31 +72,16 @@ describe Parliament::Grom::Decorator::ParliamentPeriod, vcr: true, focus: true d
   end
 
   describe '#date_range' do
-    context 'parliament has no start_date' do
-      it 'returns no date' do
-        parliament_node = @parliament_nodes.first
-
-        expect(parliament_node).to respond_to(:date_range)
-        expect(parliament_node.date_range(date_format: '%Y')).to eq('[Date unavailable]')
-      end
+    include_examples 'date range has no start date' do
+      let(:node) { @parliament_nodes.first }
     end
 
-    context 'parliament has an end date' do
-      it 'returns full formatted start and end date' do
-        parliament_node = @parliament_nodes.first
-
-        expect(parliament_node).to respond_to(:date_range)
-        expect(parliament_node.date_range(date_format: '%Y')).to eq('1801 to 1802')
-      end
+    include_examples 'date range has no end date' do
+      let(:node) { @parliament_nodes.first }
     end
 
-    context 'parliament has no end date' do
-      it 'returns formatted start date' do
-        parliament_node = @parliament_nodes.first
-
-        expect(parliament_node).to respond_to(:date_range)
-        expect(parliament_node.date_range(date_format: '%Y')).to eq('1801 to present')
-      end
+    include_examples 'date range has start and end dates' do
+      let(:node) { @parliament_nodes.first }
     end
   end
 

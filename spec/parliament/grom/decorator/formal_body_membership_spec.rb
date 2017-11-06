@@ -67,33 +67,17 @@ describe Parliament::Grom::Decorator::FormalBodyMembership, vcr: true do
     end
   end
 
-
   describe '#date_range' do
-    context 'formal body membership has no start_date' do
-      it 'returns no date' do
-        membership_node = @formal_body_membership_nodes.first
-
-        expect(membership_node).to respond_to(:date_range)
-        expect(membership_node.date_range).to eq('[Date unavailable]')
-      end
+    include_examples 'date range has no start date' do
+      let(:node) { @formal_body_membership_nodes.first }
     end
 
-    context 'formal body membership has an end date' do
-      it 'returns full formatted start and end date' do
-        membership_node = @formal_body_membership_nodes.first
-
-        expect(membership_node).to respond_to(:date_range)
-        expect(membership_node.date_range).to eq('8 Jun 1991 to 8 Jun 2001')
-      end
+    include_examples 'date range has no end date' do
+      let(:node) { @formal_body_membership_nodes.first }
     end
 
-    context 'formal body membership has no end date' do
-      it 'returns formatted start date' do
-        membership_node = @formal_body_membership_nodes.first
-
-        expect(membership_node).to respond_to(:date_range)
-        expect(membership_node.date_range).to eq('8 Jun 1991 to present')
-      end
+    include_examples 'date range has start and end dates' do
+      let(:node) { @formal_body_membership_nodes.first }
     end
   end
 end

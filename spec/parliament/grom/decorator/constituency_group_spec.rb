@@ -65,6 +65,20 @@ describe Parliament::Grom::Decorator::ConstituencyGroup, vcr: true do
     end
   end
 
+  describe '#date_range' do
+    include_examples 'date range has no start date' do
+      let(:node) { response.filter('https://id.parliament.uk/schema/ConstituencyGroup')[0] }
+    end
+
+    include_examples 'date range has no end date' do
+      let(:node) { response.filter('https://id.parliament.uk/schema/ConstituencyGroup')[0] }
+    end
+
+    include_examples 'date range has start and end dates' do
+      let(:node) { response.filter('https://id.parliament.uk/schema/ConstituencyGroup')[0] }
+    end
+  end
+
   describe '#seats' do
     context 'constituency has house seats' do
       it 'returns an array of house seats' do

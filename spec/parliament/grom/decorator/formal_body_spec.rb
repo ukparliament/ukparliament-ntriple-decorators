@@ -69,31 +69,16 @@ describe Parliament::Grom::Decorator::FormalBody, vcr: true do
   end
 
   describe '#date_range' do
-    context 'formal body has no start_date' do
-      it 'returns no date' do
-        formal_body_node = @formal_body_nodes.first
-
-        expect(formal_body_node).to respond_to(:date_range)
-        expect(formal_body_node.date_range).to eq('[Date unavailable]')
-      end
+    include_examples 'date range has no start date' do
+      let(:node) { @formal_body_nodes.first }
     end
 
-    context 'formal body has an end date' do
-      it 'returns full formatted start and end date' do
-        formal_body_node = @formal_body_nodes.first
-
-        expect(formal_body_node).to respond_to(:date_range)
-        expect(formal_body_node.date_range).to eq('12 Nov 1981 to 12 Nov 1991')
-      end
+    include_examples 'date range has no end date' do
+      let(:node) { @formal_body_nodes.first }
     end
 
-    context 'formal body has no end date' do
-      it 'returns formatted start date' do
-        formal_body_node = @formal_body_nodes.first
-
-        expect(formal_body_node).to respond_to(:date_range)
-        expect(formal_body_node.date_range).to eq('12 Nov 1981 to present')
-      end
+    include_examples 'date range has start and end dates' do
+      let(:node) { @formal_body_nodes.first }
     end
   end
 end
