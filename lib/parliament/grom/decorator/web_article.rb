@@ -1,7 +1,7 @@
 module Parliament
   module Grom
     module Decorator
-      # Decorator namespace for Grom::Node instances with type: https://id.parliament.uk/schema/ConstituencyArea
+      # Decorator namespace for Grom::Node instances with type: https://id.parliament.uk/schema/WebArticle
       module WebArticle
         # Alias title with fallback.
         #
@@ -26,42 +26,42 @@ module Parliament
 
         # Alias collection with fallback.
         #
-        # @return [Array, Array] array of collection Grom::Node or an empty array.
+        # @return [Array, Array] array of collection Grom::Nodes or an empty array.
         def collections
           respond_to?(:collection) ? collection : []
         end
 
         # Alias articleType with fallback.
         #
-        # @return [Array, Array] array of collection Grom::Node or an empty array.
+        # @return [Array, Array] array of articleType Grom::Nodes or an empty array.
         def types
           respond_to?(:articleType) ? articleType : []
         end
 
         # Alias audience with fallback.
         #
-        # @return [Array, Array] array of collection Grom::Node or an empty array.
+        # @return [Array, Array] array of audience Grom::Nodes or an empty array.
         def audiences
           respond_to?(:audience) ? audience : []
         end
 
         # Alias topic with fallback.
         #
-        # @return [Array, Array] array of collection Grom::Node or an empty array.
+        # @return [Array, Array] array of topic Grom::Nodes or an empty array.
         def topics
           respond_to?(:topic) ? topic : []
         end
 
         # Alias publisher with fallback.
         #
-        # @return [Array, Array] array of collection Grom::Node or an empty array.
+        # @return [Array, Array] array of publisher Grom::Nodes or an empty array.
         def publishers
           respond_to?(:publisher) ? publisher : []
         end
 
         # Alias relatedArticle with fallback.
         #
-        # @return [Array, Array] array of collection Grom::Node or an empty array.
+        # @return [Array, Array] array of article Grom::Nodes or an empty array.
         def related_articles
           respond_to?(:relatedArticle) ? relatedArticle : []
         end
