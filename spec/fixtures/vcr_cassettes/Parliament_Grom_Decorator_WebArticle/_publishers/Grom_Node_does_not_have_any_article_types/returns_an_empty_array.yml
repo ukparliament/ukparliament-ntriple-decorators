@@ -1,0 +1,97 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:3030/api/v1/webarticle_by_id
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      - application/n-triples
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/n-triples
+      Content-Disposition:
+      - inline; filename="index"
+      Last-Modified:
+      - Fri, 15 Dec 2017 13:50:07 GMT
+      X-Content-Type-Options:
+      - nosniff
+      Content-Length:
+      - '5323'
+    body:
+      encoding: UTF-8
+      string: "<https://id.parliament.uk/ccdwcKYM> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+        <https://id.parliament.uk/schema/WebArticle>  .\r\n<https://id.parliament.uk/ccdwcKYM>
+        <http://example.com/content/title> \"First Article\" .\r\n<https://id.parliament.uk/ccdwcKYM>
+        <http://example.com/content/summary> \"Lorem ipsum.\" .\r\n<https://id.parliament.uk/ccdwcKYM>
+        <http://example.com/content/body> \"Some body.\" .\r\n<https://id.parliament.uk/ccdwcKYM>
+        <http://example.com/content/relatedArticle> <https://id.parliament.uk/88GcJm8s>
+        .\r\n<https://id.parliament.uk/88GcJm8s> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+        <https://id.parliament.uk/schema/WebArticle>  .\r\n<https://id.parliament.uk/88GcJm8s>
+        <http://example.com/content/title> \"Third Article\" .\r\n<https://id.parliament.uk/88GcJm8s>
+        <http://example.com/content/summary> \"dolor sit amet.\" .\r\n<https://id.parliament.uk/88GcJm8s>
+        <http://example.com/content/body> \"Vestibulum ante ipsum.\" .\r\n<https://id.parliament.uk/88GcJm8s>
+        <http://example.com/content/relatedArticle> <https://id.parliament.uk/5NZbplzc>
+        .\r\n<https://id.parliament.uk/5NZbplzc> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+        <https://id.parliament.uk/schema/WebArticle>  .\r\n<https://id.parliament.uk/5NZbplzc>
+        <http://example.com/content/title> \"Second Article\" .\r\n<https://id.parliament.uk/5NZbplzc>
+        <http://example.com/content/summary> \"article 1 summary\" .\r\n<https://id.parliament.uk/5NZbplzc>
+        <http://example.com/content/body> \"article 1 __body__\\n\\n\\n*Testing, testing*\"
+        .\r\n<https://id.parliament.uk/5NZbplzc> <http://example.com/content/relatedArticle>
+        <https://id.parliament.uk/asdf1234> .\r\n<https://id.parliament.uk/88GcJm8s>
+        <http://example.com/content/relatedArticle> <https://id.parliament.uk/ccdwcKYM>
+        .\r\n<https://id.parliament.uk/asdf1234> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+        <https://id.parliament.uk/schema/WebArticle>  .\r\n<https://id.parliament.uk/88GcJm8s>
+        <http://example.com/content/topic> <https://id.parliament.uk/autos1> .\r\n<https://id.parliament.uk/autos1>
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.com/content/Topic>
+        .\r\n<https://id.parliament.uk/88GcJm8s> <http://example.com/content/topic>
+        <https://id.parliament.uk/autos2> .\r\n<https://id.parliament.uk/autos2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+        <http://example.com/content/Topic> .\r\n<https://id.parliament.uk/autos2>
+        <http://example.com/content/name> \"topic 2\" .\r\n<https://id.parliament.uk/88GcJm8s>
+        <http://example.com/content/topic> <https://id.parliament.uk/autos3> .\r\n<https://id.parliament.uk/autos3>
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.com/content/Topic>
+        .\r\n<https://id.parliament.uk/88GcJm8s> <http://example.com/content/topic>
+        <https://id.parliament.uk/autos4> .\r\n<https://id.parliament.uk/autos4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+        <http://example.com/content/Topic> .\r\n<https://id.parliament.uk/88GcJm8s>
+        <http://example.com/content/articleType> <https://id.parliament.uk/APaJn0ZK>
+        .\r\n<https://id.parliament.uk/APaJn0ZK> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+        <http://example.com/content/ArticleType> .\r\n<https://id.parliament.uk/88GcJm8s>
+        <http://example.com/content/audience> <https://id.parliament.uk/autos5> .\r\n<https://id.parliament.uk/autos5>
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.com/content/Audience>
+        .\r\n<https://id.parliament.uk/88GcJm8s> <http://example.com/content/audience>
+        <https:://id.parliament.uk/autos6> .\r\n<https://id.parliament.uk/autos6>
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.com/content/Audience>
+        .\r\n<https://id.parliament.uk/autos6> <http://example.com/content/name> \"audience
+        1\" .\r\n<https://id.parliament.uk/ccdwcKYM> <http://example.com/content/relatedArticle>
+        <https://id.parliament.uk/5NZbplzc> .\r\n<https://id.parliament.uk/ccdwcKYM>
+        <http://example.com/content/topic> <https://id.parliament.uk/autos2> .\r\n<https://id.parliament.uk/ccdwcKYM>
+        <http://example.com/content/articleType> <https://id.parliament.uk/autos7>
+        .\r\n<https://id.parliament.uk/autos7> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+        <http://example.com/content/ArticleType> .\r\n<https://id.parliament.uk/autos7>
+        <http://example.com/content/name> \"article type 1\" .\r\n<https://id.parliament.uk/ccdwcKYM>
+        <http://example.com/content/articleType> <https://id.parliament.uk/autos8>
+        .\r\n<https://id.parliament.uk/autos8> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+        <http://example.com/content/ArticleType> .\r\n<https://id.parliament.uk/autos8>
+        <http://example.com/content/name> \"article type 2\" .\r\n<https://id.parliament.uk/ccdwcKYM>
+        <http://example.com/content/audience> <https://id.parliament.uk/autos6> .\r\n<https://id.parliament.uk/autos9>
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.com/content/Publisher>
+        .\r\n<https://id.parliament.uk/autos9> <http://example.com/content/name> \"publisher
+        2\" .\r\n<https://id.parliament.uk/ccdwcKYM> <http://example.com/content/collection>
+        <https://id.parliament.uk/autos10> .\r\n<https://id.parliament.uk/autos10>
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.com/content/Collection>
+        .\r\n<https://id.parliament.uk/autos10> <http://example.com/content/name>
+        \"collection1\" .\r\n"
+    http_version:
+  recorded_at: Fri, 15 Dec 2017 14:22:23 GMT
+recorded_with: VCR 3.0.3
