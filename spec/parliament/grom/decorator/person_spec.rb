@@ -13,15 +13,6 @@ describe Parliament::Grom::Decorator::Person, vcr: true do
       @people_nodes = response.filter('https://id.parliament.uk/schema/Person')
     end
 
-    context 'Grom::Node has all the required objects' do
-      it 'returns the houses for a Grom::Node object of type Person' do
-        person_node = @people_nodes.first
-
-        expect(person_node.houses.size).to eq(2)
-        expect(person_node.houses.first.type).to eq('https://id.parliament.uk/schema/House')
-      end
-    end
-
     context 'Grom::Node has no houses' do
       it 'returns an empty array' do
         person_node = @people_nodes[0]
@@ -430,7 +421,7 @@ describe Parliament::Grom::Decorator::Person, vcr: true do
       end
     end
 
-    context 'Grom::Node has a current house incumbency' do
+    context 'Grom::Node has a current seat incumbency' do
       it 'returns the status Current Lord' do
         id = '841a4a1f-965a-4009-8cbc-dfc9e350fe0e'
         response = Parliament::Request::UrlRequest.new(base_url: 'http://localhost:3030',
@@ -438,8 +429,9 @@ describe Parliament::Grom::Decorator::Person, vcr: true do
         decorators: Parliament::Grom::Decorator).people(id).get
         person_node = response.filter('https://id.parliament.uk/schema/Person').first
 
-        expect(person_node.statuses[:house_membership_status].size).to eq(1)
+        expect(person_node.statuses[:house_membership_status].size).to eq(2)
         expect(person_node.statuses[:house_membership_status].first).to eq('Member of the House of Lords')
+        expect(person_node.statuses[:house_membership_status].last).to eq('former MP')
       end
     end
 
@@ -482,7 +474,7 @@ describe Parliament::Grom::Decorator::Person, vcr: true do
       end
     end
 
-    context 'Grom::Node has house incumbencies but no current house incumbency' do
+    context 'Grom::Node has seat incumbencies but no current seat incumbency' do
       it 'returns the status Former Lord' do
         id = '99ceb32e-2e16-42a0-904d-c6a7e3a9f217'
         response = Parliament::Request::UrlRequest.new(base_url: 'http://localhost:3030',
@@ -495,7 +487,7 @@ describe Parliament::Grom::Decorator::Person, vcr: true do
       end
     end
 
-    context 'Grom::Node has seat incumbencies and a current house incumbency' do
+    context 'Grom::Node has seat incumbencies and a current incumbency' do
       it 'returns the statuses Former MP and Current Lord' do
         id = '7c511a2b-9ce2-4001-8ee5-71ae734c52d6'
         response = Parliament::Request::UrlRequest.new(base_url: 'http://localhost:3030',
@@ -509,7 +501,7 @@ describe Parliament::Grom::Decorator::Person, vcr: true do
       end
     end
 
-    context 'Grom::Node has house incumbencies and seat incumbencies but no current incumbency' do
+    context 'Grom::Node has seat incumbencies but no current incumbency' do
       it 'returns the statuses Former Lord and Former MP' do
         id = '90558d1f-ea34-4c44-b3ad-ed9c98a557d1'
         response = Parliament::Request::UrlRequest.new(base_url: 'http://localhost:3030',
