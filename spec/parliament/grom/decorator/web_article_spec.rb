@@ -146,4 +146,21 @@ describe Parliament::Grom::Decorator::WebArticle, vcr: true do
     end
   end
 
+  describe '#related_articles' do
+    context 'Grom::Node has all the required objects' do
+      it 'returns an array' do
+        expect(@article.related_articles).to be_a(Array)
+      end
+
+      it 'returns an array of Grom Nodes' do
+        expect(@article.related_articles[0]).to be_a(Grom::Node)
+      end
+    end
+
+    context 'Grom::Node does not have any related articles' do
+      it 'returns an empty array' do
+        expect(@article.related_articles).to eq([])
+      end
+    end
+  end
 end
