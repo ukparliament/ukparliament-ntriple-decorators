@@ -24,6 +24,8 @@ require 'parliament/grom/decorator/government_position'
 require 'parliament/grom/decorator/opposition_incumbency'
 require 'parliament/grom/decorator/opposition_position'
 require 'parliament/grom/decorator/web_article'
+require 'parliament/grom/decorator/audience'
+require 'parliament/grom/decorator/article_type'
 
 # Namespace for classes and modules that handle connections to, and processing of data from the parliamentary API.
 # @since 0.1.0
