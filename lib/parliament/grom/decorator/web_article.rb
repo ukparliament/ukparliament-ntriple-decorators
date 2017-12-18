@@ -58,6 +58,13 @@ module Parliament
         def publishers
           respond_to?(:publisher) ? topic : []
         end
+
+        # Alias relatedArticle with fallback.
+        #
+        # @return [Array, Array] array of article Grom::Nodes or an empty array.
+        def related_articles
+          respond_to?(:relatedArticle) ? relatedArticle : []
+        end
       end
     end
   end
