@@ -833,4 +833,72 @@ describe Parliament::Grom::Decorator::Person, vcr: true do
       end
     end
   end
+
+  describe 'private methods' do
+    describe '#status_of_member' do
+      before(:each) do
+        id = 'YHylN7q7'
+        response = Parliament::Request::UrlRequest.new(base_url: 'http://localhost:3030',
+        builder: Parliament::Builder::NTripleResponseBuilder,
+        decorators: Parliament::Grom::Decorator).people(id).get
+        @person_node = response.filter('https://id.parliament.uk/schema/Person').first
+      end
+
+      context 'former Lord' do
+        context 'is former Lord' do
+          it 'will return true' do
+            expect(@person_node.send(:status_of_member, 'House of Lords', :former)).to eq(true)
+          end
+        end
+
+        context 'is not former Lord' do
+          it 'will return false' do
+            expect(@person_node.send(:status_of_member, 'House of Lords', :former)).to eq(false)
+          end
+        end
+      end
+
+      context 'current Lord' do
+        context 'is current Lord' do
+          it 'will return true' do
+            expect(@person_node.send(:status_of_member, 'House of Lords', :current)).to eq(true)
+          end
+        end
+
+        context 'is not current Lord' do
+          it 'will return false' do
+            expect(@person_node.send(:status_of_member, 'House of Lords', :current)).to eq(false)
+          end
+        end
+      end
+
+      context 'former MP' do
+        context 'is former MP' do
+          it 'will return true' do
+            expect(@person_node.send(:status_of_member, 'House of Commons', :former)).to eq(true)
+          end
+        end
+
+        context 'is not former MP' do
+          it 'will return false' do
+            expect(@person_node.send(:status_of_member, 'House of Commons', :former)).to eq(false)
+          end
+        end
+      end
+
+      context 'current MP' do
+        context 'is current MP' do
+          it 'will return true' do
+            expect(@person_node.send(:status_of_member, 'House of Commons', :current)).to eq(true)
+          end
+        end
+
+        context 'is not current MP' do
+          it 'will return false' do
+            expect(@person_node.send(:status_of_member, 'House of Commons', :current)).to eq(false)
+          end
+        end
+      end
+    end
+  end
 end

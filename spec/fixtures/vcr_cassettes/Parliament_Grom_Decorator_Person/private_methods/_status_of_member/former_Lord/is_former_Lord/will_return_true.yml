@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://localhost:3030/people/841a4a1f-965a-4009-8cbc-dfc9e350fe0e
+    uri: http://localhost:3030/people/YHylN7q7
     body:
       encoding: US-ASCII
       string: ''
@@ -122,6 +122,7 @@ http_interactions:
         <https://id.parliament.uk/TImtubyi> <https://id.parliament.uk/schema/memberHasParliamentaryIncumbency> <https://id.parliament.uk/GQ2wydCg> .
         <https://id.parliament.uk/GQ2wydCg> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://id.parliament.uk/schema/SeatIncumbency> .
         <https://id.parliament.uk/GQ2wydCg> <https://id.parliament.uk/schema/parliamentaryIncumbencyStartDate> "2010-06-23+00:00"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <https://id.parliament.uk/GQ2wydCg> <https://id.parliament.uk/schema/parliamentaryIncumbencyEndDate> "2017-06-23+00:00"^^<http://www.w3.org/2001/XMLSchema#date> .
         <https://id.parliament.uk/GQ2wydCg> <https://id.parliament.uk/schema/seatIncumbencyHasHouseSeat> <https://id.parliament.uk/cNdGYt0g> .
         <https://id.parliament.uk/cNdGYt0g> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://id.parliament.uk/schema/HouseSeat> .
         <https://id.parliament.uk/cNdGYt0g> <https://id.parliament.uk/schema/houseSeatHasHouse> <https://id.parliament.uk/WkUWUBMx> .
