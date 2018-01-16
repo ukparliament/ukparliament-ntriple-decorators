@@ -58,6 +58,20 @@ module Parliament
           end
         end
 
+        # Alias personPimsId with fallback.
+        #
+        # @return [Array, Array] the pims_id of the Grom::Node or nil.
+        def pims_id
+          respond_to?(:personPimsId) ? personPimsId : nil
+        end
+
+        # Alias personMnisId with fallback.
+        #
+        # @return [Array, Array] the mnis_id of the Grom::Node or nil.
+        def mnis_id
+          respond_to?(:personMnisId) ? personMnisId : nil
+        end
+
         # Alias memberHasParliamentaryIncumbency with fallback.
         #
         # @return [Array, Array] all the incumbencies of the Grom::Node or an empty array.
