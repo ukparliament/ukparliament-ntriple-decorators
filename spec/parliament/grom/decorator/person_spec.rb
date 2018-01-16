@@ -44,6 +44,58 @@ describe Parliament::Grom::Decorator::Person, vcr: true do
     end
   end
 
+  describe '#pims_id' do
+    before(:each) do
+      response = Parliament::Request::UrlRequest.new(base_url: 'http://localhost:3030/api/v1',
+      builder: Parliament::Builder::NTripleResponseBuilder,
+      decorators: Parliament::Grom::Decorator).person_by_id.get
+      # N.B. Different 'get' request following change in data API
+      @people_nodes = response.filter('https://id.parliament.uk/schema/Person')
+    end
+
+    context 'Grom::Node has all the required objects' do
+      it 'returns the pims_id for a Grom::Node object of type Person' do
+        person_node = @people_nodes.first
+
+        expect(person_node.pims_id).to eq('5441')
+      end
+    end
+
+    context 'Grom::Node has no pims_id' do
+      it 'returns nil' do
+        person_node = @people_nodes.first
+
+        expect(person_node.pims_id).to eq(nil)
+      end
+    end
+  end
+
+  describe '#mnis_id' do
+    before(:each) do
+      response = Parliament::Request::UrlRequest.new(base_url: 'http://localhost:3030/api/v1',
+      builder: Parliament::Builder::NTripleResponseBuilder,
+      decorators: Parliament::Grom::Decorator).person_by_id.get
+      # N.B. Different 'get' request following change in data API
+      @people_nodes = response.filter('https://id.parliament.uk/schema/Person')
+    end
+
+    context 'Grom::Node has all the required objects' do
+      it 'returns the mnis_id for a Grom::Node object of type Person' do
+        person_node = @people_nodes.first
+
+        expect(person_node.mnis_id).to eq('3898')
+      end
+    end
+
+    context 'Grom::Node has no mnis_id' do
+      it 'returns nil' do
+        person_node = @people_nodes.first
+
+        expect(person_node.mnis_id).to eq(nil)
+      end
+    end
+  end
+
   describe '#seat_incumbencies' do
     before(:each) do
       @people_nodes = response.filter('https://id.parliament.uk/schema/Person')
