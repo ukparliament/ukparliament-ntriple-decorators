@@ -173,28 +173,28 @@ module Parliament
         #
         # @return [Boolean] a boolean depending on whether or not they have a current seat incumbency in the House of Commons.
         def current_mp?
-          current_member_by_house?('House of Commons')
+          status_of_member('House of Commons', :current)
         end
 
         # Check whether they are a former member of the House of Commons.
         #
         # @return [Boolean] a boolean depending on whether or not they have a current seat incumbency in the House of Commons.
         def former_mp?
-          former_member_by_house?('House of Commons')
+          status_of_member('House of Commons', :former)
         end
 
         # Check whether they have a current seat on the House of Lords.
         #
         # @return [Boolean] a boolean depending on whether or not they have a current seat incumbency in the House of Lords.
         def current_lord?
-          current_member_by_house?('House of Lords')
+          status_of_member('House of Lords', :current)
         end
 
         # Check whether they are a former member of the House of Lords.
         #
         # @return [Boolean] a boolean depending on whether or not they have a current seat incumbency in the House of Lords.
         def former_lord?
-          former_member_by_house?('House of Lords')
+          status_of_member('House of Lords', :former)
         end
 
         # Alias D79B0BAC513C4A9A87C9D5AFF1FC632F with fallback.
@@ -260,12 +260,17 @@ module Parliament
 
         private
 
-        def current_member_by_house?(house_name)
-          seat_incumbencies.select{ |incumbency| incumbency.house.name == house_name && incumbency.end_date.nil? }.any?
-        end
-
-        def former_member_by_house?(house_name)
-          seat_incumbencies.select{ |incumbency| incumbency.house.name == house_name && incumbency.end_date }.any?
+        def status_of_member(house_name, status_to_check)
+          seat_incumbencies.select do |incumbency|
+            next unless incumbency.house.name == house_name
+            if incumbency.end_date.nil? && status_to_check == :current
+              incumbency
+            elsif incumbency.end_date && status_to_check == :former
+              incumbency
+            else
+              next
+            end
+          end.any?
         end
 
         def house_membership_status
