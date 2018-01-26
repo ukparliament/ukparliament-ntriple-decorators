@@ -86,6 +86,16 @@ module Parliament
           @seat_incumbencies ||= incumbencies.select { |inc| inc.type == 'https://id.parliament.uk/schema/SeatIncumbency' }
         end
 
+        # @return [Grom::Node] the seat incumbency as a Grom::Node or nil
+        def current_seat_incumbency
+          @current_seat_incumbencies ||= seat_incumbencies.select(&:current?)&.first
+        end
+
+        # @return [Grom::Node] the most recent seat incumbency as a Grom::Node or nil
+        def most_recent_seat_incumbency
+          @most_recent_seat_incumbency ||= seat_incumbencies.sort_by!(&:start_date).reverse.first
+        end
+
         # Alias seatIncumbencyHasHouseSeat with fallback.
         #
         # @return [Array, Array] the seats of the Grom::Node or an empty array.

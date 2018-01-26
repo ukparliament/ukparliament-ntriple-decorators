@@ -71,6 +71,34 @@ describe Parliament::Grom::Decorator::Person, vcr: true do
     end
   end
 
+  describe '#current_seat_incumbencies' do
+    context 'Grom::Node has all the required objects' do
+      it 'returns the current seat incumbencies for a Grom::Node object of type Person' do
+        expect(person_node.current_seat_incumbency.type).to eq('https://id.parliament.uk/schema/SeatIncumbency')
+      end
+    end
+
+    context 'Grom::Node has no seat incumbencies' do
+      it 'returns an empty array' do
+        expect(person_node.current_seat_incumbency).to eq(nil)
+      end
+    end
+  end
+
+  describe '#most_recent_seat_incumbency' do
+    context 'Grom::Node has all the required objects' do
+      it 'returns the current seat incumbencies for a Grom::Node object of type Person' do
+        expect(person_node.most_recent_seat_incumbency.type).to eq('https://id.parliament.uk/schema/SeatIncumbency')
+      end
+    end
+
+    context 'Grom::Node has no seat incumbencies' do
+      it 'returns an empty array' do
+        expect(person_node.most_recent_seat_incumbency).to eq(nil)
+      end
+    end
+  end
+
   describe '#seats' do
     context 'Grom::Node has all the required objects' do
       it 'returns the seats for a Grom::Node object of type Person' do
