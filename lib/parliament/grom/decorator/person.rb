@@ -88,7 +88,7 @@ module Parliament
 
         # @return [Grom::Node] the seat incumbency as a Grom::Node or nil
         def current_seat_incumbency
-          @current_seat_incumbencies ||= seat_incumbencies.select(&:current?)&.first
+          @current_seat_incumbency ||= seat_incumbencies.select(&:current?)&.first
         end
 
         # @return [Grom::Node] the most recent seat incumbency as a Grom::Node or nil
