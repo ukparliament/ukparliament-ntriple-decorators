@@ -409,6 +409,36 @@ describe Parliament::Grom::Decorator::Person, vcr: true do
     end
   end
 
+  describe '#person_type' do
+    context 'MP' do
+      context 'is a current MP' do
+        it 'returns member' do
+          expect(person_node.person_type).to eq('member')
+        end
+      end
+
+      context 'is a former MP' do
+        it 'returns member' do
+          expect(person_node.person_type).to eq('member')
+        end
+      end
+    end
+
+    context 'Lord' do
+      context 'is a current Lord' do
+        it 'returns lord' do
+          expect(person_node.person_type).to eq('lord')
+        end
+      end
+
+      context 'is a former Lord' do
+        it 'returns lord' do
+          expect(person_node.person_type).to eq('lord')
+        end
+      end
+    end
+  end
+
   describe '#full_title' do
     context 'Grom::Node has all the required objects' do
       it 'returns the given full_title for a Grom::Node objects of type Person' do

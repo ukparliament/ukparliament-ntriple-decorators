@@ -1,0 +1,68 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:3030/api/v1/person_by_id
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      - application/n-triples
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/n-triples
+      Content-Disposition:
+      - inline; filename="index"
+      Last-Modified:
+      - Fri, 02 Feb 2018 16:23:46 GMT
+      X-Content-Type-Options:
+      - nosniff
+      Content-Length:
+      - '2955'
+    body:
+      encoding: UTF-8
+      string: "<https://id.parliament.uk/ZjlEUhyI> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+        <https://id.parliament.uk/schema/Person> .\r\n<https://id.parliament.uk/ZjlEUhyI>
+        <https://id.parliament.uk/schema/personGivenName> \"Peter\" .\r\n<https://id.parliament.uk/ZjlEUhyI>
+        <https://id.parliament.uk/schema/personOtherNames> \"Grey\" .\r\n<https://id.parliament.uk/ZjlEUhyI>
+        <https://id.parliament.uk/schema/personFamilyName> \"Bennet\" .\r\n<https://id.parliament.uk/ZjlEUhyI>
+        <http://example.com/F31CBD81AD8343898B49DC65743F0BDF> \"The Earl of Tankerville\"
+        .\r\n<https://id.parliament.uk/ZjlEUhyI> <http://example.com/D79B0BAC513C4A9A87C9D5AFF1FC632F>
+        \"The Rt Hon. the Earl of Tankerville\" .\r\n<https://id.parliament.uk/ZjlEUhyI>
+        <https://id.parliament.uk/schema/partyMemberHasPartyMembership> <https://id.parliament.uk/jeGlfKTX>
+        .\r\n<https://id.parliament.uk/ZjlEUhyI> <https://id.parliament.uk/schema/memberHasParliamentaryIncumbency>
+        <https://id.parliament.uk/9HTIxEjf> .\r\n<https://id.parliament.uk/ZjlEUhyI>
+        <https://id.parliament.uk/schema/memberMnisId> \"2231\" .\r\n<https://id.parliament.uk/9HTIxEjf>
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://id.parliament.uk/schema/SeatIncumbency>
+        .\r\n<https://id.parliament.uk/9HTIxEjf> <https://id.parliament.uk/schema/parliamentaryIncumbencyEndDate>
+        \"1999-11-11+00:00\"^^<http://www.w3.org/2001/XMLSchema#date> .\r\n<https://id.parliament.uk/9HTIxEjf>
+        <https://id.parliament.uk/schema/parliamentaryIncumbencyStartDate> \"1980-04-27+00:00\"^^<http://www.w3.org/2001/XMLSchema#date>
+        .\r\n<https://id.parliament.uk/9HTIxEjf> <https://id.parliament.uk/schema/seatIncumbencyHasHouseSeat>
+        <https://id.parliament.uk/4nwlVL0c> .\r\n<https://id.parliament.uk/4nwlVL0c>
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://id.parliament.uk/schema/HouseSeat>
+        .\r\n<https://id.parliament.uk/4nwlVL0c> <https://id.parliament.uk/schema/houseSeatHasHouse>
+        <https://id.parliament.uk/WkUWUBMx> .\r\n<https://id.parliament.uk/2QWu0T16>
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://id.parliament.uk/schema/Party>
+        .\r\n<https://id.parliament.uk/2QWu0T16> <https://id.parliament.uk/schema/partyName>
+        \"Non-affiliated\" .\r\n<https://id.parliament.uk/jeGlfKTX> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+        <https://id.parliament.uk/schema/PartyMembership> .\r\n<https://id.parliament.uk/jeGlfKTX>
+        <https://id.parliament.uk/schema/partyMembershipStartDate> \"1980-04-27+00:00\"^^<http://www.w3.org/2001/XMLSchema#date>
+        .\r\n<https://id.parliament.uk/jeGlfKTX> <https://id.parliament.uk/schema/partyMembershipEndDate>
+        \"1999-11-11+00:00\"^^<http://www.w3.org/2001/XMLSchema#date> .\r\n<https://id.parliament.uk/jeGlfKTX>
+        <https://id.parliament.uk/schema/partyMembershipHasParty> <https://id.parliament.uk/2QWu0T16>
+        .\r\n<https://id.parliament.uk/WkUWUBMx> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+        <https://id.parliament.uk/schema/House> .\r\n<https://id.parliament.uk/WkUWUBMx>
+        <https://id.parliament.uk/schema/houseName> \"House of Lords\" .\r\n"
+    http_version: 
+  recorded_at: Fri, 02 Feb 2018 16:24:12 GMT
+recorded_with: VCR 3.0.3
