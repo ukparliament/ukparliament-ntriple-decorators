@@ -207,6 +207,17 @@ module Parliament
           former_member_by_house?('House of Lords')
         end
 
+        # Check whether they are a Member or a Lord from their latest seat incumbency.
+        # Current incumbencies are higher priority when determining a person_type, therefore check first for former, then current   
+        # @return [String] 'member' if they are a member, 'lord' if they are a lord.
+        def person_type
+          person_type = 'member' if former_mp?
+          person_type = 'lord' if former_lord?
+          person_type = 'member' if current_mp?
+          person_type = 'lord' if current_lord?
+          person_type
+        end
+
         # Alias D79B0BAC513C4A9A87C9D5AFF1FC632F with fallback.
         #
         # @return [String, String] the full title of the Grom::Node or an empty string.

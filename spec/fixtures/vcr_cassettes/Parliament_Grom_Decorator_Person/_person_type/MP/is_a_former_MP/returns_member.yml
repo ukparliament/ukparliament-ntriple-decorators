@@ -1,0 +1,163 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:3030/api/v1/person_by_id
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      - application/n-triples
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/n-triples
+      Content-Disposition:
+      - inline; filename="index"
+      Last-Modified:
+      - Fri, 02 Feb 2018 16:26:31 GMT
+      X-Content-Type-Options:
+      - nosniff
+      Content-Length:
+      - '12229'
+    body:
+      encoding: UTF-8
+      string: "<https://id.parliament.uk/vzU7i8L6> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+        <https://id.parliament.uk/schema/Person> .\r\n<https://id.parliament.uk/vzU7i8L6>
+        <https://id.parliament.uk/schema/personGivenName> \"Michael\" .\r\n<https://id.parliament.uk/vzU7i8L6>
+        <https://id.parliament.uk/schema/personOtherNames> \"Thomas\" .\r\n<https://id.parliament.uk/vzU7i8L6>
+        <https://id.parliament.uk/schema/personFamilyName> \"Hall\" .\r\n<https://id.parliament.uk/vzU7i8L6>
+        <http://example.com/F31CBD81AD8343898B49DC65743F0BDF> \"Mr Mike Hall\" .\r\n<https://id.parliament.uk/vzU7i8L6>
+        <http://example.com/D79B0BAC513C4A9A87C9D5AFF1FC632F> \"Mr Mike Hall\" .\r\n<https://id.parliament.uk/vzU7i8L6>
+        <https://id.parliament.uk/schema/partyMemberHasPartyMembership> <https://id.parliament.uk/m9Pr5IfI>
+        .\r\n<https://id.parliament.uk/vzU7i8L6> <https://id.parliament.uk/schema/memberHasParliamentaryIncumbency>
+        <https://id.parliament.uk/2h5S9pPd> .\r\n<https://id.parliament.uk/vzU7i8L6>
+        <https://id.parliament.uk/schema/personHasFormalBodyMembership> <https://id.parliament.uk/dmOuVHC1>
+        .\r\n<https://id.parliament.uk/vzU7i8L6> <https://id.parliament.uk/schema/governmentPersonHasGovernmentIncumbency>
+        <https://id.parliament.uk/WpjuGNu6> .\r\n<https://id.parliament.uk/vzU7i8L6>
+        <https://id.parliament.uk/schema/personPimsId> \"3716\" .\r\n<https://id.parliament.uk/vzU7i8L6>
+        <https://id.parliament.uk/schema/memberMnisId> \"434\" .\r\n<https://id.parliament.uk/vzU7i8L6>
+        <https://id.parliament.uk/schema/personHasPersonalWebLink> <http://www.epolitix.com/EN/MPWebsites/Mike+Hall>
+        .\r\n<https://id.parliament.uk/AqDewwpP> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+        <https://id.parliament.uk/schema/ConstituencyGroup> .\r\n<https://id.parliament.uk/AqDewwpP>
+        <https://id.parliament.uk/schema/constituencyGroupName> \"Warrington South\"
+        .\r\n<https://id.parliament.uk/AqDewwpP> <https://id.parliament.uk/schema/constituencyGroupStartDate>
+        \"1983-06-09+00:00\"^^<http://www.w3.org/2001/XMLSchema#date> .\r\n<https://id.parliament.uk/AqDewwpP>
+        <https://id.parliament.uk/schema/constituencyGroupEndDate> \"1997-05-01+00:00\"^^<http://www.w3.org/2001/XMLSchema#date>
+        .\r\n<https://id.parliament.uk/2h5S9pPd> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+        <https://id.parliament.uk/schema/SeatIncumbency> .\r\n<https://id.parliament.uk/2h5S9pPd>
+        <https://id.parliament.uk/schema/parliamentaryIncumbencyEndDate> \"1997-05-01+00:00\"^^<http://www.w3.org/2001/XMLSchema#date>
+        .\r\n<https://id.parliament.uk/2h5S9pPd> <https://id.parliament.uk/schema/parliamentaryIncumbencyStartDate>
+        \"1992-04-09+00:00\"^^<http://www.w3.org/2001/XMLSchema#date> .\r\n<https://id.parliament.uk/2h5S9pPd>
+        <https://id.parliament.uk/schema/seatIncumbencyHasHouseSeat> <https://id.parliament.uk/CYpA1TI1>
+        .\r\n<https://id.parliament.uk/CYpA1TI1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+        <https://id.parliament.uk/schema/HouseSeat> .\r\n<https://id.parliament.uk/CYpA1TI1>
+        <https://id.parliament.uk/schema/houseSeatHasConstituencyGroup> <https://id.parliament.uk/AqDewwpP>
+        .\r\n<https://id.parliament.uk/CYpA1TI1> <https://id.parliament.uk/schema/houseSeatHasHouse>
+        <https://id.parliament.uk/1AFu55Hs> .\r\n<https://id.parliament.uk/LEYIBvV9>
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://id.parliament.uk/schema/Party>
+        .\r\n<https://id.parliament.uk/LEYIBvV9> <https://id.parliament.uk/schema/partyName>
+        \"Labour\" .\r\n<https://id.parliament.uk/m9Pr5IfI> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+        <https://id.parliament.uk/schema/PartyMembership> .\r\n<https://id.parliament.uk/m9Pr5IfI>
+        <https://id.parliament.uk/schema/partyMembershipStartDate> \"1992-04-09+00:00\"^^<http://www.w3.org/2001/XMLSchema#date>
+        .\r\n<https://id.parliament.uk/m9Pr5IfI> <https://id.parliament.uk/schema/partyMembershipHasParty>
+        <https://id.parliament.uk/LEYIBvV9> .\r\n<https://id.parliament.uk/1AFu55Hs>
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://id.parliament.uk/schema/House>
+        .\r\n<https://id.parliament.uk/1AFu55Hs> <https://id.parliament.uk/schema/houseName>
+        \"House of Commons\" .\r\n<https://id.parliament.uk/dmOuVHC1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+        <https://id.parliament.uk/schema/FormalBodyMembership> .\r\n<https://id.parliament.uk/dmOuVHC1>
+        <https://id.parliament.uk/schema/formalBodyMembershipStartDate> \"1998-06-04+00:00\"^^<http://www.w3.org/2001/XMLSchema#date>
+        .\r\n<https://id.parliament.uk/dmOuVHC1> <https://id.parliament.uk/schema/formalBodyMembershipEndDate>
+        \"1998-11-05+00:00\"^^<http://www.w3.org/2001/XMLSchema#date> .\r\n<https://id.parliament.uk/dmOuVHC1>
+        <https://id.parliament.uk/schema/formalBodyMembershipHasFormalBody> <https://id.parliament.uk/vOnlgeFJ>
+        .\r\n<https://id.parliament.uk/vOnlgeFJ> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+        <https://id.parliament.uk/schema/FormalBody> .\r\n<https://id.parliament.uk/vOnlgeFJ>
+        <https://id.parliament.uk/schema/formalBodyName> \"Modernisation of the House
+        of Commons\" .\r\n<https://id.parliament.uk/WpjuGNu6> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+        <https://id.parliament.uk/schema/GovernmentIncumbency> .\r\n<https://id.parliament.uk/WpjuGNu6>
+        <https://id.parliament.uk/schema/incumbencyStartDate> \"1998-07-28+00:00\"^^<http://www.w3.org/2001/XMLSchema#date>
+        .\r\n<https://id.parliament.uk/WpjuGNu6> <https://id.parliament.uk/schema/incumbencyEndDate>
+        \"2001-06-07+00:00\"^^<http://www.w3.org/2001/XMLSchema#date> .\r\n<https://id.parliament.uk/WpjuGNu6>
+        <https://id.parliament.uk/schema/governmentIncumbencyHasGovernmentPosition>
+        <https://id.parliament.uk/NMxlUBz3> .\r\n<https://id.parliament.uk/NMxlUBz3>
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://id.parliament.uk/schema/GovernmentPosition>
+        .\r\n<https://id.parliament.uk/NMxlUBz3> <https://id.parliament.uk/schema/positionName>
+        \"Assistant Whip (HM Treasury)\" .\r\n<https://id.parliament.uk/vzU7i8L6>
+        <https://id.parliament.uk/schema/personHasFormalBodyMembership> <https://id.parliament.uk/6riwguPA>
+        .\r\n<https://id.parliament.uk/6riwguPA> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+        <https://id.parliament.uk/schema/FormalBodyMembership> .\r\n<https://id.parliament.uk/6riwguPA>
+        <https://id.parliament.uk/schema/formalBodyMembershipStartDate> \"2005-07-12+00:00\"^^<http://www.w3.org/2001/XMLSchema#date>
+        .\r\n<https://id.parliament.uk/6riwguPA> <https://id.parliament.uk/schema/formalBodyMembershipEndDate>
+        \"2010-05-06+00:00\"^^<http://www.w3.org/2001/XMLSchema#date> .\r\n<https://id.parliament.uk/6riwguPA>
+        <https://id.parliament.uk/schema/formalBodyMembershipHasFormalBody> <https://id.parliament.uk/tz34m7Vt>
+        .\r\n<https://id.parliament.uk/tz34m7Vt> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+        <https://id.parliament.uk/schema/FormalBody> .\r\n<https://id.parliament.uk/tz34m7Vt>
+        <https://id.parliament.uk/schema/formalBodyName> \"Culture, Media and Sport
+        Committee\" .\r\n<https://id.parliament.uk/vzU7i8L6> <https://id.parliament.uk/schema/personHasFormalBodyMembership>
+        <https://id.parliament.uk/NyN8UU06> .\r\n<https://id.parliament.uk/NyN8UU06>
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://id.parliament.uk/schema/FormalBodyMembership>
+        .\r\n<https://id.parliament.uk/NyN8UU06> <https://id.parliament.uk/schema/formalBodyMembershipStartDate>
+        \"2000-01-19+00:00\"^^<http://www.w3.org/2001/XMLSchema#date> .\r\n<https://id.parliament.uk/NyN8UU06>
+        <https://id.parliament.uk/schema/formalBodyMembershipEndDate> \"2001-05-11+00:00\"^^<http://www.w3.org/2001/XMLSchema#date>
+        .\r\n<https://id.parliament.uk/NyN8UU06> <https://id.parliament.uk/schema/formalBodyMembershipHasFormalBody>
+        <https://id.parliament.uk/x7eu4YYX> .\r\n<https://id.parliament.uk/x7eu4YYX>
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://id.parliament.uk/schema/FormalBody>
+        .\r\n<https://id.parliament.uk/x7eu4YYX> <https://id.parliament.uk/schema/formalBodyName>
+        \"Administration Committee\" .\r\n<https://id.parliament.uk/vzU7i8L6> <https://id.parliament.uk/schema/personHasFormalBodyMembership>
+        <https://id.parliament.uk/WocVSJIG> .\r\n<https://id.parliament.uk/WocVSJIG>
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://id.parliament.uk/schema/FormalBodyMembership>
+        .\r\n<https://id.parliament.uk/WocVSJIG> <https://id.parliament.uk/schema/formalBodyMembershipStartDate>
+        \"1993-06-09+00:00\"^^<http://www.w3.org/2001/XMLSchema#date> .\r\n<https://id.parliament.uk/WocVSJIG>
+        <https://id.parliament.uk/schema/formalBodyMembershipEndDate> \"1997-03-21+00:00\"^^<http://www.w3.org/2001/XMLSchema#date>
+        .\r\n<https://id.parliament.uk/WocVSJIG> <https://id.parliament.uk/schema/formalBodyMembershipHasFormalBody>
+        <https://id.parliament.uk/FkVzBipk> .\r\n<https://id.parliament.uk/FkVzBipk>
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://id.parliament.uk/schema/FormalBody>
+        .\r\n<https://id.parliament.uk/FkVzBipk> <https://id.parliament.uk/schema/formalBodyName>
+        \"Public Accounts Committee\" .\r\n<https://id.parliament.uk/vzU7i8L6> <https://id.parliament.uk/schema/memberHasParliamentaryIncumbency>
+        <https://id.parliament.uk/lFQYPDDV> .\r\n<https://id.parliament.uk/ieiRYXfe>
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://id.parliament.uk/schema/ContactPoint>
+        .\r\n<https://id.parliament.uk/R9Nkw0hg> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+        <https://id.parliament.uk/schema/ConstituencyGroup> .\r\n<https://id.parliament.uk/R9Nkw0hg>
+        <https://id.parliament.uk/schema/constituencyGroupName> \"Weaver Vale\" .\r\n<https://id.parliament.uk/R9Nkw0hg>
+        <https://id.parliament.uk/schema/constituencyGroupStartDate> \"1997-05-01+00:00\"^^<http://www.w3.org/2001/XMLSchema#date>
+        .\r\n<https://id.parliament.uk/R9Nkw0hg> <https://id.parliament.uk/schema/constituencyGroupEndDate>
+        \"2010-05-06+00:00\"^^<http://www.w3.org/2001/XMLSchema#date> .\r\n<https://id.parliament.uk/lFQYPDDV>
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://id.parliament.uk/schema/SeatIncumbency>
+        .\r\n<https://id.parliament.uk/lFQYPDDV> <https://id.parliament.uk/schema/parliamentaryIncumbencyEndDate>
+        \"2010-05-06+00:00\"^^<http://www.w3.org/2001/XMLSchema#date> .\r\n<https://id.parliament.uk/lFQYPDDV>
+        <https://id.parliament.uk/schema/parliamentaryIncumbencyStartDate> \"2005-05-05+00:00\"^^<http://www.w3.org/2001/XMLSchema#date>
+        .\r\n<https://id.parliament.uk/lFQYPDDV> <https://id.parliament.uk/schema/seatIncumbencyHasHouseSeat>
+        <https://id.parliament.uk/fPR29Ota> .\r\n<https://id.parliament.uk/lFQYPDDV>
+        <https://id.parliament.uk/schema/parliamentaryIncumbencyHasContactPoint> <https://id.parliament.uk/ieiRYXfe>
+        .\r\n<https://id.parliament.uk/fPR29Ota> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+        <https://id.parliament.uk/schema/HouseSeat> .\r\n<https://id.parliament.uk/fPR29Ota>
+        <https://id.parliament.uk/schema/houseSeatHasConstituencyGroup> <https://id.parliament.uk/R9Nkw0hg>
+        .\r\n<https://id.parliament.uk/fPR29Ota> <https://id.parliament.uk/schema/houseSeatHasHouse>
+        <https://id.parliament.uk/1AFu55Hs> .\r\n<https://id.parliament.uk/vzU7i8L6>
+        <https://id.parliament.uk/schema/memberHasParliamentaryIncumbency> <https://id.parliament.uk/fROMOEhX>
+        .\r\n<https://id.parliament.uk/fROMOEhX> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+        <https://id.parliament.uk/schema/SeatIncumbency> .\r\n<https://id.parliament.uk/fROMOEhX>
+        <https://id.parliament.uk/schema/parliamentaryIncumbencyEndDate> \"2001-06-07+00:00\"^^<http://www.w3.org/2001/XMLSchema#date>
+        .\r\n<https://id.parliament.uk/fROMOEhX> <https://id.parliament.uk/schema/parliamentaryIncumbencyStartDate>
+        \"1997-05-01+00:00\"^^<http://www.w3.org/2001/XMLSchema#date> .\r\n<https://id.parliament.uk/fROMOEhX>
+        <https://id.parliament.uk/schema/seatIncumbencyHasHouseSeat> <https://id.parliament.uk/fPR29Ota>
+        .\r\n<https://id.parliament.uk/vzU7i8L6> <https://id.parliament.uk/schema/memberHasParliamentaryIncumbency>
+        <https://id.parliament.uk/sdz97Dyn> .\r\n<https://id.parliament.uk/sdz97Dyn>
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://id.parliament.uk/schema/SeatIncumbency>
+        .\r\n<https://id.parliament.uk/sdz97Dyn> <https://id.parliament.uk/schema/parliamentaryIncumbencyEndDate>
+        \"2005-05-05+00:00\"^^<http://www.w3.org/2001/XMLSchema#date> .\r\n<https://id.parliament.uk/sdz97Dyn>
+        <https://id.parliament.uk/schema/parliamentaryIncumbencyStartDate> \"2001-06-07+00:00\"^^<http://www.w3.org/2001/XMLSchema#date>
+        .\r\n<https://id.parliament.uk/sdz97Dyn> <https://id.parliament.uk/schema/seatIncumbencyHasHouseSeat>
+        <https://id.parliament.uk/fPR29Ota> .\r\n"
+    http_version: 
+  recorded_at: Fri, 02 Feb 2018 16:26:52 GMT
+recorded_with: VCR 3.0.3
