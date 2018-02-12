@@ -74,38 +74,38 @@ describe Parliament::Grom::Decorator::Concept, vcr: true do
     end
   end
 
-  describe '#parent_concepts' do
+  describe '#broader_concepts' do
     context 'Grom::Node has all the required objects' do
       it 'returns an array' do
-        expect(concept.parent_concepts).to be_a(Array)
+        expect(concept.broader_concepts).to be_a(Array)
       end
 
       it 'returns an array of Grom Nodes' do
-        expect(concept.parent_concepts[0]).to be_a(Grom::Node)
+        expect(concept.broader_concepts[0]).to be_a(Grom::Node)
       end
     end
 
     context 'Grom::Node does not have any parent concepts' do
       it 'returns an empty array' do
-        expect(concept.parent_concepts).to eq([])
+        expect(concept.broader_concepts).to eq([])
       end
     end
   end
 
-  describe '#child_concepts' do
+  describe '#narrower_concepts' do
     context 'Grom::Node has all the required objects' do
       it 'returns an array' do
-        expect(concept.child_concepts).to be_a(Array)
+        expect(concept.narrower_concepts).to be_a(Array)
       end
 
       it 'returns an array of Grom Nodes' do
-        expect(concept.child_concepts[0]).to be_a(Grom::Node)
+        expect(concept.narrower_concepts[0]).to be_a(Grom::Node)
       end
     end
 
     context 'Grom::Node does not have any child concepts' do
       it 'returns an empty array' do
-        expect(concept.child_concepts).to eq([])
+        expect(concept.narrower_concepts).to eq([])
       end
     end
   end
