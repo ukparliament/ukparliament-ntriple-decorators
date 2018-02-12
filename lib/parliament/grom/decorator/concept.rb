@@ -34,14 +34,14 @@ module Parliament
         # Alias conceptHasBroaderConcept with fallback.
         #
         # @return [Array, Array] array of parent Concept Grom::Nodes or an empty array.
-        def parent_concepts
+        def broader_concepts
           respond_to?(:conceptHasBroaderConcept) ? conceptHasBroaderConcept : []
         end
 
         # Alias conceptHasNarrowerConcept with fallback.
         #
         # @return [Array, Array] array of child Concept Grom::Nodes or an empty array.
-        def child_concepts
+        def narrower_concepts
           respond_to?(:conceptHasNarrowerConcept) ? conceptHasNarrowerConcept : []
         end
       end
