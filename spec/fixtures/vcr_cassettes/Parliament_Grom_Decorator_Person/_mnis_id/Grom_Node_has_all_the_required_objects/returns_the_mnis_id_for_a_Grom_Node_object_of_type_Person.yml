@@ -45,7 +45,7 @@ http_interactions:
         <https://id.parliament.uk/5b1mxVJ7> .\r\n<https://id.parliament.uk/43RHonMf>
         <https://id.parliament.uk/schema/personHasFormalBodyMembership> <https://id.parliament.uk/VHM0rBq1>
         .\r\n<https://id.parliament.uk/43RHonMf> <https://id.parliament.uk/schema/personPimsId>
-        \"5441\" .\r\n<https://id.parliament.uk/43RHonMf> <https://id.parliament.uk/schema/personMnisId>
+        \"5441\" .\r\n<https://id.parliament.uk/43RHonMf> <https://id.parliament.uk/schema/memberMnisId>
         \"3898\" .\r\n<https://id.parliament.uk/43RHonMf> <https://id.parliament.uk/schema/oppositionPersonHasOppositionIncumbency>
         <https://id.parliament.uk/CsQVi7Hx> .\r\n<https://id.parliament.uk/43RHonMf>
         <https://id.parliament.uk/schema/personHasPersonalWebLink> <http://www.dianeabbott.org.uk/>
@@ -266,6 +266,6 @@ http_interactions:
         \"2015-05-07+00:00\"^^<http://www.w3.org/2001/XMLSchema#date> .\r\n<https://id.parliament.uk/DqWmAFwg>
         <https://id.parliament.uk/schema/seatIncumbencyHasHouseSeat> <https://id.parliament.uk/0BhROnYP>
         .\r\n"
-    http_version: 
+    http_version:
   recorded_at: Tue, 16 Jan 2018 13:58:20 GMT
 recorded_with: VCR 3.0.3
