@@ -65,11 +65,11 @@ module Parliament
           respond_to?(:personPimsId) ? personPimsId : nil
         end
 
-        # Alias personMnisId with fallback.
+        # Alias memberMnisId with fallback.
         #
         # @return [Array, Array] the mnis_id of the Grom::Node or nil.
         def mnis_id
-          respond_to?(:personMnisId) ? personMnisId : nil
+          respond_to?(:memberMnisId) ? memberMnisId : nil
         end
 
         # Alias memberHasParliamentaryIncumbency with fallback.
@@ -208,7 +208,8 @@ module Parliament
         end
 
         # Check whether they are a Member or a Lord from their latest seat incumbency.
-        # Current incumbencies are higher priority when determining a person_type, therefore check first for former, then current   
+        # Current incumbencies are higher priority when determining a person_type
+        # Therefore check first for former, then current
         # @return [String] 'member' if they are a member, 'lord' if they are a lord.
         def person_type
           person_type = 'member' if former_mp?
