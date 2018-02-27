@@ -27,6 +27,11 @@ require 'parliament/grom/decorator/audience'
 require 'parliament/grom/decorator/article_type'
 require 'parliament/grom/decorator/collection'
 require 'parliament/grom/decorator/concept'
+require 'parliament/grom/decorator/incumbency'
+require 'parliament/grom/decorator/group'
+require 'parliament/grom/decorator/gov_register_government_organisation'
+require 'parliament/grom/decorator/position'
+require 'parliament/grom/decorator/formal_body_chair'
 
 # Namespace for classes and modules that handle connections to, and processing of data from the parliamentary API.
 # @since 0.1.0
