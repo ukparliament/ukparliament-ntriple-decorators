@@ -33,8 +33,9 @@ http_interactions:
       encoding: UTF-8
       string: "<https://id.parliament.uk/fy1cWNCD>
         <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://id.parliament.uk/schema/ContactPoint>
-        .\r\n<https://id.parliament.uk/fy1cWNCD>
-        <https://id.parliament.uk/schema/phoneNumber> \"1234 567 8910\" .\r\n<https://id.parliament.uk/fy1cWNCD>
+        .\r\n<https://id.parliament.uk/fy1cWNCD> <https://id.parliament.uk/schema/email>
+        \"emailaddress@parliament.uk\" .\r\n<https://id.parliament.uk/fy1cWNCD>
+        <https://id.parliament.uk/schema/phoneNumber> \"-\" .\r\n<https://id.parliament.uk/fy1cWNCD>
         <https://id.parliament.uk/schema/contactPointHasPostalAddress> <https://id.parliament.uk/uBuD8ZqA>
         .\r\n<https://id.parliament.uk/uBuD8ZqA> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
         <https://id.parliament.uk/schema/PostalAddress> .\r\n<https://id.parliament.uk/uBuD8ZqA>
@@ -42,5 +43,5 @@ http_interactions:
         <https://id.parliament.uk/schema/addressLine2> \"London.\" .\r\n<https://id.parliament.uk/uBuD8ZqA>
         <https://id.parliament.uk/schema/postCode> \"SW1A 0AA\" ."
     http_version:
-  recorded_at: Thu, 15 Mar 2018 15:54:48 GMT
+  recorded_at: Thu, 15 Mar 2018 16:24:39 GMT
 recorded_with: VCR 3.0.3
