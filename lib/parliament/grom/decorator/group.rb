@@ -17,7 +17,7 @@ module Parliament
         #
         # @return [String, String] the formal body name of the Grom::Node or an empty string.
         def formal_body_name
-           @formal_body_name ||= respond_to?(:formalBodyName) ? formalBodyName : ''
+          @formal_body_name ||= respond_to?(:formalBodyName) ? formalBodyName : ''
         end
 
         # Alias formalBodyRemit with fallback.
@@ -38,7 +38,7 @@ module Parliament
         #
         # @return [Boolean] a boolean depending on whether or not the Grom::Node is joint.
         def is_joint?
-           respond_to?(:formalBodyHasLeadHouse)
+          respond_to?(:formalBodyHasLeadHouse)
         end
 
         # Alias is_chair with fallback.
