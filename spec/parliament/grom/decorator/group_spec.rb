@@ -5,7 +5,7 @@ describe Parliament::Grom::Decorator::Group, vcr: true do
     before(:each) do
       response = Parliament::Request::UrlRequest.new(base_url: 'http://localhost:3030/api/v1',
                                                      builder: Parliament::Builder::NTripleResponseBuilder,
-                                                     decorators: Parliament::Grom::Decorator).group_index.get
+                                                     decorators: Parliament::Grom::Decorator).group_by_id.get
       @group_nodes = response.filter('https://id.parliament.uk/schema/Group')
     end
 
@@ -19,15 +19,87 @@ describe Parliament::Grom::Decorator::Group, vcr: true do
       it 'returns the name of the Grom::Node object' do
         group = @group_nodes.first
 
-        expect(group.name).to eq('Culture, Media and Sport Committee')
+        expect(group.name).to eq('Human Rights (Joint Committee)')
+      end
+
+      it 'does not return the name for the this Grom::Node object' do
+        group = @group_nodes.first
+
+        expect(group.name).to eq('')
+      end
+    end
+  end
+
+  describe '#formal_body_name' do
+    before(:each) do
+      response = Parliament::Request::UrlRequest.new(base_url: 'http://localhost:3030/api/v1',
+                                                     builder: Parliament::Builder::NTripleResponseBuilder,
+                                                     decorators: Parliament::Grom::Decorator).group_by_id.get
+      @group_nodes = response.filter('https://id.parliament.uk/schema/Group')
+    end
+
+    context 'Grom::Node has all the required objects' do
+      it 'returns the formal body name of the Grom::Node object' do
+        group = @group_nodes.first
+
+        expect(group.formal_body_name).to eq('Human Rights (Joint Committee)')
       end
     end
 
-    context 'Grom::Node does not have a name' do
-      it 'confirms that name for this Grom::Node node do not exist' do
-        group = @group_nodes[0]
+    context 'Grom::Node does not have all the required objects' do
+      it 'does not return the formal body name for this Grom::Node object' do
+        group = @group_nodes.first
 
-        expect(group.name).to eq('')
+        expect(group.formal_body_name).to eq('')
+      end
+    end
+  end
+
+
+  describe '#formal_body_remit' do
+    before(:each) do
+      response = Parliament::Request::UrlRequest.new(base_url: 'http://localhost:3030/api/v1',
+                                                     builder: Parliament::Builder::NTripleResponseBuilder,
+                                                     decorators: Parliament::Grom::Decorator).group_by_id.get
+      @group_nodes = response.filter('https://id.parliament.uk/schema/Group')
+    end
+
+   context '#is_chair?' do
+    context 'is a committee chair' do
+      it 'will return true' do
+        expect(@group_nodes[0].is_chair?).to eq(true)
+      end
+    end
+
+    context 'is not a committee chair' do
+      it 'will return false' do
+        expect(@group_nodes[0].is_chair?).to eq(false)
+      end
+    end
+   end
+  end 
+
+  describe '#formal_body_remit' do
+    before(:each) do
+      response = Parliament::Request::UrlRequest.new(base_url: 'http://localhost:3030/api/v1',
+                                                     builder: Parliament::Builder::NTripleResponseBuilder,
+                                                     decorators: Parliament::Grom::Decorator).group_by_id.get
+      @group_nodes = response.filter('https://id.parliament.uk/schema/Group')
+    end
+
+    context 'Grom::Node has all the required objects' do
+      it 'returns the formal body description of the Grom::Node object' do
+        group = @group_nodes.first
+
+        expect(group.formal_body_remit).to eq('We examine human rights issues in the UK and check government bills are compatible with human rights.')
+      end
+    end
+
+    context 'Grom::Node does not have all the required objects' do
+      it 'does not return the formal body name for this Grom::Node object' do
+        group = @group_nodes.first
+
+        expect(group.formal_body_remit).to eq('')
       end
     end
   end
@@ -36,7 +108,7 @@ describe Parliament::Grom::Decorator::Group, vcr: true do
     before(:each) do
       response = Parliament::Request::UrlRequest.new(base_url: 'http://localhost:3030/api/v1',
                                                      builder: Parliament::Builder::NTripleResponseBuilder,
-                                                     decorators: Parliament::Grom::Decorator).group_index.get
+                                                     decorators: Parliament::Grom::Decorator).group_by_id.get
       @group_nodes = response.filter('https://id.parliament.uk/schema/Group')
     end
 
@@ -44,7 +116,7 @@ describe Parliament::Grom::Decorator::Group, vcr: true do
       it 'returns the start_date of the Grom::Node object' do
         group = @group_nodes.first
 
-        expect(group.start_date).to eq(DateTime.parse('Mon, 28 Jul 1997 00:00:00.000000000 +0000'))
+        expect(group.start_date).to eq(DateTime.parse('Wed, 17 Jan 2001 00:00:00.000000000 +0000'))
       end
     end
 
@@ -57,11 +129,35 @@ describe Parliament::Grom::Decorator::Group, vcr: true do
     end
   end
 
+  describe '#is_joint?' do
+    before(:each) do
+      response = Parliament::Request::UrlRequest.new(base_url: 'http://localhost:3030/api/v1',
+                                                     builder: Parliament::Builder::NTripleResponseBuilder,
+                                                     decorators: Parliament::Grom::Decorator).group_by_id.get
+      @group_nodes = response.filter('https://id.parliament.uk/schema/Group')
+    end
+
+    context '#is_joint?' do
+      context 'is a joint committee' do
+        it 'will return true' do
+          expect(@group_nodes[0].is_joint?).to eq(true)
+        end
+      end
+
+      context 'is not a joint committee' do
+        it 'will return false' do
+          expect(@group_nodes[0].is_joint?).to eq(false)
+        end
+      end
+    end
+
+  end
+  
   describe '#end_date' do
     before(:each) do
       response = Parliament::Request::UrlRequest.new(base_url: 'http://localhost:3030/api/v1',
                                                      builder: Parliament::Builder::NTripleResponseBuilder,
-                                                     decorators: Parliament::Grom::Decorator).group_index.get
+                                                     decorators: Parliament::Grom::Decorator).group_by_id.get
       @group_nodes = response.filter('https://id.parliament.uk/schema/Group')
     end
 
@@ -69,7 +165,7 @@ describe Parliament::Grom::Decorator::Group, vcr: true do
       it 'returns the end_date of the Grom::Node object' do
         group = @group_nodes.first
 
-        expect(group.end_date).to eq(DateTime.parse('DateTime: 2017-09-12T00:00:00+00:00 ((2458009j,0s,0n),+0s,2299161j'))
+        expect(group.end_date).to eq(DateTime.parse('Tue, 06 Mar 2018 00:00:00.000000000 +0000'))
       end
     end
 
@@ -81,4 +177,23 @@ describe Parliament::Grom::Decorator::Group, vcr: true do
       end
     end
   end
+
+ 
+  describe '#member_count' do
+    before(:each) do
+        response = Parliament::Request::UrlRequest.new(base_url: 'http://localhost:3030/api/v1',
+                                                       builder: Parliament::Builder::NTripleResponseBuilder,
+                                                       decorators: Parliament::Grom::Decorator).group_by_id.get
+        @group_nodes = response.filter('https://id.parliament.uk/schema/Group')
+    end
+
+    context 'Grom::Node has a members count' do
+        it 'returns the members count for a Grom::Node object of type Group' do
+          group = @group_nodes.first
+          expect(group.count.to_i).to eq(12)
+        end
+    end
+  end
 end
+
+
