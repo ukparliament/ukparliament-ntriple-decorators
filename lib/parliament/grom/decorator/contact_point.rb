@@ -14,7 +14,7 @@ module Parliament
         #
         # @return [String, String] the email of the Grom::Node or an empty string.
         def email
-          instance_variable_get('@email'.to_sym).nil? ? '' : instance_variable_get('@email'.to_sym)
+          instance_variable_get('@email'.to_sym).nil? ? '' : instance_variable_get('@email'.to_sym).strip
         end
 
         # Alias phoneNumber with fallback.

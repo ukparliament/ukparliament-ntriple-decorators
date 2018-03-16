@@ -14,6 +14,7 @@ describe Parliament::Grom::Decorator::ContactPoint, vcr: true do
   describe '#postal_addresses' do
     context 'Grom::Node has all the required objects' do
       it 'returns the postal addresses for a Grom::Node object of type ContactPoint' do
+
         contact_point_node = @contact_point_nodes.first
 
         expect(contact_point_node.postal_addresses.size).to eq(1)
@@ -33,6 +34,15 @@ describe Parliament::Grom::Decorator::ContactPoint, vcr: true do
   describe '#email' do
     context 'Grom::Node has all the required objects' do
       it 'returns the email for a Grom::Node object of type ContactPoint' do
+        contact_point_node = @contact_point_nodes.first
+
+        expect(contact_point_node).to respond_to(:email)
+        expect(contact_point_node.email).to eq('person@parliament.uk')
+      end
+    end
+
+    context 'Grom::Node has all the required objects' do
+      it 'returns the email stripped of whitespace for a Grom::Node object of type ContactPoint' do
         contact_point_node = @contact_point_nodes.first
 
         expect(contact_point_node).to respond_to(:email)
