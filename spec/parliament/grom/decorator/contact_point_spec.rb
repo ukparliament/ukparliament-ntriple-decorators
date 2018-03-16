@@ -14,6 +14,7 @@ describe Parliament::Grom::Decorator::ContactPoint, vcr: true do
   describe '#postal_addresses' do
     context 'Grom::Node has all the required objects' do
       it 'returns the postal addresses for a Grom::Node object of type ContactPoint' do
+
         contact_point_node = @contact_point_nodes.first
 
         expect(contact_point_node.postal_addresses.size).to eq(1)

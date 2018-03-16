@@ -68,7 +68,7 @@ http_interactions:
         <https://id.parliament.uk/21708d79-1bae-41b5-9648-fb3bd60c9aaf> <https://id.parliament.uk/schema/partyMembershipHasParty> <https://id.parliament.uk/f4e62fb8-2cf4-41b2-b7a3-7e621522a30d> .
         <https://id.parliament.uk/80c2b596-494f-4dab-97ed-867729a40451> <https://id.parliament.uk/schema/memberHasParliamentaryIncumbency> <https://id.parliament.uk/cae17778-79c2-42cb-8196-8e1d85d8c50f> .
         <https://id.parliament.uk/d4340898-79ef-4351-9674-49d61f36224d> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://id.parliament.uk/schema/ContactPoint> .
-        <https://id.parliament.uk/d4340898-79ef-4351-9674-49d61f36224d> <https://id.parliament.uk/schema/email> "person@parliament.uk" .
+        <https://id.parliament.uk/d4340898-79ef-4351-9674-49d61f36224d> <https://id.parliament.uk/schema/email> "  person@parliament.uk  " .
         <https://id.parliament.uk/d4340898-79ef-4351-9674-49d61f36224d> <https://id.parliament.uk/schema/phoneNumber> "0123 4567 8901" .
         <https://id.parliament.uk/d4340898-79ef-4351-9674-49d61f36224d> <https://id.parliament.uk/schema/contactPointHasPostalAddress> <https://id.parliament.uk/0edc6f22-9465-452e-beae-f6240d45b950> .
         <https://id.parliament.uk/0edc6f22-9465-452e-beae-f6240d45b950> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://id.parliament.uk/schema/PostalAddress> .
