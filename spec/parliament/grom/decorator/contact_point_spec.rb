@@ -41,6 +41,15 @@ describe Parliament::Grom::Decorator::ContactPoint, vcr: true do
       end
     end
 
+    context 'Grom::Node has all the required objects' do
+      it 'returns the email stripped of whitespace for a Grom::Node object of type ContactPoint' do
+        contact_point_node = @contact_point_nodes.first
+
+        expect(contact_point_node).to respond_to(:email)
+        expect(contact_point_node.email).to eq('person@parliament.uk')
+      end
+    end
+
     context 'Grom::Node has no email' do
       it 'returns an empty string' do
         contact_point_node = @contact_point_nodes[0]
