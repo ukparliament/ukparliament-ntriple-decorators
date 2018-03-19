@@ -13,6 +13,41 @@ module Parliament
           @start_date ||= respond_to?(:groupStartDate) ? DateTime.parse(groupStartDate) : nil
         end
 
+        # Alias formalBodyName with fallback.
+        #
+        # @return [String, String] the formal body name of the Grom::Node or an empty string.
+        def formal_body_name
+          @formal_body_name ||= respond_to?(:formalBodyName) ? formalBodyName : ''
+        end
+
+        # Alias formalBodyRemit with fallback.
+        #
+        # @return [String, String] the formal body remit of the Grom::Node or an empty string.
+        def formal_body_remit
+          @formal_body_remit ||= respond_to?(:formalBodyRemit) ? formalBodyRemit : ''
+        end
+
+        # Alias member count with fallback.
+        #
+        # @return [Integer, nil] the count of members of the Grom::Node or nil.
+        def member_count
+          respond_to?(:count) ? count.to_i : nil
+        end
+
+        # Alias is_joint with fallback.
+        #
+        # @return [Boolean] a boolean depending on whether or not the Grom::Node is joint.
+        def joint?
+          respond_to?(:formalBodyHasLeadHouse)
+        end
+
+        # Alias is_chair with fallback.
+        #
+        # @return [Boolean] a boolean depending on whether or not the Grom::Node is chair.
+        def has_chair?
+          respond_to?(:formalBodyHasFormalBodyChair)
+        end
+
         # Alias groupEndDate with fallback.
         #
         # @return [DateTime, nil] the end date of the Grom::Node or nil.

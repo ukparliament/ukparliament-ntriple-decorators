@@ -6,6 +6,7 @@ describe Parliament::Grom::Decorator::Person, vcr: true do
                                                        decorators: Parliament::Grom::Decorator).person_by_id.get }
   let(:person_node) { response.filter('https://id.parliament.uk/schema/Person').first }
 
+
   describe '#houses' do
     context 'Grom::Node has no houses' do
       it 'returns an empty array' do
@@ -463,6 +464,34 @@ describe Parliament::Grom::Decorator::Person, vcr: true do
     context 'Grom::Node has no displayAs' do
       it 'returns the full_name' do
         expect(person_node.display_name).to eq('Person - givenName Person - familyName')
+      end
+    end
+  end
+
+  describe '#ex_officio?' do
+    context 'Grom::Node has all the required objects' do
+      it 'returns person is an ex_offico' do
+        expect(person_node.ex_officio?).to eq(true)
+      end
+    end
+
+    context 'Grom::Node has no ex_officio predicate' do
+      it 'returns person is not an ex_officio' do
+        expect(person_node.ex_officio?).to eq(false)
+      end
+    end
+  end
+
+  describe '#alternate?' do
+    context 'Grom::Node has all the required objects' do
+      it 'returns person is an alternate' do
+        expect(person_node.alternate?).to eq(true)
+      end
+    end
+
+    context 'Grom::Node has no alternate predicate' do
+      it 'returns person is not an alternate' do
+        expect(person_node.alternate?).to eq(false)
       end
     end
   end
