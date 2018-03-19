@@ -200,6 +200,20 @@ module Parliament
           current_member_by_house?('House of Lords')
         end
 
+        # Check whether member is an ex_officio?.
+        #
+        # @return [Boolean] a boolean depending on whether or not member is an ex_officio?
+        def ex_officio?
+          respond_to?(:memberHasExOfficioMembership)
+        end
+
+        # Check whether member is an alternate?.
+        #
+        # @return [Boolean] a boolean depending on whether or not member is an alternate?
+        def alternate?
+          respond_to?(:memberHasAlternateMembership)
+        end
+
         # Check whether they are a former member of the House of Lords.
         #
         # @return [Boolean] a boolean depending on whether or not they have a current seat incumbency in the House of Lords.

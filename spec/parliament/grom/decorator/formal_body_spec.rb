@@ -27,16 +27,16 @@ describe Parliament::Grom::Decorator::FormalBody, vcr: true do
     end
   end
 
-  context '#is_chair?' do
-    context 'is a committee chair' do
+  context '#has_chair?' do
+    context 'has a committee chair' do
       it 'will return true' do
-        expect(@formal_body_nodes[0].is_chair?).to eq(true)
+        expect(@formal_body_nodes[0].has_chair?).to eq(true)
       end
     end
 
-    context 'is not a committee chair' do
+    context 'does not have a committee chair' do
       it 'will return false' do
-        expect(@formal_body_nodes[1].is_chair?).to eq(false)
+        expect(@formal_body_nodes[1].has_chair?).to eq(false)
       end
     end
   end
@@ -100,16 +100,16 @@ describe Parliament::Grom::Decorator::FormalBody, vcr: true do
     end
   end
 
-   context '#is_joint?' do
+   context '#joint?' do
     context 'is a joint committee' do
       it 'will return true' do
-        expect(@formal_body_nodes[0].is_joint?).to eq(true)
+        expect(@formal_body_nodes[0].joint?).to eq(true)
       end
     end
 
     context 'is not a joint committee' do
       it 'will return false' do
-        expect(@formal_body_nodes[0].is_joint?).to eq(false)
+        expect(@formal_body_nodes[0].joint?).to eq(false)
       end
     end
   end

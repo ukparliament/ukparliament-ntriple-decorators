@@ -24,17 +24,18 @@ http_interactions:
       Content-Disposition:
       - inline; filename="index"
       Last-Modified:
-      - Thu, 08 Mar 2018 10:14:13 GMT
+      - Thu, 08 Mar 2018 18:32:25 GMT
       X-Content-Type-Options:
       - nosniff
       Content-Length:
-      - '5574'
+      - '5774'
     body:
       encoding: UTF-8
       string: |
         <https://id.parliament.uk/P7Ne09WK> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://id.parliament.uk/schema/Group> .
         <https://id.parliament.uk/P7Ne09WK> <https://id.parliament.uk/schema/groupName> "Human Rights (Joint Committee)" .
         <https://id.parliament.uk/P7Ne09WK> <https://id.parliament.uk/schema/groupStartDate> "2001-01-17+00:00"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <https://id.parliament.uk/P7Ne09WK> <https://id.parliament.uk/schema/formalBodyRemit> "We examine human rights issues in the UK and check government bills are compatible with human rights." .
         <https://id.parliament.uk/P7Ne09WK> <https://id.parliament.uk/schema/formalBodyHasFormalBodyChair> <https://id.parliament.uk/5lOcrEH6> .
         <https://id.parliament.uk/P7Ne09WK> <https://id.parliament.uk/schema/formalBodyHasLeadHouse> <https://id.parliament.uk/1AFu55Hs> .
         <https://id.parliament.uk/P7Ne09WK> <https://id.parliament.uk/schema/formalBodyName> "Human Rights (Joint Committee)" .
@@ -68,6 +69,8 @@ http_interactions:
         <https://id.parliament.uk/LEYIBvV9> <https://id.parliament.uk/schema/partyName> "Labour" .
         <https://id.parliament.uk/ZY0Mx1bp> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://id.parliament.uk/schema/MemberImage> .
         <https://id.parliament.uk/168eTafq> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://id.parliament.uk/schema/ContactPoint> .
+        <https://id.parliament.uk/168eTafq> <https://id.parliament.uk/schema/email> "fakeemail@gmail.com" .
+        <https://id.parliament.uk/168eTafq> <https://id.parliament.uk/schema/phoneNumber> "0208 123 4567" .
         <https://id.parliament.uk/168eTafq> <https://id.parliament.uk/schema/contactPointHasPostalAddress> <https://id.parliament.uk/nDs0SLUm> .
         <https://id.parliament.uk/nDs0SLUm> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://id.parliament.uk/schema/PostalAddress> .
         <https://id.parliament.uk/nDs0SLUm> <https://id.parliament.uk/schema/addressLine1> "House of Commons" .
@@ -75,5 +78,5 @@ http_interactions:
         <https://id.parliament.uk/nDs0SLUm> <https://id.parliament.uk/schema/postCode> "SW1A 0AA" .
         <https://id.parliament.uk/P7Ne09WK> <https://id.parliament.uk/schema/count> "12"^^<http://www.w3.org/2001/XMLSchema#integer> .
     http_version: 
-  recorded_at: Thu, 08 Mar 2018 11:22:48 GMT
+  recorded_at: Mon, 19 Mar 2018 11:06:32 GMT
 recorded_with: VCR 3.0.3

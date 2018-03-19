@@ -37,7 +37,6 @@ http_interactions:
         <https://id.parliament.uk/P7Ne09WK> <https://id.parliament.uk/schema/groupStartDate> "2001-01-17+00:00"^^<http://www.w3.org/2001/XMLSchema#date> .
         <https://id.parliament.uk/P7Ne09WK> <https://id.parliament.uk/schema/formalBodyRemit> "We examine human rights issues in the UK and check government bills are compatible with human rights." .
         <https://id.parliament.uk/P7Ne09WK> <https://id.parliament.uk/schema/formalBodyHasFormalBodyChair> <https://id.parliament.uk/5lOcrEH6> .
-        <https://id.parliament.uk/P7Ne09WK> <https://id.parliament.uk/schema/formalBodyHasLeadHouse> <https://id.parliament.uk/1AFu55Hs> .
         <https://id.parliament.uk/P7Ne09WK> <https://id.parliament.uk/schema/formalBodyName> "Human Rights (Joint Committee)" .
         <https://id.parliament.uk/P7Ne09WK> <https://id.parliament.uk/schema/formalBodyStartDate> "2001-01-17+00:00"^^<http://www.w3.org/2001/XMLSchema#date> .
         <https://id.parliament.uk/P7Ne09WK> <https://id.parliament.uk/schema/formalBodyHasHouse> <https://id.parliament.uk/1AFu55Hs> .

@@ -56,7 +56,7 @@ describe Parliament::Grom::Decorator::Group, vcr: true do
   end
 
 
-  describe '#formal_body_remit' do
+  describe '#has_chair?' do
     before(:each) do
       response = Parliament::Request::UrlRequest.new(base_url: 'http://localhost:3030/api/v1',
                                                      builder: Parliament::Builder::NTripleResponseBuilder,
@@ -64,16 +64,16 @@ describe Parliament::Grom::Decorator::Group, vcr: true do
       @group_nodes = response.filter('https://id.parliament.uk/schema/Group')
     end
 
-   context '#is_chair?' do
-    context 'is a committee chair' do
+   context '#has_chair?' do
+    context 'has a committee chair' do
       it 'will return true' do
-        expect(@group_nodes[0].is_chair?).to eq(true)
+        expect(@group_nodes[0].has_chair?).to eq(true)
       end
     end
 
-    context 'is not a committee chair' do
+    context 'does not have a committee chair' do
       it 'will return false' do
-        expect(@group_nodes[0].is_chair?).to eq(false)
+        expect(@group_nodes[0].has_chair?).to eq(false)
       end
     end
    end
@@ -96,7 +96,7 @@ describe Parliament::Grom::Decorator::Group, vcr: true do
     end
 
     context 'Grom::Node does not have all the required objects' do
-      it 'does not return the formal body name for this Grom::Node object' do
+      it 'does not return the formal body remit for this Grom::Node object' do
         group = @group_nodes.first
 
         expect(group.formal_body_remit).to eq('')
@@ -129,7 +129,7 @@ describe Parliament::Grom::Decorator::Group, vcr: true do
     end
   end
 
-  describe '#is_joint?' do
+  describe '#joint?' do
     before(:each) do
       response = Parliament::Request::UrlRequest.new(base_url: 'http://localhost:3030/api/v1',
                                                      builder: Parliament::Builder::NTripleResponseBuilder,
@@ -137,16 +137,16 @@ describe Parliament::Grom::Decorator::Group, vcr: true do
       @group_nodes = response.filter('https://id.parliament.uk/schema/Group')
     end
 
-    context '#is_joint?' do
+    context '#joint?' do
       context 'is a joint committee' do
         it 'will return true' do
-          expect(@group_nodes[0].is_joint?).to eq(true)
+          expect(@group_nodes[0].joint?).to eq(true)
         end
       end
 
       context 'is not a joint committee' do
         it 'will return false' do
-          expect(@group_nodes[0].is_joint?).to eq(false)
+          expect(@group_nodes[0].joint?).to eq(false)
         end
       end
     end

@@ -16,7 +16,7 @@ module Parliament
         # Checks if Grom::Node has a chair.
         #
         # @return [Boolean] a boolean depending on whether or not the Grom::Node is chair.
-        def is_chair?
+        def has_chair?
          respond_to?(:formalBodyHasFormalBodyChair)
         end
 
@@ -37,7 +37,7 @@ module Parliament
         # Checks if Grom::Node is joint.
         #
         # @return [Boolean] a boolean depending on whether or not the Grom::Node is joint.
-        def is_joint?
+        def joint?
           respond_to?(:formalBodyHasLeadHouse)
         end
 
