@@ -17,7 +17,7 @@ module Parliament
         #
         # @return [Boolean] a boolean depending on whether or not the Grom::Node is chair.
         def has_chair?
-         respond_to?(:formalBodyHasFormalBodyChair)
+          respond_to?(:formalBodyHasFormalBodyChair)
         end
 
         # Alias formalBodyStartDate with fallback.

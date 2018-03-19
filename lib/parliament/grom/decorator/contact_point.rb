@@ -3,32 +3,36 @@ module Parliament
     module Decorator
       # Decorator namespace for Grom::Node instances with type: https://id.parliament.uk/schema/ContactPoint
       module ContactPoint
+        # A hack has been added to postal_addresses, email, phone_number and fax_number
+        # to remove any details that are less than ATTRIBUTE_LENGTH_LIMIT_HACK in length
+        # including "." and "-" addresses when these have been mistakenly entered into Mnis
+        ATTRIBUTE_LENGTH_LIMIT_HACK = 1
         # Alias contactPointHasPostalAddress with fallback.
         #
         # @return [Array, Array] an array of the postal addresses for the Grom::Node or an empty array.
         def postal_addresses
-          respond_to?(:contactPointHasPostalAddress) ? contactPointHasPostalAddress : []
+          @postal_addresses ||= respond_to?(:contactPointHasPostalAddress) ? contactPointHasPostalAddress.reject { |address| address.full_address.length <= ATTRIBUTE_LENGTH_LIMIT_HACK } : []
         end
 
         # Alias email with fallback.
         #
         # @return [String, String] the email of the Grom::Node or an empty string.
         def email
-          instance_variable_get('@email'.to_sym).nil? ? '' : instance_variable_get('@email'.to_sym).strip
+          @email_decorator ||= instance_variable_get('@email'.to_sym) && instance_variable_get('@email'.to_sym).length > ATTRIBUTE_LENGTH_LIMIT_HACK ? instance_variable_get('@email'.to_sym).strip : ''
         end
 
         # Alias phoneNumber with fallback.
         #
         # @return [String, String] the phone number of the Grom::Node or an empty string.
         def phone_number
-          respond_to?(:phoneNumber) ? phoneNumber : ''
+          @phone_number ||= respond_to?(:phoneNumber) && phoneNumber.length > ATTRIBUTE_LENGTH_LIMIT_HACK ? phoneNumber : ''
         end
 
         # Alias faxNumber with fallback.
         #
         # @return [String, String] the fax number of the Grom::Node or an empty string.
         def fax_number
-          respond_to?(:faxNumber) ? faxNumber : ''
+          @fax_number ||= respond_to?(:faxNumber) && faxNumber.length > ATTRIBUTE_LENGTH_LIMIT_HACK ? faxNumber : ''
         end
 
         # Alias contactPointHasPerson with fallback.
