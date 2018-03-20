@@ -214,6 +214,13 @@ module Parliament
           respond_to?(:memberHasAlternateMembership)
         end
 
+        # Check whether person is a lay member?.
+        #
+        # @return [Boolean] a boolean depending on whether or person is a lay member or not
+        def lay_member?
+          respond_to?(:formalBodyLayPersonMnisId)
+        end
+
         # Check whether they are a former member of the House of Lords.
         #
         # @return [Boolean] a boolean depending on whether or not they have a current seat incumbency in the House of Lords.

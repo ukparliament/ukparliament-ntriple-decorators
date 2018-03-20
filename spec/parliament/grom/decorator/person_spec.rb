@@ -496,6 +496,20 @@ describe Parliament::Grom::Decorator::Person, vcr: true do
     end
   end
 
+  describe '#lay_member?' do
+    context 'Grom::Node has all the required objects' do
+      it 'returns person is a lay member' do
+        expect(person_node.lay_member?).to eq(true)
+      end
+    end
+
+    context 'Grom::Node does not have all required objects' do
+      it 'returns person is not a lay member' do
+        expect(person_node.lay_member?).to eq(false)
+      end
+    end
+  end
+
   describe '#sort_name' do
     context 'Grom::Node has all the required objects' do
       it 'returns the given sort_name for a Grom::Node objects of type Person' do
