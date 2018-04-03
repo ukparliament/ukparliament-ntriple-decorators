@@ -2,7 +2,6 @@ module Parliament
   module Grom
     module Decorator
       # Decorator namespace for Grom::Node instances with type: https://id.parliament.uk/schema/Incumbency.
-      # rubocop:disable ModuleLength
       module Incumbency
         include Helpers::DateHelper
 

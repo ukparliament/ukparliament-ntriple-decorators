@@ -37,6 +37,20 @@ module Parliament
         def house_incumbencies
           respond_to?(:houseHasHouseIncumbency) ? houseHasHouseIncumbency : []
         end
+
+        # Is this the lords?
+        #
+        # @return Boolean is the house the lords?
+        def lords?
+          name == 'House of Lords'
+        end
+
+        # Is this the commons?
+        #
+        # @return Boolean is the house the commons?
+        def commons?
+          name == 'House of Commons'
+        end
       end
     end
   end

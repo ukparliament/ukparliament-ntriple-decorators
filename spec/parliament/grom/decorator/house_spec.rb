@@ -107,4 +107,56 @@ describe Parliament::Grom::Decorator::House, vcr: true do
       end
     end
   end
+
+  describe '#lords?' do
+    before(:each) do
+      id = '511a622a-22c2-4e3f-9a17-e5a024380138'
+      response = Parliament::Request::UrlRequest.new(base_url: 'http://localhost:3030',
+                                                     builder: Parliament::Builder::NTripleResponseBuilder,
+                                                     decorators: Parliament::Grom::Decorator).people(id).houses.get
+      @house_nodes = response.filter('https://id.parliament.uk/schema/House')
+    end
+
+    context 'in the lords' do
+      it 'returns true' do
+        house_node = @house_nodes.first
+
+        expect(house_node.lords?).to eq(true)
+      end
+    end
+
+    context 'in the commons' do
+      it 'returns false' do
+        house_node = @house_nodes.first
+
+        expect(house_node.lords?).to eq(false)
+      end
+    end
+  end
+
+  describe '#commons?' do
+    before(:each) do
+      id = '511a622a-22c2-4e3f-9a17-e5a024380138'
+      response = Parliament::Request::UrlRequest.new(base_url: 'http://localhost:3030',
+                                                     builder: Parliament::Builder::NTripleResponseBuilder,
+                                                     decorators: Parliament::Grom::Decorator).people(id).houses.get
+      @house_nodes = response.filter('https://id.parliament.uk/schema/House')
+    end
+
+    context 'in the lords' do
+      it 'returns false' do
+        house_node = @house_nodes.first
+
+        expect(house_node.commons?).to eq(false)
+      end
+    end
+
+    context 'in the commons' do
+      it 'returns true' do
+        house_node = @house_nodes.first
+
+        expect(house_node.commons?).to eq(true)
+      end
+    end
+  end
 end

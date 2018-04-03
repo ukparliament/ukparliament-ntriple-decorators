@@ -117,14 +117,10 @@ module Parliament
           return @party_name unless @party_name.nil?
           current_incumbency = seat_incumbencies.select(&:current?).first
 
-          if current_incumbency
-            current_membership = current_incumbency.member.party_memberships.select(&:current?).first
-            @party_name = current_membership.nil? ? nil : current_membership.party.name
-          else
-            @party_name = nil
-          end
+          return @party_name = nil unless current_incumbency
 
-          @party_name
+          current_membership = current_incumbency.member.party_memberships.select(&:current?).first
+          @party_name = current_membership.nil? ? nil : current_membership.party.name
         end
 
         # @return [Array, Array] the regions of the Grom::Node or an empty array.

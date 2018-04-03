@@ -2,7 +2,6 @@ module Parliament
   module Grom
     module Decorator
       # Decorator namespace for Grom::Node instances with type: https://id.parliament.uk/schema/FormalBody.
-      # rubocop:disable ModuleLength
       module FormalBody
         include Helpers::DateHelper
 

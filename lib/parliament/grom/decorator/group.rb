@@ -2,7 +2,6 @@ module Parliament
   module Grom
     module Decorator
       # Decorator namespace for Grom::Node instances with type: https://id.parliament.uk/schema/Group.
-      # rubocop:disable ModuleLength
       module Group
         include Helpers::DateHelper
 

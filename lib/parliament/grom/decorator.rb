@@ -42,28 +42,71 @@ module Parliament
     #
     # @since 0.1.0
     module Decorator
-      # Gets the root directory of the gem
-      def self.gem_path
-        File.expand_path '../../../../', __FILE__
-      end
+      MAPPING = {
+        'ConstituencyArea'                  => ConstituencyArea,
+        'ConstituencyGroup'                 => ConstituencyGroup,
+        'ContactPoint'                      => ContactPoint,
+        'EuropeanRegion'                    => EuropeanRegion,
+        'Gender'                            => Gender,
+        'GenderIdentity'                    => GenderIdentity,
+        'House'                             => House,
+        'HouseSeat'                         => HouseSeat,
+        'MemberImage'                       => MemberImage,
+        'ParliamentPeriod'                  => ParliamentPeriod,
+        'ParliamentaryIncumbency'           => ParliamentaryIncumbency,
+        'Party'                             => Party,
+        'PartyMembership'                   => PartyMembership,
+        'Person'                            => Person,
+        'PostalAddress'                     => PostalAddress,
+        'SeatIncumbency'                    => SeatIncumbency,
+        'FormalBodyMembership'              => FormalBodyMembership,
+        'FormalBody'                        => FormalBody,
+        'FormalBodyType'                    => FormalBodyType,
+        'GovernmentIncumbency'              => GovernmentIncumbency,
+        'GovernmentPosition'                => GovernmentPosition,
+        'OppositionIncumbency'              => OppositionIncumbency,
+        'OppositionPosition'                => OppositionPosition,
+        'WebArticle'                        => WebArticle,
+        'Audience'                          => Audience,
+        'ArticleType'                       => ArticleType,
+        'Collection'                        => Collection,
+        'Concept'                           => Concept,
+        'Incumbency'                        => Incumbency,
+        'Group'                             => Group,
+        'GovRegisterGovernmentOrganisation' => GovRegisterGovernmentOrganisation,
+        'Position'                          => Position,
+        'FormalBodyChair'                   => FormalBodyChair
+      }.freeze
 
-      # Loads the translation file into the I18n gem
-      I18n.load_path += Dir[File.join(gem_path, 'config', 'locales', '*.yml')]
-      I18n.backend.load_translations
+      class << self
+        # Gets the root directory of the gem
+        def gem_path
+          File.expand_path '../../..', __dir__
+        end
 
-      # Decorates objects with alias methods extended from its decorator module.
-      #
-      # @param [Grom::Node] object the object to be decorated.
-      def self.decorate(object)
-        return object unless object.respond_to?(:type)
+        def load!
+          # Loads the translation file into the I18n gem
+          I18n.load_path += Dir[File.join(gem_path, 'config', 'locales', '*.yml')]
+          I18n.backend.load_translations
+        end
 
-        object_type = ::Grom::Helper.get_id(object.type)
+        # Decorates objects with alias methods extended from its decorator module.
+        #
+        # @param [Grom::Node] object the object to be decorated.
+        def decorate(object)
+          return object unless object.respond_to?(:type)
 
-        return object unless constants.include?(object_type.to_sym)
+          Array(object.type).each do |type|
+            decorator = MAPPING[::Grom::Helper.get_id(type)] # Get the decorator for a type, or nil
 
-        decorator_module = Object.const_get("Parliament::Grom::Decorator::#{object_type}")
-        object.extend(decorator_module)
+            object.extend(decorator) unless decorator.nil?
+          end
+
+          object
+        end
       end
     end
   end
 end
+
+Parliament::Grom::Decorator.load!

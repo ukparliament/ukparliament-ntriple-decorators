@@ -67,12 +67,14 @@ module Parliament
           respond_to?(:parliamentaryIncumbencyHasMember) ? parliamentaryIncumbencyHasMember.first : nil
         end
 
+        # @depreciatedn Use {#lords?} on a House object instead. I.e. `seat_incumbency.house.lords?`
         def house_of_lords?
-          house.name == 'House of Lords'
+          house.lords?
         end
 
+        # @depreciatedn Use {#commons?} on a House object instead. I.e. `seat_incumbency.house.commons?`
         def house_of_commons?
-          house.name == 'House of Commons'
+          house.commons?
         end
       end
     end

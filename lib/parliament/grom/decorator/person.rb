@@ -2,7 +2,6 @@ module Parliament
   module Grom
     module Decorator
       # Decorator namespace for Grom::Node instances with type: https://id.parliament.uk/schema/Person.
-      # rubocop:disable ModuleLength
       module Person
         include Helpers::DateHelper
 
@@ -304,22 +303,14 @@ module Parliament
         private
 
         def current_member_by_house?(house_name)
-          seat_incumbencies.select{ |incumbency| incumbency.house.name == house_name && incumbency.end_date.nil? }.any?
+          seat_incumbencies.select { |incumbency| incumbency.house.name == house_name && incumbency.end_date.nil? }.any?
         end
 
         def former_member_by_house?(house_name)
-          seat_incumbencies.select{ |incumbency| incumbency.house.name == house_name && incumbency.end_date }.any?
+          seat_incumbencies.select { |incumbency| incumbency.house.name == house_name && incumbency.end_date }.any?
         end
 
         def house_membership_status
-          no_current_seat_incumbency = seat_incumbencies.select(&:current?).empty?
-          former_lord = former_lord?
-          former_mp = (seat_incumbencies.any? && no_current_seat_incumbency)
-
-          build_house_membership_status(no_current_seat_incumbency, former_lord, former_mp)
-        end
-
-        def build_house_membership_status(no_current_seat_incumbency, former_lord, former_mp)
           statuses     = []
           current_mp   = current_mp?
           current_lord = current_lord?

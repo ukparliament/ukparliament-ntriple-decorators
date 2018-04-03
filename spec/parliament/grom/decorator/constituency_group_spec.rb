@@ -220,7 +220,7 @@ describe Parliament::Grom::Decorator::ConstituencyGroup, vcr: true do
   end
 
   describe '#current_member_party_name' do
-    let(:id) {'9d65a056-04c9-4aa5-999c-1a5905ce54fd'}
+    let(:id) {'aaaaaaaa'}
     let(:response) { Parliament::Request::UrlRequest.new(base_url: 'http://localhost:3030',
                                                          builder: Parliament::Builder::NTripleResponseBuilder,
                                                          decorators: Parliament::Grom::Decorator).constituencies(id).get}
@@ -230,9 +230,14 @@ describe Parliament::Grom::Decorator::ConstituencyGroup, vcr: true do
         constituency_node = response.filter('https://id.parliament.uk/schema/ConstituencyGroup')[0]
         expect(constituency_node.current_member_party_name).to eq('Conservative')
       end
+
+      it 'does not return a party name' do
+        constituency_node = response.filter('https://id.parliament.uk/schema/ConstituencyGroup')[0]
+        expect(constituency_node.current_member_party_name).to eq('')
+      end
     end
 
-    context 'constituency member' do
+    context 'constituency member is not a current seat incumbent' do
       it 'does not return a party name' do
         constituency_node = response.filter('https://id.parliament.uk/schema/ConstituencyGroup')[0]
         expect(constituency_node.current_member_party_name).to eq('')
