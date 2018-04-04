@@ -1,0 +1,183 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:3030/api/v1/webarticle_by_id
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      - application/n-triples
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/n-triples
+      Content-Disposition:
+      - inline; filename="index"
+      Last-Modified:
+      - Wed, 04 Apr 2018 08:41:06 GMT
+      X-Content-Type-Options:
+      - nosniff
+      Content-Length:
+      - '12137'
+    body:
+      encoding: UTF-8
+      string: "<https://id.parliament.uk/oxGevlNF> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+        <https://id.parliament.uk/schema/WebArticle> .\r\n<https://id.parliament.uk/oxGevlNF>
+        <http://example.com/content/schema/title> \"How to submit a written question
+        on paper\" .\r\n<https://id.parliament.uk/oxGevlNF> <http://example.com/content/schema/summary>
+        \"These steps are for submitting a written question on paper.  \" .\r\n<https://id.parliament.uk/oxGevlNF>
+        <http://example.com/content/schema/body> \"You can also [submit a written
+        question online](/articles/8MHJ9zSp).\\n\\nYou or your staff can complete
+        these steps, but your handwritten signature is needed for step 2.\\n\\n##
+        Steps\\n1. Fill in a question form ([download a question form (Word Doc, 39
+        KB)](https://intranet.parliament.uk/Documents/Table-Office-archive/Templates/Question-form.doc)
+        from the intranet or get one from the Table Office or Procedural Hub).\\n
+        \ - Tick the box to specify whether it is an ordinary or named day written
+        question. There is no set deadline for answers to ordinary questions, although
+        departments usually respond between five and 10 working days after the question
+        has been tabled. You can table up to five named day questions each day and
+        they should receive an answer on the third sitting day after they\\u2019re
+        tabled (unless you specify a later named day). A sitting day is a day when
+        the House is meeting.\\n  - Fill in your name, constituency and the relevant
+        department.\\n  - Tick the box if you have an [interest to declare](https://publications.parliament.uk/pa/cm201012/cmcode/1885/188505.htm)
+        and email [tableoffice@parliament.uk](mailto: tableoffice@parliament.uk) to
+        say what the interest is.\\n  - Write the text of your question in the blank
+        space on the form. Check it conforms to the rules for questions.\\n  - If
+        you want to ask the same question to several departments, fill in one form
+        and, beneath your question, list the departments and answering bodies you
+        want to ask. Don\\u2019t put \\u201Call departments\\u201D unless you want
+        it to go to all the answering bodies, some of which (such as the Church Commissioners)
+        are very small.\\n\\n2. Take your question form to the Table Office or Procedural
+        Hub in person, or ask another MP to take it for you. Or sign the question
+        form and post it or ask your staff to take it to the Table Office or Procedural
+        Hub (faxed, stamped or photocopied signatures cannot be accepted).\\n3. The
+        Table Office will check your question and contact you if they have a problem.
+        Once the Table Office has approved your question, it has been tabled.\\n\"
+        .\r\n<https://id.parliament.uk/oxGevlNF> <http://example.com/content/schema/relatedArticle>
+        <https://id.parliament.uk/KsHS5ZcZ> .\r\n<https://id.parliament.uk/KsHS5ZcZ>
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://id.parliament.uk/schema/WebArticle>
+        .\r\n<https://id.parliament.uk/KsHS5ZcZ> <http://example.com/content/schema/title>
+        \"Written questions: overview for MPs\" .\r\n<https://id.parliament.uk/KsHS5ZcZ>
+        <http://example.com/content/schema/summary> \"You can ask a department a question
+        in writing and will receive an answer by email.\" .\r\n<https://id.parliament.uk/KsHS5ZcZ>
+        <http://example.com/content/schema/body> \"There are two kinds of written
+        question:\\n\\n- \\u2018Ordinary\\u2019 written questions. Departments usually
+        respond between five and 10 working days after the question has been tabled.
+        There is no limit on the number of ordinary written questions you can table.\\n-
+        \\u2018Named day\\u2019 written questions. Departments deal with named day
+        questions as a priority.  They should be answered on the third sitting day
+        after they are tabled. A sitting day is a day when the House is meeting. You
+        can table a maximum of five named day questions each day. This allows you
+        to prioritise some questions.\\n\" .\r\n<https://id.parliament.uk/KsHS5ZcZ>
+        <http://example.com/content/schema/relatedArticle> <https://id.parliament.uk/8MHJ9zSp>
+        .\r\n<https://id.parliament.uk/8MHJ9zSp> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+        <https://id.parliament.uk/schema/WebArticle> .\r\n<https://id.parliament.uk/8MHJ9zSp>
+        <http://example.com/content/schema/title> \"How to submit a written question
+        online\" .\r\n<https://id.parliament.uk/8MHJ9zSp> <http://example.com/content/schema/summary>
+        \"These steps are for submitting a written question online. You can submit
+        a maximum of 20 questions a day online. \" .\r\n<https://id.parliament.uk/8MHJ9zSp>
+        <http://example.com/content/schema/body> \"If you prefer to use a hard copy,
+        please read [how to submit a written question on paper](/articles/oxGevlNF).\\n\\nYou
+        or your staff can complete these steps, but you will need to [register your
+        staff to use the MemberHub](https://memberhub.parliament.uk).\\n\\n## Steps\\n1.
+        Go to the online [MemberHub](https://memberhub.parliament.uk):\\n  - Click
+        \\u2018submit\\u2019 (towards the top of the screen) and choose \\u2018written
+        question\\u2019.  \\n  - Type the name of the department you want into the
+        \\u2018Answering Bodies\\u2019 box and click \\u2018next\\u2019.\\n  - Click
+        the box to specify whether it is an ordinary or named day written question.
+        There is no set deadline for answers to ordinary questions, although departments
+        usually respond between five and 10 working days after the question has been
+        tabled. You can table up to five named day questions each day and they should
+        receive an answer on the third sitting day after they\\u2019re tabled (unless
+        you specify a later named day). A sitting day is a day when the House is meeting.
+        \\n  - Write the text of your question in the blank space indicated. Check
+        it conforms to the rules for questions.\\n  - If you have [an interest to
+        declare](https://publications.parliament.uk/pa/cm201012/cmcode/1885/188505.htm),
+        click the box saying \\u2018yes\\u2019 and explain what the interest is.\\n
+        \ - Click \\u2018next\\u2019. Review the information and click \\u2018submit\\u2019.\\n
+        \ - If you want to ask the same question to several departments, submit the
+        question to the first department, then find that question in the list of questions
+        you have submitted, click \\u2018actions\\u2019 and \\u2018submit to another
+        answering body\\u2019. Choose the additional department you want to ask. \\n2.
+        The Table Office will check your question and contact you if there is a problem.
+        Once the Table Office has approved your question, it has been tabled.\\n\\n\"
+        .\r\n<https://id.parliament.uk/8MHJ9zSp> <http://example.com/content/schema/relatedArticle>
+        <https://id.parliament.uk/KsHS5ZcZ> .\r\n<https://id.parliament.uk/8MHJ9zSp>
+        <http://example.com/content/schema/relatedArticle> <https://id.parliament.uk/oxGevlNF>
+        .\r\n<https://id.parliament.uk/9vwTZN0a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+        <https://id.parliament.uk/schema/WebArticle> .\r\n<https://id.parliament.uk/9vwTZN0a>
+        <http://example.com/content/schema/title> \"Unsatisfactory answers to written
+        questions\" .\r\n<https://id.parliament.uk/9vwTZN0a> <http://example.com/content/schema/summary>
+        \". \" .\r\n<https://id.parliament.uk/9vwTZN0a> <http://example.com/content/schema/body>
+        \"Ministers are responsible for the speed and content of their answers. If
+        you receive an answer that is late, inaccurate, incomplete or unsatisfactory,
+        you should discuss your concerns with the Table Office. They can advise you
+        on taking further action.\\n\\nFor answers that are very late, you can ask
+        a \\u2018chasing\\u2019 question (in the form \\u201Cwhen s/he plans to answer
+        Question 123456, tabled by the hon. Member for [Constituency] on [Date Month
+        Year]\\u201D).\\n\\nIf an answer gives rise to further questions, you can
+        ask a \\u2018pursuant\\u2019 question requesting more information (in the
+        form \\u201CPursuant to the Answer of [Date Month Year] to Question 123456
+        on [Title of Question], \\u2026\\u201D).\\n\" .\r\n<https://id.parliament.uk/9vwTZN0a>
+        <http://example.com/content/schema/relatedArticle> <https://id.parliament.uk/KsHS5ZcZ>
+        .\r\n<https://id.parliament.uk/9vwTZN0a> <http://example.com/content/schema/relatedArticle>
+        <https://id.parliament.uk/8MHJ9zSp> .\r\n<https://id.parliament.uk/9vwTZN0a>
+        <http://example.com/content/schema/relatedArticle> <https://id.parliament.uk/oxGevlNF>
+        .\r\n<https://id.parliament.uk/AIg8zyho> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+        <https://id.parliament.uk/schema/Concept> .\r\n<https://id.parliament.uk/AIg8zyho>
+        <https://id.parliament.uk/schema/conceptLabel> \"Written questions\" .\r\n<https://id.parliament.uk/AIg8zyho>
+        <https://id.parliament.uk/schema/conceptDefinition> \"Questions asked by Members
+        of both Houses which receive a written answer from government departments.
+        Questions are asked to raise awareness of particular subjects, or to answer
+        constituents' questions, to gather statistics or to monitor government progress
+        in an area of interest. In the Commons, named-day questions are for answer
+        on a stated day; ordinary written questions are for answer two sitting days
+        after they are received. In the Lords, Members enter questions on the order
+        paper via the Lords Table Office and can expect an answer within 14 days.\"
+        .\r\n<https://id.parliament.uk/AIg8zyho> <https://id.parliament.uk/schema/conceptScopeNote>
+        \"Questions receiving a written answer.\" .\r\n<http://example.com/content/1DNoI6R8cckOmoKiqQqkKk>
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.com/content/schema/Collection>
+        .\r\n<http://example.com/content/1DNoI6R8cckOmoKiqQqkKk> <http://example.com/content/schema/name>
+        \"Guide to Procedure\" .\r\n<https://id.parliament.uk/9vwTZN0a> <https://id.parliament.uk/schema/subjectTaggedThingHasConcept>
+        <https://id.parliament.uk/AIg8zyho> .\r\n<https://id.parliament.uk/9vwTZN0a>
+        <http://example.com/content/schema/articleHasCollection> <http://example.com/content/1DNoI6R8cckOmoKiqQqkKk>
+        .\r\n<https://id.parliament.uk/8MHJ9zSp> <http://example.com/content/schema/relatedArticle>
+        <https://id.parliament.uk/9vwTZN0a> .\r\n<https://id.parliament.uk/8MHJ9zSp>
+        <https://id.parliament.uk/schema/subjectTaggedThingHasConcept> <https://id.parliament.uk/AIg8zyho>
+        .\r\n<https://id.parliament.uk/8MHJ9zSp> <http://example.com/content/schema/articleType>
+        <http://example.com/content/6ROrcWq8yAEW4wOAqQMqGi> .\r\n<http://example.com/content/6ROrcWq8yAEW4wOAqQMqGi>
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.com/content/schema/ArticleType>
+        .\r\n<http://example.com/content/6ROrcWq8yAEW4wOAqQMqGi> <http://example.com/content/schema/name>
+        \"How-To Guide\" .\r\n<https://id.parliament.uk/8MHJ9zSp> <http://example.com/content/schema/articleHasCollection>
+        <http://example.com/content/1DNoI6R8cckOmoKiqQqkKk> .\r\n<https://id.parliament.uk/KsHS5ZcZ>
+        <http://example.com/content/schema/relatedArticle> <https://id.parliament.uk/oxGevlNF>
+        .\r\n<https://id.parliament.uk/KsHS5ZcZ> <http://example.com/content/schema/relatedArticle>
+        <https://id.parliament.uk/9vwTZN0a> .\r\n<https://id.parliament.uk/KsHS5ZcZ>
+        <https://id.parliament.uk/schema/subjectTaggedThingHasConcept> <https://id.parliament.uk/AIg8zyho>
+        .\r\n<https://id.parliament.uk/KsHS5ZcZ> <http://example.com/content/schema/articleHasCollection>
+        <http://example.com/content/1DNoI6R8cckOmoKiqQqkKk> .\r\n<https://id.parliament.uk/oxGevlNF>
+        <http://example.com/content/schema/relatedArticle> <https://id.parliament.uk/8MHJ9zSp>
+        .\r\n<https://id.parliament.uk/oxGevlNF> <http://example.com/content/schema/relatedArticle>
+        <https://id.parliament.uk/9vwTZN0a> .\r\n<https://id.parliament.uk/oxGevlNF>
+        <https://id.parliament.uk/schema/subjectTaggedThingHasConcept> <https://id.parliament.uk/AIg8zyho>
+        .\r\n<https://id.parliament.uk/oxGevlNF> <http://example.com/content/schema/articleType>
+        <http://example.com/content/6ROrcWq8yAEW4wOAqQMqGi> .\r\n<https://id.parliament.uk/oxGevlNF>
+        <http://example.com/content/schema/articleHasCollection> <http://example.com/content/1DNoI6R8cckOmoKiqQqkKk>
+        .\r\n<https://id.parliament.uk/9vwTZN0a> <http://example.com/content/schema/articleHasCollection>
+        <http://example.com/content/moCkCollectionObject> .\r\n<http://example.com/content/moCkCollectionObject>
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.com/content/schema/Collection>
+        .\r\n<http://example.com/content/moCkCollectionObject> <http://example.com/content/schema/name>
+        \"Some other big collection\" .\r\n"
+    http_version: 
+  recorded_at: Fri, 06 Apr 2018 18:41:45 GMT
+recorded_with: VCR 3.0.3

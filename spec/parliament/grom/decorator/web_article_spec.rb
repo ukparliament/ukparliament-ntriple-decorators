@@ -16,8 +16,8 @@ describe Parliament::Grom::Decorator::WebArticle, vcr: true do
         expect(@article.type).to eq('https://id.parliament.uk/schema/WebArticle')
       end
 
-      it 'returns the title of the article the Grom::Node object' do
-        expect(@article.article_title).to eq('First Article')
+      it 'returns the title of the Grom::Node object' do
+        expect(@article.article_title).to eq('How to submit a written question on paper')
       end
     end
 
@@ -30,8 +30,8 @@ describe Parliament::Grom::Decorator::WebArticle, vcr: true do
 
   describe '#article_summary' do
     context 'Grom::Node has all the required objects' do
-      it 'returns the summary of the article the Grom::Node object' do
-        expect(@article.article_summary).to include('Lorem ipsum.')
+      it 'returns the summary of the Grom::Node object' do
+        expect(@article.article_summary).to include('These steps are for submitting a written question on paper.')
       end
     end
 
@@ -44,8 +44,8 @@ describe Parliament::Grom::Decorator::WebArticle, vcr: true do
 
   describe '#article_body' do
     context 'Grom::Node has all the required objects' do
-      it 'returns the body of the article the Grom::Node object' do
-        expect(@article.article_body).to include('Some body.')
+      it 'returns the body of the Grom::Node object' do
+        expect(@article.article_body).to include('You can also [submit a written question online](/articles/8MHJ9zSp)')
       end
     end
 
