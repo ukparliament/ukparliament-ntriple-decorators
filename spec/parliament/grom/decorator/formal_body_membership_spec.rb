@@ -2,8 +2,8 @@ require_relative '../../../spec_helper'
 
 describe Parliament::Grom::Decorator::FormalBodyMembership, vcr: true do
   before(:each) do
-    id = 'tJxPOiSd'
-    response = Parliament::Request::UrlRequest.new(base_url: 'http://localhost:3000',
+  id = 'tJxPOiSd'
+  response = Parliament::Request::UrlRequest.new(base_url: 'http://localhost:3000',
     builder: Parliament::Builder::NTripleResponseBuilder,
     decorators: Parliament::Grom::Decorator).people(id).get
     @formal_body_membership_nodes = response.filter('https://id.parliament.uk/schema/FormalBodyMembership')
@@ -67,7 +67,6 @@ describe Parliament::Grom::Decorator::FormalBodyMembership, vcr: true do
     end
   end
 
-
   describe '#date_range' do
     context 'formal body membership has no start_date' do
       it 'returns no date' do
@@ -93,6 +92,26 @@ describe Parliament::Grom::Decorator::FormalBodyMembership, vcr: true do
 
         expect(membership_node).to respond_to(:date_range)
         expect(membership_node.date_range).to eq('8 Jun 1991 to present')
+      end
+    end
+  end
+
+  describe '#people' do
+    context 'formal body membership has a person Grom::Node' do
+      it 'returns an array of person Grom::Nodes' do
+        membership_node = @formal_body_membership_nodes.first
+
+        expect(membership_node).to respond_to(:people)
+        expect((membership_node.people[0]).type).to eq('https://id.parliament.uk/schema/Person')
+      end
+    end
+
+    context 'formal body membership does not have a person Grom::Node' do
+      it 'returns an empty array' do
+        membership_node = @formal_body_membership_nodes.first
+
+        expect(membership_node).to respond_to(:people)
+        expect(membership_node.people).to eq([])
       end
     end
   end
