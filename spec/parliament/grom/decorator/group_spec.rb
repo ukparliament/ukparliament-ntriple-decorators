@@ -190,7 +190,7 @@ describe Parliament::Grom::Decorator::Group, vcr: true do
     context 'Grom::Node has a members count' do
         it 'returns the members count for a Grom::Node object of type Group' do
           group = @group_nodes.first
-          expect(group.count.to_i).to eq(12)
+          expect(group.member_count).to eq(12)
         end
     end
   end

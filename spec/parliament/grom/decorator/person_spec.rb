@@ -663,4 +663,18 @@ describe Parliament::Grom::Decorator::Person, vcr: true do
       end
     end
   end
+
+  describe '#government_incumbencies' do
+    context 'Grom::Node has all the required objects' do
+      it 'returns the government incumbencies for a Grom::Node object of type Person' do
+        expect(person_node.government_incumbencies.size).to eq(3)
+      end
+    end
+
+    context 'Grom::Node has no government incumbencies' do
+      it 'returns an empty array' do
+        expect(person_node.government_incumbencies).to eq([])
+      end
+    end
+  end
 end

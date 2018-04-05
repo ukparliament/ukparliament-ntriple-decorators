@@ -2,7 +2,6 @@ module Parliament
   module Grom
     module Decorator
       # Decorator namespace for Grom::Node instances with type: https://id.parliament.uk/schema/governmentPosition.
-      # rubocop:disable ModuleLength
       module GovernmentPosition
         # Checks if Grom::Node has a name.
         #

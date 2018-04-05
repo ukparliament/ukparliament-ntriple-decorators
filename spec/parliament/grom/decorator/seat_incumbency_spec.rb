@@ -189,4 +189,40 @@ describe Parliament::Grom::Decorator::SeatIncumbency, vcr: true do
       end
     end
   end
+
+  describe '#house_of_lords?' do
+    context 'in the lords' do
+      it 'returns true' do
+        seat_incumbency_node = @seat_incumbency_nodes.first
+
+        expect(seat_incumbency_node.house_of_lords?).to eq(true)
+      end
+    end
+
+    context 'in the commons' do
+      it 'returns false' do
+        seat_incumbency_node = @seat_incumbency_nodes.first
+
+        expect(seat_incumbency_node.house_of_lords?).to eq(false)
+      end
+    end
+  end
+
+  describe '#house_of_commons?' do
+    context 'in the lords' do
+      it 'returns false' do
+        seat_incumbency_node = @seat_incumbency_nodes.first
+
+        expect(seat_incumbency_node.house_of_commons?).to eq(false)
+      end
+    end
+
+    context 'in the commons' do
+      it 'returns true' do
+        seat_incumbency_node = @seat_incumbency_nodes.first
+
+        expect(seat_incumbency_node.house_of_commons?).to eq(true)
+      end
+    end
+  end
 end

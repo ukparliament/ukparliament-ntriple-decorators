@@ -2,7 +2,6 @@ module Parliament
   module Grom
     module Decorator
       # Decorator namespace for Grom::Node instances with type: http://data.ordnancesurvey.co.uk/ontology/admingeo/EuropeanRegion.
-      # rubocop:disable ModuleLength
       module EuropeanRegion
         # Alias prefLabel with fallback.
         #
