@@ -53,6 +53,13 @@ module Parliament
         def current?
           end_date.nil?
         end
+
+        # Checks if Grom::Node has contact points.
+        #
+        # @return [Array, Array] an arry containing the contact_point(s), or an empty array.
+        def contact_points
+          @contact_points ||= respond_to?(:formalBodyHasContactPoint) ? Array(formalBodyHasContactPoint) : []
+        end
       end
     end
   end

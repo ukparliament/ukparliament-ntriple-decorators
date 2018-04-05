@@ -112,6 +112,20 @@ describe Parliament::Grom::Decorator::FormalBody, vcr: true do
         expect(@formal_body_nodes[0].joint?).to eq(false)
       end
     end
+   end
+
+  context '#contact_point' do
+    context 'formal body has a contact point' do
+      it 'return the contact point' do
+        expect(@formal_body_nodes[0].contact_points.first.email).to eq('test@formal-body-test.com')
+      end
+    end
+
+    context 'formal body does not have a contact point' do
+      it 'returns an empty array' do
+        expect(@formal_body_nodes[0].contact_points).to eq([])
+      end
+    end
   end
 
   describe '#date_range' do
