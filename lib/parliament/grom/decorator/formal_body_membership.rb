@@ -28,9 +28,16 @@ module Parliament
 
         # Alias formalBodyMembershipFormalBody with fallback.
         #
-        # @return [Grom::Node, nil] the start date of the Grom::Node or nil.
+        # @return [Grom::Node, nil] the formal body of the Grom::Node or nil.
         def formal_body
           respond_to?(:formalBodyMembershipHasFormalBody) ? formalBodyMembershipHasFormalBody&.first : nil
+        end
+
+        # Alias formalBodyMembershipHasPerson with fallback.
+        #
+        # @return [Grom::Node, nil] Array of people Grom::Nodes or empty array
+        def people
+          respond_to?(:formalBodyMembershipHasPerson) ? formalBodyMembershipHasPerson : []
         end
       end
     end

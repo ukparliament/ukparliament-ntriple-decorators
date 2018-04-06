@@ -1,0 +1,46 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:3000/people/tJxPOiSd
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      - application/n-triples
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/n-triples
+      Content-Disposition:
+      - inline; filename="index"
+      Last-Modified:
+      - Thu, 05 Apr 2018 16:31:17 GMT
+      X-Content-Type-Options:
+      - nosniff
+      Content-Length:
+      - '894'
+    body:
+      encoding: UTF-8
+      string: "<https://id.parliament.uk/cLjFRjRt> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+        <https://id.parliament.uk/schema/FormalBody> .\r\n<https://id.parliament.uk/cLjFRjRt>
+        <https://id.parliament.uk/schema/formalBodyHasFormalBodyMembership> <https://id.parliament.uk/rYgJkjbC>
+        .\r\n<https://id.parliament.uk/rYgJkjbC> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+        <https://id.parliament.uk/schema/FormalBodyMembership> .\r\n<https://id.parliament.uk/rYgJkjbC>
+        <https://id.parliament.uk/schema/formalBodyMembershipHasPerson> <https://id.parliament.uk/33DsBHsm>
+        .\r\n<https://id.parliament.uk/33DsBHsm> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+        <https://id.parliament.uk/schema/Person> .\r\n<https://id.parliament.uk/33DsBHsm>
+        <https://id.parliament.uk/schema/personGivenName> \"William\" .\r\n<https://id.parliament.uk/33DsBHsm>
+        <https://id.parliament.uk/schema/personFamilyName> \"Lloyd-George\" .\r\n"
+    http_version:
+  recorded_at: Thu, 05 Apr 2018 16:33:18 GMT
+recorded_with: VCR 3.0.3
