@@ -16,7 +16,7 @@ describe Parliament::Grom::Decorator::Collection, vcr: true do
         expect(@collection.type).to eq('https://id.parliament.uk/schema/Collection')
       end
 
-      it 'returns the name of the article the Grom::Node object' do
+      it 'returns the name of the Grom::Node object' do
         expect(@collection.name).to eq('Questions')
       end
     end
@@ -30,7 +30,7 @@ describe Parliament::Grom::Decorator::Collection, vcr: true do
 
   describe '#description' do
     context 'Grom::Node has all the required objects' do
-      it 'returns the description of the article the Grom::Node object' do
+      it 'returns the description of the Grom::Node object' do
         expect(@collection.description).to eq('You can ask a Minister an oral question in person or a written question. Questions are submitted via the Table Office.')
       end
     end
@@ -38,6 +38,20 @@ describe Parliament::Grom::Decorator::Collection, vcr: true do
     context 'Grom::Node does not have a description' do
       it 'returns an empty string' do
         expect(@collection.description).to eq('')
+      end
+    end
+  end
+
+  describe '#extendedDescription' do
+    context 'Grom::Node has all the required objects' do
+      it 'returns the extended description of the Grom::Node object' do
+        expect(@collection.extended_description).to eq('__This__ is an extended description')
+      end
+    end
+
+    context 'Grom::Node does not have an extended description' do
+      it 'returns an empty string' do
+        expect(@collection.extended_description).to eq('')
       end
     end
   end
@@ -80,6 +94,24 @@ describe Parliament::Grom::Decorator::Collection, vcr: true do
     context 'Grom::Node does not have parent collections' do
       it 'returns an empty array' do
         expect(@collection.parents).to eq([])
+      end
+    end
+  end
+
+  describe '#orphaned_ancestors' do
+    context 'Grom::Node has all the required objects' do
+      it 'returns an array of Collection Grom::Nodes' do
+        expect(@collection.orphaned_ancestors.first.type).to eq('https://id.parliament.uk/schema/Collection')
+      end
+
+      it 'returns only Grom::Nodes without parents' do
+        expect(@collection.orphaned_ancestors.map(&:parents).flatten).to eq([])
+      end
+    end
+
+    context 'Grom::Node does not have parent collections' do
+      it 'returns an empty array' do
+        expect(@collection.orphaned_ancestors).to eq([])
       end
     end
   end

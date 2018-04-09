@@ -19,6 +19,13 @@ module Parliament
           respond_to?(:collectionDescription) ? collectionDescription : ''
         end
 
+        # Alias collectionExtendedDescription with fallback.
+        #
+        # @return [String, String] the extended description of the Grom::Node or an empty string.
+        def extended_description
+          respond_to?(:collectionExtendedDescription) ? collectionExtendedDescription : ''
+        end
+
         # Alias collectionHasArticle with fallback.
         #
         # @return [Array, Array] an array of Articles related to the Grom::Node or an empty Array.
@@ -35,9 +42,19 @@ module Parliament
 
         # Alias collectionHasParent with fallback.
         #
-        # @return [Array, Array] an array of Subcollections related to the Grom::Node or an empty Array.
+        # @return [Array, Array] an array of parent collections related to the Grom::Node or an empty Array.
         def parents
           respond_to?(:collectionHasParent) ? collectionHasParent : []
+        end
+
+        # Travel up the ancestry trees finding orphaned collections
+        #
+        # @return [Array, Array] an array of orphaned ancestral collections related to the Grom::Node or an empty Array.
+        def orphaned_ancestors(nodes = parents)
+          orphans = nodes.select { |node| node.parents.none? }
+          parent_nodes = (nodes - orphans).map(&:parents).flatten
+          orphans += orphaned_ancestors(parent_nodes) if parent_nodes.any?
+          orphans
         end
       end
     end
