@@ -33,6 +33,9 @@ require 'parliament/grom/decorator/group'
 require 'parliament/grom/decorator/gov_register_government_organisation'
 require 'parliament/grom/decorator/position'
 require 'parliament/grom/decorator/formal_body_chair'
+require 'parliament/grom/decorator/question'
+require 'parliament/grom/decorator/answer'
+require 'parliament/grom/decorator/answering_body_allocation'
 
 # Namespace for classes and modules that handle connections to, and processing of data from the parliamentary API.
 # @since 0.1.0
@@ -75,7 +78,10 @@ module Parliament
         'Group'                             => Group,
         'GovRegisterGovernmentOrganisation' => GovRegisterGovernmentOrganisation,
         'Position'                          => Position,
-        'FormalBodyChair'                   => FormalBodyChair
+        'FormalBodyChair'                   => FormalBodyChair,
+        'Question'                          => Question,
+        'Answer'                            => Answer,
+        'AnsweringBodyAllocation'           => AnsweringBodyAllocation
       }.freeze
 
       class << self

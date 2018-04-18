@@ -43,10 +43,10 @@ http_interactions:
         <https://id.parliament.uk/schema/partyMemberHasPartyMembership> <https://id.parliament.uk/UcFeoI5t>
         .\r\n<https://id.parliament.uk/43RHonMf> <https://id.parliament.uk/schema/memberHasParliamentaryIncumbency>
         <https://id.parliament.uk/5b1mxVJ7> .\r\n<https://id.parliament.uk/43RHonMf>
-        <https://id.parliament.uk/schema/governmentIncumbency> <https://id.parliament.uk/12345678>
-        .\r\n<https://id.parliament.uk/43RHonMf> <https://id.parliament.uk/schema/governmentIncumbency>
+        <https://id.parliament.uk/schema/governmentPersonHasGovernmentIncumbency> <https://id.parliament.uk/12345678>
+        .\r\n<https://id.parliament.uk/43RHonMf> <https://id.parliament.uk/schema/governmentPersonHasGovernmentIncumbency>
         <https://id.parliament.uk/23456789> .\r\n<https://id.parliament.uk/43RHonMf>
-        <https://id.parliament.uk/schema/governmentIncumbency> <https://id.parliament.uk/34567890>
+        <https://id.parliament.uk/schema/governmentPersonHasGovernmentIncumbency> <https://id.parliament.uk/34567890>
         .\r\n<https://id.parliament.uk/43RHonMf> <https://id.parliament.uk/schema/personHasFormalBodyMembership>
         <https://id.parliament.uk/VHM0rBq1> .\r\n<https://id.parliament.uk/43RHonMf>
         <https://id.parliament.uk/schema/personPimsId> \"5441\" .\r\n<https://id.parliament.uk/43RHonMf>
@@ -271,6 +271,6 @@ http_interactions:
         \"2015-05-07+00:00\"^^<http://www.w3.org/2001/XMLSchema#date> .\r\n<https://id.parliament.uk/DqWmAFwg>
         <https://id.parliament.uk/schema/seatIncumbencyHasHouseSeat> <https://id.parliament.uk/0BhROnYP>
         .\r\n"
-    http_version: 
+    http_version:
   recorded_at: Tue, 03 Apr 2018 15:51:00 GMT
 recorded_with: VCR 3.0.3
