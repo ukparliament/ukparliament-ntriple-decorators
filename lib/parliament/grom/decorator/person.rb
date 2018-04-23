@@ -269,9 +269,9 @@ module Parliament
 
         # Alias governmentIncumbency with fallback.
         #
-        # @return [Array, Array] all the formal body memberships of the Grom::Node or an empty array.
+        # @return [Array, Array] all the government incumbencies of the Grom::Node or an empty array.
         def government_incumbencies
-          respond_to?(:governmentIncumbency) ? governmentIncumbency : []
+          respond_to?(:governmentPersonHasGovernmentIncumbency) ? governmentPersonHasGovernmentIncumbency : []
         end
 
         # Alias personHasPersonalWebLink with fallback.
