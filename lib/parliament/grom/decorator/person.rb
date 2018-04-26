@@ -82,7 +82,7 @@ module Parliament
         #
         # @return [Array, Array] the seat incumbencies of the Grom::Node or an empty array.
         def seat_incumbencies
-          @seat_incumbencies ||= incumbencies.select { |inc| inc.type == 'https://id.parliament.uk/schema/SeatIncumbency' }
+          @seat_incumbencies ||= incumbencies.select { |inc| inc.type.include?('https://id.parliament.uk/schema/SeatIncumbency') }
         end
 
         # @return [Grom::Node] the seat incumbency as a Grom::Node or nil
@@ -303,11 +303,11 @@ module Parliament
         private
 
         def current_member_by_house?(house_name)
-          incumbencies.select { |incumbency| incumbency.house.name == house_name && incumbency.end_date.nil? }.any?
+          seat_incumbencies.select { |incumbency| incumbency.house.name == house_name && incumbency.end_date.nil? }.any?
         end
 
         def former_member_by_house?(house_name)
-          incumbencies.select { |incumbency| incumbency.house.name == house_name && incumbency.end_date }.any?
+          seat_incumbencies.select { |incumbency| incumbency.house.name == house_name && incumbency.end_date }.any?
         end
 
         def house_membership_status
