@@ -24,16 +24,17 @@ http_interactions:
       Content-Disposition:
       - inline; filename="index"
       Last-Modified:
-      - Tue, 24 Apr 2018 15:42:12 GMT
+      - Wed, 25 Apr 2018 15:27:11 GMT
       X-Content-Type-Options:
       - nosniff
       Content-Length:
-      - '37296'
+      - '37443'
     body:
       encoding: UTF-8
       string: |
         <https://id.parliament.uk/DBFruMTZ> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Resource> .
         <https://id.parliament.uk/DBFruMTZ> <https://id.parliament.uk/schema/groupName> "Artificial Intelligence Committee" .
+        <https://id.parliament.uk/DBFruMTZ> <https://id.parliament.uk/schema/groupStartDate> "2017-06-27+00:00"^^<http://www.w3.org/2001/XMLSchema#date> .
         <https://id.parliament.uk/DBFruMTZ> <https://id.parliament.uk/schema/formalBodyRemit> "We evaluate the economic, ethical and social impacts of advances in artificial intelligence." .
         <https://id.parliament.uk/DBFruMTZ> <https://id.parliament.uk/schema/formalBodyHasFormalBodyMembership> <https://id.parliament.uk/yzspKPKX> .
         <https://id.parliament.uk/DBFruMTZ> <https://id.parliament.uk/schema/formalBodyName> "Artificial Intelligence Committee" .
@@ -309,16 +310,15 @@ http_interactions:
         <https://id.parliament.uk/DBFruMTZ> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://id.parliament.uk/schema/ExternalThing> .
         <https://id.parliament.uk/DBFruMTZ> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://id.parliament.uk/schema/NamedThing> .
         <https://id.parliament.uk/DBFruMTZ> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://id.parliament.uk/schema/ContactableThing> .
-        <https://id.parliament.uk/DBFruMTZ> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://id.parliament.uk/schema/FormalBody> .
-        <https://id.parliament.uk/DBFruMTZ> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://id.parliament.uk/schema/Group> .
         <https://id.parliament.uk/DBFruMTZ> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://id.parliament.uk/schema/MnisFormalBody> .
+        <https://id.parliament.uk/DBFruMTZ> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://id.parliament.uk/schema/Group> .
         <https://id.parliament.uk/DBFruMTZ> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> _:node19743504 .
         <https://id.parliament.uk/DBFruMTZ> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://id.parliament.uk/schema/SelectCommittee> .
         <https://id.parliament.uk/DBFruMTZ> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://id.parliament.uk/schema/ParliamentaryCommittee> .
         <https://id.parliament.uk/DBFruMTZ> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> _:node19743508 .
         <https://id.parliament.uk/DBFruMTZ> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> _:node19743512 .
         <https://id.parliament.uk/DBFruMTZ> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> _:node19775343 .
-        <https://id.parliament.uk/DBFruMTZ> <https://id.parliament.uk/schema/memberCount> "13"^^<http://www.w3.org/2001/XMLSchema#integer> .
+        <https://id.parliament.uk/DBFruMTZ> <https://id.parliament.uk/schema/count> "13"^^<http://www.w3.org/2001/XMLSchema#integer> .
     http_version:
-  recorded_at: Tue, 24 Apr 2018 15:48:06 GMT
+  recorded_at: Thu, 26 Apr 2018 13:03:06 GMT
 recorded_with: VCR 3.0.3
