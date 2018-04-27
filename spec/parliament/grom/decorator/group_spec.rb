@@ -37,9 +37,15 @@ describe Parliament::Grom::Decorator::Group, vcr: true do
 
   describe '#member_count' do
     context 'Grom::Node has a members count' do
-        it 'returns the members count for a Grom::Node object of type Group' do
-          expect(group_node.member_count).to eq(13)
-        end
+      it 'returns the members count for a Grom::Node object of type Group' do
+        expect(group_node.member_count).to eq(13)
+      end
+    end
+
+    context 'Grom::Node has no members count' do
+      it 'returns the members count for a Grom::Node object of type Group' do
+        expect(group_node.member_count).to eq(nil)
+      end
     end
   end
 
@@ -53,6 +59,20 @@ describe Parliament::Grom::Decorator::Group, vcr: true do
     context 'Grom::Node does not have a end_date' do
       it 'confirms that end_date for this Grom::Node node does not exist' do
         expect(group_node.end_date).to eq(nil)
+      end
+    end
+  end
+
+  describe '#formal_body?' do
+    context 'Grom::Node also has a type of FormalBody' do
+      it 'returns true' do
+        expect(group_node.formal_body?).to eq(true)
+      end
+    end
+
+    context 'Grom::Node does not have a type of FormalBody' do
+      it 'returns false' do
+        expect(group_node.formal_body?).to eq(false)
       end
     end
   end

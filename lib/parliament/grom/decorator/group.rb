@@ -22,7 +22,7 @@ module Parliament
         #
         # @return [Integer, nil] the count of members of the Grom::Node or nil.
         def member_count
-          respond_to?(:count) ? count.to_i : nil
+          respond_to?(:memberCount) ? memberCount.to_i : nil
         end
 
         # Alias groupEndDate with fallback.
@@ -30,6 +30,11 @@ module Parliament
         # @return [DateTime, nil] the end date of the Grom::Node or nil.
         def end_date
           @end_date ||= respond_to?(:groupEndDate) ? DateTime.parse(groupEndDate) : nil
+        end
+
+        # @return [Boolean] whether the group is also a formal body.
+        def formal_body?
+          type.include?('https://id.parliament.uk/schema/FormalBody')
         end
       end
     end
