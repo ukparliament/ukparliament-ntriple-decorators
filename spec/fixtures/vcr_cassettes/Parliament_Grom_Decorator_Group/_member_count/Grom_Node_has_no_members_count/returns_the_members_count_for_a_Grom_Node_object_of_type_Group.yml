@@ -318,7 +318,6 @@ http_interactions:
         <https://id.parliament.uk/DBFruMTZ> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> _:node19743508 .
         <https://id.parliament.uk/DBFruMTZ> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> _:node19743512 .
         <https://id.parliament.uk/DBFruMTZ> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> _:node19775343 .
-        <https://id.parliament.uk/DBFruMTZ> <https://id.parliament.uk/schema/memberCount> "13"^^<http://www.w3.org/2001/XMLSchema#integer> .
     http_version:
   recorded_at: Tue, 24 Apr 2018 15:48:06 GMT
 recorded_with: VCR 3.0.3
