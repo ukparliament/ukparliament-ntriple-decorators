@@ -510,6 +510,32 @@ describe Parliament::Grom::Decorator::Person, vcr: true do
     end
   end
 
+  describe '#commitee_membership_type' do
+    context 'committee member' do
+      it 'will return the correct membership type' do
+        expect(person_node.committee_membership_type).to eq(['committee member'])
+      end
+    end
+
+    context 'ex officio' do
+      it 'will return the correct membership type' do
+        expect(person_node.committee_membership_type).to eq(['Ex officio', 'committee member'])
+      end
+    end
+
+    context 'lay member' do
+      it 'will return the correct membership type' do
+        expect(person_node.committee_membership_type).to eq(['Lay', 'committee member'])
+      end
+    end
+
+    context 'alternate' do
+      it 'will return the correct membership type' do
+        expect(person_node.committee_membership_type).to eq(['Alternate', 'committee member'])
+      end
+    end
+  end
+
   describe '#sort_name' do
     context 'Grom::Node has all the required objects' do
       it 'returns the given sort_name for a Grom::Node objects of type Person' do

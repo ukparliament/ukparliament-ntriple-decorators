@@ -103,7 +103,6 @@ module Parliament
         end
 
         # Alias houseSeatHasHouse with fallback.
-        #
         # @return [Array, Array] the houses of the Grom::Node or an empty array.
         def houses
           @houses ||= [seats.map(&:house), seat_incumbencies.map(&:house)].flatten.uniq.compact
@@ -220,6 +219,15 @@ module Parliament
           respond_to?(:formalBodyLayPersonMnisId)
         end
 
+        def committee_membership_type
+          committee_membership_type = []
+          committee_membership_type << I18n.t('person.committee.lay') if lay_member?
+          committee_membership_type << I18n.t('person.committee.ex_officio') if ex_officio?
+          committee_membership_type << I18n.t('person.committee.alternate') if alternate?
+          committee_membership_type << I18n.t('person.committee.member')
+          committee_membership_type
+        end
+
         # Check whether they are a former member of the House of Lords.
         #
         # @return [Boolean] a boolean depending on whether or not they have a current seat incumbency in the House of Lords.
@@ -260,11 +268,11 @@ module Parliament
           respond_to?(:A5EE13ABE03C4D3A8F1A274F57097B6C) ? self.A5EE13ABE03C4D3A8F1A274F57097B6C : ''
         end
 
-        # Alias memberHasFormalBodyMembership with fallback.
+        # Alias personHasFormalBodyMembership with fallback.
         #
         # @return [Array, Array] all the formal body memberships of the Grom::Node or an empty array.
         def formal_body_memberships
-          respond_to?(:memberHasFormalBodyMembership) ? memberHasFormalBodyMembership : []
+          respond_to?(:personHasFormalBodyMembership) ? personHasFormalBodyMembership : []
         end
 
         # Alias governmentIncumbency with fallback.
