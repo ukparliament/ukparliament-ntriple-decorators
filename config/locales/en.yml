@@ -31,4 +31,10 @@ en:
       mp: 'Former MP'
       member_of_the_house_of_lords: 'Former Member of the House of Lords'
       member: 'Former Member'
+    committee:
+      member: 'committee member'
+      lay: 'Lay'
+      ex_officio: 'Ex officio'
+      co_opted: 'Co-opted'
+      alternate: 'Alternate'
   date_unavailable: '[Date unavailable]'

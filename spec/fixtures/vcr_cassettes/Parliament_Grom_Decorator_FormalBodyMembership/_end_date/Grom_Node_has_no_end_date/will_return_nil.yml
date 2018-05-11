@@ -139,14 +139,14 @@ http_interactions:
         <https://id.parliament.uk/yKbi7ikQ> <https://id.parliament.uk/schema/parliamentaryIncumbencyStartDate> "2017-06-08"^^<http://www.w3.org/2001/XMLSchema#date> .
         <https://id.parliament.uk/yKbi7ikQ> <https://id.parliament.uk/schema/seatIncumbencyHasHouseSeat> <https://id.parliament.uk/VKUYDXoa> .
         <https://id.parliament.uk/yKbi7ikQ> <https://id.parliament.uk/schema/parliamentaryIncumbencyHasContactPoint> <https://id.parliament.uk/FeCebO0j> .
-        <https://id.parliament.uk/tJxPOiSd> <https://id.parliament.uk/schema/memberHasFormalBodyMembership> <https://id.parliament.uk/JCORBTRADECOMMITTEEMEMBERSHIP> .
+        <https://id.parliament.uk/tJxPOiSd> <https://id.parliament.uk/schema/personHasFormalBodyMembership> <https://id.parliament.uk/JCORBTRADECOMMITTEEMEMBERSHIP> .
         <https://id.parliament.uk/JCORBTRADECOMMITTEEMEMBERSHIP> <https://id.parliament.uk/schema/formalBodyMembershipHasFormalBody> <https://id.parliament.uk/TRADECOMMITTEE> .
         <https://id.parliament.uk/JCORBTRADECOMMITTEEMEMBERSHIP> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://id.parliament.uk/schema/FormalBodyMembership> .
         <https://id.parliament.uk/JCORBTRADECOMMITTEEMEMBERSHIP> <https://id.parliament.uk/schema/formalBodyMembershipStartDate> "1991-06-08"^^<http://www.w3.org/2001/XMLSchema#date> .
         <https://id.parliament.uk/JCORBTRADECOMMITTEEMEMBERSHIP> <https://id.parliament.uk/schema/formalBodyMembershipEndDate> "2001-06-08"^^<http://www.w3.org/2001/XMLSchema#date> .
         <https://id.parliament.uk/TRADECOMMITTEE> <https://id.parliament.uk/schema/formalBodyName> "Trade Committee" .
         <https://id.parliament.uk/TRADECOMMITTEE> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://id.parliament.uk/schema/FormalBody> .
-        <https://id.parliament.uk/tJxPOiSd> <https://id.parliament.uk/schema/memberHasFormalBodyMembership> <https://id.parliament.uk/JCORBJOBSCOMMITTEEMEMBERSHIP> .
+        <https://id.parliament.uk/tJxPOiSd> <https://id.parliament.uk/schema/personHasFormalBodyMembership> <https://id.parliament.uk/JCORBJOBSCOMMITTEEMEMBERSHIP> .
         <https://id.parliament.uk/JCORBJOBSCOMMITTEEMEMBERSHIP> <https://id.parliament.uk/schema/formalBodyMembershipHasFormalBody> <https://id.parliament.uk/TRADECOMMITTEE> .
         <https://id.parliament.uk/JCORBJOBSCOMMITTEEMEMBERSHIP> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://id.parliament.uk/schema/FormalBodyMembership> .
         <https://id.parliament.uk/JCORBJOBSCOMMITTEEMEMBERSHIP> <https://id.parliament.uk/schema/formalBodyMembershipStartDate> "1998-06-08"^^<http://www.w3.org/2001/XMLSchema#date> .
