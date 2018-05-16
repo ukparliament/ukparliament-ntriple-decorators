@@ -23,7 +23,7 @@ describe Parliament::Grom::Decorator::Question, vcr: true do
   describe '#answering_body_allocation' do
     context 'Grom::Node has all the required objects' do
       it 'returns the answering_body_allocation for a Grom::Node object of type Question' do
-        expect(question_node.answering_body_allocation.answering_body.name).to eq("Home Office")
+        expect(question_node.answering_body_allocation.answering_body.name).to eq('Home Office')
       end
     end
 
@@ -48,16 +48,16 @@ describe Parliament::Grom::Decorator::Question, vcr: true do
     end
   end
 
-  describe '#uin' do
+  describe '#indexing_search_uri' do
     context 'Grom::Node has all the required objects' do
-      it 'returns the uin for a Grom::Node object of type Question' do
-        expect(question_node.uin).to eq('121009')
+      it 'returns the indexing_search_uri for a Grom::Node object of type Question' do
+        expect(question_node.indexing_search_uri).to eq('http://data.parliament.uk/writtenparliamentaryquestion/commons/2017-19/133284')
       end
     end
 
-    context 'Grom::Node has no uin' do
+    context 'Grom::Node has no indexing_search_uri' do
       it 'returns an empty string' do
-        expect(question_node.uin).to eq('')
+        expect(question_node.indexing_search_uri).to eq('')
       end
     end
   end
@@ -72,6 +72,42 @@ describe Parliament::Grom::Decorator::Question, vcr: true do
     context 'Grom::Node has no text' do
       it 'returns an empty string' do
         expect(question_node.text).to eq('')
+      end
+    end
+  end
+
+  describe '#question_title' do
+    context 'Grom::Node has all the required objects' do
+      it 'returns the question_title for a Grom::Node object of type Question' do
+        expect(question_node.question_title).to eq('Pre-school Education: Non-domestic Rates')
+      end
+    end
+
+    context 'Grom::Node has no question_title' do
+      it 'returns an empty string' do
+        expect(question_node.question_title).to eq('')
+      end
+    end
+  end
+
+  describe '#fallback_heading' do
+    context 'Grom::Node has all the required objects' do
+      it 'returns the fallback_heading for a Grom::Node object of type Question' do
+        expect(question_node.fallback_heading).to eq('Question 133284')
+      end
+    end
+  end
+
+  describe '#heading' do
+    context 'Grom::Node has all the required objects' do
+      it 'returns the heading for a Grom::Node object of type Question' do
+        expect(question_node.heading).to eq('Pre-school Education: Non-domestic Rates')
+      end
+    end
+
+    context 'Grom::Node heading is an empty string' do
+      it 'returns a fallback_heading' do
+        expect(question_node.heading).to eq('Question 133284')
       end
     end
   end
