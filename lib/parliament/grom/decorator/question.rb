@@ -4,6 +4,27 @@ module Parliament
       # Decorator namespace for Grom::Node instances with type: https://id.parliament.uk/schema/Question.
       module Question
         include Helpers::DateHelper
+        # Alias questionHeading with fallback.
+        #
+        # @return [String, String] the question_title of the Grom::Node or an empty string.
+        def question_title
+          respond_to?(:questionHeading) ? questionHeading : ''
+        end
+
+        # Builds a fallback question heading using indexingAndSearchUri.
+        #
+        # @return [String, String] the fallback_heading of the Grom::Node.
+        def fallback_heading
+          "Question #{indexing_search_uri.split('/').last}"
+        end
+
+        # Returns heading or fallback_heading.
+        #
+        # @return [String, String] the heading of the Grom::Node or fallback_heading.
+        def heading
+          question_title.empty? || question_title.include?('Tabled Parliamentary Question') ? fallback_heading : question_title
+        end
+
         # Alias questionText with fallback.
         #
         # @return [String, String] the text of the Grom::Node or an empty string.
@@ -11,11 +32,11 @@ module Parliament
           respond_to?(:questionText) ? questionText : ''
         end
 
-        # Alias eqmUin with fallback.
+        # Alias indexingAndSearchUri with fallback.
         #
-        # @return [String, String] the uin of the Grom::Node or an empty string.
-        def uin
-          respond_to?(:eqmUin) ? eqmUin : ''
+        # @return [String, String] the indexing_search_uri of the Grom::Node or an empty string.
+        def indexing_search_uri
+          respond_to?(:indexingAndSearchUri) ? indexingAndSearchUri : ''
         end
 
         # Alias questionAskedAt with fallback.
