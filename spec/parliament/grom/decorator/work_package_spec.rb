@@ -37,6 +37,26 @@ describe Parliament::Grom::Decorator::WorkPackage, vcr: true do
     end
   end
 
+  describe '#work_packageable_thing_name' do
+    context 'Grom::Node has a work packageable thing with a name' do
+      it 'returns the name of the Grom::Node object' do
+        expect(@work_package.work_packageable_thing_name).to eq('Andrey Lugovoy and Dmitri Kovtun Freezing Order 2018')
+      end
+    end
+
+    context 'Grom::Node has a work packageable thing but no name' do
+      it 'returns nil' do
+        expect(@work_package.work_packageable_thing_name).to eq('')
+      end
+    end
+
+    context 'Grom::Node has no work packageable thing' do
+      it 'returns nil' do
+        expect(@work_package.work_packageable_thing_name).to eq(nil)
+      end
+    end
+  end
+
   describe '#business_items' do
     context 'Grom::Node has a set of business items' do
       it 'returns an array of Grom::Nodes for the Grom::Node object' do
@@ -51,20 +71,6 @@ describe Parliament::Grom::Decorator::WorkPackage, vcr: true do
     context 'Grom::Node does not have any business items' do
       it 'returns an empty array' do
         expect(@work_package.business_items).to eq([])
-      end
-    end
-  end
-
-  describe '#oldest_business_item' do
-    context 'Grom::Node has an oldest business item' do
-      it 'returns a business item Grom::Node' do
-        expect(@work_package.oldest_business_item.type).to include('https://id.parliament.uk/schema/BusinessItem')
-      end
-    end
-
-    context 'Grom::Node does not have an oldest business item' do
-      it 'returns nil' do
-        expect(@work_package.oldest_business_item).to eq(nil)
       end
     end
   end

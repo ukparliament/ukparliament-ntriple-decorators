@@ -82,18 +82,4 @@ describe Parliament::Grom::Decorator::BusinessItem, vcr: true do
       end
     end
   end
-
-  describe '#laying_body' do
-    context 'Grom::Node has a laying body' do
-      it 'returns a Grom::Node representing the laying body' do
-        expect(@business_item.laying_body.type).to include('https://id.parliament.uk/schema/Group')
-      end
-    end
-
-    context 'Grom::Node has no laying date' do
-      it 'returns nil' do
-        expect(@business_item.laying_body).to eq(nil)
-      end
-    end
-  end
 end
