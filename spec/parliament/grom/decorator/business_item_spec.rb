@@ -41,6 +41,20 @@ describe Parliament::Grom::Decorator::BusinessItem, vcr: true do
     end
   end
 
+  describe '#shortest_distance_of_procedure_steps' do
+    context 'Grom::Node has procedure steps' do
+      it 'returns shortest distance' do
+        expect(@business_item.shortest_distance_of_procedure_steps).to eq(8)
+      end
+    end
+
+    context 'Grom::Node has no procedure steps' do
+      it 'returns nil' do
+        expect(@business_item.shortest_distance_of_procedure_steps).to eq(nil)
+      end
+    end
+  end
+
   describe '#date' do
     context 'Grom::Node has a date' do
       it 'returns a date' do
