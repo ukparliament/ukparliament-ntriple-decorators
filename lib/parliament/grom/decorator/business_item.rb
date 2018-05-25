@@ -18,6 +18,13 @@ module Parliament
           procedure_steps.sort_by(&:distance_from_origin)
         end
 
+        # Finds, for each of the procedure steps belonging to a business item, the shortest distance from origin
+        #
+        # @return [Integer, nil] shortest distance of procedure steps from origin or nil.
+        def shortest_distance_of_procedure_steps
+          sorted_procedure_steps_by_distance.first&.distance_from_origin
+        end
+
         # Alias businessItemDate with fallback.
         #
         # @return [Date, nil] a laying date or nil.
