@@ -38,14 +38,6 @@ module Parliament
         def weblink
           respond_to?(:businessItemHasBusinessItemWebLink) ? businessItemHasBusinessItemWebLink : ''
         end
-
-        # Alias layingHasLayingBody with fallback.
-        # NB. One and only one group has to lay, so it will always be the first laying body
-        #
-        # @return [Grom::Node, nil] a Grom::Node representing the group that did the laying.
-        def laying_body
-          respond_to?(:layingHasLayingBody) ? layingHasLayingBody.first : nil
-        end
       end
     end
   end
