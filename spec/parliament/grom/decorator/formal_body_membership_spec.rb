@@ -82,7 +82,7 @@ describe Parliament::Grom::Decorator::FormalBodyMembership, vcr: true do
         membership_node = @formal_body_membership_nodes.first
 
         expect(membership_node).to respond_to(:date_range)
-        expect(membership_node.date_range).to eq('8 Jun 1991 to 8 Jun 2001')
+        expect(membership_node.date_range).to eq('8 June 1991 to 8 June 2001')
       end
     end
 
@@ -91,7 +91,7 @@ describe Parliament::Grom::Decorator::FormalBodyMembership, vcr: true do
         membership_node = @formal_body_membership_nodes.first
 
         expect(membership_node).to respond_to(:date_range)
-        expect(membership_node.date_range).to eq('8 Jun 1991 to present')
+        expect(membership_node.date_range).to eq('8 June 1991 to present')
       end
     end
   end

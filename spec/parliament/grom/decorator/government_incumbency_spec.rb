@@ -68,7 +68,7 @@ describe Parliament::Grom::Decorator::GovernmentIncumbency, vcr: true do
         government_incumbency_node = @government_incumbency_nodes.first
 
         expect(government_incumbency_node).to respond_to(:date_range)
-        expect(government_incumbency_node.date_range).to eq('7 May 2015 to 7 Jun 2017')
+        expect(government_incumbency_node.date_range).to eq('7 May 2015 to 7 June 2017')
       end
     end
 
