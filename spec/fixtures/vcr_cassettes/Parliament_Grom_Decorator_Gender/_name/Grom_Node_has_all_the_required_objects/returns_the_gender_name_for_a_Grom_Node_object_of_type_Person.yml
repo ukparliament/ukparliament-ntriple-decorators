@@ -274,5 +274,5 @@ http_interactions:
         <https://id.parliament.uk/schema/seatIncumbencyHasHouseSeat> <https://id.parliament.uk/0BhROnYP>
         .\r\n"
     http_version: 
-  recorded_at: Fri, 22 Jun 2018 15:17:20 GMT
+  recorded_at: Mon, 25 Jun 2018 15:42:49 GMT
 recorded_with: VCR 3.0.3

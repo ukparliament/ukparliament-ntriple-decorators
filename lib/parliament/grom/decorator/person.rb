@@ -164,6 +164,17 @@ module Parliament
           gender_identities.empty? ? nil : gender_identities.first.gender
         end
 
+        # Gets the gender pronoun of the Grom::Node.
+        #
+        # @return [String, String] the gender pronoun of the Grom::Node.
+        def gender_pronoun
+          if gender
+            return 'She' if gender.name == 'Female'
+            return 'He' if gender.name == 'Male'
+          end
+          'They'
+        end
+
         # Checks the statuses of the Grom::Node.
         #
         # @return [Hash, Hash] the statuses of the Grom::Node or an empty hash.
