@@ -68,7 +68,7 @@ describe Parliament::Grom::Decorator::OppositionIncumbency, vcr: true do
         opposition_incumbency_node = @opposition_incumbency_nodes.first
 
         expect(opposition_incumbency_node).to respond_to(:date_range)
-        expect(opposition_incumbency_node.date_range).to eq('13 Jul 2016 to 19 Jan 2017')
+        expect(opposition_incumbency_node.date_range).to eq('13 July 2016 to 19 January 2017')
       end
     end
 
@@ -77,7 +77,7 @@ describe Parliament::Grom::Decorator::OppositionIncumbency, vcr: true do
         opposition_incumbency_node = @opposition_incumbency_nodes.first
 
         expect(opposition_incumbency_node).to respond_to(:date_range)
-        expect(opposition_incumbency_node.date_range).to eq('13 Jul 2016 to present')
+        expect(opposition_incumbency_node.date_range).to eq('13 July 2016 to present')
       end
     end
   end
