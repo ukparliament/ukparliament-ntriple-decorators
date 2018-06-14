@@ -34,7 +34,7 @@ module Parliament
 
         # @return [Boolean] whether the group is also a formal body.
         def formal_body?
-          type.include?('https://id.parliament.uk/schema/FormalBody')
+          type.include?(Parliament::Utils::Helpers::RequestHelper.namespace_uri_schema_path('FormalBody'))
         end
       end
     end
