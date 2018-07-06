@@ -55,26 +55,6 @@ describe Parliament::Grom::Decorator::WorkPackageableThing, vcr: true do
     end
   end
 
-  describe '#oldest_business_item_date' do
-    context 'Grom::Node has an oldest business item date' do
-      it 'returns a date' do
-        expect(@work_packageble_thing.oldest_business_item_date).to eq(DateTime.new(2018,04,30,0,0,0))
-      end
-    end
-
-    context 'Grom::Node has an oldest business item with no date' do
-      it 'returns nil' do
-        expect(@work_packageble_thing.oldest_business_item_date).to eq(nil)
-      end
-    end
-
-    context 'Grom::Node does not have any business items' do
-      it 'returns nil' do
-        expect(@work_packageble_thing.oldest_business_item_date).to eq(nil)
-      end
-    end
-  end
-
   describe '#time_limit_for_objection_date' do
     context 'Grom::Node has a time limit for objection date' do
       it 'returns a date' do

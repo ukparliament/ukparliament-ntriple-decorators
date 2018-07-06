@@ -26,10 +26,10 @@ module Parliament
           respond_to?(:workPackageableThingHasWorkPackageableThingWebLink) ? workPackageableThingHasWorkPackageableThingWebLink : ''
         end
 
-        # @return [Date, nil] an array of BusinessItem Grom::Nodes or an empty array.
-        def oldest_business_item_date
-          work_package&.oldest_business_item_date
-        end
+        # # @return [Date, nil] an array of BusinessItem Grom::Nodes or an empty array.
+        # def oldest_business_item_date
+        #   work_package&.oldest_business_item_date
+        # end
 
         # Alias workPackageableThingComingIntoForceDate with fallback.
         #
