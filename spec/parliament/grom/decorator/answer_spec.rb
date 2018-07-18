@@ -6,6 +6,25 @@ describe Parliament::Grom::Decorator::Answer, vcr: true do
                                                        decorators: Parliament::Grom::Decorator).question_by_id.get }
   let(:answer_node) { response.filter('https://id.parliament.uk/schema/Answer').first }
 
+  describe '#question' do
+    let(:response) { Parliament::Request::UrlRequest.new(base_url: 'http://localhost:3030/api/v1',
+                                                         builder: Parliament::Builder::NTripleResponseBuilder,
+                                                         decorators: Parliament::Grom::Decorator).group_questions_written_answered.get }
+    let(:answer_node) { response.filter('https://id.parliament.uk/schema/Answer').first }
+
+    context 'Grom::Node has the required object' do
+      it 'returns the question for a Grom::Node object of type Answer' do
+        expect(answer_node.question.type).to eq('https://id.parliament.uk/schema/Question')
+      end
+    end
+
+    context 'Grom::Node has no question' do
+      it 'returns nil' do
+        expect(answer_node.question).to eq(nil)
+      end
+    end
+  end
+
   describe '#answering_person' do
     context 'Grom::Node has all the required objects' do
       it 'returns the answering_person for a Grom::Node object of type Answer' do
