@@ -1,6 +1,7 @@
 require 'parliament/grom/decorator/version'
 require 'parliament/grom/decorator/helpers'
 require 'parliament/grom/decorator/answer'
+require 'parliament/grom/decorator/answering_body'
 require 'parliament/grom/decorator/answering_body_allocation'
 require 'parliament/grom/decorator/article_type'
 require 'parliament/grom/decorator/audience'
@@ -53,6 +54,7 @@ module Parliament
     module Decorator
       MAPPING = {
         'Answer'                            => Answer,
+        'AnsweringBody'                     => AnsweringBody,
         'AnsweringBodyAllocation'           => AnsweringBodyAllocation,
         'ArticleType'                       => ArticleType,
         'Audience'                          => Audience,
