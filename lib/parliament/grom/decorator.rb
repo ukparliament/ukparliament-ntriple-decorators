@@ -25,6 +25,8 @@ require 'parliament/grom/decorator/group'
 require 'parliament/grom/decorator/house'
 require 'parliament/grom/decorator/house_seat'
 require 'parliament/grom/decorator/incumbency'
+require 'parliament/grom/decorator/laying'
+require 'parliament/grom/decorator/laying_body'
 require 'parliament/grom/decorator/member_image'
 require 'parliament/grom/decorator/parliamentary_incumbency'
 require 'parliament/grom/decorator/parliaments'
@@ -38,6 +40,7 @@ require 'parliament/grom/decorator/procedure_step'
 require 'parliament/grom/decorator/procedure'
 require 'parliament/grom/decorator/question'
 require 'parliament/grom/decorator/seat_incumbency'
+require 'parliament/grom/decorator/statutory_instrument_paper'
 require 'parliament/grom/decorator/opposition_incumbency'
 require 'parliament/grom/decorator/opposition_position'
 require 'parliament/grom/decorator/web_article'
@@ -78,6 +81,8 @@ module Parliament
         'House'                             => House,
         'HouseSeat'                         => HouseSeat,
         'Incumbency'                        => Incumbency,
+        'Laying'                            => Laying,
+        'LayingBody'                        => LayingBody,
         'MemberImage'                       => MemberImage,
         'OppositionIncumbency'              => OppositionIncumbency,
         'OppositionPosition'                => OppositionPosition,
@@ -93,6 +98,7 @@ module Parliament
         'PostalAddress'                     => PostalAddress,
         'Question'                          => Question,
         'SeatIncumbency'                    => SeatIncumbency,
+        'StatutoryInstrumentPaper'          => StatutoryInstrumentPaper,
         'WebArticle'                        => WebArticle,
         'WorkPackage'                       => WorkPackage,
         'WorkPackageableThing'              => WorkPackageableThing
