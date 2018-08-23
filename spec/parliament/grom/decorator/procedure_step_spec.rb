@@ -55,4 +55,17 @@ describe Parliament::Grom::Decorator::ProcedureStep, vcr: true do
     end
   end
 
+  describe '#description' do
+    context 'Grom::Node has a description' do
+      it 'returns the description' do
+        expect(@procedure_step.description).to eq('some procedure step description')
+      end
+    end
+
+    context 'Grom::Node does not have a description' do
+      it 'returns an empty string' do
+        expect(@procedure_step.description).to eq('')
+      end
+    end
+  end
 end
