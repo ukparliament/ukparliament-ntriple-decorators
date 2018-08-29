@@ -94,30 +94,34 @@ describe Parliament::Grom::Decorator::StatutoryInstrumentPaper, vcr: true do
     end
   end
 
-  describe '#weblink' do
-    context 'Grom::Node has a web link' do
-      it 'returns the web link of the Grom::Node object' do
-        expect(@statutory_instrument_paper.weblink).to eq('http://www.legislation.gov.uk/uksi/2018/538/made')
+  describe '#made_date' do
+    context 'Grom::Node has a made date' do
+      it 'returns the made date of the Grom::Node object' do
+        expect(@statutory_instrument_paper.made_date).to eq(DateTime.new(2018,07,01,0,0,0))
       end
     end
 
-    context 'Grom::Node does not have a coming into force note' do
-      it 'returns the an empty string' do
-        expect(@statutory_instrument_paper.weblink).to eq('')
+    context 'Grom::Node does not have a made date' do
+      it 'returns nil' do
+        expect(@statutory_instrument_paper.made_date).to eq(nil)
       end
     end
   end
 
-  describe '#work_package' do
-    context 'Grom::Node has a work package' do
-      it 'returns a work package Grom::Node' do
-        expect(@statutory_instrument_paper.work_package.type).to eq('https://id.parliament.uk/schema/WorkPackage')
+  describe '#proposed_negative_statutory_instrument_papers' do
+    context 'Grom::Node has a set of proposed negative statutory instrument papers' do
+      it 'returns an array of Grom::Nodes for the Grom::Node object' do
+        expect(@statutory_instrument_paper.proposed_negative_statutory_instrument_papers.size).to eq(2)
+      end
+
+      it 'returns an array of proposed negative statutory instrument papers Grom::Nodes for the Grom::Node object' do
+        expect(@statutory_instrument_paper.proposed_negative_statutory_instrument_papers.first.type).to include('https://id.parliament.uk/schema/ProposedNegativeStatutoryInstrumentPaper')
       end
     end
 
-    context 'Grom::Node does not have a work package' do
-      it 'returns nil' do
-        expect(@statutory_instrument_paper.work_package).to eq(nil)
+    context 'Grom::Node does not have any proposed negative statutory instrument papers' do
+      it 'returns an empty array' do
+        expect(@statutory_instrument_paper.proposed_negative_statutory_instrument_papers).to eq([])
       end
     end
   end

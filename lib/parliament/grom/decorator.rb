@@ -25,6 +25,7 @@ require 'parliament/grom/decorator/group'
 require 'parliament/grom/decorator/house'
 require 'parliament/grom/decorator/house_seat'
 require 'parliament/grom/decorator/incumbency'
+require 'parliament/grom/decorator/laid_thing'
 require 'parliament/grom/decorator/laying'
 require 'parliament/grom/decorator/laying_body'
 require 'parliament/grom/decorator/member_image'
@@ -38,6 +39,7 @@ require 'parliament/grom/decorator/postal_address'
 require 'parliament/grom/decorator/procedure_route'
 require 'parliament/grom/decorator/procedure_step'
 require 'parliament/grom/decorator/procedure'
+require 'parliament/grom/decorator/proposed_negative_statutory_instrument_paper'
 require 'parliament/grom/decorator/question'
 require 'parliament/grom/decorator/seat_incumbency'
 require 'parliament/grom/decorator/statutory_instrument_paper'
@@ -46,6 +48,7 @@ require 'parliament/grom/decorator/opposition_position'
 require 'parliament/grom/decorator/web_article'
 require 'parliament/grom/decorator/work_package'
 require 'parliament/grom/decorator/work_packageable_thing'
+require 'parliament/grom/decorator/work_packaged_thing'
 
 # Namespace for classes and modules that handle connections to, and processing of data from the parliamentary API.
 # @since 0.1.0
@@ -56,52 +59,55 @@ module Parliament
     # @since 0.1.0
     module Decorator
       MAPPING = {
-        'Answer'                            => Answer,
-        'AnsweringBody'                     => AnsweringBody,
-        'AnsweringBodyAllocation'           => AnsweringBodyAllocation,
-        'ArticleType'                       => ArticleType,
-        'Audience'                          => Audience,
-        'BusinessItem'                      => BusinessItem,
-        'Collection'                        => Collection,
-        'Concept'                           => Concept,
-        'ConstituencyArea'                  => ConstituencyArea,
-        'ConstituencyGroup'                 => ConstituencyGroup,
-        'ContactPoint'                      => ContactPoint,
-        'EuropeanRegion'                    => EuropeanRegion,
-        'FormalBodyChair'                   => FormalBodyChair,
-        'FormalBodyMembership'              => FormalBodyMembership,
-        'FormalBodyType'                    => FormalBodyType,
-        'FormalBody'                        => FormalBody,
-        'Gender'                            => Gender,
-        'GenderIdentity'                    => GenderIdentity,
-        'GovernmentIncumbency'              => GovernmentIncumbency,
-        'GovernmentPosition'                => GovernmentPosition,
-        'GovRegisterGovernmentOrganisation' => GovRegisterGovernmentOrganisation,
-        'Group'                             => Group,
-        'House'                             => House,
-        'HouseSeat'                         => HouseSeat,
-        'Incumbency'                        => Incumbency,
-        'Laying'                            => Laying,
-        'LayingBody'                        => LayingBody,
-        'MemberImage'                       => MemberImage,
-        'OppositionIncumbency'              => OppositionIncumbency,
-        'OppositionPosition'                => OppositionPosition,
-        'ParliamentPeriod'                  => ParliamentPeriod,
-        'ParliamentaryIncumbency'           => ParliamentaryIncumbency,
-        'Party'                             => Party,
-        'PartyMembership'                   => PartyMembership,
-        'Person'                            => Person,
-        'Position'                          => Position,
-        'Procedure'                         => Procedure,
-        'ProcedureRoute'                    => ProcedureRoute,
-        'ProcedureStep'                     => ProcedureStep,
-        'PostalAddress'                     => PostalAddress,
-        'Question'                          => Question,
-        'SeatIncumbency'                    => SeatIncumbency,
-        'StatutoryInstrumentPaper'          => StatutoryInstrumentPaper,
-        'WebArticle'                        => WebArticle,
-        'WorkPackage'                       => WorkPackage,
-        'WorkPackageableThing'              => WorkPackageableThing
+        'Answer'                                   => Answer,
+        'AnsweringBody'                            => AnsweringBody,
+        'AnsweringBodyAllocation'                  => AnsweringBodyAllocation,
+        'ArticleType'                              => ArticleType,
+        'Audience'                                 => Audience,
+        'BusinessItem'                             => BusinessItem,
+        'Collection'                               => Collection,
+        'Concept'                                  => Concept,
+        'ConstituencyArea'                         => ConstituencyArea,
+        'ConstituencyGroup'                        => ConstituencyGroup,
+        'ContactPoint'                             => ContactPoint,
+        'EuropeanRegion'                           => EuropeanRegion,
+        'FormalBodyChair'                          => FormalBodyChair,
+        'FormalBodyMembership'                     => FormalBodyMembership,
+        'FormalBodyType'                           => FormalBodyType,
+        'FormalBody'                               => FormalBody,
+        'Gender'                                   => Gender,
+        'GenderIdentity'                           => GenderIdentity,
+        'GovernmentIncumbency'                     => GovernmentIncumbency,
+        'GovernmentPosition'                       => GovernmentPosition,
+        'GovRegisterGovernmentOrganisation'        => GovRegisterGovernmentOrganisation,
+        'Group'                                    => Group,
+        'House'                                    => House,
+        'HouseSeat'                                => HouseSeat,
+        'Incumbency'                               => Incumbency,
+        'LaidThing'                                => LaidThing,
+        'Laying'                                   => Laying,
+        'LayingBody'                               => LayingBody,
+        'MemberImage'                              => MemberImage,
+        'OppositionIncumbency'                     => OppositionIncumbency,
+        'OppositionPosition'                       => OppositionPosition,
+        'ParliamentPeriod'                         => ParliamentPeriod,
+        'ParliamentaryIncumbency'                  => ParliamentaryIncumbency,
+        'Party'                                    => Party,
+        'PartyMembership'                          => PartyMembership,
+        'Person'                                   => Person,
+        'Position'                                 => Position,
+        'Procedure'                                => Procedure,
+        'ProcedureRoute'                           => ProcedureRoute,
+        'ProcedureStep'                            => ProcedureStep,
+        'ProposedNegativeStatutoryInstrumentPaper' => ProposedNegativeStatutoryInstrumentPaper,
+        'PostalAddress'                            => PostalAddress,
+        'Question'                                 => Question,
+        'SeatIncumbency'                           => SeatIncumbency,
+        'StatutoryInstrumentPaper'                 => StatutoryInstrumentPaper,
+        'WebArticle'                               => WebArticle,
+        'WorkPackage'                              => WorkPackage,
+        'WorkPackageableThing'                     => WorkPackageableThing,
+        'WorkPackagedThing'                        => WorkPackagedThing
       }.freeze
 
       class << self

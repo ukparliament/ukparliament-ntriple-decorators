@@ -5,7 +5,7 @@ module Parliament
       module AnsweringBody
         # Alias groupName with fallback.
         #
-        # @return [String, STring] the name of the Grom::Node or an empty string.
+        # @return [String, String] the name of the Grom::Node or an empty string.
         def name
           respond_to?(:groupName) ? groupName : ''
         end
