@@ -24,16 +24,30 @@ describe Parliament::Grom::Decorator::Laying, vcr: true do
     end
   end
 
-  describe '#laying_body' do
-    context 'Grom::Node has a laying body' do
+  describe '#body' do
+    context 'Grom::Node has a body' do
       it 'returns the laying body of the Grom::Node object' do
-        expect(@laying.laying_body.type).to eq('https://id.parliament.uk/schema/LayingBody')
+        expect(@laying.body.type).to eq('https://id.parliament.uk/schema/LayingBody')
       end
     end
 
     context 'Grom::Node does not have a laying body' do
       it 'returns nil' do
-        expect(@laying.laying_body).to eq(nil)
+        expect(@laying.body).to eq(nil)
+      end
+    end
+  end
+
+  describe '#person' do
+    context 'Grom::Node has a person' do
+      it 'returns the laying person of the Grom::Node object' do
+        expect(@laying.person.type).to eq('https://id.parliament.uk/schema/LayingPerson')
+      end
+    end
+
+    context 'Grom::Node does not have a laying person' do
+      it 'returns nil' do
+        expect(@laying.person).to eq(nil)
       end
     end
   end

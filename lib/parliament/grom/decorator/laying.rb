@@ -13,8 +13,15 @@ module Parliament
         # Alias layingHasLayingBody with fallback.
         #
         # @return [Grom::Node, nil] the LayingBody of the Grom::Node or nil.
-        def laying_body
+        def body
           respond_to?(:layingHasLayingBody) ? layingHasLayingBody.first : nil
+        end
+
+        # Alias layingHasLayingPerson with fallback.
+        #
+        # @return [Grom::Node, nil] the LayingPerson of the Grom::Node or nil.
+        def person
+          respond_to?(:layingHasLayingPerson) ? layingHasLayingPerson.first : nil
         end
       end
     end
