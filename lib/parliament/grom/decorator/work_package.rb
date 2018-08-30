@@ -32,7 +32,6 @@ module Parliament
           respond_to?(:workPackageHasBusinessItem) ? workPackageHasBusinessItem : []
         end
 
-
         # @return [Grom::Node, nil] a Laying Grom::Node or nil.
         def laying
           respond_to?(:workPackageHasProcedure) ? workPackageHasProcedure.first : nil
