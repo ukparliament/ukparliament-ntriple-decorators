@@ -1,7 +1,7 @@
 module Parliament
   module Grom
     module Decorator
-      # Decorator namespace for Grom::Node instances with type: https://id.parliament.uk/schema/StatutoryInstrumentPage
+      # Decorator namespace for Grom::Node instances with type: https://id.parliament.uk/schema/StatutoryInstrumentPaper
       module StatutoryInstrumentPaper
         # Alias statutoryInstrumentPaperName with fallback.
         #
@@ -31,11 +31,11 @@ module Parliament
           respond_to?(:statutoryInstrumentPaperNumber) ? statutoryInstrumentPaperNumber : ''
         end
 
-        # Alias statutoryInstrumentPaperComingIntoForceDate with fallback.
+        # Alias statutoryInstrumentPaperMadeDate with fallback.
         #
-        # @return [Date, nil] the coming into force date of the Grom::Node or an empty string.
-        def coming_into_force_date
-          respond_to?(:statutoryInstrumentPaperComingIntoForceDate) ? DateTime.parse(statutoryInstrumentPaperComingIntoForceDate) : nil
+        # @return [Date, nil] the coming into force date of the Grom::Node or nil.
+        def made_date
+          respond_to?(:statutoryInstrumentPaperMadeDate) ? DateTime.parse(statutoryInstrumentPaperMadeDate) : nil
         end
 
         # Alias statutoryInstrumentPaperComingIntoForceNote with fallback.
@@ -45,18 +45,18 @@ module Parliament
           respond_to?(:statutoryInstrumentPaperComingIntoForceNote) ? statutoryInstrumentPaperComingIntoForceNote : ''
         end
 
-        # Alias workPackagedThingHasWorkPackagedThingWebLink with fallback.
+        # Alias Date with fallback.
         #
-        # @return [String, String] a web link to view the statutory instrument Grom::Node or an empty string.
-        def weblink
-          respond_to?(:workPackagedThingHasWorkPackagedThingWebLink) ? workPackagedThingHasWorkPackagedThingWebLink : ''
+        # @return [Date, nil] the coming into force date of the Grom::Node or nil.
+        def coming_into_force_date
+          respond_to?(:statutoryInstrumentPaperComingIntoForceDate) ? DateTime.parse(statutoryInstrumentPaperComingIntoForceDate) : nil
         end
 
-        # Alias workPackagedThingHasWorkPackage with fallback.
+        # Alias statutoryInstrumentPaperFollowsProposedNegativeStatutoryInstrumentPaper with fallback.
         #
-        # @return [Grom::Node, nil] a work package Grom::Node or an empty string.
-        def work_package
-          respond_to?(:workPackagedThingHasWorkPackage) ? workPackagedThingHasWorkPackage.first : nil
+        # @return [Array, Array] an array of ProposedNegativeStatutoryInstrumentPaper Grom::Nodes or an empty array.
+        def proposed_negative_statutory_instrument_papers
+          respond_to?(:statutoryInstrumentPaperFollowsProposedNegativeStatutoryInstrumentPaper) ? statutoryInstrumentPaperFollowsProposedNegativeStatutoryInstrumentPaper : []
         end
       end
     end
