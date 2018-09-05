@@ -41,6 +41,20 @@ describe Parliament::Grom::Decorator::BusinessItem, vcr: true do
     end
   end
 
+  describe '#shortest_distance_of_procedure_steps' do
+    context 'Grom::Node has procedure steps' do
+      it 'returns shortest distance' do
+        expect(@business_item.shortest_distance_of_procedure_steps).to eq(8)
+      end
+    end
+
+    context 'Grom::Node has no procedure steps' do
+      it 'returns nil' do
+        expect(@business_item.shortest_distance_of_procedure_steps).to eq(nil)
+      end
+    end
+  end
+
   describe '#date' do
     context 'Grom::Node has a date' do
       it 'returns a date' do
@@ -65,20 +79,6 @@ describe Parliament::Grom::Decorator::BusinessItem, vcr: true do
     context 'Grom::Node has no web link' do
       it 'returns an empty string' do
         expect(@business_item.weblink).to eq('')
-      end
-    end
-  end
-
-  describe '#laying_body' do
-    context 'Grom::Node has a laying body' do
-      it 'returns a Grom::Node representing the laying body' do
-        expect(@business_item.laying_body.type).to include('https://id.parliament.uk/schema/Group')
-      end
-    end
-
-    context 'Grom::Node has no laying date' do
-      it 'returns nil' do
-        expect(@business_item.laying_body).to eq(nil)
       end
     end
   end

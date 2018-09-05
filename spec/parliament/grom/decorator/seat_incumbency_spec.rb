@@ -67,7 +67,7 @@ describe Parliament::Grom::Decorator::SeatIncumbency, vcr: true do
         seat_incumbency_node = @seat_incumbency_nodes.first
 
         expect(seat_incumbency_node).to respond_to(:date_range)
-        expect(seat_incumbency_node.date_range).to eq('11 Jun 1987 to 9 Apr 1992')
+        expect(seat_incumbency_node.date_range).to eq('11 June 1987 to 9 April 1992')
       end
     end
 
@@ -76,7 +76,7 @@ describe Parliament::Grom::Decorator::SeatIncumbency, vcr: true do
         seat_incumbency_node = @seat_incumbency_nodes.first
 
         expect(seat_incumbency_node).to respond_to(:date_range)
-        expect(seat_incumbency_node.date_range).to eq('11 Jun 1987 to present')
+        expect(seat_incumbency_node.date_range).to eq('11 June 1987 to present')
       end
     end
   end

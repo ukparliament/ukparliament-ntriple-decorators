@@ -18,6 +18,13 @@ module Parliament
           procedure_steps.sort_by(&:distance_from_origin)
         end
 
+        # Finds, for each of the procedure steps belonging to a business item, the shortest distance from origin
+        #
+        # @return [Integer, nil] shortest distance of procedure steps from origin or nil.
+        def shortest_distance_of_procedure_steps
+          sorted_procedure_steps_by_distance.first&.distance_from_origin
+        end
+
         # Alias businessItemDate with fallback.
         #
         # @return [Date, nil] a laying date or nil.
@@ -30,14 +37,6 @@ module Parliament
         # @return [String, String] a web link to view business item Grom::Node or an empty string.
         def weblink
           respond_to?(:businessItemHasBusinessItemWebLink) ? businessItemHasBusinessItemWebLink : ''
-        end
-
-        # Alias layingHasLayingBody with fallback.
-        # NB. One and only one group has to lay, so it will always be the first laying body
-        #
-        # @return [Grom::Node, nil] a Grom::Node representing the group that did the laying.
-        def laying_body
-          respond_to?(:layingHasLayingBody) ? layingHasLayingBody.first : nil
         end
       end
     end

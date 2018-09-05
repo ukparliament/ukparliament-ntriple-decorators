@@ -31,17 +31,31 @@ module Parliament
           I18n.backend.load_translations
         end
 
-        # Decorates objects with alias methods extended from its decorator module.
+        # Decorates objects with alias methods extended from decorator modules.
+        # This method reads each of the `#type` values and extends the object with a decorator for that type,
+        # if available.
         #
         # @param [Grom::Node] object the object to be decorated.
+        # @return [Grom::Node] the object which has been decorated.
         def decorate(object)
           return object unless object.respond_to?(:type)
 
           Array(object.type).each do |type|
-            decorator = MAPPING[::Grom::Helper.get_id(type)] # Get the decorator for a type, or nil
-
-            object.extend(decorator) unless decorator.nil?
+            object = decorate_with_type(object, type)
           end
+
+          object
+        end
+
+        # Decorates objects with alias methods extended from a decorator module.
+        # This method decorated an object with a module matching the type provided.
+        #
+        # @param [Grom::Node] object the object to be decorated.
+        # @param [string] type the type we are decorating our object for/
+        # @return [Grom::Node] the object which has been decorated.
+        def decorate_with_type(object, type)
+          decorator = MAPPING[::Grom::Helper.get_id(type)] # Get the decorator for a type, or nil
+          object.extend(decorator) unless decorator.nil?
 
           object
         end

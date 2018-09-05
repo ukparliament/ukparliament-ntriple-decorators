@@ -24,6 +24,13 @@ module Parliament
         def answering_person
           respond_to?(:answerHasAnsweringPerson) ? answerHasAnsweringPerson.first : nil
         end
+
+        # Alias answerHasQuestion with fallback.
+        #
+        # @return [Grom::Node, nil] the question of the Grom::Node or nil.
+        def question
+          respond_to?(:answerHasQuestion) ? answerHasQuestion.first : nil
+        end
       end
     end
   end
