@@ -23,6 +23,13 @@ module Parliament
         def distance_from_origin
           respond_to?(:distance) ? distance.to_i : 0
         end
+
+        # Alias procedureStepDescription with fallback.
+        #
+        # @return [String, String] the description of the ProcedureStep Grom::Node.
+        def description
+          respond_to?(:procedureStepDescription) ? procedureStepDescription : ''
+        end
       end
     end
   end
