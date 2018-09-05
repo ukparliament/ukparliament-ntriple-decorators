@@ -84,7 +84,7 @@ module Parliament
         #
         # @return [Boolean] whether or not the group is a select committee.
         def select_committee?
-          type.include?('https://id.parliament.uk/schema/SelectCommittee')
+          type.include?(Parliament::Utils::Helpers::RequestHelper.namespace_uri_schema_path('SelectCommittee'))
         end
 
         # Checks what type of committee a Grom::Node represents.

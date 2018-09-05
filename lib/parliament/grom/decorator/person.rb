@@ -82,7 +82,7 @@ module Parliament
         #
         # @return [Array, Array] the seat incumbencies of the Grom::Node or an empty array.
         def seat_incumbencies
-          @seat_incumbencies ||= incumbencies.select { |inc| inc.type.include?('https://id.parliament.uk/schema/SeatIncumbency') }
+          @seat_incumbencies ||= incumbencies.select { |inc| inc.type.include?(Parliament::Utils::Helpers::RequestHelper.namespace_uri_schema_path('SeatIncumbency')) }
         end
 
         # @return [Grom::Node] the seat incumbency as a Grom::Node or nil
