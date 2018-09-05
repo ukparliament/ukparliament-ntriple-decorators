@@ -52,4 +52,36 @@ RSpec.describe Parliament::Grom::Decorator do
       end
     end
   end
+
+  describe '.decorate_with_type' do
+    subject(:decorator_module) { Parliament::Grom::Decorator }
+
+    context 'with no type' do
+      subject(:object) { double(:node) }
+
+      it 'does nothing' do
+        node = object
+
+        expect(node).not_to receive(:extend)
+      end
+    end
+
+    context 'with a type that has no decorator' do
+      it 'does nothing' do
+        node = self.class::Node.new('https://id.parliament.uk/schema/FooBar')
+
+        expect(node).not_to receive(:extend)
+      end
+    end
+
+    context 'with a type that has a decorator' do
+      it 'adds the correct decorator' do
+        node = self.class::Node.new('https://id.parliament.uk/schema/Concept', 'Test Concept')
+
+        expect(node).to receive(:extend).with(Parliament::Grom::Decorator::Concept)
+
+        decorator_module.decorate(node)
+      end
+    end
+  end
 end
