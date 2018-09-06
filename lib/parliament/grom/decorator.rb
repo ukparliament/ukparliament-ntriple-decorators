@@ -1,7 +1,7 @@
 require 'parliament/grom/decorator/version'
 require 'parliament/grom/decorator/helpers'
 
-Dir['./lib/parliament/grom/decorator/*.rb'].each { |file| require file }
+Dir[File.dirname(__FILE__) + '/decorator/*.rb'].each { |file| require file }
 
 # Namespace for classes and modules that handle connections to, and processing of data from the parliamentary API.
 # @since 0.1.0
