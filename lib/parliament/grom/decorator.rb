@@ -11,13 +11,14 @@ module Parliament
     #
     # @since 0.1.0
     module Decorator
-      INTERNAL_MODULES = %i[
+      internal_modules = %i[
         Helpers
         VERSION
       ].freeze
 
-      MAPPING = {}
-      (constants - INTERNAL_MODULES).each { |constant| MAPPING[constant.to_s] = const_get(constant) }
+      mapping_hash = {}
+      (constants - internal_modules).each { |constant| mapping_hash[constant.to_s] = const_get(constant) }
+      MAPPING = mapping_hash.freeze
 
       class << self
         # Gets the root directory of the gem

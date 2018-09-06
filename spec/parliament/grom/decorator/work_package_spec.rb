@@ -95,4 +95,18 @@ describe Parliament::Grom::Decorator::WorkPackage, vcr: true do
     end
   end
 
+  describe '#laying' do
+    context 'Grom::Node has a procedure' do
+      it 'returns an array of procedure Grom::Nodes for the Grom::Node object' do
+        expect(@work_package.laying.type).to eq('https://id.parliament.uk/schema/Procedure')
+      end
+    end
+
+    context 'Grom::Node does not have a procedure' do
+      it 'returns nil' do
+        expect(@work_package.laying).to eq(nil)
+      end
+    end
+  end
+
 end
