@@ -3,9 +3,8 @@ require 'spec_helper'
 RSpec.describe Parliament::Grom::Decorator do
   class self::Node
     attr_accessor :type, :conceptLabel
-    def initialize(type=nil, conceptLabel=nil)
+    def initialize(type=nil)
       @type = type
-      @conceptLabel = conceptLabel
     end
   end
 
@@ -31,11 +30,10 @@ RSpec.describe Parliament::Grom::Decorator do
     end
 
     context 'with a single type' do
-
       it 'adds a single decorator' do
-        node = self.class::Node.new('https://id.parliament.uk/schema/Concept', 'Test Concept')
+        node = self.class::Node.new('https://id.parliament.uk/schema/Group')
 
-        expect(node).to receive(:extend).with(Parliament::Grom::Decorator::Concept)
+        expect(node).to receive(:extend).with(Parliament::Grom::Decorator::Group)
 
         decorator_module.decorate(node)
       end
@@ -43,10 +41,10 @@ RSpec.describe Parliament::Grom::Decorator do
 
     context 'with multiple types' do
       it 'adds multiple decorators' do
-        node = self.class::Node.new(%w(https://id.parliament.uk/schema/Group https://id.parliament.uk/schema/FormalBody), 'Test Concept')
+        node = self.class::Node.new(%w(https://id.parliament.uk/schema/Group https://id.parliament.uk/schema/StatutoryInstrumentPaper))
 
         expect(node).to receive(:extend).with(Parliament::Grom::Decorator::Group)
-        expect(node).to receive(:extend).with(Parliament::Grom::Decorator::FormalBody)
+        expect(node).to receive(:extend).with(Parliament::Grom::Decorator::StatutoryInstrumentPaper)
 
         decorator_module.decorate(node)
       end
@@ -76,9 +74,9 @@ RSpec.describe Parliament::Grom::Decorator do
 
     context 'with a type that has a decorator' do
       it 'adds the correct decorator' do
-        node = self.class::Node.new('https://id.parliament.uk/schema/Concept', 'Test Concept')
+        node = self.class::Node.new('https://id.parliament.uk/schema/Group')
 
-        expect(node).to receive(:extend).with(Parliament::Grom::Decorator::Concept)
+        expect(node).to receive(:extend).with(Parliament::Grom::Decorator::Group)
 
         decorator_module.decorate(node)
       end

@@ -36,5 +36,5 @@ http_interactions:
         <https://id.parliament.uk/0RNgrC4q> <https://id.parliament.uk/schema/groupName> "Ministry of Posts and Telecommunications" .
         <https://id.parliament.uk/0RNgrC4q> <https://id.parliament.uk/schema/groupStartDate> "1969-10-01+00:00"^^<http://www.w3.org/2001/XMLSchema#date> .
     http_version: 
-  recorded_at: Thu, 27 Sep 2018 23:02:08 GMT
-recorded_with: VCR 4.0.0
+  recorded_at: Thu, 27 Sep 2018 21:48:49 GMT
+recorded_with: VCR 3.0.3
