@@ -1,4 +1,6 @@
 require 'parliament/grom/decorator/helpers/date_helper'
+require 'parliament/grom/decorator/helpers/utils'
+
 module Parliament
   module Grom
     module Decorator
