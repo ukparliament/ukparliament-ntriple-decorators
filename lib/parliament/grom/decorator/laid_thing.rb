@@ -7,7 +7,10 @@ module Parliament
         #
         # @return [Grom::Node, nil] a laying Grom::Node or nil.
         def laying
-          respond_to?(:laidThingHasLaying) ? laidThingHasLaying.first : nil
+          return @laying if @laying
+          return nil unless respond_to?(:laidThingHasLaying)
+
+          @laying = Helpers::Utils.type_safe_first(laidThingHasLaying, Parliament::Grom::Decorator::Laying)
         end
       end
     end
