@@ -65,6 +65,6 @@ http_interactions:
         <https://id.parliament.uk/D1234567> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://id.parliament.uk/schema/ProposedNegativeStatutoryInstrumentPaper> .
         <https://id.parliament.uk/C1234567> <https://id.parliament.uk/schema/proposedNegativeStatutoryInstrumentPaperName> "Proposed Negative Statutory Instrument 1" .
         <https://id.parliament.uk/D1234567> <https://id.parliament.uk/schema/proposedNegativeStatutoryInstrumentPaperName> "Proposed Negative Statutory Instrument 2" .
-    http_version: 
+    http_version:
   recorded_at: Fri, 05 Oct 2018 13:42:26 GMT
 recorded_with: VCR 3.0.3
