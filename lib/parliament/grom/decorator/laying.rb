@@ -29,6 +29,16 @@ module Parliament
 
           @person = Helpers::Utils.type_safe_first(layingHasLayingPerson, Parliament::Grom::Decorator::Person)
         end
+
+        # Alias layingHasLaidThing with fallback.
+        #
+        # @return [Grom::Node, nil] the LaidThing of the Grom::Node or nil.
+        def laid_thing
+          return @laid_thing if @laid_thing
+          return nil unless respond_to?(:layingHasLaidThing)
+
+          @laid_thing = Helpers::Utils.type_safe_first(layingHasLaidThing, Parliament::Grom::Decorator::LaidThing)
+        end
       end
     end
   end
