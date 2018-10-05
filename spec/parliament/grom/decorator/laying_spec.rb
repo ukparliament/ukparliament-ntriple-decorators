@@ -37,6 +37,18 @@ describe Parliament::Grom::Decorator::Laying, vcr: true do
     }
   )
 
+  # Test #laid_thing
+  include_examples(
+      'type_safe_first',
+      {
+          request:          request_object,
+          filter_type:      'https://id.parliament.uk/schema/Laying',
+          predicate:        :layingHasLaidThing,
+          decorator_method: :laid_thing,
+          type_klass:       Parliament::Grom::Decorator::LaidThing
+      }
+  )
+
   describe '#date' do
     context 'Grom::Node has a date' do
       it 'returns the date of the Grom::Node object' do
