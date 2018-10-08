@@ -7,18 +7,8 @@ describe Parliament::Grom::Decorator::Laying, vcr: true do
     decorators: Parliament::Grom::Decorator
   ).statutory_instrument_by_id
 
-  request_object_group = Parliament::Request::UrlRequest.new(
-    base_url:   'http://localhost:3030/api/v1',
-    builder:    Parliament::Builder::NTripleResponseBuilder,
-    decorators: Parliament::Grom::Decorator
-  ).group_by_id
-
   let(:response) do
     request_object.get
-  end
-
-  let(:response_group) do
-    request_object_group.get
   end
 
   let(:laying) {response.filter('https://id.parliament.uk/schema/Laying').first}
