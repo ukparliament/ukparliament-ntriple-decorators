@@ -18,4 +18,16 @@ describe Parliament::Grom::Decorator::WorkPackage, vcr: true do
       type_klass:       Parliament::Grom::Decorator::Procedure
     }
   )
+
+  # Test #business_item
+  include_examples(
+    'type_safe_first',
+    {
+      request:          request_object,
+      filter_type:      'https://id.parliament.uk/schema/WorkPackage',
+      predicate:        :workPackageHasBusinessItem,
+      decorator_method: :business_item,
+      type_klass:       Parliament::Grom::Decorator::BusinessItem
+    }
+  )
 end
