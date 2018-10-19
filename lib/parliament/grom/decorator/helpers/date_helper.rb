@@ -14,6 +14,7 @@ module Parliament
           # @return [String] formatted date range
           def date_range(date_format: '%-d %-B %Y')
             return I18n.t('date_unavailable') if start_date.nil?
+
             if end_date
               "#{I18n.l(start_date, format: date_format)} #{I18n.t('to')} #{I18n.l(end_date, format: date_format)}"
             else

@@ -13,6 +13,13 @@ module Parliament
 
           @procedure = Helpers::Utils.type_safe_first(workPackageHasProcedure, Parliament::Grom::Decorator::Procedure)
         end
+
+        def business_item
+          return @business_item if @business_item
+          return nil unless respond_to?(:workPackageHasBusinessItem)
+
+          @business_item = Helpers::Utils.type_safe_first(workPackageHasBusinessItem, Parliament::Grom::Decorator::BusinessItem)
+        end
       end
     end
   end
