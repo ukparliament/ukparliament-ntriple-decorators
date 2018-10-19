@@ -15,13 +15,24 @@ describe Parliament::Grom::Decorator::BusinessItem, vcr: true do
 
   # Test #procedure_step
   include_examples(
-    'type_safe_first',
-    {
+  'type_safe_first',
+  {
       request:          request_object,
       filter_type:      'https://id.parliament.uk/schema/BusinessItem',
       predicate:        :businessItemHasProcedureStep,
       decorator_method: :procedure_step,
       type_klass:       Parliament::Grom::Decorator::ProcedureStep
+    }
+  )
+  # Test #work_package
+  include_examples(
+    'type_safe_first',
+    {
+      request:          request_object,
+      filter_type:      'https://id.parliament.uk/schema/BusinessItem',
+      predicate:        :businessItemHasWorkPackage,
+      decorator_method: :work_package,
+      type_klass:       Parliament::Grom::Decorator::WorkPackage
     }
   )
 

@@ -7,7 +7,7 @@ describe Parliament::Grom::Decorator::LaidThing, vcr: true do
     decorators: Parliament::Grom::Decorator
   ).statutory_instrument_by_id
 
-  # Test #body
+  # Test #laying
   include_examples(
     'type_safe_first',
     {
