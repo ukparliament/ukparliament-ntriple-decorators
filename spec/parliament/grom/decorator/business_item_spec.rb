@@ -11,18 +11,18 @@ describe Parliament::Grom::Decorator::BusinessItem, vcr: true do
     request_object.get
   end
 
-  let(:business_item) {response.filter('https://id.parliament.uk/schema/BusinessItem').first}
+  let(:business_item) { response.filter('https://id.parliament.uk/schema/BusinessItem').first }
 
   # Test #procedure_step
   include_examples(
-      'type_safe_first',
-      {
-          request:          request_object,
-          filter_type:      'https://id.parliament.uk/schema/BusinessItem',
-          predicate:        :businessItemHasProcedureStep,
-          decorator_method: :procedure_step,
-          type_klass:       Parliament::Grom::Decorator::ProcedureStep
-      }
+    'type_safe_first',
+    {
+      request:          request_object,
+      filter_type:      'https://id.parliament.uk/schema/BusinessItem',
+      predicate:        :businessItemHasProcedureStep,
+      decorator_method: :procedure_step,
+      type_klass:       Parliament::Grom::Decorator::ProcedureStep
+    }
   )
 
   describe '#date' do
@@ -31,7 +31,7 @@ describe Parliament::Grom::Decorator::BusinessItem, vcr: true do
         expect(business_item.date).to eq(DateTime.new(2018, 06, 01, 0, 0, 0))
       end
     end
-  
+
     context 'Grom::Node does not have a date' do
       it 'returns nil' do
         expect(business_item.date).to eq(nil)

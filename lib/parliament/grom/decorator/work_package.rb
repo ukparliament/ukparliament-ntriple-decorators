@@ -20,7 +20,6 @@ module Parliament
 
           @business_item = Helpers::Utils.type_safe_first(workPackageHasBusinessItem, Parliament::Grom::Decorator::BusinessItem)
         end
-
       end
     end
   end

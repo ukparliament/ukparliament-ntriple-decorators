@@ -21,7 +21,6 @@ module Parliament
         def date
           respond_to?(:businessItemDate) ? DateTime.parse(businessItemDate) : nil
         end
-
       end
     end
   end
