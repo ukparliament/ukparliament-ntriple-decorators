@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://localhost:3030/api/v1/statutory_instrument_index
+    uri: http://localhost:3030/api/v1/statutory_instrument_by_id
     body:
       encoding: US-ASCII
       string: ''
