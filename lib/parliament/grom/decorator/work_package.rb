@@ -20,6 +20,16 @@ module Parliament
 
           @business_item = Helpers::Utils.type_safe_first(workPackageHasBusinessItem, Parliament::Grom::Decorator::BusinessItem)
         end
+
+        # Alias workPackageHasWorkPackagedThing with fallback.
+        #
+        # @return [Grom::Node, nil] a WorkPackagedThing Grom::Node or nil.
+        def work_packaged_thing
+          return @work_packaged_thing if @work_packaged_thing
+          return nil unless respond_to?(:workPackageHasWorkPackagedThing)
+
+          @work_packaged_thing = Helpers::Utils.type_safe_first(workPackageHasWorkPackagedThing, Parliament::Grom::Decorator::WorkPackagedThing)
+        end
       end
     end
   end

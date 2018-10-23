@@ -1,4 +1,3 @@
-
 require_relative '../../../spec_helper'
 
 describe Parliament::Grom::Decorator::ProposedNegativeStatutoryInstrumentPaper, vcr: true do
