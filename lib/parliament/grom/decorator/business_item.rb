@@ -3,7 +3,6 @@ module Parliament
     module Decorator
       # Decorator namespace for Grom::Node instances with type: https://id.parliament.uk/schema/BusinessItem
       module BusinessItem
-        include Helpers::DateHelper
         # Alias businessItemeHasProcedureStep with fallback.
         # NB: Currently, business items only have one procedure step
         #
