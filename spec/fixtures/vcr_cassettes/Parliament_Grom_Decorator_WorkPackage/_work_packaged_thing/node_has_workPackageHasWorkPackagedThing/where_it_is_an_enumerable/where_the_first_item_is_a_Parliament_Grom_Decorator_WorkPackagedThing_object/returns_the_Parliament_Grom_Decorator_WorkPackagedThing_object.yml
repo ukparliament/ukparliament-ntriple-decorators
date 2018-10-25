@@ -1,0 +1,63 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:3030/api/v1/statutory_instrument_by_id
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Ruby
+      Accept:
+      - "*/*"
+      - application/n-triples
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/n-triples
+      Content-Disposition:
+      - inline; filename="index"
+      Last-Modified:
+      - Tue, 23 Oct 2018 16:01:18 GMT
+      X-Content-Type-Options:
+      - nosniff
+      Content-Length:
+      - '3585'
+    body:
+      encoding: UTF-8
+      string: |
+        <https://id.parliament.uk/e9G2vHbc> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://id.parliament.uk/schema/ProcedureStep> .
+        <https://id.parliament.uk/e9G2vHbc> <https://id.parliament.uk/schema/procedureStepName> "Considered by the Joint Committee on Statutory Instruments (JCSI)" .
+        <https://id.parliament.uk/e9G2vHbc> <https://id.parliament.uk/schema/procedureStepHasBusinessItem> <https://id.parliament.uk/MZ94J0lk> .
+        <https://id.parliament.uk/e9G2vHbc> <https://id.parliament.uk/schema/procedureStepHasHouse> <https://id.parliament.uk/1AFu55Hs> .
+        <https://id.parliament.uk/MZ94J0lk> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://id.parliament.uk/schema/BusinessItem> .
+        <https://id.parliament.uk/MZ94J0lk> <https://id.parliament.uk/schema/businessItemDate> "2018-05-02+00:00"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <https://id.parliament.uk/UsdZhECl> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://id.parliament.uk/schema/WorkPackage> .
+        <https://id.parliament.uk/UsdZhECl> <https://id.parliament.uk/schema/workPackageHasWorkPackagedThing> <https://id.parliament.uk/C2rRbqeQ> .
+        <https://id.parliament.uk/UsdZhECl> <https://id.parliament.uk/schema/workPackageHasProcedure> <https://id.parliament.uk/5S6p4YsP> .
+        <https://id.parliament.uk/C2rRbqeQ> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://id.parliament.uk/schema/WorkPackagedThing> .
+        <https://id.parliament.uk/C2rRbqeQ> <https://id.parliament.uk/schema/workPackagedThingName> "Ionising Radiation (Basic Safety Standards) (Miscellaneous Provisions) Regulations 2018" .
+        <https://id.parliament.uk/1AFu55Hs> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://id.parliament.uk/schema/House> .
+        <https://id.parliament.uk/1AFu55Hs> <https://id.parliament.uk/schema/houseName> "House of Commons" .
+        <https://id.parliament.uk/5S6p4YsP> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://id.parliament.uk/schema/Procedure> .
+        <https://id.parliament.uk/5S6p4YsP> <https://id.parliament.uk/schema/procedureName> "Made negative" .
+        <https://id.parliament.uk/e9G2vHbc> <https://id.parliament.uk/schema/procedureStepHasHouse> <https://id.parliament.uk/WkUWUBMx> .
+        <https://id.parliament.uk/WkUWUBMx> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://id.parliament.uk/schema/House> .
+        <https://id.parliament.uk/WkUWUBMx> <https://id.parliament.uk/schema/houseName> "House of Lords" .
+        <https://id.parliament.uk/e9G2vHbc> <https://id.parliament.uk/schema/procedureStepHasBusinessItem> <https://id.parliament.uk/mh3hcCoq> .
+        <https://id.parliament.uk/mh3hcCoq> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://id.parliament.uk/schema/BusinessItem> .
+        <https://id.parliament.uk/mh3hcCoq> <https://id.parliament.uk/schema/businessItemDate> "2018-05-09+00:00"^^<http://www.w3.org/2001/XMLSchema#date> .
+        <https://id.parliament.uk/PsB0pq0l> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://id.parliament.uk/schema/WorkPackage> .
+        <https://id.parliament.uk/PsB0pq0l> <https://id.parliament.uk/schema/workPackageHasWorkPackagedThing> <https://id.parliament.uk/ITuNnxmw> .
+        <https://id.parliament.uk/PsB0pq0l> <https://id.parliament.uk/schema/workPackageHasProcedure> <https://id.parliament.uk/H5YJQsK2> .
+        <https://id.parliament.uk/ITuNnxmw> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://id.parliament.uk/schema/WorkPackagedThing> .
+        <https://id.parliament.uk/ITuNnxmw> <https://id.parliament.uk/schema/workPackagedThingName> "Scotland Act 2016 and Wales Act 2017 (Onshore Petroleum) (Consequential Amendments) Regulations 2018" .
+    http_version: 
+  recorded_at: Wed, 24 Oct 2018 15:05:21 GMT
+recorded_with: VCR 3.0.3
