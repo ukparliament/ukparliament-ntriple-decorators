@@ -20,6 +20,16 @@ module Parliament
           @body = Helpers::Utils.type_safe_first(layingHasLayingBody, Parliament::Grom::Decorator::Group)
         end
 
+        # Alias businessItemHasProcedureStep with fallback.
+        #
+        # @return [Grom::Node, nil] the ProcedureStep of the Grom::Node or nil.
+        def procedure_step
+          return @procedure_step if @procedure_step
+          return nil unless respond_to?(:businessItemHasProcedureStep)
+
+          @procedure_step = Helpers::Utils.type_safe_first(businessItemHasProcedureStep, Parliament::Grom::Decorator::ProcedureStep)
+        end
+
         # Alias layingHasLayingPerson with fallback.
         #
         # @return [Grom::Node, nil] the LayingPerson of the Grom::Node or nil.
