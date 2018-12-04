@@ -37,6 +37,18 @@ describe Parliament::Grom::Decorator::Laying, vcr: true do
     }
   )
 
+  # Test #procedure_step
+  include_examples(
+    'type_safe_first',
+    {
+      request:          request_object,
+      filter_type:      'https://id.parliament.uk/schema/Laying',
+      predicate:        :businessItemHasProcedureStep,
+      decorator_method: :procedure_step,
+      type_klass:       Parliament::Grom::Decorator::ProcedureStep
+    }
+  )
+
   # Test #laid_thing
   include_examples(
       'type_safe_first',
