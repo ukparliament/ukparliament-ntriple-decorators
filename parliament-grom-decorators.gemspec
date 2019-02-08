@@ -6,7 +6,7 @@ require 'parliament/grom/decorator/version'
 Gem::Specification.new do |spec|
   spec.name          = 'parliament-grom-decorators'
   spec.version       = Parliament::Grom::Decorator::VERSION
-  spec.authors       = ['Rebecca Appleyard']
+  spec.authors       = ['Rebecca Appleyard', 'Jenna Ramdenee', 'Bryony Watson']
   spec.email         = ['rklappleyard@gmail.com']
 
   spec.summary       = %q{Parliamentary Grom decorator}
