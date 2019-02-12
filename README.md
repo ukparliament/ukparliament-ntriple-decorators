@@ -10,10 +10,8 @@
 * [Bundler](http://http://bundler.io/)
 
 ## Installation
-
-This gem is currently not available on RubyGems. To use it in an application, install it directly from GitHub via your Gemfile
 ```bash
-gem 'parliament-grom-decorators', git: 'https://github.com/ukparliament/parliament-grom-decorators.git', branch: 'master'
+gem 'parliament-grom-decorators'
 ```
 
 ## Usage
